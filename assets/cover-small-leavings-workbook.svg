@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="Cover of The Small Leavings Workbook, a free workbook by Carrie Davidson">
+  <rect width="480" height="300" fill="#F7F5FB"/>
+  <circle cx="40" cy="30" r="130" fill="#E9E2F5" opacity="0.6"/>
+  <!-- dotted path wandering away, then returning to a filled point -->
+  <g fill="#B98A2E">
+    <circle cx="60" cy="228" r="4"/>
+    <circle cx="98" cy="216" r="4"/>
+    <circle cx="136" cy="230" r="4"/>
+    <circle cx="174" cy="212" r="4"/>
+    <circle cx="212" cy="226" r="4"/>
+    <circle cx="252" cy="206" r="4"/>
+    <circle cx="292" cy="222" r="4"/>
+    <circle cx="330" cy="200" r="4"/>
+    <circle cx="366" cy="214" r="4"/>
+  </g>
+  <circle cx="404" cy="204" r="9" fill="#4B2D73"/>
+  <rect x="28" y="58" width="44" height="3" fill="#B98A2E"/>
+  <text x="28" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#7A5C10">FREE WORKBOOK</text>
+  <text x="28" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#4B2D73">The Small Leavings</text>
+  <text x="28" y="146" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#2B2333">Workbook</text>
+  <text x="28" y="278" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#5B4F6B">Carrie Davidson, RN &#183; carriepdavidson.com</text>
+</svg>

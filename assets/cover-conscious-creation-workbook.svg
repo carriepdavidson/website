@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="Cover of The Conscious Creation Workbook, a free workbook by Carrie Davidson">
+  <rect width="480" height="300" fill="#F7F5FB"/>
+  <circle cx="430" cy="250" r="150" fill="#E9E2F5" opacity="0.6"/>
+  <!-- growing stem with blooms -->
+  <g stroke="#B98A2E" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M382 258 C 382 210 370 190 384 150 C 396 116 388 96 392 74"/>
+    <path d="M384 150 C 366 140 358 124 356 106"/>
+    <path d="M386 190 C 404 182 412 168 414 150"/>
+  </g>
+  <circle cx="392" cy="66" r="10" fill="#4B2D73"/>
+  <circle cx="354" cy="100" r="6" fill="#B98A2E"/>
+  <circle cx="416" cy="144" r="6" fill="#B98A2E"/>
+  <rect x="28" y="58" width="44" height="3" fill="#B98A2E"/>
+  <text x="28" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#7A5C10">FREE WORKBOOK</text>
+  <text x="28" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#2B2333">The Conscious</text>
+  <text x="28" y="146" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#4B2D73">Creation Workbook</text>
+  <text x="28" y="278" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#5B4F6B">Carrie Davidson, RN &#183; carriepdavidson.com</text>
+</svg>
