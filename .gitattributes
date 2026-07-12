@@ -1,0 +1,16 @@
+# Never apply line-ending conversion to binary assets
+*.pdf  binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.epub binary
+*.woff binary
+*.woff2 binary
+
+# Text files: normalize to LF in the repo
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
