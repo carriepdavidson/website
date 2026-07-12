@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fight Flight Freeze Fawn Quiz | Trauma Response Test</title>
+  <meta name="description" content="A free 16-question fight, flight, freeze, fawn quiz that scores all four trauma responses for a full profile, not just a label. Your answers stay private.">
+  <link rel="canonical" href="https://carriepdavidson.com/quiz.html">
+  <meta name="author" content="Carrie Davidson, BSPH, BSN, RN">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fight Flight Freeze Fawn Quiz | Trauma Response Test">
+  <meta property="og:description" content="A free 16-question quiz that scores all four trauma responses — fight, flight, freeze, fawn — for a full profile, not just a label. Your answers never leave the page.">
+  <meta property="og:url" content="https://carriepdavidson.com/quiz.html">
+  <meta property="og:site_name" content="Carrie Davidson">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- WebPage JSON-LD — plain page semantics (Organization schema lives in the footer). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Which F Response Is Running Your Life?",
+    "url": "https://carriepdavidson.com/quiz.html",
+    "description": "A free 16-question quiz that measures the intensity of all four trauma responses — fight, flight, freeze, and fawn — so you get a full response profile rather than a single label. All scoring happens in your browser; your answers never leave the page.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Carrie Davidson",
+      "url": "https://carriepdavidson.com/"
+    },
+    "about": { "@type": "Thing", "name": "Fight, flight, freeze, fawn trauma response profile" }
+  }
+  </script>
+
+  <!-- Quiz-scoped styles — no component existed for the scale + score bars.
+       Uses design-system tokens only; css/style.css is untouched. -->
+  <style>
+    .quiz { padding-block: clamp(var(--space-7), 6vw, var(--space-9)); }
+    .quiz [hidden] { display: none !important; }
+
+    /* H1 emphasis — keeps Carrie's title, adds the underline accent */
+    #quiz-title { color: var(--color-ink); }
+    #quiz-title .qz-underline {
+      font-style: italic; color: var(--color-accent);
+      text-decoration: underline;
+      text-decoration-color: var(--color-clay);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+    }
+
+    /* Progress */
+    .qz-progress { margin-bottom: var(--space-6); }
+    .qz-progress__meta {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-family: var(--font-sans); font-size: var(--step--1);
+      color: var(--color-ink-soft); margin-bottom: var(--space-2);
+    }
+    .qz-progress__track {
+      height: 6px; border-radius: 999px; background: var(--color-border); overflow: hidden;
+    }
+    .qz-progress__fill {
+      height: 100%; border-radius: 999px; background: var(--color-accent);
+      width: 0%; transition: width var(--transition);
+    }
+
+    /* Section intro band */
+    .qz-sectionintro {
+      font-family: var(--font-serif); font-style: italic; font-size: var(--step-1);
+      line-height: 1.4; color: var(--color-accent-deep);
+      background: var(--color-accent-soft); border-radius: var(--radius);
+      border-left: 3px solid var(--color-accent);
+      padding: var(--space-4) var(--space-5); margin-bottom: var(--space-6);
+      max-width: none;
+    }
+
+    /* Question */
+    .qz-question { border: 0; padding: 0; margin: 0 0 var(--space-6); }
+    .qz-question legend {
+      font-family: var(--font-serif); font-size: var(--step-2); line-height: 1.3;
+      color: var(--color-ink); padding: 0; margin-bottom: var(--space-5);
+    }
+
+    /* 1–5 scale as radio group */
+    .qz-scale__ends {
+      display: flex; justify-content: space-between;
+      font-family: var(--font-sans); font-size: var(--step--1);
+      color: var(--color-ink-soft); margin-bottom: var(--space-3);
+    }
+    .qz-scale {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-2);
+    }
+    .qz-opt { position: relative; }
+    .qz-opt input {
+      position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0;
+    }
+    .qz-opt__box {
+      display: flex; flex-direction: column; align-items: center; gap: var(--space-1);
+      background: var(--color-surface); border: 2px solid var(--color-border);
+      border-radius: var(--radius); padding: var(--space-4) var(--space-2);
+      cursor: pointer; text-align: center; min-height: 100%;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .qz-opt__num {
+      font-family: var(--font-serif); font-size: var(--step-2); font-weight: 500;
+      color: var(--color-ink-soft); line-height: 1;
+    }
+    .qz-opt__desc {
+      font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
+    }
+    .qz-opt input:hover + .qz-opt__box { border-color: var(--color-accent); }
+    .qz-opt input:checked + .qz-opt__box {
+      border-color: var(--color-accent); background: var(--color-accent-soft);
+    }
+    .qz-opt input:checked + .qz-opt__box .qz-opt__num { color: var(--color-accent-deep); }
+    .qz-opt input:focus-visible + .qz-opt__box {
+      outline: 3px solid var(--color-accent); outline-offset: 2px;
+    }
+
+    .qz-nav {
+      display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+      margin-top: var(--space-7); padding-top: var(--space-5);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Result hero */
+    .qz-result-hero {
+      text-align: center; background: var(--color-accent); color: #fff;
+      border-radius: var(--radius-lg); padding: clamp(var(--space-6), 6vw, var(--space-8));
+      margin-bottom: var(--space-7);
+    }
+    .qz-result-hero .eyebrow { color: var(--color-accent-soft); }
+    .qz-result-hero h2 { color: #fff; margin: 0 0 var(--space-3); }
+    .qz-result-hero__badge {
+      display: inline-block; font-family: var(--font-sans); font-size: var(--step--1);
+      font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.5); border-radius: 999px;
+      padding: 0.3em 0.9em; margin-bottom: var(--space-4);
+    }
+    .qz-result-hero__tagline {
+      font-family: var(--font-serif); font-style: italic; font-size: var(--step-2);
+      line-height: 1.35; color: rgba(255,255,255,0.9); max-width: 34ch; margin: 0 auto;
+    }
+
+    /* Score bars */
+    .qz-bars { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-4); }
+    .qz-bar { display: grid; grid-template-columns: 5.5rem 1fr auto; align-items: center; gap: var(--space-4); }
+    .qz-bar__label {
+      font-family: var(--font-sans); font-weight: 600; font-size: var(--step--1);
+      text-transform: capitalize; color: var(--color-ink);
+    }
+    .qz-bar__track { height: 10px; border-radius: 999px; background: var(--color-border); overflow: hidden; }
+    .qz-bar__fill { height: 100%; border-radius: 999px; background: var(--color-accent-soft); width: 0%; transition: width 0.9s ease; }
+    .qz-bar--primary .qz-bar__fill { background: var(--color-accent); }
+    .qz-bar--secondary .qz-bar__fill { background: var(--color-clay); }
+    .qz-bar__val {
+      font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
+      white-space: nowrap; min-width: 8.5rem; text-align: right;
+    }
+
+    /* Intensity tier grid */
+    .qz-tiers { display: grid; gap: var(--space-4); margin-top: var(--space-5); }
+    @media (min-width: 40rem) { .qz-tiers { grid-template-columns: repeat(3, 1fr); } }
+    .qz-tier {
+      background: var(--color-surface); border: 2px solid var(--color-border);
+      border-radius: var(--radius); padding: var(--space-5);
+    }
+    .qz-tier--current { border-color: var(--color-accent); background: var(--color-accent-soft); }
+    .qz-tier__level {
+      font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink-soft);
+      display: block; margin-bottom: var(--space-2);
+    }
+    .qz-tier--current .qz-tier__level { color: var(--color-accent-deep); }
+    .qz-tier h4 { font-family: var(--font-serif); font-size: var(--step-1); margin-bottom: var(--space-2); }
+    .qz-tier p { font-size: var(--step-0); color: var(--color-ink-soft); margin: 0; }
+    .qz-tier__here {
+      display: block; margin-top: var(--space-3); font-family: var(--font-sans);
+      font-size: var(--step--1); font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--color-accent-deep);
+    }
+
+    /* Pattern chips */
+    .qz-patterns { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+    @media (min-width: 40rem) { .qz-patterns { grid-template-columns: 1fr 1fr; } }
+    .qz-patterns li {
+      background: var(--color-surface); border: var(--border-hair);
+      border-left: 3px solid var(--color-clay); border-radius: var(--radius);
+      padding: var(--space-3) var(--space-4); font-family: var(--font-serif);
+      color: var(--color-ink);
+    }
+
+    .qz-result-section { margin-bottom: var(--space-8); }
+    .qz-result-section > h3 { margin-bottom: var(--space-4); }
+    .qz-result-section p + p { margin-top: var(--space-4); }
+
+    .qz-secondary {
+      background: var(--color-surface); border: var(--border-hair);
+      border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-8);
+    }
+
+    .qz-privacy {
+      font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
+      text-align: center; margin-top: var(--space-6);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       SITE HEADER — copied verbatim from index.html.
+       Quiz is not in the nav, so NO aria-current here.
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">Carrie Davidson<span>.</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="coaching.html">Coaching</a></li>
+          <li><a class="nav__link" href="method.html">The Method</a></li>
+          <li><a class="nav__link" href="book.html">The Book</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="resources.html">Resources</a></li>
+          <li><a class="nav__link" href="faq.html">FAQ</a></li>
+        </ul>
+        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         INTRO SCREEN
+         ============================================================ -->
+    <section class="section quiz" id="screen-intro" aria-labelledby="quiz-title">
+      <div class="container container-narrow text-center">
+        <p class="eyebrow">Free quiz &middot; About 3 minutes</p>
+        <h1 id="quiz-title">Which F Response Is <em class="qz-underline">Running Your Life?</em></h1>
+        <p class="lede mx-auto" style="max-width: 32ch;">We all have stress response patterns, ways our nervous system learned to cope.</p>
+        <p class="mx-auto">This quiz measures the intensity of all four responses &mdash; fight, flight, freeze, and
+          fawn &mdash; so you get a full picture rather than just a label. There are no wrong answers.</p>
+
+        <ul class="pill-row" style="justify-content: center; margin-top: var(--space-6);">
+          <li class="pill">16 questions</li>
+          <li class="pill">Scale of 1&ndash;5</li>
+          <li class="pill">Full response profile</li>
+          <li class="pill">For everyone, trauma history or not</li>
+        </ul>
+
+        <div class="btn-row" style="justify-content: center; margin-top: var(--space-7);">
+          <button class="btn btn--primary" type="button" id="start-btn">Start the quiz &rarr;</button>
+        </div>
+        <p class="meta" style="margin-top: var(--space-4);">No wrong answers &middot; Rate each statement honestly</p>
+        <p class="qz-privacy">Your answers never leave this page. Everything is scored right here in your browser &mdash; nothing is sent anywhere.</p>
+
+        <p class="disclaimer" style="margin-top: var(--space-6);">This work is educational and reflective, not a substitute for medical or mental health treatment.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUIZ SCREEN — one statement at a time.
+         ============================================================ -->
+    <section class="section quiz" id="screen-quiz" aria-labelledby="quiz-live-heading" hidden>
+      <div class="container container-narrow">
+        <h2 id="quiz-live-heading" class="visually-hidden">Self-assessment</h2>
+
+        <div class="qz-progress">
+          <div class="qz-progress__meta">
+            <span id="qz-count">Question 1 of 16</span>
+            <span id="qz-typelabel"></span>
+          </div>
+          <div class="qz-progress__track" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="16" aria-valuenow="1" id="qz-progressbar">
+            <div class="qz-progress__fill" id="qz-progress-fill"></div>
+          </div>
+        </div>
+
+        <p class="qz-sectionintro" id="qz-sectionintro" hidden></p>
+
+        <form id="qz-form">
+          <fieldset class="qz-question">
+            <legend id="qz-legend"></legend>
+            <div class="qz-scale__ends" aria-hidden="true">
+              <span>1 &middot; Not like me at all</span>
+              <span>5 &middot; Very much like me</span>
+            </div>
+            <div class="qz-scale" id="qz-scale" role="radiogroup" aria-labelledby="qz-legend"></div>
+          </fieldset>
+
+          <div class="qz-nav">
+            <button class="btn btn--ghost" type="button" id="qz-back">&larr; Back</button>
+            <button class="btn btn--primary" type="submit" id="qz-next" disabled>Continue &rarr;</button>
+          </div>
+        </form>
+        <p class="qz-privacy">Your answers never leave this page.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RESULT SCREEN
+         ============================================================ -->
+    <section class="section quiz" id="screen-result" aria-labelledby="qz-result-title" hidden>
+      <div class="container container-narrow">
+
+        <div class="qz-result-hero">
+          <p class="eyebrow">Your primary response</p>
+          <h2 id="qz-result-title"></h2>
+          <span class="qz-result-hero__badge" id="qz-result-badge"></span>
+          <p class="qz-result-hero__tagline" id="qz-result-tagline"></p>
+        </div>
+
+        <!-- Full response profile — accessible score bars -->
+        <div class="qz-result-section">
+          <p class="eyebrow">Your full response profile</p>
+          <h3>Each bar shows how strongly that response registered for you</h3>
+          <ul class="qz-bars" id="qz-bars"></ul>
+          <p class="meta" style="margin-top: var(--space-3);" id="qz-dominance"></p>
+        </div>
+
+        <!-- What this response is -->
+        <div class="qz-result-section">
+          <p class="eyebrow">What this response is</p>
+          <div id="qz-what"></div>
+        </div>
+
+        <!-- Quote pullquote -->
+        <blockquote class="pullquote" id="qz-quote" style="max-width: none;"></blockquote>
+
+        <!-- Intensity level -->
+        <div class="qz-result-section">
+          <p class="eyebrow">Your intensity level</p>
+          <p id="qz-intensity-summary"></p>
+          <div class="qz-tiers" id="qz-tiers"></div>
+        </div>
+
+        <!-- How it shows up -->
+        <div class="qz-result-section">
+          <p class="eyebrow">How it shows up</p>
+          <ul class="qz-patterns" id="qz-patterns"></ul>
+        </div>
+
+        <!-- What it's costing you -->
+        <div class="qz-result-section">
+          <p class="eyebrow">What it&rsquo;s costing you</p>
+          <div id="qz-cost"></div>
+        </div>
+
+        <!-- Your next step -->
+        <div class="qz-result-section">
+          <p class="eyebrow">Your next step</p>
+          <div id="qz-nextstep"></div>
+        </div>
+
+        <!-- Secondary pattern -->
+        <div class="qz-secondary">
+          <p class="eyebrow">Your secondary pattern</p>
+          <h3 id="qz-secondary-name"></h3>
+          <p id="qz-secondary-summary"></p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="qz-result-section text-center">
+          <p class="eyebrow">A gentle next step, at your own pace</p>
+          <h3>Where to go from here</h3>
+          <p class="mx-auto">Start with the free worksheet, let the Sunday Letter keep showing up, and reach out for coaching only if and when you&rsquo;re ready.</p>
+          <div class="btn-row" style="justify-content: center; margin-top: var(--space-6);">
+            <a class="btn btn--primary" href="assets/trauma-tree-worksheet.pdf">Get the free Trauma Tree Worksheet</a>
+            <a class="btn btn--secondary" href="https://carriepdavidson.substack.com/subscribe">Subscribe to the Sunday Letter</a>
+          </div>
+          <p class="meta" style="margin-top: var(--space-4);"><a href="coaching.html">See how 1:1 coaching works &rarr;</a></p>
+        </div>
+
+        <div class="btn-row" style="justify-content: center; margin-top: var(--space-6);">
+          <button class="btn btn--ghost" type="button" id="qz-retake">Retake the quiz</button>
+        </div>
+        <p class="qz-privacy">Your answers never left this page &mdash; this result was scored entirely in your browser.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER — copied verbatim from index.html.
+       Contains crisis resources, scope disclaimer, and
+       Organization JSON-LD (sitewide entity).
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <h2>Carrie Davidson, RN</h2>
+          <p class="meta">Registered nurse &amp; certified trauma recovery coach. Trauma and addiction
+            are not separate problems &mdash; they are the same wound, telling itself in two different
+            languages.</p>
+          <p class="meta" style="margin-top: var(--space-3);">
+            <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
+            Conscious Coaching Collective, PLLC
+          </p>
+        </div>
+
+        <nav class="footer-col" aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="method.html">The Method</a></li>
+            <li><a href="book.html">The Book</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resources.html">Free Resources</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h2>Start here</h2>
+          <ul>
+            <li><a href="https://calendly.com/coaching-carriepdavidson">Book a coaching call</a></li>
+            <li><a href="https://carriepdavidson.substack.com/subscribe">Join the book waitlist</a></li>
+            <li><a href="assets/trauma-tree-worksheet.pdf">Free Trauma Tree Worksheet</a></li>
+            <li><a href="quiz.html">Take the 3-minute quiz</a></li>
+            <li><a href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Crisis resources — ethical + trust signal. Keep on every page. -->
+      <section class="crisis" aria-label="Crisis resources">
+        <h2>If you are in crisis, reach out now</h2>
+        <p>You deserve immediate support. In the U.S.: call or text <strong>988</strong>
+          (Suicide &amp; Crisis Lifeline) &middot; text <strong>HOME</strong> to <strong>741741</strong>
+          (Crisis Text Line) &middot; SAMHSA National Helpline <strong>1-800-662-4357</strong>.
+          If you are in immediate danger, call 911.</p>
+      </section>
+
+      <!-- Scope disclaimer — in Carrie's voice; YMYL trust. -->
+      <p class="disclaimer">Coaching is companionship alongside care &mdash; not a replacement for it.
+        This work is trauma recovery coaching and education. It is not therapy, diagnosis, or medical
+        treatment, and it is not a substitute for care from a licensed mental-health or medical
+        professional. If you are working with a therapist or physician, coaching can walk beside that
+        care &mdash; it does not replace it.</p>
+
+      <div class="footer-legal">
+        <span>&copy; 2026 Conscious Coaching Collective, PLLC. All rights reserved.</span>
+        <span>Made with care under carriepdavidson.com</span>
+      </div>
+    </div>
+
+    <!-- Organization JSON-LD — sitewide entity (one canonical name). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://carriepdavidson.com/#org",
+      "name": "Conscious Coaching Collective, PLLC",
+      "url": "https://carriepdavidson.com/",
+      "email": "coaching@carriepdavidson.com",
+      "founder": { "@id": "https://carriepdavidson.com/#carrie" },
+      "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
+      "sameAs": [
+        "https://www.instagram.com/",
+        "https://substack.com/",
+        "https://www.goodreads.com/"
+      ]
+    }
+    </script>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- ============================================================
+       QUIZ LOGIC — vanilla JS, no frameworks. All client-side.
+       Content extracted verbatim from the original quiz bundle.
+       ============================================================ -->
+  <script>
+  (function () {
+    "use strict";
+
+    // 16 statements in original order: 4 fight, 4 flight, 4 freeze, 4 fawn.
+    var QUESTIONS = [
+      { type: "fight", sectionIntro: "The next four questions are about how you respond when things feel unfair, threatening, or out of your control.", text: "When something goes wrong that feels unfair, I feel a strong urge to confront it or say something rather than let it go." },
+      { type: "fight", text: "When someone criticizes me or challenges me, I feel defensive and want to explain myself or push back." },
+      { type: "fight", text: "I need to feel in control of my environment, my plans, and outcomes, and it bothers me when I'm not." },
+      { type: "fight", text: "I hold onto grievances or wrongs for a long time, even after the situation has technically resolved." },
+      { type: "flight", sectionIntro: "The next four questions are about your relationship with busyness, movement, and staying still.", text: "I stay very busy, and being unoccupied or having nothing to do makes me feel restless or uncomfortable." },
+      { type: "flight", text: "When a situation gets difficult or complicated, I tend to move on rather than work through it." },
+      { type: "flight", text: "I start things with a lot of energy but often find it hard to stay committed once the initial excitement fades." },
+      { type: "flight", text: "Being still, not doing anything, just sitting quietly, is genuinely difficult for me." },
+      { type: "freeze", sectionIntro: "The next four questions are about what happens in your body and mind when things feel overwhelming or difficult.", text: "In moments of conflict or pressure, I go blank. I can't find words or figure out what I want to say." },
+      { type: "freeze", text: "I sometimes feel disconnected from my own experience, like I'm watching things happen from a slight distance." },
+      { type: "freeze", text: "I struggle to know what I feel or what I want in the moment, the answers tend to come later, if at all." },
+      { type: "freeze", text: "I procrastinate on things I care about, not because I'm lazy, but because starting feels impossible." },
+      { type: "fawn", sectionIntro: "The final four questions are about how you relate to other people's needs, emotions, and approval.", text: "I say yes to things I don't want to do, and often feel frustrated with myself afterward." },
+      { type: "fawn", text: "I'm highly aware of other people's moods and feel responsible for making sure they're okay." },
+      { type: "fawn", text: "I edit what I say or how I present myself based on what I think the other person wants or needs from me." },
+      { type: "fawn", text: "Saying no, especially to people I care about, feels genuinely difficult, even when I want to." }
+    ];
+
+    var SCALE = [
+      { val: 1, desc: "Not at all" },
+      { val: 2, desc: "Rarely" },
+      { val: 3, desc: "Sometimes" },
+      { val: 4, desc: "Often" },
+      { val: 5, desc: "Always" }
+    ];
+
+    var PROFILES = {
+      fight: {
+        type: "The Fighter",
+        tagline: "Control and directness are your nervous system's first line of defense.",
+        what: ["The fight response shows up as a tendency toward directness, assertiveness, and sometimes frustration or anger when things feel wrong or out of control. At its healthy end it looks like confidence, clear limits, and the ability to stand your ground. At its more challenging end it can create conflict, push people away, and make it hard to truly let things go.", "This is not a character flaw. It is your nervous system's learned strategy for creating safety through strength, a strategy that worked at some point, and may still be running beyond the situations that originally required it."],
+        quote: "The fight response learned that strength was the only reliable form of safety. It didn't develop to hurt people. It developed to survive the situations where gentleness wasn't enough.",
+        patterns: ["Feeling frustrated when things are out of your control", "Difficulty letting go of a wrong, even after it's been addressed", "Being perceived as intense when you don't intend to be", "A strong sense of fairness, things should be right", "Conflict that keeps circling back to the same themes", "A need to be right that sometimes costs more than it gives"],
+        cost: ["The fight response keeps you prepared and protected. The cost is that the people closest to you sometimes feel like they're walking on eggshells, and that you rarely fully relax, because relaxing can feel like lowering your guard.", "Genuine vulnerability can also feel counterintuitive, because vulnerability and strength can seem like opposites rather than partners."],
+        next: ["The work for the fight response is often about getting curious about what lives underneath the anger, grief, fear, or hurt that got converted into something that felt stronger and safer to feel.", "Small practice: in your next moment of frustration, pause and ask what you're actually afraid of, not just what you're angry about."],
+        intensity: {
+          mild: { title: "Protective Directness", desc: "You're clear and assertive, sometimes more bluntly than you intend. Conflict is occasional and manageable." },
+          moderate: { title: "Frequent Activation", desc: "Frustration fires quickly and tends to linger. Recurring conflict and difficulty fully releasing grievances." },
+          significant: { title: "Strongly Rooted", desc: "Control and anger are central to how you navigate difficulty. Relationships are significantly shaped by the pattern." }
+        }
+      },
+      flight: {
+        type: "The Runner",
+        tagline: "Movement and momentum are your nervous system's most reliable comfort.",
+        what: ["The flight response shows up as a tendency to stay in motion, through busyness, achievement, change, or simply filling quiet moments with activity. At its healthy end it looks like productivity, adaptability, and drive. At its more challenging end it can make it hard to commit, settle, or be still without anxiety.", "This response developed as a way to create safety through forward movement. It is extraordinarily effective at managing discomfort in the short term, and costly in the long run."],
+        quote: "The flight response doesn't look like panic. It looks like ambition. It looks like someone who is always growing, always moving forward. What it actually is, is a nervous system that has learned to feel safer in motion than in stillness.",
+        patterns: ["Staying very busy, sometimes without knowing exactly why", "Feeling restless or uneasy when things are quiet or settled", "Moving on from situations when they plateau or get complicated", "Starting things with energy and struggling to sustain them", "A sense that contentment is always just around the next corner", "Difficulty being fully present when life is actually going well"],
+        cost: ["The flight response keeps you moving forward. The cost is that you sometimes outrun the things worth staying for, the relationship, the version of yourself that can only emerge through sustained presence over time.", "Stillness, where a lot of integration and healing happens, can feel genuinely uncomfortable rather than restorative."],
+        next: ["The work for the flight response is often about building tolerance for stillness, not as a punishment but as a practice. Your nervous system needs evidence that stopping doesn't mean something bad catches up.", "Small practice: sit with one feeling without doing anything about it. Stay in one uncomfortable situation slightly longer than you normally would."],
+        intensity: {
+          mild: { title: "Productive Energy", desc: "You're driven and tend to stay busy. Stillness is a little uncomfortable but manageable. You adapt well to change." },
+          moderate: { title: "Chronic Motion", desc: "Stopping feels difficult. You regularly move on before things fully develop. Rest is hard to access." },
+          significant: { title: "Strongly Rooted", desc: "Movement is your primary regulation strategy. Patterns of leaving, people, places, projects, are significant." }
+        }
+      },
+      freeze: {
+        type: "The Still One",
+        tagline: "Your nervous system learned that going still was often the safest choice.",
+        what: ["The freeze response shows up as a tendency to go quiet, blank, or numb in moments of stress or overwhelm. At its healthy end it looks like thoughtfulness, calm under pressure, and the ability to observe before reacting. At its more challenging end it can feel like disconnection, difficulty making decisions, or a sense of watching your life from a slight distance.", "This is one of the most invisible of the four responses because it doesn't make noise. It just goes quiet."],
+        quote: "Freeze is not weakness. It is one of the oldest survival responses available. When a threat feels inescapable, the nervous system sometimes chooses stillness. That choice made sense when it developed. It just wasn't designed to become permanent.",
+        patterns: ["Going blank in difficult moments, the words simply aren't there", "Feeling somewhat disconnected from your own experience", "Difficulty knowing what you feel or want in real time", "Procrastination that feels less like laziness and more like inability to begin", "Agreeing to things in the moment and realizing later you didn't want to", "A sense of flatness or numbness that comes and goes"],
+        cost: ["The freeze response keeps you protected by keeping you still. The cost is that it can make it hard to advocate for yourself, access your feelings, or feel fully present inside your own life.", "The disconnection accumulates, the longer the pattern runs, the more practiced the nervous system becomes at retreating before things get hard."],
+        next: ["The work for the freeze response is gentle and body-based. It starts with very small acts of presence, naming what's in the room, feeling your feet on the ground, noticing one sensation without trying to change it.", "Small practice: name five things you can see right now. Then ask yourself one honest question about what you want and sit with whatever comes."],
+        intensity: {
+          mild: { title: "Thoughtful Pause", desc: "You tend to observe before reacting. You can access your feelings but sometimes need time and space to do so." },
+          moderate: { title: "Regular Disconnection", desc: "Numbness or going blank happens frequently, especially under stress. Making decisions can feel genuinely hard." },
+          significant: { title: "Strongly Rooted", desc: "Dissociation or emotional numbness is a frequent experience. Life sometimes feels like it's happening at a remove." }
+        }
+      },
+      fawn: {
+        type: "The Fawn",
+        tagline: "Your nervous system learned that making others comfortable kept you safe.",
+        what: ["The fawn response shows up as a tendency toward accommodation, agreeableness, and putting others first. At its healthy end it looks like empathy, generosity, and the ability to read a room. At its more challenging end it can mean consistently overriding your own needs, saying yes when you mean no, and feeling hollow after giving everything.", "This response is one of the most socially rewarded of the four, which makes it one of the hardest to recognize. It looks like virtue from the outside. It often feels like exhaustion from the inside."],
+        quote: "Fawn doesn't look like fear. It looks like flexibility. It looks like being easy to be around, generous, considerate. What lives underneath is someone who learned that having needs was risky, and built a very convincing version of someone who doesn't.",
+        patterns: ["Saying yes when you mean no, and feeling the cost of it afterward", "Feeling responsible for other people's emotions and comfort", "Editing yourself based on what you think others want", "Difficulty knowing what you actually want, separate from others", "Giving significantly more in relationships than you receive", "A low-grade exhaustion without a clear source"],
+        cost: ["The fawn response keeps you connected to people by making yourself agreeable and useful. The cost is that the version of you people connect with is carefully managed, not the full, actual you.", "The hollowness that accumulates from consistent self-abandonment is real. And it compounds, the longer the pattern runs, the harder it becomes to locate what you want."],
+        next: ["The work for the fawn response is the work of taking up space. It starts with very small, low-stakes acts of honesty, saying what you actually think, asking for what you actually want.", "Small practice: in one low-stakes situation today, say what you actually think instead of what you assume is wanted. Notice what happens."],
+        intensity: {
+          mild: { title: "Considerate Adapter", desc: "You're empathetic and prioritize harmony. Saying no is uncomfortable but possible. Others' comfort matters a lot to you." },
+          moderate: { title: "Regular Self-Override", desc: "Saying no is genuinely difficult. You often prioritize others at your own expense and feel the accumulated cost." },
+          significant: { title: "Strongly Rooted", desc: "Self-abandonment is the default. Your own needs feel secondary or invisible. Resentment and hollowness are frequent." }
+        }
+      }
+    };
+
+    var TYPE_ORDER = ["fight", "flight", "freeze", "fawn"];
+
+    // Scoring thresholds: normalized = sum/20; <0.4 mild, <0.7 moderate, else significant.
+    function tier(sum) {
+      var s = sum / 20;
+      return s < 0.4 ? "mild" : (s < 0.7 ? "moderate" : "significant");
+    }
+    function tierLabel(t) { return { mild: "Mild", moderate: "Moderate", significant: "Strong" }[t]; }
+    function tierLevelWord(t) { return { mild: "Mild", moderate: "Moderate", significant: "Significant" }[t]; }
+    function patternLabel(t) { return { mild: "Mild Pattern", moderate: "Moderate Pattern", significant: "Strong Pattern" }[t]; }
+
+    // ---- State ----
+    var current = 0;                 // index of question shown
+    var answers = new Array(16).fill(null);
+
+    // ---- Elements ----
+    var elIntro   = document.getElementById("screen-intro");
+    var elQuiz    = document.getElementById("screen-quiz");
+    var elResult  = document.getElementById("screen-result");
+
+    var elCount        = document.getElementById("qz-count");
+    var elTypeLabel    = document.getElementById("qz-typelabel");
+    var elProgressBar  = document.getElementById("qz-progressbar");
+    var elProgressFill = document.getElementById("qz-progress-fill");
+    var elSectionIntro = document.getElementById("qz-sectionintro");
+    var elLegend       = document.getElementById("qz-legend");
+    var elScale        = document.getElementById("qz-scale");
+    var elForm         = document.getElementById("qz-form");
+    var elBack         = document.getElementById("qz-back");
+    var elNext         = document.getElementById("qz-next");
+
+    function show(screen) {
+      elIntro.hidden = screen !== "intro";
+      elQuiz.hidden = screen !== "quiz";
+      elResult.hidden = screen !== "result";
+      window.scrollTo(0, 0);
+    }
+
+    function renderQuestion() {
+      var q = QUESTIONS[current];
+
+      elCount.textContent = "Question " + (current + 1) + " of " + QUESTIONS.length;
+      elTypeLabel.textContent = "";
+      var pct = Math.round(((current + 1) / QUESTIONS.length) * 100);
+      elProgressFill.style.width = pct + "%";
+      elProgressBar.setAttribute("aria-valuenow", String(current + 1));
+      elLegend.setAttribute("tabindex", "-1");
+
+      if (q.sectionIntro) {
+        elSectionIntro.textContent = q.sectionIntro;
+        elSectionIntro.hidden = false;
+      } else {
+        elSectionIntro.hidden = true;
+      }
+
+      elLegend.textContent = q.text;
+
+      // Build the 1–5 radio scale
+      elScale.innerHTML = "";
+      SCALE.forEach(function (opt) {
+        var wrap = document.createElement("label");
+        wrap.className = "qz-opt";
+
+        var input = document.createElement("input");
+        input.type = "radio";
+        input.name = "q" + current;
+        input.value = String(opt.val);
+        input.setAttribute("aria-label", opt.val + " — " + opt.desc);
+        if (answers[current] === opt.val) input.checked = true;
+        input.addEventListener("change", function () {
+          answers[current] = opt.val;
+          elNext.disabled = false;
+        });
+
+        var box = document.createElement("span");
+        box.className = "qz-opt__box";
+        var num = document.createElement("span");
+        num.className = "qz-opt__num";
+        num.textContent = String(opt.val);
+        var desc = document.createElement("span");
+        desc.className = "qz-opt__desc";
+        desc.textContent = opt.desc;
+        box.appendChild(num);
+        box.appendChild(desc);
+
+        wrap.appendChild(input);
+        wrap.appendChild(box);
+        elScale.appendChild(wrap);
+      });
+
+      elNext.disabled = answers[current] === null;
+      elNext.textContent = current === QUESTIONS.length - 1 ? "See my result →" : "Continue →";
+      elBack.disabled = current === 0;
+    }
+
+    function goNext() {
+      if (answers[current] === null) return;
+      if (current < QUESTIONS.length - 1) {
+        current++;
+        renderQuestion();
+        elLegend.focus();
+      } else {
+        renderResult();
+        show("result");
+      }
+    }
+
+    function goBack() {
+      if (current > 0) { current--; renderQuestion(); elLegend.focus(); }
+    }
+
+    function computeScores() {
+      var scores = { fight: 0, flight: 0, freeze: 0, fawn: 0 };
+      QUESTIONS.forEach(function (q, i) {
+        if (answers[i] != null) scores[q.type] += answers[i];
+      });
+      return scores;
+    }
+
+    function renderResult() {
+      var scores = computeScores();
+
+      // Primary = highest, secondary = second highest.
+      var ordered = TYPE_ORDER.slice().sort(function (a, b) { return scores[b] - scores[a]; });
+      var primary = ordered[0];
+      var secondary = ordered[1];
+
+      var p = PROFILES[primary];
+      var pTier = tier(scores[primary]);
+      var primaryPct = Math.round((scores[primary] / 20) * 100);
+      var secondaryPct = Math.round((scores[secondary] / 20) * 100);
+      var sTier = tier(scores[secondary]);
+
+      // Hero
+      document.getElementById("qz-result-title").textContent = p.type;
+      document.getElementById("qz-result-badge").textContent = patternLabel(pTier);
+      document.getElementById("qz-result-tagline").textContent = p.tagline;
+
+      // Score bars (accessible)
+      var barsEl = document.getElementById("qz-bars");
+      barsEl.innerHTML = "";
+      TYPE_ORDER.forEach(function (t) {
+        var pctT = Math.round((scores[t] / 20) * 100);
+        var tt = tier(scores[t]);
+        var li = document.createElement("li");
+        li.className = "qz-bar" + (t === primary ? " qz-bar--primary" : (t === secondary ? " qz-bar--secondary" : ""));
+        li.setAttribute("aria-label", PROFILES[t].type + " (" + t + "): " + pctT + " percent, " + tierLabel(tt) + " level.");
+
+        var label = document.createElement("span");
+        label.className = "qz-bar__label";
+        label.textContent = t;
+
+        var track = document.createElement("span");
+        track.className = "qz-bar__track";
+        track.setAttribute("aria-hidden", "true");
+        var fill = document.createElement("span");
+        fill.className = "qz-bar__fill";
+        track.appendChild(fill);
+
+        var val = document.createElement("span");
+        val.className = "qz-bar__val";
+        val.textContent = pctT + "% · " + tierLabel(tt);
+
+        li.appendChild(label);
+        li.appendChild(track);
+        li.appendChild(val);
+        barsEl.appendChild(li);
+
+        // animate width after paint
+        window.requestAnimationFrame(function () {
+          window.setTimeout(function () { fill.style.width = pctT + "%"; }, 60);
+        });
+      });
+
+      // Dominance / secondary note
+      var dominanceEl = document.getElementById("qz-dominance");
+      if (secondaryPct > 35) {
+        dominanceEl.textContent = "You also show a " + tierLabel(sTier).toLowerCase() + " " + secondary +
+          " response (" + secondaryPct + "%). It's very common to have a primary and a secondary pattern running simultaneously.";
+      } else {
+        dominanceEl.textContent = "Your other response patterns are relatively low, which means this one is quite dominant for you.";
+      }
+
+      // What
+      fillParas("qz-what", p.what);
+
+      // Quote
+      document.getElementById("qz-quote").textContent = p.quote;
+
+      // Intensity summary
+      document.getElementById("qz-intensity-summary").textContent =
+        "Your " + p.type + " pattern registers at a " + pTier + " level (" + primaryPct + "%). " +
+        (secondaryPct > 35
+          ? "You also show a " + tierLabel(sTier).toLowerCase() + " " + secondary + " response (" + secondaryPct + "%), it's very common to have a primary and a secondary pattern running simultaneously."
+          : "Your other response patterns are relatively low, which means this one is quite dominant for you.");
+
+      // Intensity tiers
+      var tiersEl = document.getElementById("qz-tiers");
+      tiersEl.innerHTML = "";
+      ["mild", "moderate", "significant"].forEach(function (lvl) {
+        var isCurrent = lvl === pTier;
+        var box = document.createElement("div");
+        box.className = "qz-tier" + (isCurrent ? " qz-tier--current" : "");
+        var level = document.createElement("span");
+        level.className = "qz-tier__level";
+        level.textContent = tierLevelWord(lvl);
+        var h = document.createElement("h4");
+        h.textContent = p.intensity[lvl].title;
+        var desc = document.createElement("p");
+        desc.textContent = p.intensity[lvl].desc;
+        box.appendChild(level);
+        box.appendChild(h);
+        box.appendChild(desc);
+        if (isCurrent) {
+          var here = document.createElement("span");
+          here.className = "qz-tier__here";
+          here.textContent = "← You are here";
+          box.appendChild(here);
+        }
+        tiersEl.appendChild(box);
+      });
+
+      // Patterns
+      var patternsEl = document.getElementById("qz-patterns");
+      patternsEl.innerHTML = "";
+      p.patterns.forEach(function (item) {
+        var li = document.createElement("li");
+        li.textContent = item;
+        patternsEl.appendChild(li);
+      });
+
+      // Cost + Next
+      fillParas("qz-cost", p.cost);
+      fillParas("qz-nextstep", p.next);
+
+      // Secondary
+      document.getElementById("qz-secondary-name").textContent = PROFILES[secondary].type;
+      document.getElementById("qz-secondary-summary").textContent =
+        PROFILES[secondary].tagline + " (" + secondaryPct + "% · " + tierLabel(sTier) + ")";
+    }
+
+    function fillParas(id, arr) {
+      var el = document.getElementById(id);
+      el.innerHTML = "";
+      arr.forEach(function (text) {
+        var pEl = document.createElement("p");
+        pEl.textContent = text;
+        el.appendChild(pEl);
+      });
+    }
+
+    function startQuiz() {
+      current = 0;
+      answers = new Array(16).fill(null);
+      renderQuestion();
+      show("quiz");
+    }
+
+    function retake() {
+      current = 0;
+      answers = new Array(16).fill(null);
+      show("intro");
+    }
+
+    // ---- Wiring ----
+    document.getElementById("start-btn").addEventListener("click", startQuiz);
+    elForm.addEventListener("submit", function (e) { e.preventDefault(); goNext(); });
+    elBack.addEventListener("click", goBack);
+    document.getElementById("qz-retake").addEventListener("click", retake);
+
+    // Number-key shortcuts (1–5) while taking the quiz.
+    document.addEventListener("keydown", function (e) {
+      if (elQuiz.hidden) return;
+      if (["1", "2", "3", "4", "5"].indexOf(e.key) !== -1) {
+        var v = parseInt(e.key, 10);
+        answers[current] = v;
+        var input = elScale.querySelector('input[value="' + v + '"]');
+        if (input) input.checked = true;
+        elNext.disabled = false;
+      } else if (e.key === "ArrowLeft" && current > 0) {
+        goBack();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
