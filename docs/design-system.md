@@ -5,16 +5,16 @@ Shared stylesheet: `css/style.css`. Mood: warm clinical-calm. One H1 per page. L
 ## Color tokens (CSS custom properties, all AA)
 | Token | Hex | Use |
 |---|---|---|
-| `--color-bg` | `#F4EEE4` | page background (linen) |
-| `--color-bg-deep` | `#ECE3D4` | `.section--alt` band + footer |
-| `--color-surface` | `#FCF9F3` | cards, inputs |
-| `--color-ink` | `#2A2420` | body + headlines |
-| `--color-ink-soft` | `#574E44` | muted text / captions |
-| `--color-accent` | `#1C4A44` | deep teal — links, primary buttons |
-| `--color-accent-deep` | `#143733` | hover/active |
-| `--color-accent-soft` | `#E1EAE6` | pale teal fills, `.pill` |
-| `--color-clay` | `#9A4632` | terracotta — eyebrows, pull-quotes, rules |
-| `--color-border` | `#E2D8C9` | hairlines |
+| `--color-bg` | `#F7F5FB` | page background (lavender-white) |
+| `--color-bg-deep` | `#EFEBF7` | `.section--alt` band + footer |
+| `--color-surface` | `#FCFBFE` | cards, inputs |
+| `--color-ink` | `#2B2333` | body + headlines |
+| `--color-ink-soft` | `#5B4F6B` | muted text / captions |
+| `--color-accent` | `#4B2D73` | deep purple — links, primary buttons |
+| `--color-accent-deep` | `#3A2159` | hover/active |
+| `--color-accent-soft` | `#E9E2F5` | pale lavender fills, `.pill` |
+| `--color-clay` | `#7A5C10` | gold — eyebrows, pull-quotes, rules |
+| `--color-border` | `#E2DBEE` | hairlines |
 
 ## Type scale
 Fluid `clamp()` steps: `--step--1`…`--step-5` (small → hero). Serif = `--font-serif` (headlines, .lede, .signature, .pullquote); humanist sans = `--font-sans` (body/UI). Spacing: `--space-1`(.25rem)…`--space-9`(6rem).

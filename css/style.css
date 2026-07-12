@@ -16,20 +16,20 @@
 
 /* 1. TOKENS ================================================================ */
 :root {
-  /* Color — warm neutrals + one deep accent (teal). All text pairs meet WCAG AA. */
-  --color-bg:          #F4EEE4; /* linen page background */
-  --color-bg-deep:     #ECE3D4; /* slightly deeper band for alternating sections */
-  --color-surface:     #FCF9F3; /* cards / raised surfaces (lighter than bg) */
-  --color-ink:         #2A2420; /* warm near-black — body + headlines */
-  --color-ink-soft:    #574E44; /* muted body / captions (AA on bg) */
-  --color-accent:      #1C4A44; /* deep teal — links, primary buttons, headlines accents */
-  --color-accent-deep: #143733; /* teal hover/active */
-  --color-accent-soft: #E1EAE6; /* pale teal tint — backgrounds, chips */
-  --color-clay:        #9A4632; /* warm terracotta — secondary accent, pull-quotes, rules */
-  --color-clay-soft:   #F1E2DA; /* pale clay tint */
-  --color-border:      #E2D8C9; /* warm hairline */
-  --color-focus:       #1C4A44; /* focus ring */
-  --color-on-accent:   #FBF7F0; /* text on deep accent surfaces */
+  /* Color — lavender neutrals, deep purple accent, gold secondary. All text pairs meet WCAG AA. */
+  --color-bg:          #F7F5FB; /* lavender-tinted off-white page background */
+  --color-bg-deep:     #EFEBF7; /* lavender wash for alternating sections */
+  --color-surface:     #FCFBFE; /* cards / raised surfaces (lighter than bg) */
+  --color-ink:         #2B2333; /* deep plum near-black — body + headlines */
+  --color-ink-soft:    #5B4F6B; /* muted plum body / captions (AA on bg) */
+  --color-accent:      #4B2D73; /* deep royal purple — links, primary buttons, headline accents */
+  --color-accent-deep: #3A2159; /* purple hover/active */
+  --color-accent-soft: #E9E2F5; /* pale lavender tint — backgrounds, chips */
+  --color-clay:        #7A5C10; /* deep gold — secondary accent, pull-quotes, rules (AA as text) */
+  --color-clay-soft:   #F5EDCF; /* pale gold tint */
+  --color-border:      #E2DBEE; /* lavender hairline */
+  --color-focus:       #4B2D73; /* focus ring */
+  --color-on-accent:   #F8F5FC; /* text on deep accent surfaces */
 
   /* Typography */
   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
@@ -58,9 +58,9 @@
   --radius: 10px;
   --radius-lg: 18px;
   --border-hair: 1px solid var(--color-border);
-  --shadow-sm: 0 1px 2px rgba(42, 36, 32, 0.05);
-  --shadow-md: 0 6px 24px -12px rgba(42, 36, 32, 0.22);
-  --shadow-lg: 0 18px 48px -20px rgba(42, 36, 32, 0.28);
+  --shadow-sm: 0 1px 2px rgba(43, 35, 51, 0.05);
+  --shadow-md: 0 6px 24px -12px rgba(43, 35, 51, 0.22);
+  --shadow-lg: 0 18px 48px -20px rgba(43, 35, 51, 0.28);
   --transition: 180ms ease;
 }
 
@@ -437,7 +437,7 @@ p { max-width: var(--measure); }
 
 /* Crisis resources — emphasized, ethical + trust signal */
 .crisis {
-  background: var(--color-clay-soft); border: 1px solid #E6C9BC; border-radius: var(--radius);
+  background: var(--color-clay-soft); border: 1px solid #E4D6A4; border-radius: var(--radius);
   padding: var(--space-4) var(--space-5); margin-top: var(--space-7);
 }
 .crisis h2 { font-size: var(--step-0); font-family: var(--font-sans); font-weight: 700;
