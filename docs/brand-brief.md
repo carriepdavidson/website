@@ -11,6 +11,8 @@
 The memoir and the coaching are the **same thesis in two formats**:
 > "Trauma and addiction are not separate problems. They are the same wound, telling itself in two different languages."
 
+**Causality canon (confirmed by Carrie, 2026-07-12):** the trauma comes first; the addiction is its *result* — a symptom of the wound, never a moral failure and never the root problem. Copy may state this causal order confidently. Copy must NOT specify whether her own addiction was substance vs. behavioral — she hasn't specified, and it's her story to tell.
+
 - The **book** is the story (proof of lived experience, emotional resonance, top-of-funnel).
 - The **coaching** is the application (the method that got her out, offered to others).
 - The **Method** is the bridge: **Witness → Understand → Interrupt → Create → Sustain** ("The Conscious Creation Method™" — grouped as Awareness / Regulation / Creation).
