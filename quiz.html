@@ -11,20 +11,20 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fight Flight Freeze Fawn Quiz | Trauma Response Test">
-  <meta property="og:description" content="A free 16-question quiz that scores all four trauma responses — fight, flight, freeze, fawn — for a full profile, not just a label. Your answers never leave the page.">
+  <meta property="og:description" content="A free 16-question quiz that scores all four trauma responses (fight, flight, freeze, fawn) for a full profile, not just a label. Your answers never leave the page.">
   <meta property="og:url" content="https://carriepdavidson.com/quiz.html">
   <meta property="og:site_name" content="Carrie Davidson">
 
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- WebPage JSON-LD — plain page semantics (Organization schema lives in the footer). -->
+  <!-- WebPage JSON-LD: plain page semantics (Organization schema lives in the footer). -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Which F Response Is Running Your Life?",
     "url": "https://carriepdavidson.com/quiz.html",
-    "description": "A free 16-question quiz that measures the intensity of all four trauma responses — fight, flight, freeze, and fawn — so you get a full response profile rather than a single label. All scoring happens in your browser; your answers never leave the page.",
+    "description": "A free 16-question quiz that measures the intensity of all four trauma responses (fight, flight, freeze, and fawn) so you get a full response profile rather than a single label. All scoring happens in your browser; your answers never leave the page.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Carrie Davidson",
@@ -34,13 +34,13 @@
   }
   </script>
 
-  <!-- Quiz-scoped styles — no component existed for the scale + score bars.
+  <!-- Quiz-scoped styles: no component existed for the scale + score bars.
        Uses design-system tokens only; css/style.css is untouched. -->
   <style>
     .quiz { padding-block: clamp(var(--space-7), 6vw, var(--space-9)); }
     .quiz [hidden] { display: none !important; }
 
-    /* H1 emphasis — keeps Carrie's title, adds the underline accent */
+    /* H1 emphasis: keeps Carrie's title, adds the underline accent */
     #quiz-title { color: var(--color-ink); }
     #quiz-title .qz-underline {
       font-style: italic; color: var(--color-accent);
@@ -210,7 +210,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER — copied verbatim from index.html.
+       SITE HEADER: copied verbatim from index.html.
        Quiz is not in the nav, so NO aria-current here.
        ============================================================ -->
   <header class="site-header">
@@ -244,8 +244,8 @@
         <p class="eyebrow">Free quiz &middot; About 3 minutes</p>
         <h1 id="quiz-title">Which F Response Is <em class="qz-underline">Running Your Life?</em></h1>
         <p class="lede mx-auto" style="max-width: 32ch;">We all have stress response patterns, ways our nervous system learned to cope.</p>
-        <p class="mx-auto">This quiz measures the intensity of all four responses &mdash; fight, flight, freeze, and
-          fawn &mdash; so you get a full picture rather than just a label. There are no wrong answers.</p>
+        <p class="mx-auto">This quiz measures the intensity of all four responses (fight, flight, freeze, and
+          fawn) so you get a full picture rather than just a label. There are no wrong answers.</p>
 
         <ul class="pill-row" style="justify-content: center; margin-top: var(--space-6);">
           <li class="pill">16 questions</li>
@@ -258,14 +258,14 @@
           <button class="btn btn--primary" type="button" id="start-btn">Start the quiz &rarr;</button>
         </div>
         <p class="meta" style="margin-top: var(--space-4);">No wrong answers &middot; Rate each statement honestly</p>
-        <p class="qz-privacy">Your answers never leave this page. Everything is scored right here in your browser &mdash; nothing is sent anywhere.</p>
+        <p class="qz-privacy">Your answers never leave this page. Everything is scored right here in your browser. Nothing is sent anywhere.</p>
 
         <p class="disclaimer" style="margin-top: var(--space-6);">This work is educational and reflective, not a substitute for medical or mental health treatment.</p>
       </div>
     </section>
 
     <!-- ============================================================
-         QUIZ SCREEN — one statement at a time.
+         QUIZ SCREEN: one statement at a time.
          ============================================================ -->
     <section class="section quiz" id="screen-quiz" aria-labelledby="quiz-live-heading" hidden>
       <div class="container container-narrow">
@@ -315,7 +315,7 @@
           <p class="qz-result-hero__tagline" id="qz-result-tagline"></p>
         </div>
 
-        <!-- Full response profile — accessible score bars -->
+        <!-- Full response profile: accessible score bars -->
         <div class="qz-result-section">
           <p class="eyebrow">Your full response profile</p>
           <h3>Each bar shows how strongly that response registered for you</h3>
@@ -379,14 +379,14 @@
         <div class="btn-row" style="justify-content: center; margin-top: var(--space-6);">
           <button class="btn btn--ghost" type="button" id="qz-retake">Retake the quiz</button>
         </div>
-        <p class="qz-privacy">Your answers never left this page &mdash; this result was scored entirely in your browser.</p>
+        <p class="qz-privacy">Your answers never left this page. This result was scored entirely in your browser.</p>
       </div>
     </section>
 
   </main>
 
   <!-- ============================================================
-       SITE FOOTER — copied verbatim from index.html.
+       SITE FOOTER: copied verbatim from index.html.
        Contains crisis resources, scope disclaimer, and
        Organization JSON-LD (sitewide entity).
        ============================================================ -->
@@ -397,7 +397,7 @@
         <div class="footer-col">
           <h2>Carrie Davidson, RN</h2>
           <p class="meta">Registered nurse &amp; certified trauma recovery coach. Trauma and addiction
-            are not separate problems &mdash; they are the same wound, telling itself in two different
+            are not separate problems. They are the same wound, telling itself in two different
             languages.</p>
           <p class="meta" style="margin-top: var(--space-3);">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
@@ -430,7 +430,7 @@
 
       </div>
 
-      <!-- Crisis resources — ethical + trust signal. Keep on every page. -->
+      <!-- Crisis resources: ethical + trust signal. Keep on every page. -->
       <section class="crisis" aria-label="Crisis resources">
         <h2>If you are in crisis, reach out now</h2>
         <p>You deserve immediate support. In the U.S.: call or text <strong>988</strong>
@@ -439,12 +439,12 @@
           If you are in immediate danger, call 911.</p>
       </section>
 
-      <!-- Scope disclaimer — in Carrie's voice; YMYL trust. -->
-      <p class="disclaimer">Coaching is companionship alongside care &mdash; not a replacement for it.
+      <!-- Scope disclaimer: in Carrie's voice; YMYL trust. -->
+      <p class="disclaimer">Coaching is companionship alongside care, not a replacement for it.
         This work is trauma recovery coaching and education. It is not therapy, diagnosis, or medical
         treatment, and it is not a substitute for care from a licensed mental-health or medical
         professional. If you are working with a therapist or physician, coaching can walk beside that
-        care &mdash; it does not replace it.</p>
+        care. It does not replace it.</p>
 
       <div class="footer-legal">
         <span>&copy; 2026 Conscious Coaching Collective, PLLC. All rights reserved.</span>
@@ -452,7 +452,7 @@
       </div>
     </div>
 
-    <!-- Organization JSON-LD — sitewide entity (one canonical name). -->
+    <!-- Organization JSON-LD: sitewide entity (one canonical name). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -475,7 +475,7 @@
   <script src="js/main.js"></script>
 
   <!-- ============================================================
-       QUIZ LOGIC — vanilla JS, no frameworks. All client-side.
+       QUIZ LOGIC: vanilla JS, no frameworks. All client-side.
        Content extracted verbatim from the original quiz bundle.
        ============================================================ -->
   <script>
@@ -636,7 +636,7 @@
         input.type = "radio";
         input.name = "q" + current;
         input.value = String(opt.val);
-        input.setAttribute("aria-label", opt.val + " — " + opt.desc);
+        input.setAttribute("aria-label", opt.val + ": " + opt.desc);
         if (answers[current] === opt.val) input.checked = true;
         input.addEventListener("change", function () {
           answers[current] = opt.val;
