@@ -17,61 +17,69 @@
 /* 1. TOKENS ================================================================ */
 :root {
   /* ------------------------------------------------------------------
-     Color: "Conscious Creator" palette on Carrie's supplied backgrounds.
-     Existing token NAMES are preserved (interior pages build on them);
-     only VALUES were remapped for the immersive skin, plus new aliases.
+     SIGNATURE THREAD palette (redesign 2026-07-13). Token NAMES are
+     preserved (interior pages build on them); only VALUES were remapped
+     to the cream/ivory + thread-violet skin. Copper retires from the line;
+     the thread is now violet. Backgrounds go warm ivory / paper cream.
 
-     COMPUTED WCAG CONTRAST (sRGB, rounded). Target: ink >=7:1 everywhere;
-     accent/links >=4.5:1 (small text); eyebrow bronze >=4.5:1; metallic
-     copper is DECORATIVE ONLY (borders/dividers), never small text.
+     COMPUTED WCAG CONTRAST (sRGB, rounded to 0.01). Target: ink >=7:1;
+     accent/links + all small text >=4.5:1; thread-violet #7C77C0 is
+     DECORATIVE ONLY (never small text). Verified via WCAG relative-luminance.
 
-     Deep Plum ink #3D2B4F on backgrounds:
-       on #FBF7FC main .......... 11.9:1   AAA
-       on #F4ECF8 soft-lavender . 11.0:1   AAA
-       on #EEE8F4 mist-deep ..... 10.6:1   AAA
-       on #FAF1F3 blush ......... 11.4:1   AAA
-       on #FFFDF8 ivory ......... 12.5:1   AAA
-       on #F8F2EB paper ......... 11.4:1   AAA
-     Ink-soft #574A66 on #FBF7FC . 7.3:1   AAA (body/captions)
-     Accent  #5E4B85 (links/btn text) on #FBF7FC 7.0:1 | on soft-lav 6.5:1
-       | on mist-deep 6.2:1 | on blush 6.7:1 | on paper 6.7:1  -> all AA+
-     Accent-deep #493A6B on #FBF7FC 9.4:1 (hover)
-     On-accent text #FBF7FC on #5E4B85 button ... 7.0:1  AAA
-     Eyebrow bronze #7A5A2E on #FBF7FC 6.0:1 | on paper 5.7:1 | mist-deep 5.3:1  AA+
-     Amethyst Orchid #7B68A0 on #FBF7FC 4.6:1  -> LARGE/DECORATIVE text only
-     Footer (Deep Plum bg): light lilac #E4D7F2 text 9.5:1 | link #D9C9EC 8.2:1  AAA
-     Copper #C9A87C: contrast ~3.2:1 on light -> DECORATIVE (borders/threads) only.
-     Focus ring #5E4B85 on light backgrounds 7.0:1  (clearly visible).
+     Ink #2E2A3A (deep plum-charcoal) on backgrounds:
+       on #FAF7F0 ivory-bg ...... 13.01:1  AAA
+       on #F3EEE3 paper-cream ... 12.03:1  AAA
+       on #FFFDF8 surface ....... 13.69:1  AAA
+       on #F7F0EA blush ......... 12.34:1  AAA
+       on #ECE6D9 mist-deep ..... 11.20:1  AAA
+     Ink-soft #55506A body/caption on #FAF7F0 7.16:1 | on #F3EEE3 6.62:1  AAA/AA+
+     Accent #5A55A0 (links, buttons) as text:
+       on #FAF7F0 6.05 | #F3EEE3 5.60 | #FFFDF8 6.37 | #F7F0EA 5.74  -> all AA+
+       near-white #FBF9F4 ON #5A55A0 button fill ... 6.16:1  AAA
+     Accent-deep #47437F (hover) on #FAF7F0 8.26:1 | near-white on it 8.40:1
+     Accent-soft #ECEAF7 chip: accent-deep #47437F text on it 7.44:1  AAA
+     Eyebrow/label #5F5880 (muted plum-violet) small text:
+       on #FAF7F0 6.14 | #F3EEE3 5.68 | #FFFDF8 6.47 | clay-soft #F0E9DC 5.45  AA+
+     Lavender band #6A64AC (newsletter/accent block): near-white #FBF9F4 text
+       4.95:1 AA | white thread 5.21:1. (~#AFA8DC failed white text 2.1:1, darkened.)
+     Footer (cream #F3EEE3): ink h2 12.03:1 | meta #55506A 6.62:1 | link #5A55A0 5.60:1
+     Focus ring #5A55A0 on #FAF7F0 6.05:1 (clearly visible).
+     Thread violet #7C77C0 as text ~3.5:1 -> DECORATIVE (threads/borders) only.
      ------------------------------------------------------------------ */
-  --color-bg:          #FBF7FC; /* main page background (supplied) */
-  --color-bg-deep:     #F4ECF8; /* soft-lavender / mist wash: alternating sections */
+  --color-bg:          #FAF7F0; /* warm ivory: main page background */
+  --color-bg-deep:     #F3EEE3; /* paper cream: alternating / mist sections */
   --color-surface:     #FFFDF8; /* ivory: cards / raised surfaces */
-  --color-ink:         #3D2B4F; /* Deep Plum: body + headlines */
-  --color-ink-soft:    #574A66; /* muted plum body / captions (>=7:1 on bg) */
-  --color-accent:      #5E4B85; /* Amethyst Orchid darkened to AA: links, buttons, accents */
-  --color-accent-deep: #493A6B; /* hover/active */
-  --color-accent-soft: #EBE3F5; /* pale lavender tint: chip / soft fills */
-  --color-clay:        #7A5A2E; /* darkened bronze: usable as small text (eyebrows, rules) */
-  --color-clay-soft:   #F6EEDD; /* soft parchment tint */
-  --color-border:      #E7DCEF; /* lavender hairline */
-  --color-focus:       #5E4B85; /* focus ring (>=7:1 on light) */
-  --color-on-accent:   #FBF7FC; /* text on deep accent surfaces */
+  --color-ink:         #2E2A3A; /* deep plum-charcoal: body + headlines */
+  --color-ink-soft:    #55506A; /* muted plum body / captions (>=6.6:1) */
+  --color-accent:      #5A55A0; /* thread violet, AA: links, buttons, accents */
+  --color-accent-deep: #47437F; /* hover/active */
+  --color-accent-soft: #ECEAF7; /* pale lavender tint: chip / soft fills */
+  --color-clay:        #5F5880; /* muted plum-violet: eyebrows, rules (was bronze) */
+  --color-clay-soft:   #F0E9DC; /* warm cream tint (crisis / lived blocks) */
+  --color-border:      #E7E1D6; /* warm cream hairline */
+  --color-focus:       #5A55A0; /* focus ring (>=6:1 on light) */
+  --color-on-accent:   #FBF9F4; /* near-white text on accent/band surfaces */
 
-  /* New background aliases (supplied washes) + metallic decorative accents */
-  --color-blush:       #FAF1F3; /* warm blush wash */
+  /* Background aliases (cream washes) + thread-violet decorative accents */
+  --color-blush:       #F7F0EA; /* warm blush wash */
   --color-ivory:       #FFFDF8; /* warm ivory */
-  --color-paper:       #F8F2EB; /* warm paper */
-  --color-mist:        #F4ECF8; /* soft lavender mist */
-  --color-mist-deep:   #EEE8F4; /* deeper lavender mist */
-  --color-plum:        #3D2B4F; /* Deep Plum: footer / dark anchor */
-  --color-plum-deep:   #322341; /* deeper plum for gradients */
-  --color-copper:      #C9A87C; /* Warm Copper: borders, threads, dividers (DECORATIVE) */
-  --color-bronze:      #a4865e; /* True Bronze: decorative */
-  --color-bronze-text: #7A5A2E; /* darkened bronze: eyebrows / small text (AA) */
-  --color-orchid:      #7B68A0; /* Amethyst Orchid: large/decorative text only */
-  --color-lilac:       #B8A9C9; /* Burnished Lilac: botanical strokes */
-  --color-footer-text: #E4D7F2; /* light lilac text on plum footer */
-  --color-footer-link: #D9C9EC; /* footer links on plum */
+  --color-paper:       #F3EEE3; /* paper cream */
+  --color-mist:        #F3EEE3; /* paper cream (mist sections go cream) */
+  --color-mist-deep:   #ECE6D9; /* deeper cream (grace moment) */
+  --color-plum:        #2E2A3A; /* deep plum-charcoal: dark anchor (letter card) */
+  --color-plum-deep:   #232030; /* deeper plum for gradients */
+  --color-copper:      #C7C0E8; /* RETIRED copper -> soft lilac: card borders (DECORATIVE) */
+  --color-bronze:      #7C77C0; /* thread violet: decorative */
+  --color-bronze-text: #5F5880; /* muted plum-violet: small-caps labels (AA) */
+  --color-orchid:      #7C77C0; /* thread violet: large/decorative */
+  --color-lilac:       #B8B2E4; /* harmonized lilac: blooms / ghost strokes */
+  --color-footer-text: #55506A; /* muted plum text on cream footer */
+  --color-footer-link: #5A55A0; /* violet links on cream footer */
+
+  /* Signature Thread tokens (new) */
+  --color-thread:       #7C77C0; /* the thread violet (line, decorative) */
+  --color-thread-still: #5A55A0; /* the still point (deep violet) */
+  --color-lavender-band:#6A64AC; /* newsletter / accent band (AA near-white text) */
 
   /* Typography: Cormorant Garamond (literary display) + DM Sans (humanist body).
      Loaded via Google Fonts in each page <head> with font-display: swap. */
@@ -275,7 +283,8 @@ p { max-width: var(--measure); }
 .nav { display: flex; align-items: center; gap: var(--space-5); }
 .nav__list { display: flex; align-items: center; gap: var(--space-5); list-style: none; padding: 0; margin: 0; }
 .nav__link {
-  font-size: var(--step--1); font-weight: 500; letter-spacing: 0.02em;
+  font-size: var(--step--1); font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--color-ink); text-decoration: none; padding: var(--space-1) 0;
   border-bottom: 2px solid transparent;
 }
@@ -361,7 +370,7 @@ p { max-width: var(--measure); }
 .door:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .door--fix   { border-top-color: var(--color-accent); }
 .door--read  { border-top-color: var(--color-clay); }
-.door--start { border-top-color: #B98A2E; }
+.door--start { border-top-color: var(--color-thread); }
 .door__kicker { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--color-ink-soft); }
 .door__subtitle { font-family: var(--font-serif); font-style: italic;
@@ -480,18 +489,23 @@ p { max-width: var(--measure); }
 .faq__answer > * + * { margin-top: var(--space-3); }
 
 /* 11. FOOTER =============================================================== */
-/* Dark Anchor: Deep Plum background with light lilac text (brand doc).
-   Light text on plum verified >=9:1; links >=8:1. A copper hairline thread
-   sits at the top edge as the only metallic accent. */
-.site-footer { background: var(--color-plum); border-top: 1px solid var(--color-copper);
+/* Light Cream footer (Signature Thread redesign): paper-cream background,
+   deep-plum text, violet links. The violet thread runs along the BOTTOM edge
+   (pattern-footer.svg, see v2 block). Plum dark footer retired. Verified:
+   ink h2 12.03:1 | meta #55506A 6.62:1 | link #5A55A0 5.60:1 on #F3EEE3. */
+.site-footer { background: var(--color-bg-deep); border-top: 1px solid var(--color-copper);
   padding-block: var(--space-8) var(--space-6); font-size: var(--step--1);
   color: var(--color-footer-text); }
 .site-footer a { color: var(--color-footer-link); }
-.site-footer a:hover { color: #fff; }
-.site-footer h2 { color: #fff; }
+.site-footer a:hover { color: var(--color-accent-deep); }
+.site-footer h2 { color: var(--color-ink); }
 .site-footer .meta { color: var(--color-footer-text); }
 .site-footer .disclaimer { color: var(--color-footer-text); }
-.site-footer .footer-legal { color: var(--color-footer-link); border-top-color: rgba(201,168,124,0.30); }
+.site-footer .footer-legal { color: var(--color-footer-text); border-top-color: var(--color-border); }
+
+/* Footer newsletter invite line (Sunday Letter home in footer). */
+.footer-invite { margin-top: var(--space-4); }
+.footer-invite a { font-weight: 600; }
 .footer-grid { display: grid; gap: var(--space-7); }
 @media (min-width: 44rem) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
 .footer-col h2 { font-size: var(--step-1); margin-bottom: var(--space-3); }
@@ -502,7 +516,7 @@ p { max-width: var(--measure); }
 
 /* Crisis resources: emphasized, ethical + trust signal */
 .crisis {
-  background: var(--color-clay-soft); border: 1px solid #E4D6A4; border-radius: var(--radius);
+  background: var(--color-clay-soft); border: 1px solid var(--color-copper); border-radius: var(--radius);
   padding: var(--space-4) var(--space-5); margin-top: var(--space-7);
 }
 .crisis h2 { font-size: var(--step-0); font-family: var(--font-sans); font-weight: 700;
@@ -678,7 +692,7 @@ p { max-width: var(--measure); }
 }
 .perspective-card--clinical { background: var(--color-accent-soft); }
 .perspective-card--clinical .perspective-card__label { color: var(--color-accent-deep); }
-.perspective-card--lived { background: var(--color-clay-soft); border-color: #E4D6A4; }
+.perspective-card--lived { background: var(--color-clay-soft); border-color: var(--color-copper); }
 .perspective-card--lived .perspective-card__label { color: var(--color-clay); }
 
 /* Related-content endcap ("Keep reading") for the article template. */
@@ -1156,10 +1170,132 @@ p { max-width: var(--measure); }
   background-position: right -130px top -150px;
   background-size: 460px 460px;
 }
+/* The violet thread runs along the BOTTOM edge of the cream footer. */
 .site-footer {
   background-image: url("../assets/pattern-footer.svg");
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: min(1200px, 100%) 40px;
-  padding-top: var(--space-7);
+  background-position: bottom center;
+  background-size: min(1200px, 100%) 34px;
+  padding-bottom: var(--space-8);
 }
+
+/* ========================================================================
+   SIGNATURE THREAD (redesign 2026-07-13): index homepage components.
+   Immersive hero, three-node Method thread, lavender newsletter band,
+   personal/practical split. Additive; built on the remapped tokens.
+   ======================================================================== */
+
+/* --- Immersive hero: pond photo + violet-mist gradient + flowing thread --- */
+.hero--immersive {
+  position: relative; overflow: hidden; isolation: isolate;
+  background-image: none;                 /* photo replaces the contour whisper */
+  padding-block: clamp(var(--space-8), 8vw, var(--space-9));
+  min-height: min(80vh, 40rem);
+  display: flex; align-items: center;
+}
+.hero__bg {
+  position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background-image:
+    linear-gradient(105deg,
+      var(--color-bg) 0%, var(--color-bg) 36%,
+      rgba(250,247,240,0.60) 54%, rgba(124,119,192,0.10) 76%,
+      rgba(90,85,160,0.32) 100%),
+    linear-gradient(180deg, rgba(124,119,192,0.16), rgba(124,119,192,0.04)),
+    url("../assets/carrie-pond.jpg");
+  background-size: cover, cover, cover;
+  background-position: center, center, right center;
+}
+.hero__thread {
+  position: absolute; z-index: -1; inset: 0 0 0 auto;
+  width: min(72%, 60rem); height: 100%;
+  pointer-events: none;
+}
+.hero__thread svg { width: 100%; height: 100%; }
+.hero--immersive .hero__inner { position: relative; z-index: 1; max-width: var(--container); }
+.hero--immersive .hero__copy { max-width: 34rem; }
+.hero--immersive h1 { margin-bottom: var(--space-5); }
+.hero--immersive .support { margin-bottom: var(--space-6); }
+@media (max-width: 52rem) {
+  .hero__bg {
+    background-image:
+      linear-gradient(180deg,
+        rgba(250,247,240,0.30) 0%, rgba(250,247,240,0.72) 46%,
+        var(--color-bg) 82%),
+      linear-gradient(180deg, rgba(124,119,192,0.14), rgba(124,119,192,0.04)),
+      url("../assets/carrie-pond.jpg");
+    background-position: center top, center, center top;
+  }
+  .hero--immersive { min-height: 0; }
+  .hero__thread { width: 100%; opacity: 0.5; }
+}
+
+/* --- Three-node Method thread (homepage teaser) ------------------------- */
+.method-thread { position: relative; margin: var(--space-7) auto 0; max-width: 60rem; }
+.method-thread__line { display: block; width: 100%; height: 64px; }
+.method-nodes {
+  list-style: none; padding: 0; margin: var(--space-4) 0 0;
+  display: grid; gap: var(--space-6);
+}
+@media (min-width: 44rem) {
+  .method-nodes { grid-template-columns: repeat(3, 1fr); text-align: center; }
+}
+.method-node__arc {
+  font-family: var(--font-sans); font-size: var(--step-0); font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent);
+  display: block; margin-bottom: var(--space-2);
+}
+.method-node p {
+  font-family: var(--font-serif); font-style: italic; font-size: var(--step-1);
+  line-height: 1.3; color: var(--color-ink-soft); margin-inline: auto; max-width: 20ch;
+}
+
+/* --- Lavender newsletter band ------------------------------------------- */
+.section--lavender {
+  background: var(--color-lavender-band); color: var(--color-on-accent);
+  position: relative; overflow: hidden; isolation: isolate;
+}
+.section--lavender h1, .section--lavender h2, .section--lavender h3 { color: var(--color-on-accent); }
+.section--lavender .eyebrow { color: var(--color-on-accent); }
+.section--lavender .lede { color: #fff; }
+.section--lavender p { color: var(--color-on-accent); max-width: 46ch; }
+.section--lavender .meta { color: var(--color-on-accent); }
+.section--lavender a { color: #fff; }
+.newsletter-thread {
+  position: absolute; z-index: -1; top: 50%; right: -2%;
+  width: min(48%, 34rem); transform: translateY(-50%);
+  pointer-events: none; opacity: 0.9;
+}
+.newsletter-thread svg { width: 100%; height: auto; }
+.section--lavender .substack-embed {
+  background: var(--color-surface); border: 1px solid rgba(255,255,255,0.55);
+}
+@media (max-width: 48rem) { .newsletter-thread { opacity: 0.35; width: 80%; } }
+
+/* --- "Deeply personal and profoundly practical" split ------------------- */
+.practical-photo {
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--color-copper); box-shadow: var(--shadow-md);
+  background: var(--color-mist);
+}
+.practical-photo img { width: 100%; height: 100%; object-fit: cover;
+  aspect-ratio: 5 / 4; display: block; }
+
+/* --- Press bar: verified features only, typographic (no logo images) --- */
+.press-bar { background: var(--color-bg-deep); border-block: 1px solid var(--color-border); }
+.press-bar__inner {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center;
+  gap: var(--space-4) var(--space-7); padding-block: var(--space-5);
+}
+.press-bar__label {
+  font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-ink-soft);
+}
+.press-bar a, .press-bar span:not(.press-bar__label) {
+  font-family: var(--font-serif); font-weight: 600; font-size: var(--step-1);
+  color: var(--color-ink); text-decoration: none;
+}
+.press-bar a:hover { color: var(--color-accent); }
+
+/* Nav items never wrap (letterspaced caps need the room) */
+.nav__link { white-space: nowrap; }
+@media (min-width: 64rem) { .nav__list { gap: var(--space-5); } }

@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800" role="img" aria-label="The Healing Circle, a community for trauma recovery">
-  <rect width="640" height="800" fill="#F4ECF8"/>
-  <circle cx="320" cy="360" r="210" fill="none" stroke="#5E4B85" stroke-width="3" opacity="0.85"/>
-  <circle cx="320" cy="360" r="160" fill="none" stroke="#C9A87C" stroke-width="2" opacity="0.7"/>
+  <rect width="640" height="800" fill="#ECEAF7"/>
+  <circle cx="320" cy="360" r="210" fill="none" stroke="#5A55A0" stroke-width="3" opacity="0.85"/>
+  <circle cx="320" cy="360" r="160" fill="none" stroke="#7C77C0" stroke-width="2" opacity="0.7"/>
   <!-- seats around the circle -->
-  <g fill="#5E4B85">
+  <g fill="#5A55A0">
     <circle cx="320" cy="150" r="14"/>
     <circle cx="470" cy="215" r="14"/>
     <circle cx="530" cy="360" r="14"/>
@@ -13,7 +13,7 @@
     <circle cx="110" cy="360" r="14"/>
     <circle cx="170" cy="215" r="14"/>
   </g>
-  <circle cx="320" cy="360" r="20" fill="#C9A87C"/>
-  <text x="320" y="680" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#2B2333">The Healing Circle</text>
-  <text x="320" y="722" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill="#5B4F6B">Healing happens in relationship, not isolation.</text>
+  <circle cx="320" cy="360" r="20" fill="#7C77C0"/>
+  <text x="320" y="680" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#2E2A3A">The Healing Circle</text>
+  <text x="320" y="722" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill="#55506A">Healing happens in relationship, not isolation.</text>
 </svg>

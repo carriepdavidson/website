@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#FBF7FC"/>
-  <circle cx="1080" cy="80" r="360" fill="#F4ECF8" opacity="0.55"/>
-  <circle cx="80" cy="600" r="260" fill="#F4ECF8" opacity="0.45"/>
+  <rect width="1200" height="630" fill="#FAF7F0"/>
+  <circle cx="1080" cy="80" r="360" fill="#ECEAF7" opacity="0.55"/>
+  <circle cx="80" cy="600" r="260" fill="#ECEAF7" opacity="0.45"/>
   <!-- settling waveform motif -->
   <path d="M70 500 q28 -70 56 0 q28 70 56 0 q28 -52 56 0 q28 52 56 0 q28 -34 56 0 q28 34 56 0 q28 -16 56 0 q28 16 56 0 q40 -6 80 0 h530"
-        fill="none" stroke="#C9A87C" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
-  <rect x="70" y="120" width="76" height="6" fill="#C9A87C"/>
-  <text x="70" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="26" letter-spacing="6" fill="#7A5A2E">REGISTERED NURSE &#183; AUTHOR &#183; TRAUMA RECOVERY COACH</text>
-  <text x="70" y="230" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#2B2333">You are not broken.</text>
-  <text x="70" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#5E4B85">You are patterned.</text>
-  <text x="70" y="418" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-style="italic" fill="#5B4F6B">And patterns can change.</text>
-  <text x="70" y="576" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#2B2333">Carrie Davidson, RN &#160;&#183;&#160; carriepdavidson.com</text>
+        fill="none" stroke="#7C77C0" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <rect x="70" y="120" width="76" height="6" fill="#7C77C0"/>
+  <text x="70" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="26" letter-spacing="6" fill="#5F5880">REGISTERED NURSE &#183; AUTHOR &#183; TRAUMA RECOVERY COACH</text>
+  <text x="70" y="230" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#2E2A3A">You are not broken.</text>
+  <text x="70" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#5A55A0">You are patterned.</text>
+  <text x="70" y="418" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-style="italic" fill="#55506A">And patterns can change.</text>
+  <text x="70" y="576" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#2E2A3A">Carrie Davidson, RN &#160;&#183;&#160; carriepdavidson.com</text>
 </svg>

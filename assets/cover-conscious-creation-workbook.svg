@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="Cover of The Conscious Creation Workbook, a free workbook by Carrie Davidson">
-  <rect width="480" height="300" fill="#FBF7FC"/>
-  <circle cx="430" cy="250" r="150" fill="#F4ECF8" opacity="0.6"/>
+  <rect width="480" height="300" fill="#FAF7F0"/>
+  <circle cx="430" cy="250" r="150" fill="#ECEAF7" opacity="0.6"/>
   <!-- The choice, blooming: the line arrives, leaves the old path faint,
        and the chosen path rises and buds. -->
-  <path d="M296 236 C 322 230, 346 225, 366 221" fill="none" stroke="#C9A87C" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M366 221 C 392 224, 416 231, 442 240" fill="none" stroke="#B8A9C98C" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1 8"/>
-  <path d="M366 221 C 388 204, 402 180, 408 152 C 413 128, 410 106, 402 86" fill="none" stroke="#C9A87C" stroke-width="2.5" stroke-linecap="round"/>
-  <g stroke="#C9A87C" stroke-width="1.8" fill="none" stroke-linecap="round">
+  <path d="M296 236 C 322 230, 346 225, 366 221" fill="none" stroke="#7C77C0" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M366 221 C 392 224, 416 231, 442 240" fill="none" stroke="#B8B2E48C" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1 8"/>
+  <path d="M366 221 C 388 204, 402 180, 408 152 C 413 128, 410 106, 402 86" fill="none" stroke="#7C77C0" stroke-width="2.5" stroke-linecap="round"/>
+  <g stroke="#7C77C0" stroke-width="1.8" fill="none" stroke-linecap="round">
     <path d="M406 168 C 394 160, 386 148, 384 134"/>
   </g>
-  <ellipse cx="400" cy="78" rx="6" ry="9" transform="rotate(14 400 78)" fill="#B8A9C9"/>
-  <ellipse cx="383" cy="128" rx="4" ry="6" transform="rotate(-22 383 128)" fill="#B8A9C9" opacity="0.7"/>
-  <rect x="28" y="58" width="44" height="3" fill="#C9A87C"/>
-  <text x="28" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#7A5A2E">FREE WORKBOOK</text>
-  <text x="28" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#2B2333">The Conscious</text>
-  <text x="28" y="146" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#5E4B85">Creation Workbook</text>
-  <text x="28" y="278" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#5B4F6B">Carrie Davidson, RN &#183; carriepdavidson.com</text>
+  <ellipse cx="400" cy="78" rx="6" ry="9" transform="rotate(14 400 78)" fill="#B8B2E4"/>
+  <ellipse cx="383" cy="128" rx="4" ry="6" transform="rotate(-22 383 128)" fill="#B8B2E4" opacity="0.7"/>
+  <rect x="28" y="58" width="44" height="3" fill="#7C77C0"/>
+  <text x="28" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#5F5880">FREE WORKBOOK</text>
+  <text x="28" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#2E2A3A">The Conscious</text>
+  <text x="28" y="146" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#5A55A0">Creation Workbook</text>
+  <text x="28" y="278" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#55506A">Carrie Davidson, RN &#183; carriepdavidson.com</text>
 </svg>

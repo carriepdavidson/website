@@ -81,14 +81,16 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: stacked brand + credential line, 6-item nav,
-       Sunday Letter pill CTA. (Interior pages restyle in propagation.)
+       SITE HEADER (Signature Thread): single-line letterspaced brand,
+       6-item uppercase nav, "Work with me" pill CTA to Calendly.
+       Credential line dropped to the brand aria-label (board shows name
+       only). Sunday Letter moved to the newsletter band + footer.
+       (Interior pages restyle in propagation.)
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred">RN &middot; Author &middot; Trauma Recovery Coach</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -102,7 +104,7 @@
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
         </ul>
-        <a class="btn btn--primary btn--pill" href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a>
+        <a class="btn btn--primary btn--pill" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
       </nav>
     </div>
   </header>
@@ -110,40 +112,50 @@
   <main id="main">
 
     <!-- ============================================================
-         HERO (arrival + recognition): signature trio H1 + photo.
-         The search-language phrase lives in the <title> and the
-         orientation H2 below, preserving ranking intent.
+         HERO (arrival + recognition): the board's misty-violet vista built
+         in CSS as a violet-mist gradient over Carrie's real pond photo, with
+         the signature thread flowing across (absolutely positioned, decorative).
+         The search-language phrase lives in the <title> and the orientation
+         H2 below, preserving ranking intent.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="hero hero--split reveal">
+    <section class="hero hero--immersive reveal">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <span class="hero__thread" aria-hidden="true">
+        <svg viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice">
+          <path d="M40 300 C 140 292, 210 250, 250 250 C 300 250, 300 300, 258 302
+                   C 224 303, 222 262, 262 246 C 320 223, 402 250, 470 268
+                   C 560 292, 636 250, 720 210 C 772 185, 800 172, 812 150"
+                stroke="#7C77C0" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+          <circle cx="470" cy="268" r="5" fill="#5A55A0" opacity="0.85"/>
+        </svg>
+      </span>
       <div class="container hero__inner">
-        <div class="hero__grid">
-          <div class="hero__copy">
-            <p class="eyebrow">Registered Nurse &middot; Author &middot; Trauma Recovery Coach</p>
-            <h1>
-              <span>You are not broken.</span>
-              <span>You are patterned.</span>
-              <span class="script-line script-line--lg">And patterns can change.</span>
-            </h1>
-            <p class="support">I write and teach about CPTSD, addiction, and the slow work of
-              coming home to yourself. You have done the therapy, the apps, the breathwork, and
-              you can name your triggers like a clinician. The loop still runs faster than thought.
-              Closing that gap does not take one more explanation. It takes new evidence, given to
-              your nervous system, on purpose.</p>
-            <div class="btn-row">
-              <a class="btn btn--primary" href="/start-here">Start here &rarr;</a>
-              <a class="btn btn--ghost" href="/book#excerpt">Read the prologue</a>
-            </div>
-            <p class="hero__cred">Registered Nurse (RN, BSN, BSPH) &middot; Certified Trauma Recovery Coach</p>
+        <div class="hero__copy">
+          <h1>
+            <span>You are not broken.</span>
+            <span>You are <em class="script-line">patterned.</em></span>
+          </h1>
+          <p class="support">Break the cycles. Reclaim your choice. Create a life that feels like you.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="/start-here">Begin your shift &rarr;</a>
+            <a class="btn btn--ghost" href="/book#excerpt">Read the prologue</a>
           </div>
-          <div class="hero__media">
-            <span class="botanical" style="top: -1.5rem; right: -1rem; width: 5.5rem;" aria-hidden="true">
-              <img src="assets/motif-corner.svg" alt="" width="220" height="220"></span>
-            <img class="photo-fade" src="assets/carrie-pond.jpg"
-                 alt="Carrie Davidson sitting by a lily pond in a garden at golden hour"
-                 width="1500" height="1000" fetchpriority="high">
-          </div>
+          <p class="hero__cred">Registered Nurse (RN, BSN, BSPH) &middot; Certified Trauma Recovery Coach</p>
         </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRESS BAR: verified features only (Carrie-confirmed 2026-07-13).
+         Women's Insider verified live and linked; NY Daily Times listed
+         on Carrie's confirmation, link pending.
+         ============================================================ -->
+    <section class="press-bar" aria-label="Featured in">
+      <div class="container press-bar__inner">
+        <span class="press-bar__label">As featured in</span>
+        <a href="https://womensinsider.com/lifestyle/carrie-davidson-where-neuroscience-meets-the-soul-of-healing/">Women&rsquo;s Insider</a>
+        <span>New York Daily Times</span>
       </div>
     </section>
 
@@ -218,34 +230,37 @@
     </section>
 
     <!-- ============================================================
-         UNDERSTANDING: the Method as a five-node thread (real steps
-         + ARC stages). Keeps the "how to break a trauma pattern" H2.
+         THE METHOD band: cream/paper with faint contour whisper. The thread
+         drawn across with three arc nodes (Awareness / Regulation / Creation).
+         The full five steps live on /method. Keeps the "how to break a trauma
+         pattern" H2 for ranking intent.
          ============================================================ -->
     <section class="section section--paper reveal" aria-labelledby="method-title">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head section-head--center">
           <p class="eyebrow">The Conscious Creation Method&trade;</p>
-          <h2 id="method-title">How to break a trauma pattern: five steps</h2>
-          <p class="lede">The loop runs faster than thought. So we do not out-think it. We give it new evidence.</p>
-          <p>The loop is not a character flaw. It is a nervous system doing exactly what it was
-            trained to do, until you give it new evidence. The Method moves through three ARC stages,
-            Awareness, Regulation, and Creation, in five steps.</p>
+          <h2 id="method-title">How to break a trauma pattern: a path from survival to self-creation.</h2>
         </div>
 
-        <figure class="pattern-figure" style="margin-top: var(--space-7);">
-          <div class="pattern-strip" role="img"
-               aria-label="The Method drawn as one continuous line: repeating loops that open, a pause at a still point, lavender blooming from the returning line, and a rising open path"></div>
-        </figure>
-        <ol class="steps-line" aria-label="The five steps of the Conscious Creation Method">
-          <li><span class="steps-line__arc">Awareness</span><strong>Witness</strong></li>
-          <li><span class="steps-line__arc">Awareness</span><strong>Understand</strong></li>
-          <li><span class="steps-line__arc">Regulation</span><strong>Interrupt</strong></li>
-          <li><span class="steps-line__arc">Creation</span><strong>Find Creative Flow</strong></li>
-          <li><span class="steps-line__arc">Creation</span><strong>Build the Intentional Life</strong></li>
-        </ol>
+        <div class="method-thread">
+          <svg class="method-thread__line" viewBox="0 0 1000 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+            <path d="M20 40 C 120 34, 180 30, 220 34 C 250 37, 250 20, 230 19 C 214 18, 214 33, 232 38
+                     C 300 50, 380 30, 500 30 C 620 30, 700 48, 768 38 C 786 33, 786 18, 770 19
+                     C 750 20, 750 37, 780 34 C 820 30, 880 26, 980 22"
+                  stroke="#7C77C0" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+            <circle cx="200" cy="32" r="6" fill="#5A55A0"/>
+            <circle cx="500" cy="30" r="6" fill="#5A55A0"/>
+            <circle cx="800" cy="30" r="6" fill="#5A55A0"/>
+          </svg>
+          <ol class="method-nodes">
+            <li class="method-node"><span class="method-node__arc">Awareness</span><p>Notice the pattern</p></li>
+            <li class="method-node"><span class="method-node__arc">Regulation</span><p>Return to your body</p></li>
+            <li class="method-node"><span class="method-node__arc">Creation</span><p>Choose on purpose</p></li>
+          </ol>
+        </div>
 
-        <div class="btn-row" style="margin-top: var(--space-7);">
-          <a class="btn btn--secondary" href="/method">See the Method &rarr;</a>
+        <div class="btn-row" style="margin-top: var(--space-8); justify-content: center;">
+          <a class="btn btn--secondary" href="/method">Explore the Method &rarr;</a>
         </div>
       </div>
     </section>
@@ -253,7 +268,8 @@
     <div class="pattern-divider pattern-divider--easing" aria-hidden="true"></div>
 
     <!-- ============================================================
-         TRUST: Hi, I'm Carrie. Arch portrait + role lines + real bio.
+         MY STORY: the board's nurse-to-patient framing. Arch portrait +
+         memoir line + Carrie's signature voice. Read my story / an excerpt.
          ============================================================ -->
     <section class="section section--blush reveal" aria-labelledby="about-title">
       <div class="container">
@@ -266,15 +282,16 @@
             </div>
           </div>
           <div class="stack">
-            <p class="eyebrow">Hi, I&rsquo;m Carrie</p>
-            <h2 id="about-title">Registered nurse. Trauma recovery coach. Writer.
-              <span class="script-line">Survivor.</span></h2>
-            <p>I spent years trying nearly every evidence-based and experiential approach I could
-              find, not because I was researching them, but because I needed them. Today I combine
-              clinical understanding with lived experience to help others interrupt the same patterns.</p>
+            <p class="eyebrow">My story</p>
+            <h2 id="about-title">From the nurse to the patient.
+              <span class="script-line">From survival to creation.</span></h2>
+            <p>A memoir about love, loss, identity, and the moment everything changed. I have been
+              the nurse reading the chart and the patient inside it. Today I combine clinical
+              understanding with lived experience to help others interrupt the same patterns.</p>
             <p class="signature">You do not have to think your way out. You have to feel your way home.</p>
             <div class="btn-row">
               <a class="btn btn--secondary" href="/about">Read my story &rarr;</a>
+              <a class="btn btn--ghost" href="/book#excerpt">Read an excerpt</a>
             </div>
           </div>
         </div>
@@ -349,19 +366,53 @@
       </div>
     </section>
 
+    <!-- ============================================================
+         PERSONAL + PRACTICAL: the board's "deeply personal and profoundly
+         practical" panel. Real coaching photo + Work with me CTA.
+         ============================================================ -->
+    <section class="section section--paper reveal" aria-labelledby="practical-title">
+      <div class="container">
+        <div class="split">
+          <div class="stack">
+            <h2 id="practical-title">This work is deeply personal and
+              <span class="script-line">profoundly</span> practical.</h2>
+            <p>We go beyond insight into embodied change. The loop is not a character flaw. It is a
+              nervous system doing exactly what it was trained to do, until you give it new evidence,
+              on purpose.</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me &rarr;</a>
+            </div>
+          </div>
+          <div class="practical-photo">
+            <img src="assets/carrie-coaching-session.jpg"
+                 alt="Carrie Davidson in a coaching session, notebook open on the table"
+                 loading="lazy" width="1500" height="1200">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="pattern-divider pattern-divider--open" aria-hidden="true"></div>
 
     <!-- ============================================================
-         INVITATION: the Sunday Letter, with a working Substack embed.
+         INVITATION: the Sunday Letter on the solid lavender band, with white
+         thread loops and the working Substack embed. "Finally feel at home in
+         your body." (official Home tagline) closes the band.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="section section--mist reveal" aria-labelledby="signup-title">
+    <section class="section section--lavender reveal" aria-labelledby="signup-title">
+      <span class="newsletter-thread" aria-hidden="true">
+        <svg viewBox="0 0 520 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 150 C 90 146, 150 110, 190 110 C 240 110, 240 160, 198 162
+                   C 164 163, 162 122, 202 106 C 260 83, 342 110, 410 128
+                   C 470 144, 508 120, 512 96"
+                stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+          <circle cx="410" cy="128" r="5" fill="#FFFFFF" opacity="0.9"/>
+        </svg>
+      </span>
       <div class="container container-narrow text-center" style="position: relative;">
-        <span class="botanical" style="left: -2.5rem; bottom: -1rem; width: 8rem;" aria-hidden="true">
-          <img src="assets/motif-corner.svg" alt="" loading="lazy" width="220" height="260"></span>
         <p class="eyebrow">The Sunday Letter</p>
-        <h2 id="signup-title">Finally feel at home in your body.</h2>
-        <p class="lede mx-auto">Words for the work no one else sees.</p>
+        <h2 id="signup-title">Thoughts on trauma, creativity, healing, and becoming. In your inbox.</h2>
         <p class="mx-auto">A weekly note for the work no one else sees: neuroscience
           precision, a poetic reframe, and one small practice, every Sunday. No hustle, no shame,
           no urgency. Just companionship on the way home to yourself.</p>
@@ -372,6 +423,7 @@
             <a href="https://carriepdavidson.substack.com/subscribe">Prefer a link? Subscribe to The Sunday Letter on Substack &rarr;</a>
           </p>
         </div>
+        <p class="lede mx-auto" style="margin-top: var(--space-6);">Finally feel at home in your body.</p>
         <p class="meta mx-auto" style="margin-top: var(--space-3);">No spam. Unsubscribe anytime.</p>
       </div>
     </section>
@@ -388,10 +440,14 @@
       <div class="footer-grid">
 
         <div class="footer-col">
-          <h2>Carrie Davidson, RN</h2>
+          <h2>Carrie Davidson</h2>
+          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Human.</p>
           <p class="meta">Registered nurse &amp; certified trauma recovery coach. Trauma and addiction
             are not separate problems. They are the same wound, telling itself in two different
             languages.</p>
+          <p class="meta footer-invite">
+            <a href="https://carriepdavidson.substack.com/subscribe">Get reflections and resources to support your healing &rarr;</a>
+          </p>
           <p class="meta" style="margin-top: var(--space-3);">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
