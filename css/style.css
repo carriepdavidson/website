@@ -1293,3 +1293,7 @@ p { max-width: var(--measure); }
 .nav__link { white-space: nowrap; }
 @media (min-width: 64rem) { .nav__list { gap: var(--space-5); } }
 .site-header .btn { white-space: nowrap; }
+
+/* Footer thread icons (from the board's one-continuous-line set) */
+.footer-icon { width: 16px; height: 16px; display: inline-block;
+  vertical-align: -2px; margin-right: 0.45em; }
