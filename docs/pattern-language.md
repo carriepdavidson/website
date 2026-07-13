@@ -44,3 +44,10 @@ One gesture, five beats:
 
 ## Restraint (unchanged from v1, still the law)
 Max one feature strip + three dividers per page; whisper opacities for backgrounds; the motif never competes with words or photographs; one metaphor sitewide. If an element cannot be traced back to the line, it does not ship.
+
+## The site-level journey (added 2026-07-13)
+The line is graded across the WHOLE site, not only within pages, so one visit travels the movement once:
+- Arrival, the tangle (grade 1): home's overture opens in loops; /for-nurses (recognition).
+- Understanding, the easing (grade 2): /start-here (choosing a door is a pause), /writing, /resources, /faq, /about (meeting her is the still point), /method (the pause is its heart).
+- Choice and creation, the open path (grade 3): /coaching (the fork), /book (the bloom).
+- Home remains the overture and carries all three grades in order. Within any page, grades still only ascend.

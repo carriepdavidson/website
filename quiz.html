@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+      if (prefersStill || !elPause || !elCard) { next(); return; }
+      elCard.hidden = true;
+      elSectionIntro.hidden = true;<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -216,6 +218,21 @@
       font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
       text-align: center; margin-top: var(--space-6);
     }
+
+    /* The pause between sections: one still point, briefly held. */
+    .qz-pause { display: flex; align-items: center; justify-content: center;
+      position: relative; min-height: 12rem; }
+    .qz-pause__dot { width: 14px; height: 14px; border-radius: 50%;
+      background: var(--color-accent); }
+    .qz-pause__halo { position: absolute; width: 34px; height: 34px;
+      border-radius: 50%; border: 1.5px solid #B8A9C999; }
+    @media (prefers-reduced-motion: no-preference) {
+      .qz-pause__dot, .qz-pause__halo { opacity: 0; animation: qzBreath 0.9s ease-out forwards; }
+      .qz-pause__halo { animation-delay: 0.15s; }
+      @keyframes qzBreath { 20% { opacity: 0; } 100% { opacity: 1; } }
+      .qz-result-enter { animation: qzArrive 0.8s ease-out; }
+      @keyframes qzArrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    }
   </style>
 </head>
 <body>
@@ -296,6 +313,12 @@
         </div>
 
         <p class="qz-sectionintro" id="qz-sectionintro" hidden></p>
+
+        <!-- The pause: a held breath between sections of statements. -->
+        <div class="qz-pause" id="qz-pause" hidden aria-hidden="true">
+          <span class="qz-pause__halo"></span>
+          <span class="qz-pause__dot"></span>
+        </div>
 
         <form id="qz-form">
           <fieldset class="qz-question">
@@ -701,15 +724,42 @@
       elBack.disabled = current === 0;
     }
 
+    /* The pause: when crossing into a new section of statements, hold a
+       quiet beat (a still point) before the next question. Skipped entirely
+       for reduced-motion visitors and never blocks keyboard flow: the next
+       question renders and receives focus the moment the beat ends. */
+    var prefersStill = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var elPause = document.getElementById("qz-pause");
+    var elCard = document.getElementById("qz-form");
+    function withSectionPause(next) {
+      if (prefersStill || !elPause || !elCard) { next(); return; }
+      elCard.hidden = true;
+      elPause.hidden = false;
+      window.setTimeout(function () {
+        elPause.hidden = true;
+        elCard.hidden = false;
+        next();
+      }, 900);
+    }
+
     function goNext() {
       if (answers[current] === null) return;
       if (current < QUESTIONS.length - 1) {
+        var crossingSection = !!QUESTIONS[current + 1].sectionIntro;
         current++;
-        renderQuestion();
-        elLegend.focus();
+        if (crossingSection) {
+          withSectionPause(function () { renderQuestion(); elLegend.focus(); });
+        } else {
+          renderQuestion();
+          elLegend.focus();
+        }
       } else {
         renderResult();
-        show("result");
+        withSectionPause(function () {
+          show("result");
+          var res = document.getElementById("screen-result");
+          if (res) res.classList.add("qz-result-enter");
+        });
       }
     }
 

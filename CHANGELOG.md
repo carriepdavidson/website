@@ -92,3 +92,7 @@ Nine taste edits following the full creative review:
 - All five resource covers now strictly derive from the family (opening cycles for the affirmation cards; the blooming choice for Conscious Creation; wavering day-lines for the journal; no ruled lines remain).
 - Method page self-drawing line upgraded to all five beats; the ghost path fades in dotted rather than drawing; forward-only, reduced-motion safe.
 - docs/pattern-language.md rewritten as the v2 grammar: drawing rules, color law, placement map, restraint.
+
+## Experience pass: the site travels as one line; the quiz learns to pause (2026-07-13)
+- Site-level journey grading: divider grades now map to each page's place in the visit, not only its scroll position. Arrival in the tangle (home overture, for-nurses), understanding at the easing (start-here, writing, resources, faq, about, method), choice and creation on the open path (coaching, book). Recorded in the pattern-language grammar.
+- The quiz holds a breath: crossing into each new section of statements, a still point appears for 900ms before the next question (skipped entirely under prefers-reduced-motion; keyboard focus lands on the new statement the moment the beat ends). The result screen now arrives with the same held beat and a slow, gentle entrance.
