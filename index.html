@@ -22,6 +22,12 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T.
@@ -79,12 +85,15 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
+       SITE HEADER: stacked brand + credential line, 6-item nav,
+       Sunday Letter pill CTA. (Interior pages restyle in propagation.)
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Carrie Davidson<span>.</span></a>
+      <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <span class="brand-stack__name">Carrie Davidson</span>
+        <span class="brand-stack__cred">RN &middot; Author &middot; Trauma Recovery Coach</span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
@@ -97,7 +106,7 @@
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
         </ul>
-        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+        <a class="btn btn--primary btn--pill" href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a>
       </nav>
     </div>
   </header>
@@ -105,160 +114,222 @@
   <main id="main">
 
     <!-- ============================================================
-         HERO: two-layer copy: search-language H1 + poetic payoff.
+         HERO (arrival + recognition): signature trio H1 + photo.
+         The search-language phrase lives in the <title> and the
+         orientation H2 below, preserving ranking intent.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="hero">
+    <section class="hero hero--split reveal">
       <div class="container hero__inner">
-        <p class="eyebrow">Registered Nurse &middot; Author &middot; Trauma Recovery Coach</p>
-        <h1>Why can&rsquo;t I break my patterns, even when I understand them?</h1>
-        <p class="lede">You are not broken. You are patterned. And patterns can change.</p>
-        <p>You&rsquo;ve done the therapy, the apps, the breathwork, the workshops, and you can
-          explain your triggers like a clinician. The loop still runs faster than thought.
-          That gap has a name: <em>insight-rich and transformation-poor.</em> Closing it doesn&rsquo;t
-          take one more explanation. It takes new evidence, given to your nervous system, on purpose.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="/start-here">Start here &rarr;</a>
-          <a class="btn btn--ghost" href="/about">Read her story</a>
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow">Registered Nurse &middot; Author &middot; Trauma Recovery Coach</p>
+            <h1>
+              <span>You are not broken.</span>
+              <span>You are patterned.</span>
+              <span class="script-line script-line--lg">And patterns can change.</span>
+            </h1>
+            <p class="support">I write and teach about CPTSD, addiction, and the slow work of
+              coming home to yourself. You have done the therapy, the apps, the breathwork, and
+              you can name your triggers like a clinician. The loop still runs faster than thought.
+              Closing that gap does not take one more explanation. It takes new evidence, given to
+              your nervous system, on purpose.</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="/start-here">Start here &rarr;</a>
+              <a class="btn btn--ghost" href="/book#excerpt">Read the prologue</a>
+            </div>
+            <p class="hero__cred">Registered Nurse (RN, BSN, BSPH) &middot; Certified Trauma Recovery Coach</p>
+          </div>
+          <div class="hero__media">
+            <span class="botanical" style="top: -1.5rem; right: -1rem; width: 5.5rem;" aria-hidden="true">
+              <img src="assets/botanical-lavender-1.svg" alt=""></span>
+            <img class="photo-fade" src="assets/carrie-pond.jpg"
+                 alt="Carrie Davidson sitting by a lily pond in a garden at golden hour"
+                 width="1500" height="1000" fetchpriority="high">
+          </div>
         </div>
-        <ul class="pill-row" style="margin-top: var(--space-6);">
-          <li class="pill">Registered Nurse (RN, BSN, BSPH)</li>
-          <li class="pill">Certified Trauma Recovery Coach</li>
-          <li class="pill">Lived-experience recovery</li>
-        </ul>
       </div>
     </section>
 
+    <div class="divider-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34 C 240 12 480 12 720 30 C 960 48 1200 48 1440 26" fill="none" stroke="#C9A87C" stroke-width="1.5"/>
+        <path d="M0 40 C 240 20 480 20 720 36 C 960 52 1200 52 1440 32" fill="none" stroke="#C9A87C" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+
     <!-- ============================================================
-         THREE DOORS: the one prioritized pathway per visitor intent.
-         Order is canonical: Fix the pattern / Read the story / Start free.
+         ORIENTATION: five doorway (arch) cards. The search-language
+         H2 preserves "why can't I break my patterns" ranking intent.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="section section--alt" aria-labelledby="doors-title">
+    <section class="section section--alt reveal" aria-labelledby="doors-title">
       <div class="container">
         <div class="section-head section-head--center">
-          <p class="eyebrow">Choose your way in</p>
-          <h2 id="doors-title">Where do you want to begin?</h2>
-          <p>Different women arrive stuck in different places. Wherever you are today, there&rsquo;s a
-            next step that fits, not ten competing ones.</p>
+          <p class="eyebrow">What brought you here?</p>
+          <h2 id="doors-title">Why can&rsquo;t I break my patterns, even when I understand them?</h2>
+          <p>You do not have to figure it all out at once. Choose the doorway that feels most
+            relevant today, and let the rest wait.</p>
           <p><a href="/start-here">See all five doorways &rarr;</a></p>
         </div>
-        <div class="grid grid--3">
 
-          <article class="door door--fix">
-            <p class="door__kicker">Fix the pattern</p>
-            <h3>The ARC Program</h3>
-            <p><em>&ldquo;I understand it, and I still can&rsquo;t stop.&rdquo;</em> The flagship 12-week
-              1:1 trauma recovery coaching container, for the woman who&rsquo;s done explaining her patterns
-              and ready to stop repeating them. A clinically grounded, body-based path from pattern to
-              purpose, guided by a nurse who has walked it herself.</p>
-            <div class="door__spacer"></div>
-            <a class="btn btn--secondary btn--full" href="https://calendly.com/coaching-carriepdavidson">Book a call</a>
-            <p class="meta" style="margin-top: var(--space-3);"><a href="/coaching">How coaching works &rarr;</a></p>
+        <div class="arch-cards">
+
+          <article class="arch-card arch-card--mist">
+            <svg class="arch-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M17 2l3 3-3 3"/><path d="M20 5H8a4 4 0 0 0-4 4v1"/>
+              <path d="M7 22l-3-3 3-3"/><path d="M4 19h12a4 4 0 0 0 4-4v-1"/>
+            </svg>
+            <h3>I keep repeating the same patterns</h3>
+            <p>See the loop&rsquo;s shape, gently and without shame.</p>
+            <a class="arch-card__cta" href="/quiz">Take the quiz &rarr;</a>
           </article>
 
-          <article class="door door--read">
-            <p class="door__kicker">Read the story</p>
-            <h3><em>Addicted to Trauma</em>: the memoir</h3>
-            <p><em>&ldquo;I want to know how she got out.&rdquo;</em> The nurse who became her own
-              patient, in her own words. A memoir about trauma and addiction as one wound, telling
-              itself in two different languages. Releasing Summer 2026.</p>
-            <div class="door__spacer"></div>
-            <a class="btn btn--secondary btn--full" href="https://carriepdavidson.substack.com/subscribe">Join the waitlist</a>
-            <p class="meta" style="margin-top: var(--space-3);"><a href="/book">About the book &rarr;</a></p>
+          <article class="arch-card arch-card--blush">
+            <svg class="arch-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9"/><path d="M16 8l-3 5-5 3 3-5 5-3z"/>
+            </svg>
+            <h3>I am trying to understand CPTSD</h3>
+            <p>Start with the essays on trauma and the nervous system.</p>
+            <a class="arch-card__cta" href="/writing">Read the essays &rarr;</a>
           </article>
 
-          <article class="door door--start">
-            <p class="door__kicker">Start free</p>
-            <h3>The Trauma Tree Worksheet + 3-minute quiz</h3>
-            <p><em>&ldquo;I&rsquo;m not ready to talk to anyone yet.&rdquo;</em> Start alone, on your
-              own time. Map the roots of your patterns, then let the Sunday Letter keep showing up:
-              one small weekly practice, no pressure attached.</p>
-            <div class="door__spacer"></div>
-            <a class="btn btn--ghost btn--full" href="assets/trauma-tree-worksheet.pdf">Get the free workbook</a>
-            <p class="meta" style="margin-top: var(--space-3);"><a href="/resources">See all free resources &rarr;</a></p>
+          <article class="arch-card arch-card--paper">
+            <svg class="arch-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M12 21v-7"/><path d="M12 14c0-3-2-5-5-5H5v2c0 3 2 5 5 5h2z"/>
+              <path d="M12 12c0-3 2-6 5-6h2v2c0 3-2 5-5 5h-2z"/>
+            </svg>
+            <h3>I am in recovery, or questioning addiction</h3>
+            <p>The addiction was never the root. Begin with the wound beneath it.</p>
+            <a class="arch-card__cta" href="/about">Read her story &rarr;</a>
+          </article>
+
+          <article class="arch-card arch-card--mist">
+            <svg class="arch-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/>
+            </svg>
+            <h3>I want support putting this into practice</h3>
+            <p>When you are ready, coaching walks beside your care, never in place of it.</p>
+            <a class="arch-card__cta" href="/coaching">How coaching works &rarr;</a>
+          </article>
+
+          <article class="arch-card arch-card--blush">
+            <svg class="arch-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h13"/>
+            </svg>
+            <h3>I want to read Carrie&rsquo;s story</h3>
+            <p>How she got out, in her own words. Releasing Summer 2026.</p>
+            <a class="arch-card__cta" href="/book">Explore the memoir &rarr;</a>
           </article>
 
         </div>
       </div>
     </section>
 
+    <div class="divider-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34 C 240 12 480 12 720 30 C 960 48 1200 48 1440 26" fill="none" stroke="#C9A87C" stroke-width="1.5"/>
+        <path d="M0 40 C 240 20 480 20 720 36 C 960 52 1200 52 1440 32" fill="none" stroke="#C9A87C" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+
     <!-- ============================================================
-         METHOD TEASER: make the Method concrete on-page.
+         UNDERSTANDING: the Method as a five-node thread (real steps
+         + ARC stages). Keeps the "how to break a trauma pattern" H2.
          ============================================================ -->
-    <section class="section" aria-labelledby="method-title">
+    <section class="section section--paper reveal" aria-labelledby="method-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">The Conscious Creation Method&trade;</p>
           <h2 id="method-title">How to break a trauma pattern: five steps</h2>
-          <p class="lede">The loop runs faster than thought. So we don&rsquo;t out-think it. We give it new evidence.</p>
-          <p>The loop is not a character flaw. It is a nervous system doing exactly what it was trained
-            to do, until you give it new evidence. Creativity is the opposite of stuck: the Method moves
-            through the three ARC stages (Awareness, Regulation, Creation) in five steps:</p>
+          <p class="lede">The loop runs faster than thought. So we do not out-think it. We give it new evidence.</p>
+          <p>The loop is not a character flaw. It is a nervous system doing exactly what it was
+            trained to do, until you give it new evidence. The Method moves through three ARC stages,
+            Awareness, Regulation, and Creation, in five steps.</p>
         </div>
-        <ol class="steps" aria-label="The five steps of the Conscious Creation Method">
-          <li class="step"><h3>Witness</h3><p>See the pattern without shame: name what the body is doing.</p></li>
-          <li class="step"><h3>Understand</h3><p>Trace the loop to its root: the wound beneath the behavior.</p></li>
-          <li class="step"><h3>Interrupt</h3><p>Meet the nervous system in the moment and offer it another option.</p></li>
-          <li class="step"><h3>Find Creative Flow</h3><p>Create your way through it: creation is the central mechanism, not a side tool. Build new, felt evidence that safety is possible.</p></li>
-          <li class="step"><h3>Build the Intentional Life</h3><p>Let the new pattern become the life you live on purpose. This is what lasting change feels like.</p></li>
-        </ol>
-        <div class="btn-row" style="margin-top: var(--space-6);">
-          <a class="btn btn--secondary" href="/method">Explore the Method &rarr;</a>
+
+        <div class="thread-diagram">
+          <div class="thread-track" aria-hidden="true">
+            <svg viewBox="0 0 1000 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 36 L100 36 Q200 12 300 36 Q400 60 500 36 Q600 12 700 36 Q800 60 900 36 L1000 36"
+                    fill="none" stroke="#C9A87C" stroke-width="2"/>
+            </svg>
+          </div>
+          <ol class="thread-nodes" aria-label="The five steps of the Conscious Creation Method">
+            <li class="thread-node">
+              <span class="thread-node__dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+              <div><p class="thread-node__arc">Awareness</p><h3>Witness</h3>
+                <p>See the pattern without shame: name what the body is doing.</p></div>
+            </li>
+            <li class="thread-node">
+              <span class="thread-node__dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              </span>
+              <div><p class="thread-node__arc">Awareness</p><h3>Understand</h3>
+                <p>Trace the loop to its root: the wound beneath the behavior.</p></div>
+            </li>
+            <li class="thread-node">
+              <span class="thread-node__dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+              </span>
+              <div><p class="thread-node__arc">Regulation</p><h3>Interrupt</h3>
+                <p>Meet the nervous system in the moment and offer it another option.</p></div>
+            </li>
+            <li class="thread-node">
+              <span class="thread-node__dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2z"/></svg>
+              </span>
+              <div><p class="thread-node__arc">Creation</p><h3>Find Creative Flow</h3>
+                <p>Create your way through it: build new, felt evidence that safety is possible.</p></div>
+            </li>
+            <li class="thread-node">
+              <span class="thread-node__dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+              </span>
+              <div><p class="thread-node__arc">Creation</p><h3>Build the Intentional Life</h3>
+                <p>Let the new pattern become the life you live on purpose.</p></div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="btn-row" style="margin-top: var(--space-7);">
+          <a class="btn btn--secondary" href="/method">See the Method &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         BOOK TEASER: book and coaching cross-sell each other.
-         ============================================================ -->
-    <!-- COPY-PASS -->
-    <section class="section section--alt" aria-labelledby="book-title">
-      <div class="container">
-        <div class="split">
-          <div>
-            <img class="img-placeholder" src="assets/addicted-to-trauma-cover.jpg"
-                 alt="Cover of Addicted to Trauma, a memoir by Carrie Davidson, RN (releasing Summer 2026)"
-                 loading="lazy" width="640" height="800">
-          </div>
-          <div class="stack">
-            <p class="eyebrow teaser__label">The book</p>
-            <h2 id="book-title"><em>Addicted to Trauma</em>: a memoir about trauma and addiction</h2>
-            <p class="signature">The same wound, telling itself in two different languages.</p>
-            <p>Part clinical, part confession: the story of a nurse who became her own patient, and
-              found her way out of a loop she could name but couldn&rsquo;t stop. For readers of
-              <em>What My Bones Know</em>, <em>In the Realm of Hungry Ghosts</em>, and
-              <em>The Body Keeps the Score</em>.</p>
-            <div class="btn-row">
-              <a class="btn btn--primary" href="https://carriepdavidson.substack.com/subscribe">Join the waitlist</a>
-              <a class="btn btn--ghost" href="/book">Read more &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="divider-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34 C 240 12 480 12 720 30 C 960 48 1200 48 1440 26" fill="none" stroke="#C9A87C" stroke-width="1.5"/>
+        <path d="M0 40 C 240 20 480 20 720 36 C 960 52 1200 52 1440 32" fill="none" stroke="#C9A87C" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
 
     <!-- ============================================================
-         ABOUT TEASER: E-E-A-T: RN + lived experience.
+         TRUST: Hi, I'm Carrie. Arch portrait + role lines + real bio.
          ============================================================ -->
-    <section class="section" aria-labelledby="about-title">
+    <section class="section section--blush reveal" aria-labelledby="about-title">
       <div class="container">
         <div class="split split--media-first">
           <div>
-            <img class="img-placeholder" src="assets/carrie-davidson.jpg"
-                 alt="Portrait of Carrie Davidson, registered nurse and trauma recovery coach"
-                 loading="lazy" width="640" height="800">
+            <div class="arch-photo">
+              <img src="assets/carrie-welcome.jpg"
+                   alt="Carrie Davidson in a white blazer on a garden path, arms open in welcome"
+                   loading="lazy" width="1500" height="1000">
+            </div>
           </div>
           <div class="stack">
-            <p class="eyebrow teaser__label">About Carrie</p>
-            <h2 id="about-title">Carrie Davidson, RN: the nurse who became her own patient</h2>
-            <p>I&rsquo;m a registered nurse (BSPH, BSN, RN) and certified trauma recovery coach. I trained
-              in complex trauma and addiction, and then lived the far side of both. That combination
-              is the whole point: I can speak the clinical language <em>and</em> tell you what it&rsquo;s
-              like from the inside.</p>
+            <p class="eyebrow">Hi, I&rsquo;m Carrie</p>
+            <h2 id="about-title">Registered nurse. Trauma recovery coach. Writer.
+              <span class="script-line">Survivor.</span></h2>
+            <p>I spent years trying nearly every evidence-based and experiential approach I could
+              find, not because I was researching them, but because I needed them. Today I combine
+              clinical understanding with lived experience to help others interrupt the same patterns.</p>
             <p class="signature">You do not have to think your way out. You have to feel your way home.</p>
             <div class="btn-row">
-              <a class="btn btn--secondary" href="/about">My story &rarr;</a>
+              <a class="btn btn--secondary" href="/about">Read her story &rarr;</a>
             </div>
           </div>
         </div>
@@ -266,21 +337,91 @@
     </section>
 
     <!-- ============================================================
-         SUNDAY LETTER SIGNUP: the "start free" fallback CTA.
+         EXPLORATION: Explore the latest (real essay, resource,
+         memoir excerpt, and the Sunday Letter) as editorial cards.
          ============================================================ -->
-    <section class="section section--accent" aria-labelledby="signup-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">The Sunday Letter</p>
-        <h2 id="signup-title">Finally feel at home in your body.</h2>
-        <p class="lede" style="color: var(--color-accent-soft);">Trauma recovery coaching through nervous
-          system regulation and creative healing.</p>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">A weekly note for the insight-rich and
-          transformation-poor: neuroscience precision, poetic reframe, and one small practice, every Sunday.
-          No hustle, no shame, no urgency. Just companionship on the way home to yourself.</p>
-        <!-- Subscription happens on Substack (no on-site form handler exists). -->
-        <div class="btn-row" style="justify-content: center;">
-          <a class="btn btn--primary" href="https://carriepdavidson.substack.com/subscribe">Get the Sunday Letter</a>
+    <section class="section section--ivory reveal" aria-labelledby="explore-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Writing, resources, and reflections</p>
+          <h2 id="explore-title">Explore the latest</h2>
         </div>
+        <div class="editorial-cards">
+
+          <a class="editorial-card" href="https://carriepdavidson.substack.com/p/what-addicted-to-trauma-actually">
+            <img class="editorial-card__media" src="assets/carrie-understand.jpg"
+                 alt="Carrie Davidson sitting beneath a tree, contemplative" loading="lazy" width="800" height="600">
+            <span class="editorial-card__body">
+              <span class="editorial-card__eyebrow">New essay</span>
+              <h3>What &ldquo;Addicted to Trauma&rdquo; Actually Means</h3>
+              <span class="editorial-card__more">Read now &rarr;</span>
+            </span>
+          </a>
+
+          <a class="editorial-card" href="/resources/befriending-your-nervous-system">
+            <img class="editorial-card__media" src="assets/cover-befriending-nervous-system.svg"
+                 alt="Cover of the Befriending Your Nervous System workbook" loading="lazy" width="800" height="600">
+            <span class="editorial-card__body">
+              <span class="editorial-card__eyebrow">Free resource</span>
+              <h3>Befriending Your Nervous System</h3>
+              <span class="editorial-card__more">Download now &rarr;</span>
+            </span>
+          </a>
+
+          <a class="editorial-card" href="/book#excerpt">
+            <img class="editorial-card__media" src="assets/addicted-to-trauma-cover.jpg"
+                 alt="Cover of the memoir Addicted to Trauma by Carrie Davidson" loading="lazy" width="800" height="600">
+            <span class="editorial-card__body">
+              <span class="editorial-card__eyebrow">From the memoir</span>
+              <h3>The Prologue</h3>
+              <span class="editorial-card__more">Read the prologue &rarr;</span>
+            </span>
+          </a>
+
+          <a class="editorial-card editorial-card--letter" href="https://carriepdavidson.substack.com/subscribe">
+            <span class="editorial-card__media">
+              <img src="assets/botanical-lavender-2.svg" alt="" loading="lazy" width="220" height="260">
+            </span>
+            <span class="editorial-card__body">
+              <span class="editorial-card__eyebrow">The Sunday Letter</span>
+              <h3>Words for the work no one else sees.</h3>
+              <span class="editorial-card__more">Join the letter &rarr;</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34 C 240 12 480 12 720 30 C 960 48 1200 48 1440 26" fill="none" stroke="#C9A87C" stroke-width="1.5"/>
+        <path d="M0 40 C 240 20 480 20 720 36 C 960 52 1200 52 1440 32" fill="none" stroke="#C9A87C" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <!-- ============================================================
+         INVITATION: the Sunday Letter, with a working Substack embed.
+         ============================================================ -->
+    <!-- COPY-PASS -->
+    <section class="section section--mist reveal" aria-labelledby="signup-title">
+      <div class="container container-narrow text-center" style="position: relative;">
+        <span class="botanical" style="left: -2.5rem; bottom: -1rem; width: 8rem;" aria-hidden="true">
+          <img src="assets/botanical-lavender-2.svg" alt=""></span>
+        <p class="eyebrow">The Sunday Letter</p>
+        <h2 id="signup-title">Finally feel at home in your body.</h2>
+        <p class="lede mx-auto">Words for the work no one else sees.</p>
+        <p class="mx-auto">A weekly note for the insight-rich and transformation-poor: neuroscience
+          precision, a poetic reframe, and one small practice, every Sunday. No hustle, no shame,
+          no urgency. Just companionship on the way home to yourself.</p>
+        <div class="substack-embed" style="margin-top: var(--space-6);">
+          <iframe src="https://carriepdavidson.substack.com/embed" title="Subscribe to The Sunday Letter"
+                  loading="lazy" frameborder="0" scrolling="no"></iframe>
+          <p class="substack-embed__fallback">
+            <a href="https://carriepdavidson.substack.com/subscribe">Prefer a link? Subscribe to The Sunday Letter on Substack &rarr;</a>
+          </p>
+        </div>
+        <p class="meta mx-auto" style="margin-top: var(--space-3);">No spam. Unsubscribe anytime.</p>
       </div>
     </section>
 

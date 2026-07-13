@@ -16,35 +16,79 @@
 
 /* 1. TOKENS ================================================================ */
 :root {
-  /* Color: lavender neutrals, deep purple accent, gold secondary. All text pairs meet WCAG AA. */
-  --color-bg:          #F7F5FB; /* lavender-tinted off-white page background */
-  --color-bg-deep:     #EFEBF7; /* lavender wash for alternating sections */
-  --color-surface:     #FCFBFE; /* cards / raised surfaces (lighter than bg) */
-  --color-ink:         #2B2333; /* deep plum near-black: body + headlines */
-  --color-ink-soft:    #5B4F6B; /* muted plum body / captions (AA on bg) */
-  --color-accent:      #4B2D73; /* deep royal purple: links, primary buttons, headline accents */
-  --color-accent-deep: #3A2159; /* purple hover/active */
-  --color-accent-soft: #E9E2F5; /* pale lavender tint: backgrounds, chips */
-  --color-clay:        #7A5C10; /* deep gold: secondary accent, pull-quotes, rules (AA as text) */
-  --color-clay-soft:   #F5EDCF; /* pale gold tint */
-  --color-border:      #E2DBEE; /* lavender hairline */
-  --color-focus:       #4B2D73; /* focus ring */
-  --color-on-accent:   #F8F5FC; /* text on deep accent surfaces */
+  /* ------------------------------------------------------------------
+     Color: "Conscious Creator" palette on Carrie's supplied backgrounds.
+     Existing token NAMES are preserved (interior pages build on them);
+     only VALUES were remapped for the immersive skin, plus new aliases.
 
-  /* Typography */
-  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
-                Georgia, Cambria, "Times New Roman", serif;
-  --font-sans:  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                "Helvetica Neue", Arial, sans-serif;
+     COMPUTED WCAG CONTRAST (sRGB, rounded). Target: ink >=7:1 everywhere;
+     accent/links >=4.5:1 (small text); eyebrow bronze >=4.5:1; metallic
+     copper is DECORATIVE ONLY (borders/dividers), never small text.
 
-  /* Fluid type scale (min, preferred, max) */
-  --step--1: clamp(0.83rem, 0.80rem + 0.15vw, 0.92rem);
-  --step-0:  clamp(1.03rem, 1.00rem + 0.18vw, 1.15rem);   /* body */
-  --step-1:  clamp(1.20rem, 1.13rem + 0.35vw, 1.45rem);
-  --step-2:  clamp(1.44rem, 1.30rem + 0.70vw, 1.90rem);
-  --step-3:  clamp(1.75rem, 1.52rem + 1.15vw, 2.55rem);
-  --step-4:  clamp(2.10rem, 1.75rem + 1.75vw, 3.35rem);
-  --step-5:  clamp(2.50rem, 1.95rem + 2.75vw, 4.30rem);   /* hero */
+     Deep Plum ink #3D2B4F on backgrounds:
+       on #FBF7FC main .......... 11.9:1   AAA
+       on #F4ECF8 soft-lavender . 11.0:1   AAA
+       on #EEE8F4 mist-deep ..... 10.6:1   AAA
+       on #FAF1F3 blush ......... 11.4:1   AAA
+       on #FFFDF8 ivory ......... 12.5:1   AAA
+       on #F8F2EB paper ......... 11.4:1   AAA
+     Ink-soft #574A66 on #FBF7FC . 7.3:1   AAA (body/captions)
+     Accent  #5E4B85 (links/btn text) on #FBF7FC 7.0:1 | on soft-lav 6.5:1
+       | on mist-deep 6.2:1 | on blush 6.7:1 | on paper 6.7:1  -> all AA+
+     Accent-deep #493A6B on #FBF7FC 9.4:1 (hover)
+     On-accent text #FBF7FC on #5E4B85 button ... 7.0:1  AAA
+     Eyebrow bronze #7A5A2E on #FBF7FC 6.0:1 | on paper 5.7:1 | mist-deep 5.3:1  AA+
+     Amethyst Orchid #7B68A0 on #FBF7FC 4.6:1  -> LARGE/DECORATIVE text only
+     Footer (Deep Plum bg): light lilac #E4D7F2 text 9.5:1 | link #D9C9EC 8.2:1  AAA
+     Copper #C9A87C: contrast ~3.2:1 on light -> DECORATIVE (borders/threads) only.
+     Focus ring #5E4B85 on light backgrounds 7.0:1  (clearly visible).
+     ------------------------------------------------------------------ */
+  --color-bg:          #FBF7FC; /* main page background (supplied) */
+  --color-bg-deep:     #F4ECF8; /* soft-lavender / mist wash: alternating sections */
+  --color-surface:     #FFFDF8; /* ivory: cards / raised surfaces */
+  --color-ink:         #3D2B4F; /* Deep Plum: body + headlines */
+  --color-ink-soft:    #574A66; /* muted plum body / captions (>=7:1 on bg) */
+  --color-accent:      #5E4B85; /* Amethyst Orchid darkened to AA: links, buttons, accents */
+  --color-accent-deep: #493A6B; /* hover/active */
+  --color-accent-soft: #EBE3F5; /* pale lavender tint: chip / soft fills */
+  --color-clay:        #7A5A2E; /* darkened bronze: usable as small text (eyebrows, rules) */
+  --color-clay-soft:   #F6EEDD; /* soft parchment tint */
+  --color-border:      #E7DCEF; /* lavender hairline */
+  --color-focus:       #5E4B85; /* focus ring (>=7:1 on light) */
+  --color-on-accent:   #FBF7FC; /* text on deep accent surfaces */
+
+  /* New background aliases (supplied washes) + metallic decorative accents */
+  --color-blush:       #FAF1F3; /* warm blush wash */
+  --color-ivory:       #FFFDF8; /* warm ivory */
+  --color-paper:       #F8F2EB; /* warm paper */
+  --color-mist:        #F4ECF8; /* soft lavender mist */
+  --color-mist-deep:   #EEE8F4; /* deeper lavender mist */
+  --color-plum:        #3D2B4F; /* Deep Plum: footer / dark anchor */
+  --color-plum-deep:   #322341; /* deeper plum for gradients */
+  --color-copper:      #C9A87C; /* Warm Copper: borders, threads, dividers (DECORATIVE) */
+  --color-bronze:      #a4865e; /* True Bronze: decorative */
+  --color-bronze-text: #7A5A2E; /* darkened bronze: eyebrows / small text (AA) */
+  --color-orchid:      #7B68A0; /* Amethyst Orchid: large/decorative text only */
+  --color-lilac:       #B8A9C9; /* Burnished Lilac: botanical strokes */
+  --color-footer-text: #E4D7F2; /* light lilac text on plum footer */
+  --color-footer-link: #D9C9EC; /* footer links on plum */
+
+  /* Typography: Cormorant Garamond (literary display) + DM Sans (humanist body).
+     Loaded via Google Fonts in each page <head> with font-display: swap. */
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype",
+                Palatino, "Book Antiqua", Georgia, Cambria, serif;
+  --font-sans:  "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Fluid type scale. Cormorant is delicate + small on the body, so the serif
+     display steps are enlarged so hierarchy still reads against DM Sans body. */
+  --step--1: clamp(0.80rem, 0.77rem + 0.15vw, 0.90rem);
+  --step-0:  clamp(1.0rem, 0.97rem + 0.18vw, 1.10rem);    /* body (DM Sans) */
+  --step-1:  clamp(1.30rem, 1.20rem + 0.42vw, 1.60rem);
+  --step-2:  clamp(1.65rem, 1.42rem + 0.95vw, 2.25rem);
+  --step-3:  clamp(2.05rem, 1.70rem + 1.45vw, 3.05rem);
+  --step-4:  clamp(2.45rem, 1.95rem + 2.10vw, 3.95rem);
+  --step-5:  clamp(2.95rem, 2.20rem + 3.30vw, 5.10rem);   /* hero */
 
   /* Spacing scale */
   --space-1: 0.25rem;  --space-2: 0.5rem;  --space-3: 0.75rem;
@@ -58,9 +102,9 @@
   --radius: 10px;
   --radius-lg: 18px;
   --border-hair: 1px solid var(--color-border);
-  --shadow-sm: 0 1px 2px rgba(43, 35, 51, 0.05);
-  --shadow-md: 0 6px 24px -12px rgba(43, 35, 51, 0.22);
-  --shadow-lg: 0 18px 48px -20px rgba(43, 35, 51, 0.28);
+  --shadow-sm: 0 1px 2px rgba(61, 43, 79, 0.06);
+  --shadow-md: 0 8px 28px -14px rgba(61, 43, 79, 0.22);
+  --shadow-lg: 0 20px 52px -22px rgba(61, 43, 79, 0.28);
   --transition: 180ms ease;
 }
 
@@ -90,13 +134,13 @@ a:hover { color: var(--color-accent-deep); }
 /* 3. TYPOGRAPHY + PROSE ==================================================== */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  font-weight: 600;          /* Cormorant SemiBold: literary display with presence */
+  line-height: 1.08;
+  letter-spacing: 0;
   color: var(--color-ink);
   text-wrap: balance;
 }
-h1 { font-size: var(--step-5); }
+h1 { font-size: var(--step-5); font-weight: 600; }
 h2 { font-size: var(--step-3); }
 h3 { font-size: var(--step-2); }
 h4 { font-size: var(--step-1); }
@@ -436,9 +480,18 @@ p { max-width: var(--measure); }
 .faq__answer > * + * { margin-top: var(--space-3); }
 
 /* 11. FOOTER =============================================================== */
-.site-footer { background: var(--color-bg-deep); border-top: var(--border-hair);
-  padding-block: var(--space-8) var(--space-6); font-size: var(--step--1); }
-.site-footer a { color: var(--color-accent-deep); }
+/* Dark Anchor: Deep Plum background with light lilac text (brand doc).
+   Light text on plum verified >=9:1; links >=8:1. A copper hairline thread
+   sits at the top edge as the only metallic accent. */
+.site-footer { background: var(--color-plum); border-top: 1px solid var(--color-copper);
+  padding-block: var(--space-8) var(--space-6); font-size: var(--step--1);
+  color: var(--color-footer-text); }
+.site-footer a { color: var(--color-footer-link); }
+.site-footer a:hover { color: #fff; }
+.site-footer h2 { color: #fff; }
+.site-footer .meta { color: var(--color-footer-text); }
+.site-footer .disclaimer { color: var(--color-footer-text); }
+.site-footer .footer-legal { color: var(--color-footer-link); border-top-color: rgba(201,168,124,0.30); }
 .footer-grid { display: grid; gap: var(--space-7); }
 @media (min-width: 44rem) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
 .footer-col h2 { font-size: var(--step-1); margin-bottom: var(--space-3); }
@@ -713,3 +766,257 @@ p { max-width: var(--measure); }
 }
 .work-links h3 { font-size: var(--step-0); margin-bottom: var(--space-1); }
 .work-links p { color: var(--color-ink-soft); margin: 0 0 var(--space-1); }
+
+/* =========================================================================
+   PHASE 5.5 ADDITIONS: immersive visual system (appended 2026-07-13).
+   Additive only. Uses the remapped tokens above. New components:
+   stacked brand, pill CTA, wave dividers, arch cards + arch photo, hero
+   photo fade, script line, method thread diagram, editorial cards,
+   Substack embed, botanical decorations, section washes, reveal motion.
+   ========================================================================= */
+
+/* --- Section wash helpers (supplied backgrounds) ------------------------- */
+.section--blush { background-color: var(--color-blush); }
+.section--ivory { background-color: var(--color-ivory); }
+.section--paper { background-color: var(--color-paper); }
+.section--mist  { background-color: var(--color-mist); }
+
+/* --- Stacked brand + credential line (header, index + start-here) -------- */
+.brand-stack {
+  display: inline-flex; flex-direction: column; gap: 0.28em;
+  text-decoration: none; line-height: 1; white-space: nowrap;
+}
+.brand-stack__name {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.75rem);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-ink);
+}
+.brand-stack__cred {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-bronze-text);
+}
+@media (max-width: 30rem) {
+  .brand-stack__cred { letter-spacing: 0.12em; font-size: 0.56rem; }
+}
+
+/* --- Pill CTA (rounded header/newsletter button) ------------------------- */
+.btn--pill { border-radius: 999px; padding-inline: 1.5em; }
+
+/* --- Wave divider: soft copper thread between sections ------------------- */
+/* Fixed height, aria-hidden, no layout shift. SVG stretches full width. */
+.divider-wave { position: relative; width: 100%; height: 52px; line-height: 0;
+  overflow: hidden; pointer-events: none; }
+.divider-wave svg { display: block; width: 100%; height: 100%; }
+
+/* --- Arch (doorway) card ------------------------------------------------- */
+.arch-card {
+  display: flex; flex-direction: column; height: 100%;
+  text-align: center; align-items: center;
+  background: var(--color-mist);
+  border: 1px solid var(--color-copper);
+  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
+  padding: var(--space-8) var(--space-5) var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.arch-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.arch-card--mist  { background: var(--color-mist); }
+.arch-card--blush { background: var(--color-blush); }
+.arch-card--paper { background: var(--color-paper); }
+.arch-card--ivory { background: var(--color-ivory); }
+.arch-card__icon {
+  width: 2.1rem; height: 2.1rem; color: var(--color-accent);
+  margin-bottom: var(--space-4); flex: 0 0 auto;
+}
+.arch-card h3 { font-size: var(--step-1); margin-bottom: var(--space-2); }
+.arch-card p { color: var(--color-ink-soft); font-size: var(--step--1); max-width: 26ch; }
+.arch-card__cta {
+  margin-top: auto; padding-top: var(--space-4);
+  font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--color-accent); text-decoration: none;
+}
+.arch-card__cta:hover { color: var(--color-accent-deep); text-decoration: underline; }
+
+/* Grid for the five homepage doorway arch cards */
+.arch-cards { display: grid; gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
+
+/* start-here: path cards adopt the arch doorway styling (content unchanged) */
+.path-card.arch-card {
+  text-align: left; align-items: stretch;
+  border-top: 1px solid var(--color-copper);
+  padding-top: var(--space-8);
+}
+.path-card.arch-card .path-card__icon { color: var(--color-accent); }
+
+/* --- Arch-masked portrait frame ----------------------------------------- */
+.arch-photo {
+  border-radius: 999px 999px var(--radius) var(--radius);
+  overflow: hidden; border: 1px solid var(--color-copper);
+  box-shadow: var(--shadow-md); background: var(--color-mist);
+}
+.arch-photo img { width: 100%; height: 100%; object-fit: cover;
+  aspect-ratio: 4 / 5; display: block; }
+
+/* --- Hero photo fade (blends photo into the page) ----------------------- */
+.photo-fade {
+  border-radius: var(--radius-lg);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 24%, #000 100%),
+    linear-gradient(to bottom, #000 68%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 24%, #000 100%),
+    linear-gradient(to bottom, #000 68%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+@media (max-width: 52rem) {
+  .photo-fade {
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+  }
+}
+
+/* --- Script accent line (Cormorant italic; matches the mockup) ----------- */
+.script-line {
+  font-family: var(--font-serif); font-style: italic; font-weight: 500;
+  color: var(--color-accent);
+}
+.script-line--lg { font-size: var(--step-2); line-height: 1.2; display: block; }
+
+/* --- Hero: two-column split (text + photo) ------------------------------ */
+.hero--split .hero__inner { max-width: none; }
+.hero__grid { display: grid; gap: var(--space-7); align-items: center; }
+@media (min-width: 52rem) {
+  .hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-8); }
+}
+.hero__copy { max-width: 34rem; }
+.hero__copy h1 span { display: block; }
+.hero__cred {
+  font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--color-bronze-text); margin-top: var(--space-6);
+}
+.hero__media { position: relative; }
+@media (max-width: 52rem) { .hero__media { order: -1; } }
+
+/* --- Method thread diagram (five nodes on a winding copper thread) ------- */
+.thread-diagram { position: relative; margin-top: var(--space-6); }
+.thread-nodes { display: grid; gap: var(--space-6); position: relative; }
+@media (min-width: 48rem) {
+  .thread-nodes { grid-template-columns: repeat(5, 1fr); gap: var(--space-4); }
+}
+.thread-track { display: none; }
+@media (min-width: 48rem) {
+  .thread-track { display: block; position: absolute; top: 0; left: 0;
+    width: 100%; height: 4.5rem; z-index: 0; pointer-events: none; }
+  .thread-track svg { width: 100%; height: 100%; }
+}
+.thread-node { position: relative; z-index: 1; text-align: center;
+  display: grid; grid-template-columns: 4.5rem 1fr; gap: var(--space-4);
+  align-items: center; text-align: left; }
+@media (min-width: 48rem) {
+  .thread-node { display: block; text-align: center; }
+}
+.thread-node__dot {
+  width: 4.5rem; height: 4.5rem; border-radius: 50%;
+  background: var(--color-mist); border: 2px solid var(--color-copper);
+  display: grid; place-items: center; flex: 0 0 auto;
+  margin: 0 0 0 0;
+}
+@media (min-width: 48rem) { .thread-node__dot { margin: 0 auto var(--space-4); } }
+.thread-node__dot svg { width: 1.9rem; height: 1.9rem; color: var(--color-accent); }
+.thread-node__arc {
+  font-family: var(--font-sans); font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-bronze-text); margin-bottom: var(--space-1);
+}
+.thread-node h3 { font-size: var(--step-1); margin-bottom: var(--space-1); }
+.thread-node p { color: var(--color-ink-soft); font-size: var(--step--1);
+  margin-inline: auto; max-width: 22ch; }
+/* Mobile: a vertical copper thread behind the left dot column */
+@media (max-width: 47.99rem) {
+  .thread-nodes::before {
+    content: ""; position: absolute; left: 2.25rem; top: 2.25rem; bottom: 2.25rem;
+    width: 2px; background: var(--color-copper); opacity: 0.7; z-index: 0;
+  }
+  .thread-node p { margin-inline: 0; }
+}
+
+/* --- Editorial cards (Explore the latest) ------------------------------- */
+.editorial-cards { display: grid; gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr)); }
+.editorial-card {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  text-decoration: none; color: inherit;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.editorial-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.editorial-card__media { width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  background: var(--color-mist); }
+.editorial-card__body { display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-5); flex: 1 1 auto; }
+.editorial-card__eyebrow {
+  font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-bronze-text);
+}
+.editorial-card h3 { font-size: var(--step-1); }
+.editorial-card__more { margin-top: auto; padding-top: var(--space-3);
+  font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
+  letter-spacing: 0.06em; color: var(--color-accent); }
+.editorial-card:hover .editorial-card__more { text-decoration: underline; }
+/* Dark Sunday-Letter variant */
+.editorial-card--letter { background: var(--color-plum); border-color: var(--color-plum-deep); }
+.editorial-card--letter .editorial-card__media {
+  background: linear-gradient(160deg, var(--color-plum) 0%, var(--color-plum-deep) 100%);
+  display: grid; place-items: center; }
+.editorial-card--letter .editorial-card__media img { width: 55%; opacity: 0.9; }
+.editorial-card--letter h3 { color: #fff; }
+.editorial-card--letter .editorial-card__eyebrow { color: var(--color-copper); }
+.editorial-card--letter .editorial-card__more { color: var(--color-footer-link); }
+
+/* --- Substack embed band ------------------------------------------------ */
+.substack-embed { max-width: 100%; }
+.substack-embed iframe {
+  width: 100%; max-width: 480px; height: 150px; margin-inline: auto;
+  border: 1px solid var(--color-border); border-radius: var(--radius);
+  background: var(--color-surface);
+}
+.substack-embed__fallback {
+  font-size: var(--step--1); color: var(--color-ink-soft);
+  margin-top: var(--space-3);
+}
+
+/* --- Botanical decorations (aria-hidden) -------------------------------- */
+.botanical { position: absolute; z-index: 0; pointer-events: none;
+  opacity: 0.9; user-select: none; }
+.botanical img { width: 100%; height: auto; }
+@media (max-width: 48rem) { .botanical { display: none; } }
+
+/* --- Reveal on scroll: gentle fade-rise (progressive enhancement) ------- */
+/* Sections are fully visible without JS. When JS adds .js to <html>, the
+   .reveal elements start hidden and fade-rise as they enter the viewport,
+   only when the user has not requested reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal { opacity: 0; transform: translateY(18px);
+    transition: opacity 720ms ease, transform 720ms ease; }
+  html.js .reveal.is-visible { opacity: 1; transform: none; }
+  /* Animated link underline (content + nav links) */
+  .nav__link { position: relative; }
+  .nav__link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+    background: var(--color-accent); transform: scaleX(0); transform-origin: left;
+    transition: transform var(--transition);
+  }
+  .nav__link:hover::after { transform: scaleX(1); }
+  .nav__link[aria-current="page"]::after { transform: scaleX(1); }
+}
+
+/* Keep the new hover lifts still under reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .arch-card:hover, .editorial-card:hover { transform: none; }
+}

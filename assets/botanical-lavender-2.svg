@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 260" fill="none" aria-hidden="true" role="presentation">
+  <g stroke="#B8A9C9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- three sprigs fanning from a lower point -->
+    <path d="M110 256 C 96 210 78 176 60 138"/>
+    <path d="M110 256 C 110 206 110 168 110 122"/>
+    <path d="M110 256 C 124 210 142 176 160 138"/>
+    <!-- small leaves along stems -->
+    <path d="M78 176 C 66 176 56 168 50 156 C 62 158 72 164 78 176 Z"/>
+    <path d="M110 190 C 122 188 132 180 138 168 C 126 170 116 178 110 190 Z"/>
+    <path d="M142 176 C 154 176 164 168 170 156 C 158 158 148 164 142 176 Z"/>
+  </g>
+  <!-- buds -->
+  <g fill="#C9A87C" opacity="0.85">
+    <ellipse cx="55" cy="130" rx="4.4" ry="6" transform="rotate(-24 55 130)"/>
+    <ellipse cx="60" cy="116" rx="4" ry="5.6" transform="rotate(-22 60 116)"/>
+    <ellipse cx="66" cy="104" rx="3.6" ry="5" transform="rotate(-20 66 104)"/>
+    <ellipse cx="165" cy="130" rx="4.4" ry="6" transform="rotate(24 165 130)"/>
+    <ellipse cx="160" cy="116" rx="4" ry="5.6" transform="rotate(22 160 116)"/>
+    <ellipse cx="154" cy="104" rx="3.6" ry="5" transform="rotate(20 154 104)"/>
+  </g>
+  <g fill="#B8A9C9">
+    <ellipse cx="110" cy="116" rx="4.4" ry="6.2"/>
+    <ellipse cx="110" cy="102" rx="4" ry="5.6"/>
+    <ellipse cx="110" cy="90" rx="3.4" ry="4.8"/>
+  </g>
+</svg>
