@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================
+     TEMPLATE: copy to root, fill TODO fields, remove noindex, add to sitemap.
+     ----------------------------------------------------------------------------
+     This is the editorial template for FUTURE native, on-site articles
+     (see CONTENT-ROADMAP.md Part 2). Essays currently live canonically on
+     Substack; this template is only for original articles written to live on
+     carriepdavidson.com. It ships noindex + excluded from sitemap.xml until the
+     first native article publishes.
+
+     To publish an article:
+       1. Copy this file to the repo root as /your-article-slug.html
+          (extensionless clean URL: /your-article-slug).
+       2. Replace every TODO(...) marker below with real content.
+       3. Assets are referenced root-relative (/css, /js, /assets) so they work
+          from the root the same as from /templates/. Keep them root-relative.
+       4. Remove the <meta name="robots" content="noindex"> line in <head>.
+       5. Add the new clean URL to sitemap.xml.
+       6. Run: bash checks/site-check.sh  (unique title, one H1, JSON-LD, links).
+
+     VOICE: two-layer copy (search-language title + poetic payoff), answer-first
+     under each H2, named credentialed byline, no em-dashes, never diagnose,
+     never promise a cure, no fear or shame. Coaching is not therapy.
+     ============================================================================ -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TEMPLATE ONLY: remove this line when publishing a real article. -->
+  <meta name="robots" content="noindex">
+
+  <!-- TODO(TITLE): search-language, <=60 chars, unique across the site. -->
+  <title>TODO Article Title | Carrie Davidson, RN</title>
+  <!-- TODO(DESCRIPTION): answer-first summary, <=155 chars. -->
+  <meta name="description" content="TODO one-sentence, answer-first description of this article in plain search language, 155 characters or fewer.">
+  <!-- TODO(CANONICAL): the article's clean URL. -->
+  <link rel="canonical" href="https://carriepdavidson.com/TODO-article-slug">
+  <meta name="author" content="Carrie Davidson, BSPH, BSN, RN">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TODO Article Title | Carrie Davidson, RN">
+  <meta property="og:description" content="TODO poetic-plus-precise social description.">
+  <meta property="og:url" content="https://carriepdavidson.com/TODO-article-slug">
+  <meta property="og:site_name" content="Carrie Davidson">
+  <meta property="og:image" content="https://carriepdavidson.com/assets/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://carriepdavidson.com/assets/og-default.jpg">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Article + Breadcrumb structured data. Fill every TODO before publishing. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TODO Article Title",
+    "description": "TODO answer-first description.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://carriepdavidson.com/#carrie",
+      "name": "Carrie Davidson",
+      "honorificSuffix": "BSPH, BSN, RN"
+    },
+    "publisher": { "@id": "https://carriepdavidson.com/#org" },
+    "datePublished": "TODO-YYYY-MM-DD",
+    "dateModified": "TODO-YYYY-MM-DD",
+    "mainEntityOfPage": "https://carriepdavidson.com/TODO-article-slug",
+    "image": "https://carriepdavidson.com/assets/og-default.jpg"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carriepdavidson.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://carriepdavidson.com/writing" },
+      { "@type": "ListItem", "position": 3, "name": "TODO Topic", "item": "https://carriepdavidson.com/writing/TODO-topic" },
+      { "@type": "ListItem", "position": 4, "name": "TODO Article Title", "item": "https://carriepdavidson.com/TODO-article-slug" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       SITE HEADER: copied verbatim from start-here.html.
+       aria-current marks Writing (articles live under Writing).
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/">Carrie Davidson<span>.</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/start-here">Start Here</a></li>
+          <li><a class="nav__link" href="/writing" aria-current="page">Writing</a></li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
+          <li><a class="nav__link" href="/book">The Memoir</a></li>
+          <li><a class="nav__link" href="/coaching">Coaching</a></li>
+          <li><a class="nav__link" href="/about">About</a></li>
+        </ul>
+        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         ARTICLE HEADER: breadcrumb, topic label, two-layer title,
+         byline + dates + reading time.
+         ============================================================ -->
+    <article>
+      <header class="hero">
+        <div class="container container-narrow">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="/writing">Writing</a></li>
+              <!-- TODO(TOPIC): link to this article's topic hub. -->
+              <li><a href="/writing/TODO-topic">TODO Topic</a></li>
+              <li><span aria-current="page">TODO Article Title</span></li>
+            </ol>
+          </nav>
+
+          <!-- TODO(TOPIC LABEL): the topic, linking to its hub. -->
+          <p class="eyebrow"><a href="/writing/TODO-topic" style="color: inherit;">TODO Topic</a></p>
+
+          <!-- ONE H1 per page: the search-language title. -->
+          <h1>TODO: the literal question a tired woman would type at 11pm</h1>
+          <!-- Subtitle / poetic payoff. -->
+          <p class="lede">TODO: the poetic reframe that lands beneath the search-language title.</p>
+
+          <!-- Byline + dates + reading time. -->
+          <p class="meta">
+            By <strong>Carrie Davidson, BSPH, BSN, RN</strong> &middot; Registered nurse &amp; certified
+            trauma recovery coach<br>
+            Published <time datetime="TODO-YYYY-MM-DD">TODO Month D, YYYY</time> &middot;
+            Last updated <time datetime="TODO-YYYY-MM-DD">TODO Month D, YYYY</time> &middot;
+            TODO&nbsp;min read
+          </p>
+        </div>
+      </header>
+
+      <!-- ============================================================
+           SCOPE DISCLAIMER: place near the top for sensitive topics.
+           Voice mirrors the footer disclaimer. Keep for YMYL trust.
+           ============================================================ -->
+      <div class="container container-narrow">
+        <blockquote class="disclaimer" style="margin-top: var(--space-6);">
+          This article is trauma recovery education, not therapy, diagnosis, or medical treatment. It is
+          not a substitute for care from a licensed mental-health or medical professional. If you are
+          working with a therapist or physician, let this walk beside that care. It does not replace it.
+        </blockquote>
+      </div>
+
+      <!-- ============================================================
+           TABLE OF CONTENTS: for long educational pieces only. Delete
+           for short essays. Anchors must match the H2 ids below.
+           ============================================================ -->
+      <div class="section section--tight">
+        <div class="container container-narrow">
+          <nav class="article-toc" aria-label="On this page">
+            <h2>On this page</h2>
+            <ol>
+              <li><a href="#section-1">TODO: first section heading</a></li>
+              <li><a href="#section-2">TODO: second section heading</a></li>
+              <li><a href="#section-3">TODO: third section heading</a></li>
+              <li><a href="#references">References</a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           BODY: answer-first under every H2. First 40 to 60 words after
+           each heading directly answer that heading (AEO). Keep neuroscience
+           precise; no fear, no shame, no diagnosis.
+           ============================================================ -->
+      <div class="section section--tight">
+        <div class="container container-narrow prose">
+
+          <h2 id="section-1">TODO: first section heading (a real question)</h2>
+          <p>TODO: answer the heading directly in the first 40 to 60 words, so this paragraph can stand
+            alone as a citable unit. Then expand.</p>
+
+          <!-- PULL-QUOTE pattern: a single resonant line, sparingly. -->
+          <blockquote class="pullquote">TODO: one resonant line worth pulling out. Signature voice, no
+            hype.</blockquote>
+
+          <h2 id="section-2">TODO: second section heading</h2>
+          <p>TODO: answer-first paragraph, then supporting detail. Cite any statistic or clinical claim
+            with a linked primary source in the References section below.</p>
+
+          <!-- ============================================================
+               CLINICAL PERSPECTIVE vs LIVED PERSPECTIVE callout: the two-tone
+               card pair. Use to hold both the nurse's precision and the
+               survivor's experience side by side. Carrie is both.
+               ============================================================ -->
+          <div class="perspective-pair" style="margin: var(--space-6) 0;">
+            <div class="perspective-card perspective-card--clinical">
+              <p class="perspective-card__label">The clinical perspective</p>
+              <p>TODO: what the neuroscience or nursing lens says about this, precisely and without
+                pathologizing.</p>
+            </div>
+            <div class="perspective-card perspective-card--lived">
+              <p class="perspective-card__label">The lived perspective</p>
+              <p>TODO: what this actually feels like from the inside, in Carrie's first-person voice.
+                No new private details beyond what is already public.</p>
+            </div>
+          </div>
+
+          <h2 id="section-3">TODO: third section heading</h2>
+          <p>TODO: answer-first paragraph. Close the body by pointing gently toward a next step, never a
+            cure or a promise.</p>
+
+          <!-- ============================================================
+               REFERENCES: every statistic or clinical claim, with a linked
+               primary source. Delete rows you do not use.
+               ============================================================ -->
+          <h2 id="references">References</h2>
+          <ol class="meta">
+            <li>TODO: Author / Organization. <em>Source title</em>. <a href="TODO-url">Primary source</a>.</li>
+            <li>TODO: Author / Organization. <em>Source title</em>. <a href="TODO-url">Primary source</a>.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============================================================
+         AUTHOR BOX: Carrie + credentials + photo.
+         ============================================================ -->
+    <div class="section section--tight">
+      <div class="container container-narrow">
+        <div class="author-box">
+          <img class="author-box__photo" src="/assets/carrie-davidson.jpg"
+               alt="Carrie Davidson, registered nurse and trauma recovery coach"
+               width="84" height="84" loading="lazy">
+          <div>
+            <h2>Carrie Davidson, BSPH, BSN, RN</h2>
+            <p class="meta">Registered nurse and certified trauma recovery coach; the nurse who became her
+              own patient. She writes about the overlap of complex trauma and addiction: the same wound,
+              telling itself in two different languages. Author of the memoir <em>Addicted to Trauma</em>.</p>
+            <p class="meta"><a href="/about">More about Carrie &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         RELATED-CONTENT ENDCAP: 2 to 3 related links + one free resource
+         + ONE primary next step. Vary the primary CTA by article context
+         (quiz for patterns, Sunday Letter for essays, waitlist for memoir).
+         ============================================================ -->
+    <section class="section section--alt" aria-labelledby="endcap-title">
+      <div class="container container-narrow">
+        <div class="section-head">
+          <p class="eyebrow">Keep reading</p>
+          <h2 id="endcap-title">If this spoke to you</h2>
+        </div>
+        <div class="keep-reading">
+          <ul class="topic-links">
+            <li>
+              <h3><a href="TODO-related-1">TODO: related article or essay title</a></h3>
+              <p>TODO: one-line description.</p>
+            </li>
+            <li>
+              <h3><a href="TODO-related-2">TODO: related article or essay title</a></h3>
+              <p>TODO: one-line description.</p>
+            </li>
+            <li>
+              <h3><a href="/writing/TODO-topic">TODO: the topic hub</a></h3>
+              <p>TODO: the guide that gathers everything on this theme.</p>
+            </li>
+          </ul>
+
+          <div class="card">
+            <p class="eyebrow">A free companion</p>
+            <!-- TODO(RESOURCE): the one resource that fits this article. -->
+            <h3>TODO: resource name</h3>
+            <p>TODO: one sentence on what it is and who it helps. Education, not treatment.</p>
+            <div class="btn-row">
+              <a class="btn btn--secondary" href="/assets/TODO-resource.pdf">Download it free</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ONE primary next step. Choose the single best CTA for this article. -->
+        <div class="btn-row" style="margin-top: var(--space-7);">
+          <a class="btn btn--primary" href="TODO-primary-cta">TODO: one primary next step</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER: copied verbatim from start-here.html.
+       Only change for this subdirectory template: the worksheet link is
+       root-relative (/assets/...) so it resolves from /templates/ and root.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <h2>Carrie Davidson, RN</h2>
+          <p class="meta">Registered nurse &amp; certified trauma recovery coach. Trauma and addiction
+            are not separate problems. They are the same wound, telling itself in two different
+            languages.</p>
+          <p class="meta" style="margin-top: var(--space-3);">
+            <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
+            Conscious Coaching Collective, PLLC
+          </p>
+        </div>
+
+        <nav class="footer-col" aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="/start-here">Start Here</a></li>
+            <li><a href="/coaching">Coaching</a></li>
+            <li><a href="/method">The Method</a></li>
+            <li><a href="/book">The Book</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/writing">Writing</a></li>
+            <li><a href="/resources">Free Resources</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h2>Start here</h2>
+          <ul>
+            <li><a href="https://calendly.com/coaching-carriepdavidson">Book a coaching call</a></li>
+            <li><a href="https://carriepdavidson.substack.com/subscribe">Join the book waitlist</a></li>
+            <li><a href="/assets/trauma-tree-worksheet.pdf">Free Trauma Tree Worksheet</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Crisis resources: ethical + trust signal. Keep on every page. -->
+      <section class="crisis" aria-label="Crisis resources">
+        <h2>If you are in crisis, reach out now</h2>
+        <p>You deserve immediate support. In the U.S.: call or text <strong>988</strong>
+          (Suicide &amp; Crisis Lifeline) &middot; text <strong>HOME</strong> to <strong>741741</strong>
+          (Crisis Text Line) &middot; SAMHSA National Helpline <strong>1-800-662-4357</strong>.
+          If you are in immediate danger, call 911.</p>
+      </section>
+
+      <!-- Scope disclaimer: in Carrie's voice; YMYL trust. -->
+      <p class="disclaimer">Coaching is companionship alongside care, not a replacement for it.
+        This work is trauma recovery coaching and education. It is not therapy, diagnosis, or medical
+        treatment, and it is not a substitute for care from a licensed mental-health or medical
+        professional. If you are working with a therapist or physician, coaching can walk beside that
+        care. It does not replace it.</p>
+
+      <div class="footer-legal">
+        <span>&copy; 2026 Conscious Coaching Collective, PLLC. All rights reserved.</span>
+        <span>Made with care under carriepdavidson.com</span>
+      </div>
+    </div>
+
+    <!-- Organization JSON-LD: sitewide entity (one canonical name). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://carriepdavidson.com/#org",
+      "name": "Conscious Coaching Collective, PLLC",
+      "url": "https://carriepdavidson.com/",
+      "email": "coaching@carriepdavidson.com",
+      "founder": { "@id": "https://carriepdavidson.com/#carrie" },
+      "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
+      "sameAs": [
+        "https://www.instagram.com/carriepdavidson",
+        "https://carriepdavidson.substack.com"
+      ]
+    }
+    </script>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

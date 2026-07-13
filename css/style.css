@@ -533,3 +533,88 @@ p { max-width: var(--measure); }
   padding: 0; font-size: var(--step--1);
 }
 .path-card__links a { color: var(--color-accent-deep); }
+
+/* ==========================================================================
+   PHASE 3 ADDITIONS: publication architecture (topic hubs + article template)
+   Appended 2026-07-12. Additive only. No rule above this banner is modified.
+   Serves: writing/*.html topic hubs, templates/article.html, the "Browse by
+   topic" block on writing.html. Built on existing tokens + surface language.
+   ========================================================================== */
+
+/* Breadcrumb trail: visible companion to the BreadcrumbList JSON-LD. */
+.breadcrumb { margin-bottom: var(--space-5); font-size: var(--step--1); }
+.breadcrumb ol {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+}
+.breadcrumb li { display: flex; align-items: center; gap: var(--space-2); color: var(--color-ink-soft); }
+.breadcrumb li + li::before { content: "/"; color: var(--color-border); }
+.breadcrumb a { color: var(--color-ink-soft); text-decoration: none; }
+.breadcrumb a:hover { color: var(--color-accent); text-decoration: underline; }
+.breadcrumb [aria-current="page"] { color: var(--color-ink); font-weight: 600; }
+
+/* Topic hub: the "start with this essay" featured pick. */
+.hub-featured {
+  background: var(--color-accent-soft); border: var(--border-hair);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+}
+.hub-featured .eyebrow { color: var(--color-accent-deep); }
+.hub-featured h3 { font-size: var(--step-2); margin: var(--space-2) 0 var(--space-3); }
+.hub-featured h3 a { color: var(--color-ink); text-decoration: none; }
+.hub-featured h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.hub-featured p { color: var(--color-ink-soft); }
+
+/* Topic hub: the rest of the cluster as a readable list (not a card grid). */
+.hub-essays { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-5); }
+.hub-essays li { border-bottom: var(--border-hair); padding-bottom: var(--space-5); }
+.hub-essays li:last-child { border-bottom: 0; padding-bottom: 0; }
+.hub-essays h3 { font-size: var(--step-1); margin-bottom: var(--space-2); }
+.hub-essays h3 a { color: var(--color-ink); text-decoration: none; }
+.hub-essays h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.hub-essays p { color: var(--color-ink-soft); }
+.hub-essays .meta { margin-top: var(--space-2); }
+
+/* Neighboring-topic links + the "Browse by topic" list on writing.html. */
+.topic-links { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-5); }
+@media (min-width: 40rem) { .topic-links--2 { grid-template-columns: 1fr 1fr; } }
+.topic-links h3 { font-size: var(--step-1); margin-bottom: var(--space-1); }
+.topic-links h3 a { color: var(--color-ink); text-decoration: none; }
+.topic-links h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.topic-links p { color: var(--color-ink-soft); font-size: var(--step--1); }
+
+/* Article template: table of contents for long educational pieces. */
+.article-toc {
+  background: var(--color-surface); border: var(--border-hair);
+  border-radius: var(--radius); padding: var(--space-5) var(--space-6);
+}
+.article-toc h2 { font-size: var(--step-1); margin-bottom: var(--space-3); }
+.article-toc ol { margin: 0; }
+.article-toc li { margin-bottom: var(--space-2); }
+
+/* Article template: author box (photo + credentials). */
+.author-box {
+  display: flex; gap: var(--space-5); align-items: flex-start;
+  background: var(--color-surface); border: var(--border-hair);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+}
+.author-box__photo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.author-box h2 { font-size: var(--step-1); margin-bottom: var(--space-1); }
+.author-box .meta { margin-top: var(--space-2); }
+@media (max-width: 32rem) { .author-box { flex-direction: column; } }
+
+/* Article template: clinical-perspective vs lived-perspective two-tone pair. */
+.perspective-pair { display: grid; gap: var(--space-4); }
+@media (min-width: 44rem) { .perspective-pair { grid-template-columns: 1fr 1fr; } }
+.perspective-card { border: var(--border-hair); border-radius: var(--radius-lg); padding: var(--space-6); }
+.perspective-card__label {
+  font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: var(--space-3);
+}
+.perspective-card--clinical { background: var(--color-accent-soft); }
+.perspective-card--clinical .perspective-card__label { color: var(--color-accent-deep); }
+.perspective-card--lived { background: var(--color-clay-soft); border-color: #E4D6A4; }
+.perspective-card--lived .perspective-card__label { color: var(--color-clay); }
+
+/* Related-content endcap ("Keep reading") for the article template. */
+.keep-reading { display: grid; gap: var(--space-5); }

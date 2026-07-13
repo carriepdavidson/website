@@ -13,3 +13,10 @@
 - Homepage hero: credential eyebrow (Registered Nurse, Author, Trauma Recovery Coach); ONE dominant CTA (Start here) + quiet ghost secondary (Read her story); H1, signature lede, body, and trust pills unchanged. Three-doors section retitled "Where do you want to begin?" and demoted to secondary actions linking /start-here.
 - CSS: new commented Phase 2 section only (.path-card system, .btn min-height 44px). robots.txt added.
 - QA note: headless-Edge screenshots on this machine clip below ~500px window width (verified with a control page); mobile layout verified by CSS inspection (no fixed widths; only .table-compare exceeds 375px and it sits inside .table-wrap overflow-x). Real-device check recommended.
+
+## Phase 3: Publication architecture (2026-07-12)
+- Three topic hubs (guide format, breadcrumbs + BreadcrumbList): /writing/nervous-system (3 essays), /writing/adhd (2), /writing/trauma-patterns (4, merged with cptsd cluster). Clusters below the 2-essay threshold got no page (no empty indexable hubs).
+- writing.html gains a Browse-by-topic section; essays and Sunday Letter CTA untouched.
+- templates/article.html: full editorial article template (noindexed, TODO-marked) with Article + BreadcrumbList schema, TOC, author box, clinical-vs-lived perspective pattern, related-content endcap.
+- Dead-end audit: method/book/coaching/about already end in a single primary next step; no changes needed.
+- CSS: additive PHASE 3 block only (.breadcrumb, .topic-links, hub + article components).
