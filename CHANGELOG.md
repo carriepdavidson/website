@@ -27,3 +27,9 @@
 - sitemap.xml (21 clean URLs), branded 404.html (noindex, calm voice, four doors), robots.txt already pointing at sitemap.
 - Quiz result screens gain a per-type "read next" pathway (fight/flight to nervous-system hub; freeze/fawn to trauma-patterns hub); language stays non-diagnostic.
 - CSS: additive PHASE 4 block only.
+
+## Phase 5: Authority pages (2026-07-13)
+- Reusable credibility strip (.cred-strip) on about, coaching, book, media.
+- About restructured: In brief facts, current work links, coaching philosophy + scope/ethics block; her story prose preserved byte-for-byte; media section as TODO placeholder.
+- Book: waitlist benefit line under hero CTA; author cred-strip. Coaching: cred-strip + FAQ link near apply CTA.
+- media.html: complete noindexed template, unlinked, every unverifiable fact behind TODO(CARRIE) comments.
