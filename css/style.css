@@ -53,8 +53,8 @@
 
   /* Background aliases (cream washes) + thread-violet decorative accents */
   --color-blush:       #F3EFFA; /* soft lavender wash */
-  --color-ivory:       #FFFDF8; /* warm ivory */
-  --color-paper:       #F3EEE3; /* paper cream */
+  --color-ivory:       #FDFCFF; /* near-white lavender */
+  --color-paper:       #ECE8F7; /* deep lavender wash (was paper cream) */
   --color-mist:        #EEEAF8; /* lavender mist */
   --color-mist-deep:   #E9E4F5; /* deeper lavender (grace moment) */
   --color-plum:        #3F3168; /* deep plum-charcoal: dark anchor (letter card) */
