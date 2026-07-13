@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="60" viewBox="0 0 1200 60" aria-hidden="true" focusable="false">
+  <!-- PATTERN LANGUAGE divider, grade 3 THE OPEN PATH: used near the FOOT of a page,
+       before the invitation. The line is nearly straight, rising, unfinished. -->
+  <path d="M0 40 C 240 38, 480 34, 720 30 C 900 27, 1060 24, 1180 22"
+        fill="none" stroke="#C9A87C" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="1180" cy="22" r="3.5" fill="#C9A87C" opacity="0.6"/>
+</svg>

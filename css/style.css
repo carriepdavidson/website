@@ -803,11 +803,11 @@ p { max-width: var(--measure); }
 /* --- Pill CTA (rounded header/newsletter button) ------------------------- */
 .btn--pill { border-radius: 999px; padding-inline: 1.5em; }
 
-/* --- Wave divider: soft copper thread between sections ------------------- */
-/* Fixed height, aria-hidden, no layout shift. SVG stretches full width. */
-.divider-wave { position: relative; width: 100%; height: 52px; line-height: 0;
-  overflow: hidden; pointer-events: none; }
-.divider-wave svg { display: block; width: 100%; height: 100%; }
+/* --- Wave divider: RETIRED in Phase 6. Replaced sitewide by the Pattern
+   Language (.pattern-divider). See the PATTERN LANGUAGE block at end of file
+   and docs/pattern-language.md ("retire generic waves as pages are touched").
+   The old .divider-wave used an inline SVG, no external asset, so nothing to
+   delete from /assets. ------------------------------------------------------ */
 
 /* --- Arch (doorway) card ------------------------------------------------- */
 .arch-card {
@@ -1019,4 +1019,76 @@ p { max-width: var(--measure); }
 /* Keep the new hover lifts still under reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .arch-card:hover, .editorial-card:hover { transform: none; }
+}
+
+/* ========================================================================
+   PATTERN LANGUAGE  (Phase 6)  --  the site's signature visual motif
+   ------------------------------------------------------------------------
+   One motif, one grammar: a thin line that begins in loops and gradually
+   opens into a path. This is the site's ownable signature. The law lives in
+   docs/pattern-language.md (asset table, scroll rule, restraint rules).
+   Assets are static SVGs in /assets. This block is the ONLY connective line
+   motif on the site; the old .divider-wave was retired above.
+
+   THE SCROLL RULE (signature behavior): dividers appear in grade order down
+   every page, 1 loop -> 2 easing -> 3 open, so scrolling enacts the brand
+   promise (the line becomes more ordered toward the invitation). Never place
+   a lower grade below a higher one.
+
+   RESTRAINT: at most one feature strip + three dividers per page.
+
+   ACCESSIBILITY: every instance is decorative and MUST carry
+   aria-hidden="true" on its element, with ONE exception: the master
+   .pattern-strip on the method page carries role="img" + aria-label (its
+   text alternative describing the movement) instead of aria-hidden. The
+   .pattern-strip on about.html stays decorative (aria-hidden="true").
+   ======================================================================== */
+
+/* Divider: full-bleed copper thread between sections. The element's
+   aspect-ratio equals the asset's (1200x60), so the box reserves its exact
+   height before the SVG paints -> zero layout shift. Because element ratio
+   and image ratio match, background-size: contain fills the box perfectly
+   and never crops the line or its still point (contain over cover so no
+   loop, bloom, or terminal dot is ever clipped). */
+.pattern-divider {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1200 / 60;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+}
+.pattern-divider--loop   { background-image: url("../assets/pattern-divider-1.svg"); } /* grade 1: coils still running   (FIRST divider, after the hero) */
+.pattern-divider--easing { background-image: url("../assets/pattern-divider-2.svg"); } /* grade 2: one loop opening, still point appears (MID-page) */
+.pattern-divider--open   { background-image: url("../assets/pattern-divider-3.svg"); } /* grade 3: nearly straight, rising, unfinished (LAST, pre-invitation) */
+
+/* Feature strip: the whole movement drawn once (master, 1200x160). Feature
+   moments ONLY (method page + about "What I built from it"); never more than
+   once per page. Centered in a capped-width container with generous vertical
+   breathing room. aspect-ratio again prevents layout shift. */
+.pattern-strip {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: var(--space-8) auto;
+  aspect-ratio: 1200 / 160;
+  background: url("../assets/pattern-line-master.svg") center / contain no-repeat;
+  pointer-events: none;
+}
+/* Small variant: a quieter close (e.g. end-of-article slot in templates). */
+.pattern-strip--small { max-width: 460px; }
+
+/* Figure wrapper for the labelled feature strip (method page): the strip
+   plus its visible microcopy. */
+.pattern-figure { margin: var(--space-8) auto; max-width: 760px; }
+.pattern-figure .pattern-strip { margin-block: 0 var(--space-4); }
+.pattern-figure figcaption {
+  max-width: 52ch;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--step--1);
+  font-style: italic;
+  color: var(--color-ink-soft);
 }

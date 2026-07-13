@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="60" viewBox="0 0 1200 60" aria-hidden="true" focusable="false">
+  <!-- PATTERN LANGUAGE divider, grade 1 THE LOOP: used near the TOP of a page.
+       The line still coils: the pattern is running. -->
+  <path d="M0 38 C 120 34, 260 30, 380 32
+           C 420 33, 448 40, 470 40 C 500 40, 500 16, 470 16 C 458 16, 452 24, 460 32
+           C 476 46, 512 46, 545 42
+           C 575 39, 596 40, 616 40 C 646 40, 646 16, 616 16 C 604 16, 598 24, 606 32
+           C 622 46, 660 44, 700 40
+           C 840 30, 1040 30, 1200 34"
+        fill="none" stroke="#C9A87C" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+</svg>
