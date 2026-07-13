@@ -1201,7 +1201,7 @@ p { max-width: var(--measure); }
       rgba(250,247,240,0.60) 54%, rgba(124,119,192,0.10) 76%,
       rgba(90,85,160,0.32) 100%),
     linear-gradient(180deg, rgba(124,119,192,0.16), rgba(124,119,192,0.04)),
-    url("../assets/carrie-pond.jpg");
+    url("../assets/carrie-laughing.jpg");
   background-size: cover, cover, cover;
   background-position: center, center, right center;
 }
@@ -1222,7 +1222,7 @@ p { max-width: var(--measure); }
         rgba(250,247,240,0.30) 0%, rgba(250,247,240,0.72) 46%,
         var(--color-bg) 82%),
       linear-gradient(180deg, rgba(124,119,192,0.14), rgba(124,119,192,0.04)),
-      url("../assets/carrie-pond.jpg");
+      url("../assets/carrie-laughing.jpg");
     background-position: center top, center, center top;
   }
   .hero--immersive { min-height: 0; }
