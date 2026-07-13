@@ -55,3 +55,6 @@ AEO questions: What is the trauma loop? / How do you break a trauma pattern? / C
 
 ## Palette note
 BrandStory "Conscious Creator" palette (Cloud Dancer #F0EDE8, Burnished Lilac #B8A9C9, Amethyst Orchid #7B68A0, Warm Copper #C9A87C, Deep Plum #3D2B4F, Parchment Gold #E8D5B7, True Bronze #a4865e) harmonizes with the ImmersiveExample mockup tokens Carrie supplied (#FBF7FC / #F4ECF8 / #FAF1F3 / #FFFDF8 / #F8F2EB / #EEE8F4). Redesign uses the mockup backgrounds + Deep Plum ink + Amethyst Orchid CTAs + Warm Copper/True Bronze metallic accents (bronze where small-text contrast is needed). Typography: Cormorant Garamond headlines (Light/Regular; italic for Carrie's direct voice) + DM Sans body, both Google Fonts. Avoid: pure white, corporate blue, mint, neon, stark black, saturated pink.
+
+## Credential display rule (Carrie, 2026-07-13)
+Degrees are public (BSPH, BSN, RN, Certified Trauma Recovery Coach). The institution name is NOT displayed on the site: never name the university in site copy, bios, or schema.
