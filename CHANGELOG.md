@@ -20,3 +20,10 @@
 - templates/article.html: full editorial article template (noindexed, TODO-marked) with Article + BreadcrumbList schema, TOC, author box, clinical-vs-lived perspective pattern, related-content endcap.
 - Dead-end audit: method/book/coaching/about already end in a single primary next step; no changes needed.
 - CSS: additive PHASE 3 block only (.breadcrumb, .topic-links, hub + article components).
+
+## Phase 4: Resource architecture, sitemap, quiz pathways (2026-07-13)
+- 8 resource detail pages under /resources/ (what it is, who it may help, format + size, open direct download, related hub, inline scope disclaimer, breadcrumbs + schema). No email gates; page counts stated only where verifiable.
+- resources.html library regrouped by need (Grounding and Regulation; Understanding Patterns; ADHD and Executive Functioning; Reflection and Creativity); card titles link to detail pages with direct-download links preserved; companion workbook cross-linked, not duplicated.
+- sitemap.xml (21 clean URLs), branded 404.html (noindex, calm voice, four doors), robots.txt already pointing at sitemap.
+- Quiz result screens gain a per-type "read next" pathway (fight/flight to nervous-system hub; freeze/fawn to trauma-patterns hub); language stays non-diagnostic.
+- CSS: additive PHASE 4 block only.

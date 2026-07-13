@@ -618,3 +618,45 @@ p { max-width: var(--measure); }
 
 /* Related-content endcap ("Keep reading") for the article template. */
 .keep-reading { display: grid; gap: var(--space-5); }
+
+/* ===========================================================
+   PHASE 4 ADDITIONS (appended 2026-07-12)
+   Resource detail pages + library grouping. Tokens only.
+   =========================================================== */
+
+/* Resource detail: cover + info two-column lead */
+.resource-lead { display: grid; gap: var(--space-6); align-items: start; }
+@media (min-width: 44rem) {
+  .resource-lead--cover { grid-template-columns: minmax(0, 240px) 1fr; gap: var(--space-7); }
+}
+.resource-cover {
+  width: 100%; height: auto; border-radius: var(--radius);
+  border: var(--border-hair); box-shadow: var(--shadow-md);
+}
+
+/* Format / size facts as a compact definition list */
+.res-facts {
+  margin: var(--space-5) 0 0; display: grid; grid-template-columns: auto 1fr;
+  gap: var(--space-2) var(--space-5); font-family: var(--font-sans); font-size: var(--step--1);
+}
+.res-facts dt { font-weight: 600; color: var(--color-ink); }
+.res-facts dd { margin: 0; color: var(--color-ink-soft); }
+
+/* Shorter inline scope disclaimer (reuses footer voice) */
+.disclaimer-inline {
+  font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
+  background: var(--color-clay-soft); border-left: 3px solid var(--color-clay);
+  border-radius: var(--radius); padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-6); max-width: none;
+}
+
+/* Grouped library sections on /resources */
+.library-group { margin-top: var(--space-8); }
+.library-group:first-of-type { margin-top: var(--space-6); }
+.library-group__head { margin-bottom: var(--space-5); }
+.library-group__head h3 { font-size: var(--step-1); margin-bottom: var(--space-1); }
+.library-group__head p { color: var(--color-ink-soft); margin: 0; }
+.library-crosslink {
+  margin-top: var(--space-8); padding-top: var(--space-6);
+  border-top: var(--border-hair); color: var(--color-ink-soft);
+}

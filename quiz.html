@@ -363,6 +363,14 @@
           <div id="qz-nextstep"></div>
         </div>
 
+        <!-- Where to go next: per-type reading (Phase 4). Populated by JS. -->
+        <div class="qz-result-section" id="qz-readnext">
+          <p class="eyebrow">Where to go next</p>
+          <h3>Reading that fits your pattern</h3>
+          <p id="qz-readnext-desc"></p>
+          <p class="meta"><a id="qz-readnext-link" href="/writing">Keep reading &rarr;</a></p>
+        </div>
+
         <!-- Secondary pattern -->
         <div class="qz-secondary">
           <p class="eyebrow">Your secondary pattern</p>
@@ -577,6 +585,18 @@
     };
 
     var TYPE_ORDER = ["fight", "flight", "freeze", "fawn"];
+
+    // Per-type "where to go next" reading (Phase 4). Non-diagnostic; maps to hubs.
+    var NEXTLINKS = {
+      fight:  { href: "/writing/nervous-system", label: "nervous system regulation",
+        desc: "The fight response lives in a nervous system braced for threat. These essays work the problem from the body up, with none of the hype." },
+      flight: { href: "/writing/nervous-system", label: "nervous system regulation",
+        desc: "The flight response is a nervous system that feels safer in motion than in stillness. These essays are about learning to come to rest." },
+      freeze: { href: "/writing/trauma-patterns", label: "CPTSD and trauma patterns",
+        desc: "Freeze is one of the quietest survival patterns. These essays are about why the same loops repeat, and where a pattern can finally stop." },
+      fawn:   { href: "/writing/trauma-patterns", label: "CPTSD and trauma patterns",
+        desc: "The fawn response shows up most between people. These essays are about the patterns we repeat in relationship, and staying with yourself." }
+    };
 
     // Scoring thresholds: normalized = sum/20; <0.4 mild, <0.7 moderate, else significant.
     function tier(sum) {
@@ -810,6 +830,15 @@
       // Cost + Next
       fillParas("qz-cost", p.cost);
       fillParas("qz-nextstep", p.next);
+
+      // Where to go next: per-type reading link
+      var nl = NEXTLINKS[primary];
+      if (nl) {
+        document.getElementById("qz-readnext-desc").textContent = nl.desc;
+        var rn = document.getElementById("qz-readnext-link");
+        rn.setAttribute("href", nl.href);
+        rn.textContent = "Read more on " + nl.label + " →";
+      }
 
       // Secondary
       document.getElementById("qz-secondary-name").textContent = PROFILES[secondary].type;
