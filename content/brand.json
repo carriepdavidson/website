@@ -1,0 +1,163 @@
+{
+  "_readme": "Canonical brand language for carriepdavidson.com. This is the single source of truth: future copy edits should copy from here rather than re-deriving language from the BrandStory document. PUBLIC-SAFE only. This file deliberately contains NO pricing, NO persona names (the two ICP personas are internal), and NO internal strategy notes. It lives in a PUBLIC repo. Sourcing rule: the Conscious Creation Method is 'informed by research,' never 'backed by' or 'science-backed by' any study; no effect-size figures appear here (see RESEARCH-VERIFICATION.md). Classification and TODO items live in BRAND-CONTENT-MAP.md. No em-dashes anywhere in site copy.",
+  "name": "Carrie Davidson",
+  "credential_line": "BSPH, BSN, RN · Certified Trauma Recovery Coach · Author",
+  "entity": "Conscious Coaching Collective, PLLC",
+  "promise": {
+    "primary": "Finally feel at home in your body.",
+    "supporting": "Trauma recovery coaching through nervous system regulation and creative healing."
+  },
+  "positioning": {
+    "short": "The nurse who became her own patient.",
+    "long": "A registered nurse and certified trauma recovery coach who builds methods from her own recovery, not just her training. She helps people who are insight-rich and transformation-poor find a way out that moves through the body, not around it."
+  },
+  "credentials": [
+    "BSPH, Duke University",
+    "BSN, Duke University",
+    "Registered Nurse (RN)",
+    "Certified Trauma Recovery Coach",
+    "Author of Addicted to Trauma (2026)",
+    "Creator of the Conscious Creation Method™"
+  ],
+  "method": {
+    "name": "The Conscious Creation Method™",
+    "premise": "Creativity is the opposite of stuck. When you interrupt the loop and make something, you stop surviving the same story and start building a new one. This is not art therapy and not journaling as homework. It is a structured method informed by research on nervous-system regulation, trauma, and creative arts interventions.",
+    "arc": [
+      {
+        "stage": "A",
+        "name": "Awareness",
+        "steps": "Steps 1 and 2",
+        "tagline": "See the pattern. Name the story.",
+        "note": "You cannot change what you cannot see."
+      },
+      {
+        "stage": "R",
+        "name": "Regulation",
+        "steps": "Step 3",
+        "tagline": "Build the pause. Interrupt the loop.",
+        "note": "The power lives in the window between trigger and response."
+      },
+      {
+        "stage": "C",
+        "name": "Creation",
+        "steps": "Steps 4 and 5",
+        "tagline": "Find flow. Build the intentional life.",
+        "note": "The act of making something moves what talking cannot reach."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "name": "Witness",
+        "meaning": "Build the capacity to observe the pattern without becoming it. You stop identifying with the loop and start seeing it as data.",
+        "may_shift": false
+      },
+      {
+        "number": 2,
+        "name": "Understand",
+        "meaning": "Ask why the loop is running and what purpose it once served. The pattern stops feeling like a character flaw and starts feeling like a nervous system doing its job with outdated information.",
+        "may_shift": false
+      },
+      {
+        "number": 3,
+        "name": "Interrupt",
+        "meaning": "Build the pause on purpose, one breath at a time. Choice becomes available where there was only reaction.",
+        "may_shift": false
+      },
+      {
+        "number": 4,
+        "name": "Find Creative Flow",
+        "meaning": "Creation is the central mechanism, not a side tool. Making something moves stuck energy the body has been bracing against.",
+        "may_shift": false
+      },
+      {
+        "number": 5,
+        "name": "Build the Intentional Life",
+        "meaning": "The daily, unglamorous work of building new habits from what creation reveals. The new pattern is built through repetition, the same way the old one was.",
+        "may_shift": true,
+        "may_shift_note": "Canonical name is 'Build the Intentional Life.' An earlier brand-brief draft called this step 'Sustain.' Use the canonical name; noted here in case future copy references the older label."
+      }
+    ]
+  },
+  "bios": {
+    "homepage": "Carrie Davidson is a registered nurse, certified trauma recovery coach, and author of Addicted to Trauma. Through the Conscious Creation Method™, her five-step framework for nervous system regulation and creative healing, she helps people interrupt the pattern at its source and build something new on purpose.",
+    "full": "See /about for the full first-person About-page bio (canonical long form).",
+    "brief": "Carrie Davidson is a registered nurse, certified trauma recovery coach, and author of Addicted to Trauma (2026). She is the creator of the Conscious Creation Method™, a five-step framework for breaking the trauma loop through nervous system regulation and creative healing. Carrie holds a BSPH and BSN from Duke University. She coaches from lived experience: she has been the nurse reading the chart and the patient inside it.",
+    "speaker_intro": "Our next speaker spent two years on a cardiac floor reading vital signs before the monitors caught them. She was good at it because she had been reading rooms for danger since she was six years old. She is a registered nurse with a BSPH and BSN from Duke, a certified trauma recovery coach, and the author of the memoir Addicted to Trauma. She is the creator of the Conscious Creation Method™. She has been the nurse holding the chart. She has also been the patient in the white hallway who could not remember her own name. She built her method from both chairs. Please welcome Carrie Davidson.",
+    "podcast_short": "Carrie Davidson is a registered nurse, certified trauma recovery coach, and author of Addicted to Trauma (2026). She is the creator of the Conscious Creation Method™, a five-step framework for breaking the trauma loop through nervous system regulation and creative healing. Carrie holds a BSPH and BSN from Duke and has been on both sides of the chart."
+  },
+  "audiences": {
+    "primary": {
+      "label": "The therapy-veteran seeker",
+      "recognition": "You have read the books. Done the therapy. Tried the apps, the workshops, the breathwork. You understand your patterns better than most people ever will. And you are still reacting the same way to the same triggers. That is not failure. That is the loop. You do not have to talk about it one more time to heal it. You can create your way through it."
+    },
+    "healthcare": {
+      "label": "The healthcare caregiver",
+      "recognition": "You went into this work to give. Somewhere along the way, giving became the only thing you knew how to do. The creative life that was just yours went quiet, then silent. You call it burnout. But your body is telling you something older is underneath it. You do not have to keep giving from empty. The way back to yourself is still there."
+    }
+  },
+  "memoir": {
+    "title": "Addicted to Trauma",
+    "subtitle": "A story of CPTSD, Addiction, and the Patterns that almost killed me",
+    "tagline": "The story of what it took to stop running the patterns that almost killed me.",
+    "status": "waitlist, releasing 2026, confirm exact timing"
+  },
+  "voice": {
+    "favor": [
+      "the loop",
+      "the pattern",
+      "the pause",
+      "nervous system",
+      "regulate",
+      "interrupt",
+      "witness",
+      "zero to one",
+      "the work",
+      "return",
+      "turn the car around",
+      "feel your way home",
+      "building the gap",
+      "debride the wound"
+    ],
+    "limit": [
+      "Clinical language only where precision matters; human everywhere else",
+      "Swearing only where natural, never for effect, never in formal contexts",
+      "First person on the About and Memoir pages; second person for reader recognition"
+    ],
+    "banned": [
+      "journey",
+      "empower",
+      "transformation",
+      "holistic",
+      "thrive",
+      "trauma-informed"
+    ],
+    "rules": [
+      "Never say the Method is 'backed by' or 'science-backed by' any study. Say it is 'informed by research on nervous-system regulation, trauma, and creative arts interventions.'",
+      "Publish no effect-size figures or statistics without a linked primary source; the creative-arts research is referenced only as 'emerging research,' figure-free (see RESEARCH-VERIFICATION.md).",
+      "Promise interruption, not transformation. Lead with recognition before any offer.",
+      "Never position Carrie as the hero. She is the guide who has been there.",
+      "Never diagnose, never promise a cure, never use fear or shame urgency. Reframe, do not pathologize.",
+      "Causality canon: trauma comes first, addiction is its result and a symptom, never a moral failure and never the root. Do not specify substance versus behavioral.",
+      "Coaching is companionship alongside care, not a replacement for therapy or medical treatment.",
+      "No em-dashes anywhere.",
+      "Every piece should feel like a 2am realization that found its thesis by the end. Does the first sentence earn the second?"
+    ]
+  },
+  "signature_lines": [
+    "You are not broken. You are patterned. And patterns can change.",
+    "Finally feel at home in your body.",
+    "Break the trauma loop. Not by talking about it. By creating your way through it.",
+    "You can create your way through it.",
+    "Creativity is the opposite of stuck.",
+    "You do not have to talk about it one more time to heal it.",
+    "She has been the nurse reading the chart and the patient inside it.",
+    "I coach from the floor I once found myself on, now standing.",
+    "You do not have to be ready. You have to be willing.",
+    "You cannot think your way out. You have to feel your way home.",
+    "Healing is not a destination. It is a returning.",
+    "The soul is the point. Some things were never meant to be automated.",
+    "Insight-rich and transformation-poor.",
+    "The loop is not a character flaw. It is a nervous system doing exactly what it was trained to do, until you give it new evidence."
+  ]
+}

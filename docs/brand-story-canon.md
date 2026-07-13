@@ -38,7 +38,7 @@ Premise: "Creativity is the opposite of stuck." Not art therapy; a structured me
 - Direct; clinical when precision matters, human everywhere else; first person on About; "every piece should feel like a 2am realization that found its thesis by the end."
 - USE her words: the loop, the pattern, the pause, nervous system, regulate, interrupt, witness, zero to one, the work, return, turn the car around, feel your way home, building the gap.
 - **BANNED words** (sweep site): journey (use arc/loop/return), empower (use reclaim/interrupt/choose), transformation (use shift/change/return), holistic, thrive, trauma-informed.
-- Promise interruption, not transformation. Maya (therapy-veteran seeker) and Dana (healthcare caregiver) must feel seen before any offer appears. Never make Carrie the hero; she is the guide who has been there.
+- Promise interruption, not transformation. The therapy-veteran seeker and the healthcare caregiver must feel seen before any offer appears. Never make Carrie the hero; she is the guide who has been there.
 
 ## SEO/AEO terms (brand-official)
 Primary: trauma recovery coaching; break the trauma loop; nervous system regulation; CPTSD recovery coach; creative healing for trauma.
