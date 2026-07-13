@@ -1,6 +1,6 @@
 /* ==========================================================================
-   carriepdavidson.com — Design System
-   Mood: warm clinical-calm. Linen, dusk, warm neutrals + one deep accent (teal).
+   carriepdavidson.com: Design System
+   Mood: warm clinical-calm. Linen, dusk, warm neutrals + one deep accent (purple).
    Literary serif headlines + humanist sans body. WCAG AA. Single warm light theme.
 
    Structure:
@@ -16,16 +16,16 @@
 
 /* 1. TOKENS ================================================================ */
 :root {
-  /* Color — lavender neutrals, deep purple accent, gold secondary. All text pairs meet WCAG AA. */
+  /* Color: lavender neutrals, deep purple accent, gold secondary. All text pairs meet WCAG AA. */
   --color-bg:          #F7F5FB; /* lavender-tinted off-white page background */
   --color-bg-deep:     #EFEBF7; /* lavender wash for alternating sections */
   --color-surface:     #FCFBFE; /* cards / raised surfaces (lighter than bg) */
-  --color-ink:         #2B2333; /* deep plum near-black — body + headlines */
+  --color-ink:         #2B2333; /* deep plum near-black: body + headlines */
   --color-ink-soft:    #5B4F6B; /* muted plum body / captions (AA on bg) */
-  --color-accent:      #4B2D73; /* deep royal purple — links, primary buttons, headline accents */
+  --color-accent:      #4B2D73; /* deep royal purple: links, primary buttons, headline accents */
   --color-accent-deep: #3A2159; /* purple hover/active */
-  --color-accent-soft: #E9E2F5; /* pale lavender tint — backgrounds, chips */
-  --color-clay:        #7A5C10; /* deep gold — secondary accent, pull-quotes, rules (AA as text) */
+  --color-accent-soft: #E9E2F5; /* pale lavender tint: backgrounds, chips */
+  --color-clay:        #7A5C10; /* deep gold: secondary accent, pull-quotes, rules (AA as text) */
   --color-clay-soft:   #F5EDCF; /* pale gold tint */
   --color-border:      #E2DBEE; /* lavender hairline */
   --color-focus:       #4B2D73; /* focus ring */
@@ -103,7 +103,7 @@ h4 { font-size: var(--step-1); }
 
 p { max-width: var(--measure); }
 
-/* Eyebrow / kicker — small uppercase label above a heading */
+/* Eyebrow / kicker: small uppercase label above a heading */
 .eyebrow {
   font-family: var(--font-sans);
   font-size: var(--step--1);
@@ -114,7 +114,7 @@ p { max-width: var(--measure); }
   margin-bottom: var(--space-3);
 }
 
-/* Lede — the poetic payoff line that follows a search-language H1/H2 */
+/* Lede: the poetic payoff line that follows a search-language H1/H2 */
 .lede {
   font-family: var(--font-serif);
   font-size: var(--step-2);
@@ -124,7 +124,7 @@ p { max-width: var(--measure); }
   max-width: 40ch;
 }
 
-/* Signature line — Carrie's canonical voice lines, set apart */
+/* Signature line: Carrie's canonical voice lines, set apart */
 .signature {
   font-family: var(--font-serif);
   font-size: var(--step-2);
@@ -134,7 +134,7 @@ p { max-width: var(--measure); }
   max-width: 30ch;
 }
 
-/* Pull-quote — large emphasis quote inside prose */
+/* Pull-quote: large emphasis quote inside prose */
 .pullquote {
   font-family: var(--font-serif);
   font-size: var(--step-3);
@@ -147,7 +147,7 @@ p { max-width: var(--measure); }
   max-width: 34ch;
 }
 
-/* .prose — long-form article body used on inner pages */
+/* .prose: long-form article body used on inner pages */
 .prose { max-width: var(--measure); }
 .prose > * + * { margin-top: var(--space-5); }
 .prose h2 { margin-top: var(--space-8); }
@@ -155,7 +155,7 @@ p { max-width: var(--measure); }
 .prose ul, .prose ol { padding-left: 1.3em; }
 .prose li + li { margin-top: var(--space-2); }
 
-/* Meta line — byline / last-updated (E-E-A-T + freshness signal) */
+/* Meta line: byline / last-updated (E-E-A-T + freshness signal) */
 .meta {
   font-size: var(--step--1);
   color: var(--color-ink-soft);
@@ -267,15 +267,15 @@ p { max-width: var(--measure); }
 }
 .btn:active { transform: translateY(1px); }
 
-/* Primary — deep teal, for the page's single main CTA */
+/* Primary: deep purple, for the page's single main CTA */
 .btn--primary { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
 .btn--primary:hover { background: var(--color-accent-deep); border-color: var(--color-accent-deep); color: #fff; }
 
-/* Secondary — outlined, for the alternate door */
+/* Secondary: outlined, for the alternate door */
 .btn--secondary { background: transparent; color: var(--color-accent); border-color: var(--color-accent); }
 .btn--secondary:hover { background: var(--color-accent-soft); color: var(--color-accent-deep); }
 
-/* Ghost — low emphasis / on tinted backgrounds */
+/* Ghost: low emphasis / on tinted backgrounds */
 .btn--ghost { background: transparent; color: var(--color-ink); border-color: var(--color-border); }
 .btn--ghost:hover { background: var(--color-surface); border-color: var(--color-ink-soft); }
 
@@ -295,7 +295,7 @@ p { max-width: var(--measure); }
 }
 .card > * + * { margin-top: var(--space-4); }
 
-/* Door — the three primary pathway cards on the homepage.
+/* Door: the three primary pathway cards on the homepage.
    Modifiers tint the top rule to distinguish the three intents. */
 .door {
   display: flex; flex-direction: column; height: 100%;
@@ -330,7 +330,7 @@ p { max-width: var(--measure); }
 .hero .lede { margin-bottom: var(--space-6); }
 .hero .btn-row { margin-top: var(--space-6); }
 
-/* Image placeholder — subtle CSS texture where a photo of Carrie belongs.
+/* Image placeholder: subtle CSS texture where a photo of Carrie belongs.
    Apply to a wrapper or directly to <img> via .img-placeholder. */
 .img-placeholder {
   background-color: var(--color-bg-deep);
@@ -345,7 +345,7 @@ p { max-width: var(--measure); }
 .img-placeholder--wide { aspect-ratio: 16 / 10; }
 .img-placeholder__label { padding: var(--space-3) var(--space-4); font-style: italic; }
 
-/* Method steps — the five-step Conscious Creation Method */
+/* Method steps: the five-step Conscious Creation Method */
 .steps { display: grid; gap: var(--space-4); counter-reset: step; padding: 0; list-style: none; }
 @media (min-width: 40rem) { .steps { grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); } }
 .step {
@@ -360,10 +360,10 @@ p { max-width: var(--measure); }
 .step h3 { font-size: var(--step-1); margin-bottom: var(--space-1); }
 .step p { font-size: var(--step--1); color: var(--color-ink-soft); }
 
-/* Teaser — a compact "learn more about X" block (book / about / method) */
+/* Teaser: a compact "learn more about X" block (book / about / method) */
 .teaser__label { color: var(--color-clay); }
 
-/* Stat / data point (bridge stats to method — AEO "hard specifics") */
+/* Stat / data point (bridge stats to method: AEO "hard specifics") */
 .stat { font-family: var(--font-serif); font-size: var(--step-4); color: var(--color-accent);
   line-height: 1; }
 .stat + p { margin-top: var(--space-2); color: var(--color-ink-soft); }
@@ -403,7 +403,7 @@ p { max-width: var(--measure); }
 .section--accent .input { background: rgba(255,255,255,0.95); color: var(--color-ink); }
 
 /* 10. FAQ ACCORDION ======================================================== */
-/* Built on native <details>/<summary> — no JS required, keyboard-accessible. */
+/* Built on native <details>/<summary>: no JS required, keyboard-accessible. */
 .faq { max-width: var(--container-narrow); }
 .faq__item {
   border-bottom: var(--border-hair); background: transparent;
@@ -435,7 +435,7 @@ p { max-width: var(--measure); }
 .footer-col a { text-decoration: none; }
 .footer-col a:hover { text-decoration: underline; }
 
-/* Crisis resources — emphasized, ethical + trust signal */
+/* Crisis resources: emphasized, ethical + trust signal */
 .crisis {
   background: var(--color-clay-soft); border: 1px solid #E4D6A4; border-radius: var(--radius);
   padding: var(--space-4) var(--space-5); margin-top: var(--space-7);
@@ -444,7 +444,7 @@ p { max-width: var(--measure); }
   color: var(--color-clay); margin-bottom: var(--space-2); }
 .crisis p { max-width: none; color: var(--color-ink); }
 
-/* Scope disclaimer — in her voice; YMYL trust */
+/* Scope disclaimer: in her voice; YMYL trust */
 .disclaimer { margin-top: var(--space-6); color: var(--color-ink-soft); max-width: 70ch; }
 
 .footer-legal { margin-top: var(--space-7); padding-top: var(--space-5);
