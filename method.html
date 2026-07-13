@@ -133,11 +133,41 @@
             columns: each stage only becomes possible once the one before it has settled in the body.</p>
         </div>
 
-        <!-- Pattern Language: the master strip (the whole movement drawn as one
-             line). Feature moment. Carries a text alternative, per the doc. -->
-        <figure class="pattern-figure">
-          <div class="pattern-strip" role="img"
-               aria-label="The Conscious Creation Method drawn as one continuous line: looping coils that ease open into a still pause, then bloom into lilac buds and rise into an open, unfinished path."></div>
+        <!-- Pattern Language: the master strip, inline so the line can draw
+             itself forward on first view (the site's one signature interaction;
+             fully static under prefers-reduced-motion). -->
+        <figure class="pattern-figure reveal">
+          <svg class="pattern-draw" viewBox="0 0 1200 160" role="img"
+               aria-label="The Conscious Creation Method drawn as one continuous line: looping coils that ease open into a still pause, then bloom into lilac buds and rise into an open, unfinished path."
+               xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;display:block;margin-inline:auto;height:auto;">
+            <path class="draw-1" pathLength="1" d="M40 100
+                 C 70 100, 70 60, 100 60 C 130 60, 130 100, 100 100 C 88 100, 82 92, 90 82
+                 C 110 58, 150 58, 180 60 C 210 62, 210 100, 180 100 C 168 100, 162 92, 170 82
+                 C 190 58, 230 58, 260 60 C 290 62, 290 100, 260 100 C 248 100, 242 92, 250 82
+                 C 272 56, 320 54, 356 62 C 388 69, 404 84, 416 92"
+                 fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
+            <circle class="draw-dot" cx="470" cy="94" r="7" fill="#5E4B85"/>
+            <circle class="draw-dot" cx="470" cy="94" r="14" fill="none" stroke="#B8A9C999" stroke-width="1.5"/>
+            <path class="draw-2" pathLength="1" d="M524 92 C 560 86, 600 82, 640 76 C 700 67, 760 60, 820 56"
+                 fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
+            <g class="draw-bloom">
+              <g stroke="#C9A87C" stroke-width="2" fill="none" stroke-linecap="round">
+                <path d="M612 80 C 606 66, 610 54, 620 44"/>
+                <path d="M700 66 C 708 52, 706 42, 700 32"/>
+              </g>
+              <g fill="#B8A9C9">
+                <ellipse cx="622" cy="40" rx="6" ry="9" transform="rotate(18 622 40)"/>
+                <ellipse cx="699" cy="28" rx="6" ry="9" transform="rotate(-12 699 28)"/>
+              </g>
+              <g fill="#B8A9C9" opacity="0.7">
+                <ellipse cx="610" cy="52" rx="4" ry="6" transform="rotate(28 610 52)"/>
+                <ellipse cx="706" cy="42" rx="4" ry="6" transform="rotate(-20 706 42)"/>
+              </g>
+            </g>
+            <path class="draw-3" pathLength="1" d="M820 56 C 900 51, 1000 48, 1080 44 C 1110 42.5, 1140 41, 1160 40"
+                 fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
+            <circle class="draw-bloom" cx="1160" cy="40" r="4" fill="#C9A87C8C"/>
+          </svg>
           <figcaption>The Method, drawn as one line: the loop, the pause, the bloom, the path.</figcaption>
         </figure>
 
@@ -436,7 +466,7 @@
 
       <div class="footer-legal">
         <span>&copy; 2026 Conscious Coaching Collective, PLLC. All rights reserved.</span>
-        <span>Made with care under carriepdavidson.com</span>
+        <span>Made slowly, on purpose.</span>
       </div>
     </div>
 

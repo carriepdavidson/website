@@ -11,7 +11,7 @@ It is the Conscious Creation Method in a single line: Witness and Understand liv
 ## The assets
 | Asset | Story stage | Use |
 |---|---|---|
-| assets/pattern-line-master.svg (1200x160) | the whole movement | Feature moments ONLY: method page (the Method drawn as one line), about "What I built from it". Never more than once per page. |
+| assets/pattern-line-master.svg (1200x160) | the whole movement | Feature moments ONLY: homepage method teaser, method page (inline, self-drawing), about "What I built from it". Never more than once per page. |
 | assets/pattern-divider-1.svg "the loop" | coils still running | The FIRST divider on a page (near the top, after the hero). |
 | assets/pattern-divider-2.svg "the easing" | one loop opening; the still point appears | MID-page dividers. |
 | assets/pattern-divider-3.svg "the open path" | nearly straight, rising, unfinished | The LAST divider, just before the closing invitation. |

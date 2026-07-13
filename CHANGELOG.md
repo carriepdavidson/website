@@ -72,3 +72,15 @@ Final editorial pass reading every indexable page (root, 3 writing hubs, 8 resou
 ## Phase 6.5: Brand-story fidelity review + credential rule (2026-07-13)
 - Distributed six-beat narrative spine verified across the site; all fourteen fidelity questions pass. Three repetition prunes ("central mechanism" over-assertion on method/coaching). Endings confirmed forward-aimed at choice, creativity, and life.
 - Duke removed from all credentials per Carrie: visible text, credential cards, media template, brand.json, and alumniOf schema on both pages. Rule recorded in the brand canon: degrees public, institution never named.
+
+## Creative Director pass (2026-07-13)
+Nine taste edits following the full creative review:
+1. The Grace moment: a museum-framed sentence from the book on the homepage ("She says her name is Grace. It is not.").
+2. Hero photo presence strengthened (mask floor raised; the pond photo now co-stars).
+3. One visual language: the homepage circle-node diagram replaced by the drawn Pattern Line with the five step names beneath.
+4. Media page voice: H1 "Speaking & Media", lede "Stories, strategy, and truth that move people to act.", Inside Success card given an honest sentence.
+5. Signature phrase rationed: "insight-rich and transformation-poor" removed from both newsletter blocks ("words for the work no one else sees" and a variant take their place); remaining uses are definitional.
+6. Substack embed seated in a paper card with copper hairline.
+7. Footer line: "Made slowly, on purpose."
+8. Book themes: six cards merged into three calmer pairs.
+9. The signature interaction: the method page's Pattern Line is now inline SVG that draws itself forward on first view (loops to path, never backward; fully static under prefers-reduced-motion).
