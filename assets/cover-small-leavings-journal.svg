@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="Cover of The Small Leavings Journal, a free printable journal by Carrie Davidson">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="Cover of The Small Leavings Journal, a free journal by Carrie Davidson">
   <rect width="480" height="300" fill="#FBF7FC"/>
-  <circle cx="440" cy="60" r="130" fill="#F4ECF8" opacity="0.6"/>
-  <!-- quiet journal lines, one gold moment -->
-  <g stroke="#B8A9C9" stroke-width="2.5" stroke-linecap="round">
-    <path d="M28 196 C 130 193, 250 198, 452 194" fill="none"/>
-    <path d="M28 222 C 150 220, 300 224, 452 221" fill="none"/>
-    <path d="M28 248 C 140 246, 280 250, 452 247" fill="none"/>
+  <circle cx="40" cy="30" r="130" fill="#F4ECF8" opacity="0.6"/>
+  <!-- dotted path wandering away, then returning to a filled point -->
+  <g fill="#C9A87C">
+    <circle cx="60" cy="228" r="4"/>
+    <circle cx="98" cy="216" r="4"/>
+    <circle cx="136" cy="230" r="4"/>
+    <circle cx="174" cy="212" r="4"/>
+    <circle cx="212" cy="226" r="4"/>
+    <circle cx="252" cy="206" r="4"/>
+    <circle cx="292" cy="222" r="4"/>
+    <circle cx="330" cy="200" r="4"/>
+    <circle cx="366" cy="214" r="4"/>
   </g>
-  <path d="M28 222 C 90 220, 150 223, 192 221" fill="none" stroke="#C9A87C" stroke-width="2.5" stroke-linecap="round"/>
-  <circle cx="204" cy="222" r="6" fill="#5E4B85"/>
+  <circle cx="404" cy="204" r="9" fill="#5E4B85"/>
   <rect x="28" y="58" width="44" height="3" fill="#C9A87C"/>
   <text x="28" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#7A5A2E">FREE JOURNAL</text>
   <text x="28" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#5E4B85">The Small Leavings</text>
