@@ -571,10 +571,18 @@ p { max-width: var(--measure); }
    whole-card layout that keeps a heading link and one visible CTA per card.
    No hover-only affordances: everything is reachable by keyboard and visible
    without a pointer. */
-.path-cards { display: grid; gap: var(--space-5); }
+.path-cards { display: grid; gap: var(--space-5); justify-items: center; }
 @media (min-width: 44rem) {
   .path-cards { grid-template-columns: repeat(2, 1fr); }
 }
+@media (min-width: 64rem) {
+  .path-cards { grid-template-columns: repeat(3, 1fr); }
+}
+/* Arch proportion guard: the doorway shape only reads on narrow, tall
+   cards, so arch path-cards never stretch wide (Carrie bug 2026-07-13). */
+.path-card.arch-card { max-width: 400px; width: 100%; }
+.path-card.arch-card .path-card__cta { align-self: center; }
+.path-card.arch-card .path-card__links { justify-content: center; }
 
 .path-card {
   display: flex; flex-direction: column; height: 100%;
