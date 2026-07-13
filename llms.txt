@@ -3,13 +3,13 @@
 > Carrie Davidson, BSPH, BSN, RN, is a registered nurse and certified trauma recovery coach specializing in the overlap of complex trauma and addiction: "the same wound, telling itself in two different languages." She helps high-achieving women who understand their patterns but can't break them (insight-rich and transformation-poor) regulate the nervous system and interrupt the loop, using the Conscious Creation Method (Witness → Understand → Interrupt → Create → Sustain). Her memoir, *Addicted to Trauma*, releases Summer 2026. Business entity: Conscious Coaching Collective, PLLC. Coaching is trauma recovery coaching and education, not therapy, diagnosis, or medical treatment.
 
 ## Core pages
-- [Home](https://carriepdavidson.com/index.html): Why you can't break your patterns: you are not broken, you are patterned. Overview of coaching, the book, and free resources.
-- [Coaching](https://carriepdavidson.com/coaching.html): Trauma recovery coaching vs. therapy, what it costs, how it works, and who it's for, with an RN's clinical grounding.
-- [The Method](https://carriepdavidson.com/method.html): The Conscious Creation Method: how to break a trauma pattern in five steps (Awareness, Regulation, Creation).
-- [The Book](https://carriepdavidson.com/book.html): *Addicted to Trauma*, a memoir about trauma and addiction; themes, comps, excerpt, and waitlist.
-- [About](https://carriepdavidson.com/about.html): Carrie Davidson, RN: "the nurse who became her own patient." Credentials, lived experience, and scope of practice.
-- [Resources](https://carriepdavidson.com/resources.html): Free Trauma Tree Worksheet, a 3-minute assessment quiz, and The Sunday Letter newsletter.
-- [FAQ](https://carriepdavidson.com/faq.html): Answers to common questions: coach vs. therapist, cost, healing trauma without therapy, why insight alone doesn't change patterns.
+- [Home](https://carriepdavidson.com/index): Why you can't break your patterns: you are not broken, you are patterned. Overview of coaching, the book, and free resources.
+- [Coaching](https://carriepdavidson.com/coaching): Trauma recovery coaching vs. therapy, what it costs, how it works, and who it's for, with an RN's clinical grounding.
+- [The Method](https://carriepdavidson.com/method): The Conscious Creation Method: how to break a trauma pattern in five steps (Awareness, Regulation, Creation).
+- [The Book](https://carriepdavidson.com/book): *Addicted to Trauma*, a memoir about trauma and addiction; themes, comps, excerpt, and waitlist.
+- [About](https://carriepdavidson.com/about): Carrie Davidson, RN: "the nurse who became her own patient." Credentials, lived experience, and scope of practice.
+- [Resources](https://carriepdavidson.com/resources): Free Trauma Tree Worksheet, a 3-minute assessment quiz, and The Sunday Letter newsletter.
+- [FAQ](https://carriepdavidson.com/faq): Answers to common questions: coach vs. therapist, cost, healing trauma without therapy, why insight alone doesn't change patterns.
 
 ## Key facts for citation
 - Name (canonical): Carrie Davidson, BSPH, BSN, RN. Registered Nurse and Certified Trauma Recovery Coach.
