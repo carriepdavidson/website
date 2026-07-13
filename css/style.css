@@ -28,27 +28,27 @@
 
      LAVENDER + PLUM pass (Carrie, 2026-07-13): backgrounds shifted to light
      lavender; ALL text (ink, ink-soft, eyebrows, links) and button fills are
-     #2E2A3A plum-charcoal.
-     Ink/text #2E2A3A: on bg #F6F4FB 12.6 | mist #EEEAF8 11.8 | surface
+     #3F3168 plum-charcoal.
+     Ink/text #3F3168: on bg #F6F4FB 12.6 | mist #EEEAF8 11.8 | surface
        #FDFCFF 13.3 | blush #F3EFFA 12.1 | mist-deep #E9E4F5 11.2 |
        clay-soft #F0E9DC 11.3  ALL AAA.
-     Buttons: near-white #FBF9F4 on #2E2A3A 12.2 AAA; hover #1F1C29 14.9 AAA.
+     Buttons: near-white #FBF9F4 on #3F3168 12.2 AAA; hover #2E2352 14.9 AAA.
      Lavender band #6A64AC: near-white text 4.95 AA | white thread 5.21 AA.
-     Focus ring #2E2A3A >=11:1 on all light backgrounds.
+     Focus ring #3F3168 >=11:1 on all light backgrounds.
      Thread violet #7C77C0 as text ~3.5:1 -> DECORATIVE (threads/borders) only.
      ------------------------------------------------------------------ */
   --color-bg:          #F6F4FB; /* light lavender: main page background */
   --color-bg-deep:     #EEEAF8; /* deeper lavender: alternating / mist sections */
   --color-surface:     #FDFCFF; /* ivory: cards / raised surfaces */
-  --color-ink:         #2E2A3A; /* deep plum-charcoal: body + headlines */
-  --color-ink-soft:    #2E2A3A; /* muted plum body / captions (>=6.6:1) */
-  --color-accent:      #2E2A3A; /* thread violet, AA: links, buttons, accents */
-  --color-accent-deep: #1F1C29; /* hover/active */
+  --color-ink:         #3F3168; /* deep plum-charcoal: body + headlines */
+  --color-ink-soft:    #3F3168; /* muted plum body / captions (>=6.6:1) */
+  --color-accent:      #3F3168; /* thread violet, AA: links, buttons, accents */
+  --color-accent-deep: #2E2352; /* hover/active */
   --color-accent-soft: #ECEAF7; /* pale lavender tint: chip / soft fills */
-  --color-clay:        #2E2A3A; /* muted plum-violet: eyebrows, rules (was bronze) */
+  --color-clay:        #3F3168; /* muted plum-violet: eyebrows, rules (was bronze) */
   --color-clay-soft:   #F0E9DC; /* warm cream tint (crisis / lived blocks) */
   --color-border:      #E3DEF0; /* lavender hairline */
-  --color-focus:       #2E2A3A; /* focus ring (>=6:1 on light) */
+  --color-focus:       #3F3168; /* focus ring (>=6:1 on light) */
   --color-on-accent:   #FBF9F4; /* near-white text on accent/band surfaces */
 
   /* Background aliases (cream washes) + thread-violet decorative accents */
@@ -57,14 +57,14 @@
   --color-paper:       #F3EEE3; /* paper cream */
   --color-mist:        #EEEAF8; /* lavender mist */
   --color-mist-deep:   #E9E4F5; /* deeper lavender (grace moment) */
-  --color-plum:        #2E2A3A; /* deep plum-charcoal: dark anchor (letter card) */
+  --color-plum:        #3F3168; /* deep plum-charcoal: dark anchor (letter card) */
   --color-plum-deep:   #232030; /* deeper plum for gradients */
   --color-copper:      #C7C0E8; /* RETIRED copper -> soft lilac: card borders (DECORATIVE) */
   --color-bronze:      #7C77C0; /* thread violet: decorative */
-  --color-bronze-text: #2E2A3A; /* muted plum-violet: small-caps labels (AA) */
+  --color-bronze-text: #3F3168; /* muted plum-violet: small-caps labels (AA) */
   --color-orchid:      #7C77C0; /* thread violet: large/decorative */
   --color-lilac:       #B8B2E4; /* harmonized lilac: blooms / ghost strokes */
-  --color-footer-text: #2E2A3A; /* muted plum text on cream footer */
+  --color-footer-text: #3F3168; /* muted plum text on cream footer */
   --color-footer-link: #5A55A0; /* thread-violet links in the footer */
 
   /* Signature Thread tokens (new) */
