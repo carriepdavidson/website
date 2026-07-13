@@ -22,6 +22,11 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Book JSON-LD: author is bidirectional with Person #carrie (defined on about.html / index.html head).
@@ -68,7 +73,10 @@
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Carrie Davidson<span>.</span></a>
+      <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <span class="brand-stack__name">Carrie Davidson</span>
+        <span class="brand-stack__cred">RN &middot; Author &middot; Trauma Recovery Coach</span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
@@ -81,7 +89,7 @@
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
         </ul>
-        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+        <a class="btn btn--primary btn--pill" href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a>
       </nav>
     </div>
   </header>
@@ -122,10 +130,17 @@
       </div>
     </section>
 
+    <div class="divider-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34 C 240 12 480 12 720 30 C 960 48 1200 48 1440 26" fill="none" stroke="#C9A87C" stroke-width="1.5"/>
+        <path d="M0 40 C 240 20 480 20 720 36 C 960 52 1200 52 1440 32" fill="none" stroke="#C9A87C" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+
     <!-- ============================================================
          WHAT THE BOOK IS ABOUT: the unified thesis.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="about-book-title">
+    <section class="section section--paper reveal" aria-labelledby="about-book-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">What the book is about</p>
@@ -159,7 +174,7 @@
     <!-- ============================================================
          THEMES.
          ============================================================ -->
-    <section class="section" aria-labelledby="themes-title">
+    <section class="section reveal" aria-labelledby="themes-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Themes</p>
@@ -204,7 +219,7 @@
     <!-- ============================================================
          WHO IT'S FOR.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="who-title">
+    <section class="section section--alt reveal" aria-labelledby="who-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Who it&rsquo;s for</p>
@@ -231,7 +246,7 @@
     <!-- ============================================================
          COMPS: positioning anchors.
          ============================================================ -->
-    <section class="section" aria-labelledby="comps-title">
+    <section class="section reveal" aria-labelledby="comps-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">If you loved these</p>
@@ -272,7 +287,7 @@
          PROLOGUE EXCERPT: placeholder block.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="section section--alt" id="excerpt" aria-labelledby="excerpt-title">
+    <section class="section section--blush reveal" id="excerpt" aria-labelledby="excerpt-title">
       <div class="container container-narrow">
         <div class="section-head">
           <p class="eyebrow">From the prologue</p>
@@ -296,7 +311,7 @@
           <p>This is the story of how that happened. How I lost myself one small leaving at a time until
             I lost the part of me that knew my own name.</p>
           <p>And how I found my way back.</p>
-          <p class="signature">You do not have to think your way out. You have to feel your way home.</p>
+          <p class="signature script-line">You do not have to think your way out. You have to feel your way home.</p>
         </div>
         <div class="btn-row" style="margin-top: var(--space-6);">
           <a class="btn btn--primary" href="https://carriepdavidson.substack.com/subscribe">Join the waitlist for the full first chapter</a>
@@ -311,7 +326,7 @@
     <!-- ============================================================
          AUTHOR BIO TEASER: links to about.html.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="author-title">
+    <section class="section section--alt reveal" aria-labelledby="author-title">
       <div class="container">
         <div class="split split--media-first">
           <div>
@@ -339,7 +354,7 @@
     <!-- ============================================================
          CROSS-SELL: the method in the book + coaching.
          ============================================================ -->
-    <section class="section" aria-labelledby="cross-title">
+    <section class="section reveal" aria-labelledby="cross-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Beyond the page</p>
@@ -369,7 +384,7 @@
          COMPANION WORKBOOK: free download (checkout retired with old
          site; Carrie chose free-for-now, 2026-07-12).
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="workbook-title">
+    <section class="section section--alt reveal" aria-labelledby="workbook-title">
       <div class="container">
         <div class="split split--media-first">
           <div>
@@ -399,7 +414,7 @@
          PRIMARY CTA: book waitlist + newsletter fallback.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="section section--accent" aria-labelledby="waitlist-title">
+    <section class="section section--accent reveal" aria-labelledby="waitlist-title">
       <div class="container container-narrow text-center">
         <p class="eyebrow" style="color: var(--color-accent-soft);">Releasing Summer 2026: the wait is part of the story</p>
         <h2 id="waitlist-title">Be first to read <em>Addicted to Trauma</em></h2>
@@ -444,6 +459,7 @@
             <li><a href="/method">The Method</a></li>
             <li><a href="/book">The Book</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/for-nurses">For Nurses &amp; Caregivers</a></li>
             <li><a href="/writing">Writing</a></li>
             <li><a href="/resources">Free Resources</a></li>
             <li><a href="/faq">FAQ</a></li>

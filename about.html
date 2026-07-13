@@ -22,6 +22,11 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Person JSON-LD (Carrie): reused verbatim from index.html head.
@@ -84,7 +89,10 @@
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Carrie Davidson<span>.</span></a>
+      <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <span class="brand-stack__name">Carrie Davidson</span>
+        <span class="brand-stack__cred">RN &middot; Author &middot; Trauma Recovery Coach</span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
@@ -97,7 +105,7 @@
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about" aria-current="page">About</a></li>
         </ul>
-        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+        <a class="btn btn--primary btn--pill" href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a>
       </nav>
     </div>
   </header>
@@ -129,19 +137,30 @@
               <li class="pill">Certified Trauma Recovery Coach</li>
             </ul>
           </div>
-          <div>
-            <img class="img-placeholder" src="assets/carrie-davidson.jpg"
-                 alt="Portrait of Carrie Davidson, registered nurse and trauma recovery coach"
-                 width="640" height="800">
+          <div style="position: relative;">
+            <span class="botanical" style="top: -1.5rem; right: -1rem; width: 5.5rem;" aria-hidden="true">
+              <img src="assets/botanical-lavender-1.svg" alt=""></span>
+            <div class="arch-photo">
+              <img src="assets/carrie-davidson.jpg"
+                   alt="Portrait of Carrie Davidson, registered nurse and trauma recovery coach"
+                   width="640" height="800">
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <div class="divider-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34 C 240 12 480 12 720 30 C 960 48 1200 48 1440 26" fill="none" stroke="#C9A87C" stroke-width="1.5"/>
+        <path d="M0 40 C 240 20 480 20 720 36 C 960 52 1200 52 1440 32" fill="none" stroke="#C9A87C" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+
     <!-- ============================================================
          IN BRIEF: the whole picture at a glance, before the long story.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="brief-title">
+    <section class="section section--alt reveal" aria-labelledby="brief-title">
       <div class="container container-narrow">
         <div class="section-head">
           <p class="eyebrow">In brief</p>
@@ -162,7 +181,7 @@
     <!-- ============================================================
          CURRENT WORK: coaching + writing + the memoir, three quiet links.
          ============================================================ -->
-    <section class="section" aria-labelledby="work-title">
+    <section class="section reveal" aria-labelledby="work-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Current work</p>
@@ -192,7 +211,7 @@
     <!-- ============================================================
          CREDENTIALS: E-E-A-T surfaced prominently.
          ============================================================ -->
-    <section class="section--tight section--alt" aria-labelledby="cred-title">
+    <section class="section--tight section--alt reveal" aria-labelledby="cred-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Training &amp; credentials</p>
@@ -236,17 +255,18 @@
          beats. Every paragraph preserved verbatim; only the section
          headings and paragraph grouping changed.
          ============================================================ -->
-    <!-- TODO(CARRIE): confirm "I learned to read a room for danger before I learned to read a book." as your approved public opening line -->
+    <!-- Opening line confirmed by Carrie 2026-07-13 as her approved public opening. -->
     <!-- COPY-PASS -->
-    <section class="section" aria-labelledby="story-title">
+    <section class="section reveal" aria-labelledby="story-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">My story</p>
           <h2 id="story-title">Before I had language for it</h2>
         </div>
         <div class="prose">
-          <p>Before I could read a book, I could read a room for danger. I was holding things together at
-            six, and that early hypervigilance is exactly what later made me an exceptional nurse.</p>
+          <p>I learned to read a room for danger before I learned to read a book. I was holding things
+            together at six, and that early hypervigilance is exactly what later made me an exceptional
+            nurse.</p>
 
           <h2>The skill that became a career</h2>
           <p>In scrubs I was steady, capable, trusted with the worst moments of strangers&rsquo; lives. I
@@ -289,7 +309,7 @@
     <!-- ============================================================
          WHY I COACH.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="why-title">
+    <section class="section section--alt reveal" aria-labelledby="why-title">
       <div class="container">
         <div class="split split--media-first">
           <div>
@@ -317,7 +337,7 @@
          COACHING PHILOSOPHY + SCOPE / ETHICS: her voice, then the edges.
          Boundaries reuse the sitewide disclaimer language.
          ============================================================ -->
-    <section class="section" aria-labelledby="philosophy-title">
+    <section class="section reveal" aria-labelledby="philosophy-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Coaching philosophy &amp; scope</p>
@@ -364,7 +384,7 @@
          PRIMARY CTA: coaching + newsletter fallback.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="section section--accent" aria-labelledby="cta-title">
+    <section class="section section--accent reveal" aria-labelledby="cta-title">
       <div class="container container-narrow text-center">
         <p class="eyebrow" style="color: var(--color-accent-soft);">If any of this sounds like you</p>
         <h2 id="cta-title">Let&rsquo;s find your way home together</h2>
@@ -409,6 +429,7 @@
             <li><a href="/method">The Method</a></li>
             <li><a href="/book">The Book</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/for-nurses">For Nurses &amp; Caregivers</a></li>
             <li><a href="/writing">Writing</a></li>
             <li><a href="/resources">Free Resources</a></li>
             <li><a href="/faq">FAQ</a></li>

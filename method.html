@@ -22,6 +22,11 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -33,7 +38,10 @@
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Carrie Davidson<span>.</span></a>
+      <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <span class="brand-stack__name">Carrie Davidson</span>
+        <span class="brand-stack__cred">RN &middot; Author &middot; Trauma Recovery Coach</span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
@@ -46,7 +54,7 @@
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
         </ul>
-        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+        <a class="btn btn--primary btn--pill" href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a>
       </nav>
     </div>
   </header>
@@ -57,28 +65,44 @@
          HERO: two-layer copy: search-language H1 + poetic payoff.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="hero">
+    <section class="hero hero--split">
       <div class="container hero__inner">
-        <p class="eyebrow">The Conscious Creation Method&trade;</p>
-        <h1>How to break a trauma pattern: when insight isn&rsquo;t enough</h1>
-        <p class="lede">The loop runs faster than thought.</p>
-        <p>Somewhere between the trigger and the spiral there&rsquo;s a pause (sometimes only twenty
-          seconds long) and for a long time, you&rsquo;ve been arriving after it closes. That&rsquo;s not
-          a failure of insight. The loop is not a character flaw. It is a nervous system doing exactly what
-          it was trained to do, until you give it new evidence. This Method doesn&rsquo;t ask you to
-          out-think the pause. It teaches your body to live inside it, in five steps across the three ARC
-          stages: A (Awareness), R (Regulation), C (Creation). Creativity is the opposite of stuck.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work the method with Carrie</a>
-          <a class="btn btn--secondary" href="assets/trauma-tree-worksheet.pdf">Start with the free workbook</a>
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow">The Conscious Creation Method&trade;</p>
+            <h1>How to break a trauma pattern: when insight isn&rsquo;t enough</h1>
+            <p class="lede">The loop runs faster than thought.</p>
+            <p>Somewhere between the trigger and the spiral there&rsquo;s a pause (sometimes only twenty
+              seconds long) and for a long time, you&rsquo;ve been arriving after it closes. That&rsquo;s not
+              a failure of insight. The loop is not a character flaw. It is a nervous system doing exactly what
+              it was trained to do, until you give it new evidence. This Method doesn&rsquo;t ask you to
+              out-think the pause. It teaches your body to live inside it, in five steps across the three ARC
+              stages: A (Awareness), R (Regulation), C (Creation). Creativity is the opposite of stuck.</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work the method with Carrie</a>
+              <a class="btn btn--secondary" href="assets/trauma-tree-worksheet.pdf">Start with the free workbook</a>
+            </div>
+          </div>
+          <div class="hero__media">
+            <img class="photo-fade" src="assets/carrie-understand.jpg"
+                 alt="Carrie Davidson sitting beneath a tree, contemplative"
+                 width="1600" height="1067" fetchpriority="high">
+          </div>
         </div>
       </div>
     </section>
 
+    <div class="divider-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 34 C 240 12 480 12 720 30 C 960 48 1200 48 1440 26" fill="none" stroke="#C9A87C" stroke-width="1.5"/>
+        <path d="M0 40 C 240 20 480 20 720 36 C 960 52 1200 52 1440 32" fill="none" stroke="#C9A87C" stroke-width="1" opacity="0.4"/>
+      </svg>
+    </div>
+
     <!-- ============================================================
          WHY INSIGHT ISN'T ENOUGH: answer-first opener.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="why-title">
+    <section class="section section--alt reveal" aria-labelledby="why-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Start here</p>
@@ -103,7 +127,7 @@
     <!-- ============================================================
          THE FIVE STEPS at a glance.
          ============================================================ -->
-    <section class="section" aria-labelledby="steps-title">
+    <section class="section reveal" aria-labelledby="steps-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">The five steps</p>
@@ -126,7 +150,7 @@
     <!-- ============================================================
          PHASE 1: AWARENESS (Witness + Understand).
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="awareness-title">
+    <section class="section section--alt reveal" aria-labelledby="awareness-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Phase one &middot; A: Awareness</p>
@@ -163,7 +187,7 @@
     <!-- ============================================================
          PHASE 2: REGULATION (Interrupt).
          ============================================================ -->
-    <section class="section" aria-labelledby="regulation-title">
+    <section class="section reveal" aria-labelledby="regulation-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Phase two &middot; R: Regulation</p>
@@ -202,7 +226,7 @@
     <!-- ============================================================
          PHASE 3: CREATION (Find Creative Flow + Build the Intentional Life).
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="creation-title">
+    <section class="section section--alt reveal" aria-labelledby="creation-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Phase three &middot; C: Creation</p>
@@ -245,7 +269,7 @@
     <!-- ============================================================
          CROSS-SELL: book + coaching + free workbook.
          ============================================================ -->
-    <section class="section" aria-labelledby="cross-title">
+    <section class="section reveal" aria-labelledby="cross-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Where to go from here</p>
@@ -269,7 +293,7 @@
             <a class="btn btn--secondary btn--full" href="/book">About the book &rarr;</a>
           </article>
           <article class="door door--fix">
-            <p class="door__kicker">Fix the pattern</p>
+            <p class="door__kicker">Interrupt the pattern</p>
             <h3>The ARC Program</h3>
             <p>Walk the full method with Carrie (a nurse who has lived it) guiding you step by
               step, from Witness to building the intentional life.</p>
@@ -284,7 +308,7 @@
          WHAT THIS METHOD IS, AND IS NOT: scope clarity in her voice.
          Two short lists, using the coaching fit/not-fit .grid--2 pattern.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="scope-title">
+    <section class="section section--alt reveal" aria-labelledby="scope-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Honest edges</p>
@@ -324,7 +348,7 @@
          PRIMARY CTA: coaching + newsletter fallback.
          ============================================================ -->
     <!-- COPY-PASS -->
-    <section class="section section--accent" aria-labelledby="cta-title">
+    <section class="section section--accent reveal" aria-labelledby="cta-title">
       <div class="container container-narrow text-center">
         <p class="eyebrow" style="color: var(--color-accent-soft);">You already know the theory. Now give your body the evidence.</p>
         <h2 id="cta-title">Move through the method with a guide who has walked it</h2>
@@ -369,6 +393,7 @@
             <li><a href="/method">The Method</a></li>
             <li><a href="/book">The Book</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/for-nurses">For Nurses &amp; Caregivers</a></li>
             <li><a href="/writing">Writing</a></li>
             <li><a href="/resources">Free Resources</a></li>
             <li><a href="/faq">FAQ</a></li>

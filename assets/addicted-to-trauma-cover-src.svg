@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800" role="img" aria-label="Addicted to Trauma by Carrie Davidson, cover reveal coming soon">
   <rect width="640" height="800" fill="#2B2333"/>
-  <rect x="24" y="24" width="592" height="752" fill="none" stroke="#B98A2E" stroke-width="2" opacity="0.7"/>
-  <circle cx="560" cy="120" r="220" fill="#4B2D73" opacity="0.35"/>
-  <circle cx="90" cy="700" r="180" fill="#4B2D73" opacity="0.28"/>
-  <text x="320" y="150" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="6" fill="#B98A2E">A MEMOIR</text>
-  <text x="320" y="290" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="bold" fill="#F8F5FC">ADDICTED</text>
-  <text x="320" y="370" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-style="italic" fill="#B98A2E">to</text>
-  <text x="320" y="460" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="bold" fill="#F8F5FC">TRAUMA</text>
+  <rect x="24" y="24" width="592" height="752" fill="none" stroke="#C9A87C" stroke-width="2" opacity="0.7"/>
+  <circle cx="560" cy="120" r="220" fill="#5E4B85" opacity="0.35"/>
+  <circle cx="90" cy="700" r="180" fill="#5E4B85" opacity="0.28"/>
+  <text x="320" y="150" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="6" fill="#C9A87C">A MEMOIR</text>
+  <text x="320" y="290" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="bold" fill="#FBF7FC">ADDICTED</text>
+  <text x="320" y="370" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-style="italic" fill="#C9A87C">to</text>
+  <text x="320" y="460" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="bold" fill="#FBF7FC">TRAUMA</text>
   <path d="M120 540 q20 -36 40 0 q20 36 40 0 q20 -26 40 0 q20 26 40 0 q20 -14 40 0 q20 14 40 0 q30 -6 160 0"
-        fill="none" stroke="#B98A2E" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-  <text x="320" y="640" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#F8F5FC">CARRIE DAVIDSON</text>
-  <text x="320" y="726" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="17" letter-spacing="3" fill="#E9E2F5" opacity="0.85">COVER REVEAL COMING &#183; SUMMER 2026</text>
+        fill="none" stroke="#C9A87C" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <text x="320" y="640" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#FBF7FC">CARRIE DAVIDSON</text>
+  <text x="320" y="726" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="17" letter-spacing="3" fill="#F4ECF8" opacity="0.85">COVER REVEAL COMING &#183; SUMMER 2026</text>
 </svg>

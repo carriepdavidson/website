@@ -41,3 +41,9 @@
 - Official taglines placed (home, coaching, memoir, writing). Science claim verified as real but youth-population; published as "emerging research" without figures + citation TODO.
 - Banned-word sweep: one violation fixed ("trauma-informed"); "insight-rich and transformation-poor" exempt as her coined phrase.
 - Real memoir cover replaced the placeholder (committed separately).
+
+## Phase 5.5: Immersive visual redesign (2026-07-13)
+- Design system transformed to the ImmersiveExample mockup: Carrie's lavender/blush/ivory/paper tokens (all contrast pairs computed, AA/AAA), Cormorant Garamond + DM Sans, arch doorway cards, copper wave dividers, botanical lavender SVGs, photo-fade hero masking, method thread diagram, editorial cards, working Substack embed, stacked brand header with Sunday Letter pill, deep-plum footer.
+- Homepage recomposed to the emotional sequence (arrival, recognition, orientation, understanding, trust, exploration, invitation) with all-real copy and the search-language layer preserved. Reveal animation hardened with a visibility failsafe.
+- Skin propagated to all 23 interior pages with restrained per-page treatments (arch portraits, session photo on coaching, tinted memoir sections, script-line prologue signature). All 9 brand SVGs recolored; og-image and touch icon re-rendered.
+- BrandStory compliance: governance docs (BRAND-CONTENT-MAP, RESEARCH-VERIFICATION, EDITORIAL-BRAND-ROADMAP, content/brand.json), /for-nurses page, method boundaries section, about editorial headings with the approved opening line, kicker "Interrupt the pattern", persona names and pricing kept out of the public repo.

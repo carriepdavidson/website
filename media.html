@@ -30,6 +30,11 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -42,7 +47,10 @@
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Carrie Davidson<span>.</span></a>
+      <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <span class="brand-stack__name">Carrie Davidson</span>
+        <span class="brand-stack__cred">RN &middot; Author &middot; Trauma Recovery Coach</span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
@@ -55,7 +63,7 @@
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
         </ul>
-        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+        <a class="btn btn--primary btn--pill" href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a>
       </nav>
     </div>
   </header>
@@ -70,21 +78,32 @@
     <!-- ============================================================
          HERO.
          ============================================================ -->
-    <section class="hero">
+    <section class="hero hero--split">
       <div class="container hero__inner">
-        <p class="eyebrow">Press &amp; media</p>
-        <h1>Media resources for Carrie Davidson, RN</h1>
-        <p class="lede">Bios, headshots, speaking topics, and book details in one place.</p>
-        <p class="cred-strip">BSN, RN &middot; Certified Trauma Recovery Coach &middot; Author of <a href="/book"><em>Addicted to Trauma</em></a></p>
-        <p>For interviews, features, or speaking, reach the practice at
-          <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a>.</p>
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow">Press &amp; media</p>
+            <h1>Media resources for Carrie Davidson, RN</h1>
+            <p class="lede">Bios, headshots, speaking topics, and book details in one place.</p>
+            <p class="cred-strip">BSN, RN &middot; Certified Trauma Recovery Coach &middot; Author of <a href="/book"><em>Addicted to Trauma</em></a></p>
+            <p>For interviews, features, or speaking, reach the practice at
+              <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a>.</p>
+          </div>
+          <div class="hero__media">
+            <div class="arch-photo">
+              <img src="assets/carrie-gate.jpg"
+                   alt="Carrie Davidson standing at a gothic garden gate, editorial portrait"
+                   width="1536" height="1024" fetchpriority="high">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============================================================
          BIOS: short + long. Written from verified site facts only.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="bio-title">
+    <section class="section section--alt reveal" aria-labelledby="bio-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Biography</p>
@@ -120,7 +139,7 @@
     <!-- ============================================================
          HEADSHOTS: one real portrait exists; others are TODO.
          ============================================================ -->
-    <section class="section" aria-labelledby="headshots-title">
+    <section class="section reveal" aria-labelledby="headshots-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Headshots</p>
@@ -145,7 +164,7 @@
          SPEAKING TOPICS: derived ONLY from Carrie's existing published
          themes (about.html, book.html, writing hubs). No invented topics.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="topics-title">
+    <section class="section section--alt reveal" aria-labelledby="topics-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Speaking</p>
@@ -201,7 +220,7 @@
     <!-- ============================================================
          BOOK SUMMARY: condensed from book.html (verified copy).
          ============================================================ -->
-    <section class="section" aria-labelledby="book-summary-title">
+    <section class="section reveal" aria-labelledby="book-summary-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">The book</p>
@@ -231,7 +250,7 @@
     <!-- ============================================================
          CONTACT + MEDIA KIT.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="contact-title">
+    <section class="section section--alt reveal" aria-labelledby="contact-title">
       <div class="container container-narrow">
         <div class="section-head">
           <p class="eyebrow">Contact</p>
@@ -277,6 +296,7 @@
             <li><a href="/method">The Method</a></li>
             <li><a href="/book">The Book</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/for-nurses">For Nurses &amp; Caregivers</a></li>
             <li><a href="/writing">Writing</a></li>
             <li><a href="/resources">Free Resources</a></li>
             <li><a href="/faq">FAQ</a></li>

@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="Cover of ADHD Affirmation Cards, free printable cards by Carrie Davidson">
-  <rect width="480" height="300" fill="#F7F5FB"/>
-  <circle cx="60" cy="270" r="140" fill="#E9E2F5" opacity="0.6"/>
+  <rect width="480" height="300" fill="#FBF7FC"/>
+  <circle cx="60" cy="270" r="140" fill="#F4ECF8" opacity="0.6"/>
   <!-- fanned cards -->
   <g transform="translate(402,208) scale(0.78)">
-    <rect x="-38" y="-52" width="76" height="104" rx="8" fill="#FCFBFE" stroke="#E2DBEE" stroke-width="2" transform="rotate(-14)"/>
-    <rect x="-38" y="-52" width="76" height="104" rx="8" fill="#F5EDCF" stroke="#E4D6A4" stroke-width="2" transform="rotate(2)"/>
-    <rect x="-38" y="-52" width="76" height="104" rx="8" fill="#4B2D73" transform="rotate(17)"/>
-    <circle cx="16" cy="-6" r="7" fill="#B98A2E" transform="rotate(17)"/>
+    <rect x="-38" y="-52" width="76" height="104" rx="8" fill="#FBF7FC" stroke="#B8A9C9" stroke-width="2" transform="rotate(-14)"/>
+    <rect x="-38" y="-52" width="76" height="104" rx="8" fill="#F4ECF8" stroke="#B8A9C9" stroke-width="2" transform="rotate(2)"/>
+    <rect x="-38" y="-52" width="76" height="104" rx="8" fill="#5E4B85" transform="rotate(17)"/>
+    <circle cx="16" cy="-6" r="7" fill="#C9A87C" transform="rotate(17)"/>
   </g>
-  <rect x="28" y="58" width="44" height="3" fill="#B98A2E"/>
-  <text x="28" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#7A5C10">FREE PRINTABLE</text>
-  <text x="28" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#4B2D73">ADHD</text>
+  <rect x="28" y="58" width="44" height="3" fill="#C9A87C"/>
+  <text x="28" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="3" fill="#7A5A2E">FREE PRINTABLE</text>
+  <text x="28" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#5E4B85">ADHD</text>
   <text x="28" y="146" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#2B2333">Affirmation Cards</text>
   <text x="28" y="278" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#5B4F6B">Carrie Davidson, RN &#183; carriepdavidson.com</text>
 </svg>

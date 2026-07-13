@@ -22,6 +22,11 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+
   <link rel="stylesheet" href="/css/style.css">
 
   <!-- Breadcrumb structured data: Home > Writing > ADHD or Trauma -->
@@ -46,7 +51,10 @@
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/">Carrie Davidson<span>.</span></a>
+      <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <span class="brand-stack__name">Carrie Davidson</span>
+        <span class="brand-stack__cred">RN &middot; Author &middot; Trauma Recovery Coach</span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
@@ -59,7 +67,7 @@
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
         </ul>
-        <a class="btn btn--primary" href="https://calendly.com/coaching-carriepdavidson">Work with me</a>
+        <a class="btn btn--primary btn--pill" href="https://carriepdavidson.substack.com/subscribe">The Sunday Letter</a>
       </nav>
     </div>
   </header>
@@ -93,7 +101,7 @@
     <!-- ============================================================
          FEATURED: "start with this essay" pick.
          ============================================================ -->
-    <section class="section section--tight" aria-labelledby="start-title">
+    <section class="section section--tight reveal" aria-labelledby="start-title">
       <div class="container container-narrow">
         <div class="hub-featured">
           <p class="eyebrow">Start with this essay</p>
@@ -108,7 +116,7 @@
     <!-- ============================================================
          THE CLUSTER: remaining essay(s), description reused from writing.html.
          ============================================================ -->
-    <section class="section section--tight" aria-labelledby="more-title">
+    <section class="section section--tight reveal" aria-labelledby="more-title">
       <div class="container container-narrow">
         <div class="section-head">
           <p class="eyebrow">Keep reading</p>
@@ -128,7 +136,7 @@
     <!-- ============================================================
          ONE FREE RESOURCE: the ADHD ebook + affirmation cards.
          ============================================================ -->
-    <section class="section section--alt" aria-labelledby="resource-title">
+    <section class="section section--alt reveal" aria-labelledby="resource-title">
       <div class="container container-narrow">
         <div class="card">
           <p class="eyebrow">A free companion</p>
@@ -147,7 +155,7 @@
     <!-- ============================================================
          NEIGHBORING TOPICS.
          ============================================================ -->
-    <section class="section section--tight" aria-labelledby="neighbors-title">
+    <section class="section section--tight reveal" aria-labelledby="neighbors-title">
       <div class="container container-narrow">
         <div class="section-head">
           <p class="eyebrow">Related topics</p>
@@ -169,7 +177,7 @@
     <!-- ============================================================
          PRIMARY NEXT STEP: the Sunday Letter (essays hub).
          ============================================================ -->
-    <section class="section section--accent" aria-labelledby="cta-title">
+    <section class="section section--accent reveal" aria-labelledby="cta-title">
       <div class="container container-narrow text-center">
         <p class="eyebrow" style="color: var(--color-accent-soft);">Every Sunday, one small practice</p>
         <h2 id="cta-title">Get the next essay in your inbox</h2>
@@ -212,6 +220,7 @@
             <li><a href="/method">The Method</a></li>
             <li><a href="/book">The Book</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/for-nurses">For Nurses &amp; Caregivers</a></li>
             <li><a href="/writing">Writing</a></li>
             <li><a href="/resources">Free Resources</a></li>
             <li><a href="/faq">FAQ</a></li>
