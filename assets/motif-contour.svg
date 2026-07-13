@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+  <!-- CONTOUR MOTIF: tree-ring / fingerprint hybrid derived from the line.
+       Imperfect concentric rings, each with a small opening (no ring is a
+       closed loop: cycles can open). Whisper-opacity background use only. -->
+  <g fill="none" stroke="#B8A9C9" stroke-width="1.5" stroke-linecap="round">
+    <path d="M300 236 C 336 236, 364 264, 364 300 C 364 336, 336 364, 300 364 C 264 364, 236 336, 236 300 C 236 270, 254 246, 282 238" opacity="0.5"/>
+    <path d="M300 192 C 360 192, 408 240, 408 300 C 408 362, 358 410, 296 408 C 238 406, 192 358, 192 300 C 192 254, 220 216, 262 200" opacity="0.42"/>
+    <path d="M304 148 C 388 150, 452 218, 452 300 C 452 384, 384 452, 300 452 C 216 452, 148 384, 148 300 C 148 230, 194 172, 258 154" opacity="0.34"/>
+    <path d="M290 106 C 398 100, 494 190, 496 298 C 498 408, 408 496, 300 496 C 192 496, 104 408, 104 300 C 104 210, 164 134, 246 112" opacity="0.26"/>
+    <path d="M310 62 C 434 66, 538 172, 540 298 C 542 432, 434 540, 300 540 C 166 540, 60 432, 60 300 C 60 186, 136 90, 240 66" opacity="0.18"/>
+  </g>
+  <circle cx="300" cy="300" r="5" fill="#C9A87C" opacity="0.6"/>
+</svg>

@@ -1132,13 +1132,34 @@ p { max-width: var(--measure); }
    .is-visible, each stroke draws forward (loops to path), never backward.
    Fully disabled under prefers-reduced-motion. */
 @media (prefers-reduced-motion: no-preference) {
-  .pattern-draw path { stroke-dasharray: 1; stroke-dashoffset: 1; }
-  .pattern-draw .draw-dot, .pattern-draw .draw-bloom { opacity: 0; }
-  .reveal.is-visible .pattern-draw .draw-1 { animation: patternDraw 1.6s ease-out forwards; }
-  .reveal.is-visible .pattern-draw .draw-2 { animation: patternDraw 1.2s ease-out 2.1s forwards; }
-  .reveal.is-visible .pattern-draw .draw-3 { animation: patternDraw 1.4s ease-out 3.0s forwards; }
-  .reveal.is-visible .pattern-draw .draw-dot { animation: patternAppear 0.6s ease-out 1.7s forwards; }
-  .reveal.is-visible .pattern-draw .draw-bloom { animation: patternAppear 0.8s ease-out 3.3s forwards; }
+  .pattern-draw path:not(.draw-ghost) { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .pattern-draw .draw-dot, .pattern-draw .draw-bloom, .pattern-draw .draw-ghost { opacity: 0; }
+  .reveal.is-visible .pattern-draw .draw-1 { animation: patternDraw 1.5s ease-in-out forwards; }
+  .reveal.is-visible .pattern-draw .draw-2 { animation: patternDraw 1.2s ease-out 1.5s forwards; }
+  .reveal.is-visible .pattern-draw .draw-dot { animation: patternAppear 0.6s ease-out 2.9s forwards; }
+  .reveal.is-visible .pattern-draw .draw-ghost { animation: patternAppear 1.0s ease-out 3.7s forwards; }
+  .reveal.is-visible .pattern-draw .draw-3 { animation: patternDraw 0.9s ease-out 3.7s forwards; }
+  .reveal.is-visible .pattern-draw .draw-4 { animation: patternDraw 1.3s ease-out 4.6s forwards; }
+  .reveal.is-visible .pattern-draw .draw-bloom { animation: patternAppear 0.8s ease-out 5.2s forwards; }
   @keyframes patternDraw { to { stroke-dashoffset: 0; } }
   @keyframes patternAppear { to { opacity: 1; } }
+}
+
+/* ============================================================
+   PATTERN LANGUAGE v2 (2026-07-13): contour heroes, corner motif,
+   footer line. All derive from the one hand-drawn line; see
+   docs/pattern-language.md.
+   ============================================================ */
+.hero {
+  background-image: url("../assets/motif-contour.svg");
+  background-repeat: no-repeat;
+  background-position: right -130px top -150px;
+  background-size: 460px 460px;
+}
+.site-footer {
+  background-image: url("../assets/pattern-footer.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: min(1200px, 100%) 40px;
+  padding-top: var(--space-7);
 }

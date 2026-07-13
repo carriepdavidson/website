@@ -1,41 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="160" viewBox="0 0 1200 160" role="img" aria-label="One line moving from repeating loops, through a break and a pause, into bloom and an open path">
-  <!-- THE PATTERN LINE: one continuous story, left to right.
-       1 THE LOOP (Witness): tight repeating coils, same size: the pattern running.
-       2 THE SEEING (Understand): the last coil opens slightly: the loop becomes visible.
-       3 THE BREAK + THE PAUSE (Interrupt): the line stops; a held breath; a still point.
-       4 THE BLOOM (Find Creative Flow): the line returns and buds: making something new.
-       5 THE PATH (Build the Intentional Life): the line rises, open and unfinished. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200" role="img" aria-label="One hand-drawn line moving from tangled survival loops, through steadier repeating loops, into a pause at a still point, then a choice where an old path is left behind, opening into a spacious, gently rising, imperfect path with lavender blooming from it">
+  <!-- THE PATTERN LINE v2: Survival, Pattern, Pause, Choice, Creation.
+       One continuous hand-drawn gesture. Never perfectly straight. -->
 
-  <!-- 1+2: the loops: three tight, one opening -->
-  <path d="M40 100
-           C 70 100, 70 60, 100 60 C 130 60, 130 100, 100 100 C 88 100, 82 92, 90 82
-           C 110 58, 150 58, 180 60 C 210 62, 210 100, 180 100 C 168 100, 162 92, 170 82
-           C 190 58, 230 58, 260 60 C 290 62, 290 100, 260 100 C 248 100, 242 92, 250 82
-           C 272 56, 320 54, 356 62 C 388 69, 404 84, 416 92"
-        fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
+  <!-- 1 SURVIVAL: tangled, overlapping, doubling back on itself -->
+  <path class="draw-1" pathLength="1" d="M38 128
+       C 62 132, 74 96, 96 88 C 122 79, 138 106, 122 122 C 108 136, 84 128, 90 106
+       C 96 84, 130 72, 152 84 C 176 97, 168 130, 144 132 C 126 133, 118 118, 128 104
+       C 142 84, 178 78, 198 92 C 214 103, 210 126, 192 130 C 178 133, 170 122, 176 110"
+       fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
 
-  <!-- 3: the break and the pause: a gap, and one still point inside it -->
-  <circle cx="470" cy="94" r="7" fill="#5E4B85"/>
-  <circle cx="470" cy="94" r="14" fill="none" stroke="#B8A9C9" stroke-width="1.5" opacity="0.6"/>
+  <!-- 2 PATTERN: the loops regularize; rhythm appears -->
+  <path class="draw-2" pathLength="1" d="M176 110
+       C 196 86, 240 84, 268 90 C 296 96, 296 128, 268 128 C 256 128, 250 120, 258 110
+       C 276 88, 316 86, 344 92 C 372 98, 372 128, 344 128 C 332 128, 326 120, 334 110
+       C 352 88, 392 88, 418 96 C 442 103, 452 116, 458 124"
+       fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
 
-  <!-- 4: the return and the bloom -->
-  <path d="M524 92 C 560 86, 600 82, 640 76 C 700 67, 760 60, 820 56"
-        fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
-  <g stroke="#C9A87C" stroke-width="2" fill="none" stroke-linecap="round">
-    <path d="M612 80 C 606 66, 610 54, 620 44"/>
-    <path d="M700 66 C 708 52, 706 42, 700 32"/>
+  <!-- 3 PAUSE: the gap, and one still point held inside it -->
+  <circle class="draw-dot" cx="512" cy="126" r="7" fill="#5E4B85"/>
+  <circle class="draw-dot" cx="512" cy="126" r="14" fill="none" stroke="#B8A9C999" stroke-width="1.5"/>
+
+  <!-- 4 CHOICE: the line returns and forks. The old path stays visible,
+       flat and fading; the chosen path bends upward. -->
+  <path class="draw-ghost" pathLength="1" d="M622 112 C 668 116, 716 122, 762 128 C 800 133, 836 138, 862 142"
+       fill="none" stroke="#B8A9C98C" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 10"/>
+  <path class="draw-3" pathLength="1" d="M566 122 C 586 118, 604 114, 622 112
+       C 660 106, 690 96, 716 84"
+       fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 5 CREATION: open, spacious, gently rising, wavering: never straight -->
+  <path class="draw-4" pathLength="1" d="M716 84
+       C 762 64, 800 70, 836 66 C 878 61, 906 48, 946 52 C 986 56, 1010 44, 1048 40
+       C 1082 36, 1108 42, 1136 34"
+       fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round"/>
+  <g class="draw-bloom">
+    <g stroke="#C9A87C" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M842 66 C 836 52, 840 40, 850 30"/>
+      <path d="M948 52 C 956 38, 954 28, 948 18"/>
+    </g>
+    <g fill="#B8A9C9">
+      <ellipse cx="852" cy="26" rx="6" ry="9" transform="rotate(18 852 26)"/>
+      <ellipse cx="947" cy="14" rx="6" ry="9" transform="rotate(-12 947 14)"/>
+    </g>
+    <g fill="#B8A9C9" opacity="0.7">
+      <ellipse cx="840" cy="38" rx="4" ry="6" transform="rotate(28 840 38)"/>
+      <ellipse cx="954" cy="28" rx="4" ry="6" transform="rotate(-20 954 28)"/>
+    </g>
+    <circle cx="1136" cy="34" r="4" fill="#C9A87C8C"/>
   </g>
-  <g fill="#B8A9C9">
-    <ellipse cx="622" cy="40" rx="6" ry="9" transform="rotate(18 622 40)"/>
-    <ellipse cx="699" cy="28" rx="6" ry="9" transform="rotate(-12 699 28)"/>
-  </g>
-  <g fill="#B8A9C9" opacity="0.7">
-    <ellipse cx="610" cy="52" rx="4" ry="6" transform="rotate(28 610 52)"/>
-    <ellipse cx="706" cy="42" rx="4" ry="6" transform="rotate(-20 706 42)"/>
-  </g>
-
-  <!-- 5: the path: rising, open, unfinished -->
-  <path d="M820 56 C 900 51, 1000 48, 1080 44 C 1110 42.5, 1140 41, 1160 40"
-        fill="none" stroke="#C9A87C" stroke-width="3" stroke-linecap="round" stroke-dasharray="none"/>
-  <circle cx="1160" cy="40" r="4" fill="#C9A87C" opacity="0.55"/>
 </svg>

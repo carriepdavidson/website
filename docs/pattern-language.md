@@ -1,38 +1,46 @@
-# The Pattern Line: carriepdavidson.com's visual language
-*One motif, one grammar. 2026-07-13. This is the site's ownable signature, the way rounded corners are Apple's and gradients are Stripe's. Everything here derives from a single idea: a thin line that begins in loops and gradually opens into a path.*
+# The Pattern Line v2: Carrie Davidson's signature visual language
+*One continuous hand-drawn line expressing the philosophy. Not decoration: the design itself says what the brand says. Remove the logo and the site should still be recognizably hers. Updated 2026-07-13.*
 
-## The idea
-The brand movement (brokenness → pattern recognition → interruption → regulation → creation → intentional life) drawn as one continuous stroke:
+## The philosophy, drawn
+SURVIVAL → PATTERN → PAUSE → CHOICE → CREATION
 
-LOOP → SEEING → BREAK/PAUSE → BLOOM → OPEN PATH
+One gesture, five beats:
+1. **Survival**: tangled, overlapping loops that double back on themselves. The line is coping.
+2. **Pattern**: the loops regularize into rhythm. The line can be seen.
+3. **Pause**: the line stops. A gap, holding exactly one amethyst still point.
+4. **Choice**: the line returns and forks. The old path continues faint and dotted (visible, not followed); the chosen path bends upward.
+5. **Creation**: open, spacious, gently rising, always wavering. Lavender buds only here. The line never becomes perfectly straight and never ends closed: growth without perfection.
 
-It is the Conscious Creation Method in a single line: Witness and Understand live in the coils, Interrupt is the gap with the still point, Find Creative Flow is the lavender budding from the returning line, Build the Intentional Life is the rising, unfinished path.
+## The family
+| Asset | Role |
+|---|---|
+| assets/pattern-line-master.svg (1200x200) | The whole philosophy. Feature moments only: homepage method teaser, method page (inline + self-drawing), about "What I built from it". Max once per page. |
+| assets/pattern-divider-1/2/3.svg | Graded section dividers (loop / easing+still point / choice fork into open path). Scroll rule: grades only ascend down a page. |
+| assets/motif-contour.svg | Tree-ring / fingerprint contour: imperfect concentric rings, each with an opening (no cycle is sealed). Whisper background on heroes (top-right, cropped). |
+| assets/motif-corner.svg | The line enters a corner, loops once, leaves more open, budding. Replaces all generic botanicals. |
+| assets/motif-cycle.svg | An imperfect circle that does not quite close, with a still point at its gap. For cycles/repetition contexts. |
+| assets/motif-branch.svg | The Choice glyph: fork, faint old path, chosen rising path with one bud. |
+| assets/pattern-footer.svg | Lilac wavering line at the top of the plum footer: the path continuing into evening. |
+| Resource covers (cover-*.svg) | Every cover derives from the family: settling line (Befriending), three opening cycles (Affirmation Cards), the blooming choice (Conscious Creation), the leaving-and-returning dotted path (Small Leavings Workbook), wavering day-lines with one held still point (Journal). |
 
-## The assets
-| Asset | Story stage | Use |
-|---|---|---|
-| assets/pattern-line-master.svg (1200x160) | the whole movement | Feature moments ONLY: homepage method teaser, method page (inline, self-drawing), about "What I built from it". Never more than once per page. |
-| assets/pattern-divider-1.svg "the loop" | coils still running | The FIRST divider on a page (near the top, after the hero). |
-| assets/pattern-divider-2.svg "the easing" | one loop opening; the still point appears | MID-page dividers. |
-| assets/pattern-divider-3.svg "the open path" | nearly straight, rising, unfinished | The LAST divider, just before the closing invitation. |
+## Drawing rules (non-negotiable)
+- One continuous gesture per instance; the line breaks only at the Pause, and the gap always holds exactly one still point.
+- Hand-drawn waver everywhere: no path may be perfectly straight, no circle perfectly closed, no repetition perfectly identical.
+- Doubling back is allowed only BEFORE the pause (survival/pattern beats).
+- The fork appears only AFTER the pause; the not-taken path is always lilac, dotted, fainter, and continues flat or downward; the chosen path always rises.
+- Blooms (lilac ellipses on copper stems) occur only after the choice. Two to three maximum per instance.
+- Endings are always open, marked by a soft copper terminal dot (55-60% opacity).
+- Colors: line = Warm Copper #C9A87C (85-90% on light); still point = Amethyst #5E4B85 (the only accent intrusion); ghost paths + blooms + contours = Lilac #B8A9C9 at reduced opacities; footer line = lilac on plum at 45%.
+- Motion: the line may only draw itself FORWARD (survival toward creation), the ghost path fades in rather than draws, and everything is static under prefers-reduced-motion. Implemented once, on the method page.
 
-## The scroll rule (the signature behavior)
-Dividers appear in grade order down every page: 1 → 2 → 3. Scrolling any page therefore enacts the brand promise: the line literally becomes more ordered as the visitor moves toward the invitation. Pages with one divider use the grade that matches its position (top = 1, pre-invitation = 3). Pages with two use 1 then 3. Never place a lower grade below a higher one.
+## Placement map
+- Every page: graded dividers (ascending), contour whisper behind the hero, footer line.
+- Corners: motif-corner only (never generic botanicals; the old sprigs are deleted).
+- Framework illustrations: the master line; the five Method steps map to the five beats.
+- Resource covers: one derived motif each, per the table.
+- Memoir: the printed cover is its own artwork and is never decorated over; the prologue section may carry one corner motif.
+- Quiz: the still point is the natural motif for the result screen (the pause made visible); keep usage minimal.
+- Newsletter/invitation bands: the seated embed card may sit beneath a grade-3 divider; no additional motifs.
 
-## Drawing grammar (for creating new instances)
-- One continuous stroke per instance; the line may break only at the Interrupt stage, and the gap always holds exactly one still point.
-- Stroke: 2.5px (dividers) / 3px (feature), round caps, Warm Copper #C9A87C at 0.85 opacity on light backgrounds; #B8A9C9 lilac at 0.5 for whisper-level background use.
-- The still point (the pause): Amethyst #5E4B85 filled dot; at feature scale it gains a 1.5px lilac halo. It is the only place the accent color enters the motif.
-- Blooms: lilac #B8A9C9 ellipses budding from copper stems; only AFTER the pause, never before it. Two buds maximum at divider scale.
-- The path end: always open (the line never closes or ends at the frame edge); a soft copper terminal dot at 0.55-0.6 opacity marks "unfinished, becoming."
-- The line always rises left to right after the pause. Loops always sit before it. Never mirror the direction.
-
-## Restraint rules
-- Maximum one feature strip + three dividers per page. The motif whispers; it never competes with words or photographs.
-- All instances are aria-hidden decoration except the master strip on the method page, which carries a text alternative describing the movement.
-- No other connective line motifs may be introduced (retire generic waves as pages are touched). One metaphor per site: the brief's contour-terrain option was considered and set aside to avoid mixing visual metaphors with the line.
-- The five step glyphs (loop / opening loop / gap+point / bud / rising line) are DERIVABLE from this grammar at 48x48 if ever needed for the method steps; derive from the master's geometry, do not invent new shapes.
-- Motion: if the line is ever animated (draw-on via stroke-dashoffset), it must respect prefers-reduced-motion and only ever draw forward (loops to path), never backward.
-
-## Why this and not more
-Carrie's core idea is that patterns are not flaws; they are lines that can be seen, paused, and redirected. The site's one decoration says exactly that, everywhere, quietly.
+## Restraint (unchanged from v1, still the law)
+Max one feature strip + three dividers per page; whisper opacities for backgrounds; the motif never competes with words or photographs; one metaphor sitewide. If an element cannot be traced back to the line, it does not ship.

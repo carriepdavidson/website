@@ -84,3 +84,11 @@ Nine taste edits following the full creative review:
 7. Footer line: "Made slowly, on purpose."
 8. Book themes: six cards merged into three calmer pairs.
 9. The signature interaction: the method page's Pattern Line is now inline SVG that draws itself forward on first view (loops to path, never backward; fully static under prefers-reduced-motion).
+
+## Pattern Language v2: the philosophy drawn (2026-07-13)
+- Master line rebuilt in five beats: Survival (tangled, doubling back), Pattern (rhythmic loops), Pause (still point), Choice (fork: the not-taken path stays faint and dotted; the chosen path rises), Creation (spacious waver, blooms, open ending). Nothing perfectly straight anywhere in the system.
+- New derived motif family: contour rings (tree-ring/fingerprint, each ring with an opening) whispering behind every hero; corner motif (the line loops once and leaves more open, budding) replacing the deleted generic botanical sprigs; cycle glyph (a circle that does not quite close); branch glyph (the Choice); footer line (lilac path continuing into the plum).
+- All three dividers regained hand-drawn waver; grade 3 now carries the choice fork.
+- All five resource covers now strictly derive from the family (opening cycles for the affirmation cards; the blooming choice for Conscious Creation; wavering day-lines for the journal; no ruled lines remain).
+- Method page self-drawing line upgraded to all five beats; the ghost path fades in dotted rather than drawing; forward-only, reduced-motion safe.
+- docs/pattern-language.md rewritten as the v2 grammar: drawing rules, color law, placement map, restraint.
