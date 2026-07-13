@@ -22,7 +22,7 @@ Standing rule referenced throughout: never say the Method is "backed by" or "sci
 | Home tagline: "Finally Feel at Home in Your Body." + "Trauma recovery coaching through nervous system regulation and creative healing." | 1 | Live. Matches canon. |
 | About tagline: "The Nurse Who Became Her Own Patient." + supporting line + credential line | 1 | Live. Matches canon. |
 | ARC Program tagline: "Break The Trauma Loop" + "The Conscious Creation Method: nervous system regulation meets creative healing." | 1 | Public. |
-| ARC Program: "a 12-week path from pattern to purpose" (program length) | 4 | Program length is a structural detail. `TODO(CARRIE)` confirm 12 weeks before any page states it. |
+| ARC Program: "a 12-week path from pattern to purpose" (program length) | 4 | CONFIRMED by Carrie 2026-07-13: 12 weeks is approved public copy. |
 | Conscious Creation Circle tagline (for ARC graduates) | 1 | Public. Group container naming. |
 | Memoir tagline: "Addicted to Trauma. The story of what it took to stop running the patterns that almost killed me." | 1 | Public. Note printed-cover subtitle differs (see brand.json). |
 | Speaking tagline: "Stories, Strategy, and Truth That Move People to Act." | 1 | Public. |
@@ -66,10 +66,10 @@ Standing rule referenced throughout: never say the Method is "backed by" or "sci
 | Step-4 quote: "What did you do when your parents were fighting..." | 1 | Public. Canon voice. |
 | Step-3 quote: "I can either go down this road or turn the car around." | 1 | Public. Canon. |
 | Claim: method is "science-backed" / "structured, science-backed method" | 5 | Reword. The Method itself has not been studied. Use "informed by research." See RESEARCH-VERIFICATION.md. |
-| Nature Mental Health 2025 claim (33 studies, N=4,587, g=0.85) | 5 | Real citation, but ages 3-18 and g figure unconfirmed. Publish figure-free as "emerging research." `TODO(CARRIE)`. |
-| PMC 2025 claim (SMD -1.98) | 5 | Real ("Colors of the mind," BMC Psychology 2025) but statistically fragile. Publish figure-free or omit. `TODO(CARRIE)`. |
+| Nature Mental Health 2025 claim (33 studies, N=4,587, g=0.85) | 5 | Real citation, ages 3-18, g unconfirmed. Figure-free "emerging research" wording BLESSED by Carrie 2026-07-13. |
+| PMC 2025 claim (SMD -1.98) | 5 | Real ("Colors of the mind," BMC Psychology 2025) but statistically fragile. Figure-free/omit approach BLESSED by Carrie 2026-07-13. |
 | Claim: "the body stores trauma below the level of conscious awareness" | 5 | General, widely supported. Fine with soft, non-absolute wording. |
-| PRIVATE Program Structure (Phase 1 / Phase 2, weeks 1-6 / 7-12, Steps mapping) | 4 | Phase structure is publishable once confirmed, but program length is unconfirmed. `TODO(CARRIE)`. Keep phase/week specifics off the site until then. |
+| PRIVATE Program Structure (Phase 1 / Phase 2, weeks 1-6 / 7-12, Steps mapping) | 4 | Phase structure and 12-week length CONFIRMED by Carrie 2026-07-13; phase/week specifics are publishable. |
 | ALL pricing (flagship monthly and total, group cohort, VIP intensive, digital entry, retreat; figures withheld from this public file) | 3 | INTERNAL. Never published. Canon: pricing confirmed on the first call only. |
 | The promise line: "You will not leave transformed. You will leave more connected to the truth of who you are before the patterns took over." | 2 | Public with light editing. Note banned word "transformed" is used deliberately in negation here; keep the negation but confirm it reads clearly. `TODO(CARRIE)`. |
 | Welcome Gift list (specifics withheld from this public file) | 3 | INTERNAL. `TODO(CARRIE)` on whether any gift is mentioned publicly before publication. |
@@ -83,7 +83,7 @@ All six bios are **Category 1 (public)** in substance. Specific flags below.
 
 | Element | Category | Notes |
 |---|---|---|
-| Bio 1 opening line: "I learned to read a room for danger before I learned to read a book." | 4 | `TODO(CARRIE)` confirm this is her approved public opening line for /about. |
+| Bio 1 opening line: "I learned to read a room for danger before I learned to read a book." | 4 | CONFIRMED by Carrie 2026-07-13 as her approved public opening line for /about. |
 | Bio 1 body (six years old, cardiac/oncology floor two years, "patient in the white hallway who could not remember her own name," BSPH + BSN Duke, RN, certified trauma recovery coach, somatic/parts/EMDR/ketamine/AA/outpatient, "both sides of the chart," LGBTQ+ affirming, "the soul is the point") | 1 | Public. Note the recovery-modality disclosures (ketamine, AA rooms) are sensitive personal detail; already treated as public in canon, but if Carrie wants any modality omitted, this is the place. `TODO(CARRIE)` optional confirm on modality list. |
 | Bio 2 (Brief / press kit) | 1 | Public. Duke, RN, creator of the Method. |
 | Bio 3 (Power Soundbite): "the nurse who became her own patient. Now she shows others the way home." | 1 | Public. Canon soundbite. |
@@ -159,7 +159,7 @@ Total classified elements: 60. Category-4 and Category-5 items each carry a `TOD
 
 ## Consolidated TODO(CARRIE) list
 
-1. `TODO(CARRIE)` Confirm Bio 1 opening line "I learned to read a room for danger before I learned to read a book." as the approved public /about opening. (Cat 4)
+1. RESOLVED 2026-07-13: Bio 1 opening line confirmed by Carrie as the approved public /about opening. (Cat 4)
 2. `TODO(CARRIE)` Confirm program length before any page states "12-week" / phase-week structure. (Cat 4)
 3. `TODO(CARRIE)` Decide whether welcome gifts / launch offers are mentioned publicly at all. Default: no. (Cat 3/4)
 4. `TODO(CARRIE)` Approve the promise line's deliberate use of "transformed" in negation, or reword. (Cat 4)
