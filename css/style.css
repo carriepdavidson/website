@@ -625,9 +625,9 @@ p { max-width: var(--measure); }
   border-radius: var(--radius-lg); padding: var(--space-6);
 }
 .hub-featured .eyebrow { color: var(--color-accent-deep); }
-.hub-featured h3 { font-size: var(--step-2); margin: var(--space-2) 0 var(--space-3); }
-.hub-featured h3 a { color: var(--color-ink); text-decoration: none; }
-.hub-featured h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.hub-featured h2, .hub-featured h3 { font-size: var(--step-2); margin: var(--space-2) 0 var(--space-3); }
+.hub-featured h2 a, .hub-featured h3 a { color: var(--color-ink); text-decoration: none; }
+.hub-featured h2 a:hover, .hub-featured h3 a:hover { color: var(--color-accent); text-decoration: underline; }
 .hub-featured p { color: var(--color-ink-soft); }
 
 /* Topic hub: the rest of the cluster as a readable list (not a card grid). */
