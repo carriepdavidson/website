@@ -815,7 +815,7 @@ p { max-width: var(--measure); }
 }
 
 /* --- Pill CTA (rounded header/newsletter button) ------------------------- */
-.btn--pill { border-radius: 999px; padding-inline: 1.5em; }
+.btn--pill { border-radius: 3px; padding-inline: 1.5em; } /* rectangle per Carrie 2026-07-13 (matches the board) */
 
 /* --- Wave divider: RETIRED in Phase 6. Replaced sitewide by the Pattern
    Language (.pattern-divider). See the PATTERN LANGUAGE block at end of file
