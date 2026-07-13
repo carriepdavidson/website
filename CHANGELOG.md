@@ -33,3 +33,11 @@
 - About restructured: In brief facts, current work links, coaching philosophy + scope/ethics block; her story prose preserved byte-for-byte; media section as TODO placeholder.
 - Book: waitlist benefit line under hero CTA; author cred-strip. Coaching: cred-strip + FAQ link near apply CTA.
 - media.html: complete noindexed template, unlinked, every unverifiable fact behind TODO(CARRIE) comments.
+
+## Phase 5.4: BrandStory messaging alignment (2026-07-13)
+- Offers renamed sitewide: The ARC Program (12-week flagship, Phase 1 Breaking the Loop / Phase 2 Building Forward) and The Conscious Creation Circle (graduates' group); The Healing Circle kept distinct as the community.
+- Method steps canonical everywhere: Witness / Understand / Interrupt / Find Creative Flow / Build the Intentional Life, with ARC stage labels and the "Creativity is the opposite of stuck" premise.
+- About aligned to official Bio 1: Duke BSPH+BSN, both-sides-of-the-chart, verified story specifics, LGBTQ+ affirming statement, alumniOf schema.
+- Official taglines placed (home, coaching, memoir, writing). Science claim verified as real but youth-population; published as "emerging research" without figures + citation TODO.
+- Banned-word sweep: one violation fixed ("trauma-informed"); "insight-rich and transformation-poor" exempt as her coined phrase.
+- Real memoir cover replaced the placeholder (committed separately).

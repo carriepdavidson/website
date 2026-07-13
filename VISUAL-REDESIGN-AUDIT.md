@@ -39,3 +39,5 @@ Arch cards stack single-column; hero photo mask switches to bottom-fade under te
 
 ## Integrations preserved (verified list)
 Substack subscribe links + new embed, Calendly links, 8 PDF downloads, quiz JS, sitemap/robots/404, schema, llms.txt. No content rewrites; no em-dashes; signature lines verbatim; nothing fabricated (mockup's invented framework labels, bio text, article titles, and model photography are explicitly NOT copied).
+
+NOTE for Phase 5.5 agent: final cover subtitle reads 'A story of CPTSD, Addiction, and the Patterns that almost killed me' (not 'A Memoir of...'). Update Book JSON-LD alternateName and any subtitle text to match the printed cover.

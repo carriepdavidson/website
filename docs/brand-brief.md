@@ -29,6 +29,7 @@ The memoir and the coaching are the **same thesis in two formats**:
   - "Insight-rich and transformation-poor" (names the target's exact frustration).
   - "You do not have to talk about it one more time to heal it."
 - Never: hype, hustle-marketing, toxic positivity, clinical coldness, shame-based urgency.
+- Voice constraints extended by docs/brand-story-canon.md (banned words, offer names, Method step names).
 
 ## Target Audience
 Primary: **high-achieving women** exhausted by trauma patterns — often therapy veterans ("tried therapy, apps, breathwork, workshops") who understand their patterns but can't break them. Adjacent: CPTSD, trauma-addiction overlap, ADHD/nervous-system dysregulation, addiction recovery.
