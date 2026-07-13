@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="Cover of The Small Leavings Journal, a free journal by Carrie Davidson">
-  <rect width="480" height="300" fill="#FAF7F0"/>
+  <rect width="480" height="300" fill="#F6F4FB"/>
   <circle cx="40" cy="30" r="130" fill="#ECEAF7" opacity="0.6"/>
   <!-- dotted path wandering away, then returning to a filled point -->
   <g fill="#7C77C0">
