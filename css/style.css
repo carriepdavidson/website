@@ -65,11 +65,13 @@
   --color-orchid:      #7C77C0; /* thread violet: large/decorative */
   --color-lilac:       #B8B2E4; /* harmonized lilac: blooms / ghost strokes */
   --color-footer-text: #2E2A3A; /* muted plum text on cream footer */
-  --color-footer-link: #2E2A3A; /* violet links on cream footer */
+  --color-footer-link: #5A55A0; /* thread-violet links in the footer */
 
   /* Signature Thread tokens (new) */
   --color-thread:       #7C77C0; /* the thread violet (line, decorative) */
-  --color-thread-still: #5A55A0; /* the still point (deep violet) */
+  --color-thread-still: #5A55A0;
+  --color-link:        #5A55A0; /* text-safe thread violet: links (AA on all lavender bgs) */
+  --color-link-deep:   #47437F; /* link hover */ /* the still point (deep violet) */
   --color-lavender-band:#6A64AC; /* newsletter / accent band (AA near-white text) */
 
   /* Typography: Cormorant Garamond (literary display) + DM Sans (humanist body).
@@ -127,8 +129,8 @@ img, picture, svg, video { display: block; max-width: 100%; height: auto; }
 input, button, textarea, select { font: inherit; color: inherit; }
 ul, ol { padding-left: 1.25em; }
 
-a { color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
-a:hover { color: var(--color-accent-deep); }
+a { color: var(--color-link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { color: var(--color-link-deep); }
 
 /* 3. TYPOGRAPHY + PROSE ==================================================== */
 h1, h2, h3, h4 {
@@ -488,7 +490,7 @@ p { max-width: var(--measure); }
   padding-block: var(--space-8) var(--space-6); font-size: var(--step--1);
   color: var(--color-footer-text); }
 .site-footer a { color: var(--color-footer-link); }
-.site-footer a:hover { color: var(--color-accent-deep); }
+.site-footer a:hover { color: var(--color-link-deep); }
 .site-footer h2 { color: var(--color-ink); }
 .site-footer .meta { color: var(--color-footer-text); }
 .site-footer .disclaimer { color: var(--color-footer-text); }
