@@ -1299,3 +1299,4 @@ p { max-width: var(--measure); }
 /* Nav items never wrap (letterspaced caps need the room) */
 .nav__link { white-space: nowrap; }
 @media (min-width: 64rem) { .nav__list { gap: var(--space-5); } }
+.site-header .btn { white-space: nowrap; }
