@@ -579,8 +579,12 @@ p { max-width: var(--measure); }
   .path-cards { grid-template-columns: repeat(3, 1fr); }
 }
 /* Arch proportion guard: the doorway shape only reads on narrow, tall
-   cards, so arch path-cards never stretch wide (Carrie bug 2026-07-13). */
-.path-card.arch-card { max-width: 400px; width: 100%; }
+   cards, so arch path-cards never stretch wide and their content centers
+   inside the curve (Carrie bug 2026-07-13). */
+.path-card.arch-card { max-width: 400px; width: 100%;
+  text-align: center; align-items: center; }
+.path-card.arch-card .path-card__icon { margin-inline: auto; }
+.path-card.arch-card h3 { text-align: center; }
 .path-card.arch-card .path-card__cta { align-self: center; }
 .path-card.arch-card .path-card__links { justify-content: center; }
 
