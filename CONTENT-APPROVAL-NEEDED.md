@@ -12,9 +12,9 @@ RESOLVED 2026-07-14: Carrie approved publishing exact pricing per the GTM playbo
 (Soul Story Creative, July 2026): ARC Program $3,000 in full or 3 x $1,100/month.
 Published on /arc-program, /coaching, and /faq.
 
-## ARC session cadence (VERIFY)
-TODO(CARRIE): the GTM playbook says bi-weekly 60-minute sessions; the site previously
-said weekly. Site now says "every other week" per the playbook. Confirm which is true.
+## ARC session cadence (RESOLVED 2026-07-14)
+Carrie confirmed sessions are WEEKLY (the GTM playbook's "bi-weekly" was wrong).
+Site says weekly on /arc-program and /coaching. Tell Lee to correct the playbook.
 
 ## Circle pricing (held)
 The Conscious Creation Circle's $400/month (and $297 founding rate) is NOT published;
