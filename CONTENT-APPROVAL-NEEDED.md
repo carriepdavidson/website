@@ -8,9 +8,15 @@ restraint pass: a generic national range does not describe Carrie's actual offer
 filler. Replaced sitewide with: "The investment for your path is shared plainly before the fit
 call, with no pressure to continue."
 
-TODO(CARRIE): choose how to present investment, then tell Claude to publish it:
-- [ ] Exact ARC Program figure (e.g. "$X for the 12-week program"), or
-- [ ] "Programs begin at $X", or
-- [ ] An approved range ("$X to $Y depending on container"), or
-- [ ] Keep the current "shared before the fit call" language (no number on site).
-Pricing must never be invented; nothing goes on the site until you confirm the exact wording.
+RESOLVED 2026-07-14: Carrie approved publishing exact pricing per the GTM playbook
+(Soul Story Creative, July 2026): ARC Program $3,000 in full or 3 x $1,100/month.
+Published on /arc-program, /coaching, and /faq.
+
+## ARC session cadence (VERIFY)
+TODO(CARRIE): the GTM playbook says bi-weekly 60-minute sessions; the site previously
+said weekly. Site now says "every other week" per the playbook. Confirm which is true.
+
+## Circle pricing (held)
+The Conscious Creation Circle's $400/month (and $297 founding rate) is NOT published;
+the Circle stays invitation-only for ARC graduates per the playbook. Publish only if
+Carrie asks.
