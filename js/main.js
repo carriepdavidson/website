@@ -59,3 +59,44 @@
     window.addEventListener("load", function () { setTimeout(failsafe, 1500); });
   }
 })();
+
+/* Sunday Letter signup (MailerLite): submits in place and confirms inline.
+   Progressive enhancement: without JS the form still posts to MailerLite,
+   which replies with a plain confirmation. Double opt-in is on, so the real
+   confirmation always happens in the subscriber's inbox. */
+(function () {
+  "use strict";
+  var forms = document.querySelectorAll("form[data-ml-form]");
+  if (!forms.length) return;
+
+  forms.forEach(function (form) {
+    var status = form.querySelector(".signup__status");
+    var button = form.querySelector('button[type="submit"]');
+
+    function say(message) {
+      if (status) status.textContent = message;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (button) button.disabled = true;
+      say("Sending…");
+
+      fetch(form.action, { method: "POST", body: new FormData(form) })
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          if (data && data.success) {
+            form.querySelectorAll(".input, button").forEach(function (el) { el.hidden = true; });
+            say("Almost in. Check your inbox for a confirmation email, click it, and the next letter finds you on Sunday.");
+          } else {
+            if (button) button.disabled = false;
+            say("That did not go through. Please check the address and try again.");
+          }
+        })
+        .catch(function () {
+          if (button) button.disabled = false;
+          say("Something interrupted the connection. Please try again in a moment.");
+        });
+    });
+  });
+})();

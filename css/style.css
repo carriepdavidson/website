@@ -457,6 +457,12 @@ p { max-width: var(--measure); }
 .signup__form { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
 .signup__form .input { flex: 1 1 16rem; }
 .signup__form .btn { flex: 0 0 auto; }
+.signup__status { flex-basis: 100%; margin: 0; font-size: var(--step--1); }
+.signup__status:empty { display: none; }
+/* Centered variant for the lavender newsletter band (MailerLite native form). */
+.signup__form--band { max-width: 34rem; margin-inline: auto; justify-content: center; }
+.section--lavender .signup__form .input { background: rgba(255,255,255,0.96); color: var(--color-ink); border-color: transparent; }
+.section--lavender .signup__status { color: #FFFFFF; }
 .section--accent .signup { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); }
 .section--accent .input { background: rgba(255,255,255,0.95); color: var(--color-ink); }
 

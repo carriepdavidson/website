@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260713e">
+  <link rel="stylesheet" href="css/style.css?v=20260714a">
 
   <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T.
        Reuse this verbatim on about.html; see docs/design-system.md. -->
@@ -350,7 +350,7 @@
             </span>
           </a>
 
-          <a class="editorial-card editorial-card--letter" href="https://carriepdavidson.substack.com/subscribe">
+          <a class="editorial-card editorial-card--letter" href="/subscribe">
             <span class="editorial-card__media">
               <img src="assets/motif-corner.svg" alt="" loading="lazy" width="220" height="260">
             </span>
@@ -395,8 +395,8 @@
 
     <!-- ============================================================
          INVITATION: the Sunday Letter on the solid lavender band, with white
-         thread loops and the working Substack embed. "Finally feel at home in
-         your body." (official Home tagline) closes the band.
+         thread loops and the native MailerLite signup form. "Finally feel at
+         home in your body." (official Home tagline) closes the band.
          ============================================================ -->
     <!-- COPY-PASS -->
     <section class="section section--lavender reveal" aria-labelledby="signup-title">
@@ -415,13 +415,16 @@
         <p class="mx-auto">A weekly note for the work no one else sees: neuroscience
           precision, a poetic reframe, and one small practice, every Sunday. No hustle, no shame,
           no urgency. Just companionship on the way home to yourself.</p>
-        <div class="substack-embed" style="margin-top: var(--space-6);">
-          <iframe src="https://carriepdavidson.substack.com/embed" title="Subscribe to The Sunday Letter"
-                  loading="lazy" frameborder="0" scrolling="no"></iframe>
-          <p class="substack-embed__fallback">
-            <a href="https://carriepdavidson.substack.com/subscribe">Prefer a link? Subscribe to The Sunday Letter on Substack &rarr;</a>
-          </p>
-        </div>
+        <form class="signup__form signup__form--band" method="post"
+              action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
+              data-ml-form style="margin-top: var(--space-6);">
+          <label class="visually-hidden" for="signup-email">Email address</label>
+          <input class="input" id="signup-email" name="fields[email]" type="email"
+                 autocomplete="email" placeholder="Your email address" required>
+          <input type="hidden" name="ml-submit" value="1">
+          <button class="btn btn--primary" type="submit">Get the Sunday Letter</button>
+          <p class="signup__status" role="status" aria-live="polite"></p>
+        </form>
         <p class="lede mx-auto" style="margin-top: var(--space-6);">Finally feel at home in your body.</p>
         <p class="meta mx-auto" style="margin-top: var(--space-3);">No spam. Unsubscribe anytime.</p>
       </div>
@@ -445,7 +448,7 @@
             are not separate problems. They are the same wound, telling itself in two different
             languages.</p>
           <p class="meta footer-invite">
-            <a href="https://carriepdavidson.substack.com/subscribe">Get reflections and resources to support your healing &rarr;</a>
+            <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
           <p class="meta" style="margin-top: var(--space-3);">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
@@ -473,10 +476,10 @@
           <h2>Start here</h2>
           <ul>
             <li><a href="https://calendly.com/coaching-carriepdavidson"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-coaching"/></svg>Book a coaching call</a></li>
-            <li><a href="https://carriepdavidson.substack.com/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-journal"/></svg>Join the book waitlist</a></li>
+            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-journal"/></svg>Join the book waitlist</a></li>
             <li><a href="assets/trauma-tree-worksheet.pdf"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Worksheet</a></li>
             <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="https://carriepdavidson.substack.com/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
           </ul>
         </div>
 

@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Conscious Creation Workbook | Free PDF</title>
-  <meta name="description" content="A free workbook of prompts for building an intentional life after regulation, one honest choice at a time. Open PDF from Carrie Davidson, RN.">
-  <link rel="canonical" href="https://carriepdavidson.com/resources/conscious-creation-workbook">
+  <title>Get the Sunday Letter | Carrie Davidson, RN</title>
+  <meta name="description" content="The Sunday Letter: a free weekly note on trauma, creativity, healing, and becoming. Neuroscience precision, a poetic reframe, and one small practice, every Sunday.">
+  <link rel="canonical" href="https://carriepdavidson.com/subscribe">
   <meta name="author" content="Carrie Davidson, BSPH, BSN, RN">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The Conscious Creation Workbook | Free PDF">
-  <meta property="og:description" content="Prompts for building the intentional life that comes after regulation, one honest choice at a time.">
-  <meta property="og:url" content="https://carriepdavidson.com/resources/conscious-creation-workbook">
-  <meta property="og:site_name" content="Carrie Davidson">
+  <meta property="og:title" content="Get the Sunday Letter | Carrie Davidson, RN">
+  <meta property="og:description" content="A free weekly note on trauma, creativity, healing, and becoming. One small practice, every Sunday.">
+  <meta property="og:url" content="https://carriepdavidson.com/subscribe">
   <meta property="og:image" content="https://carriepdavidson.com/assets/og-default.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -29,21 +28,33 @@
 
   <link rel="stylesheet" href="/css/style.css?v=20260714a">
 
-  <!-- Breadcrumb structured data: Home > Resources > The Conscious Creation Workbook -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carriepdavidson.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://carriepdavidson.com/resources" },
-      { "@type": "ListItem", "position": 3, "name": "The Conscious Creation Workbook", "item": "https://carriepdavidson.com/resources/conscious-creation-workbook" }
-    ]
+    "@type": "WebPage",
+    "@id": "https://carriepdavidson.com/subscribe#page",
+    "url": "https://carriepdavidson.com/subscribe",
+    "name": "Get the Sunday Letter",
+    "description": "The Sunday Letter: a free weekly note on trauma, creativity, healing, and becoming, from registered nurse and trauma recovery coach Carrie Davidson.",
+    "isPartOf": { "@id": "https://carriepdavidson.com/#website" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carriepdavidson.com/" },
+        { "@type": "ListItem", "position": 2, "name": "The Sunday Letter", "item": "https://carriepdavidson.com/subscribe" }
+      ]
+    }
   }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a><header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       SITE HEADER: copied verbatim. /subscribe is not in the nav,
+       so no aria-current.
+       ============================================================ -->
+  <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
@@ -55,7 +66,7 @@
         <ul class="nav__list">
           <li><a class="nav__link" href="/start-here">Start Here</a></li>
           <li><a class="nav__link" href="/writing">Writing</a></li>
-          <li><a class="nav__link" href="/resources" aria-current="page">Resources</a></li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
           <li><a class="nav__link" href="/book">The Memoir</a></li>
           <li><a class="nav__link" href="/coaching">Coaching</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
@@ -67,99 +78,78 @@
 
   <main id="main">
 
-<section class="hero">
-      <div class="container container-narrow">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="/">Home</a></li>
-            <li><a href="/resources">Resources</a></li>
-            <li><span aria-current="page">The Conscious Creation Workbook</span></li>
-          </ol>
-        </nav>
-        <p class="eyebrow">Free workbook</p>
-        <h1>The Conscious Creation Workbook</h1>
-        <p class="lede">The life that comes after regulation, one honest choice at a time.</p>
-        <p>The Creation phase of the Method, on paper. Once the nervous system settles, a quieter question
-          arrives: now what? This workbook is for building forward from that steadier place, deliberately,
-          instead of drifting back into the old loop.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="/assets/conscious-creation-workbook.pdf">Download the workbook (free) &rarr;</a>
+    <!-- ============================================================
+         HERO + SIGNUP: the one job of this page is the form.
+         ============================================================ -->
+    <section class="hero">
+      <div class="container container-narrow text-center">
+        <p class="eyebrow">The Sunday Letter</p>
+        <h1>A weekly letter for the work no one else sees.</h1>
+        <p class="lede">Thoughts on trauma, creativity, healing, and becoming. In your inbox.</p>
+        <p>Every Sunday: neuroscience precision, a poetic reframe, and one small practice you can
+          actually use. No hustle, no shame, no urgency. Just companionship on the way home to
+          yourself.</p>
+
+        <div class="signup" style="margin-top: var(--space-6); text-align: left;">
+          <h2 style="font-size: var(--step-1);">Get the Sunday Letter, free</h2>
+          <form class="signup__form" method="post"
+                action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
+                data-ml-form>
+            <label class="visually-hidden" for="signup-email">Email address</label>
+            <input class="input" id="signup-email" name="fields[email]" type="email"
+                   autocomplete="email" placeholder="Your email address" required>
+            <input type="hidden" name="ml-submit" value="1">
+            <button class="btn btn--primary" type="submit">Get the Sunday Letter</button>
+            <p class="signup__status" role="status" aria-live="polite"></p>
+          </form>
+          <p class="form__hint" style="margin-top: var(--space-3);">A confirmation email arrives
+            first; click it and you are in. No spam. Unsubscribe anytime.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight">
-      <div class="container container-narrow">
-        <div class="resource-lead resource-lead--cover">
-          <div>
-            <img class="resource-cover" src="/assets/cover-conscious-creation-workbook.svg"
-                 alt="Cover of the free workbook: The Conscious Creation Workbook"
-                 loading="lazy" width="480" height="300">
-          </div>
-          <div>
-            <h2>What it is</h2>
-            <p>A printable workbook of prompts for the Creation phase: naming what you actually want and
-              making the small, honest choices that build toward it. It is the part of the work that comes
-              after the alarm quiets, when there is finally room to choose.</p>
+    <div class="pattern-divider pattern-divider--easing" aria-hidden="true"></div>
 
-            <h2>Who it may help</h2>
-            <p>It may help you if you have done some of the regulation work and are ready for the next
-              question. It is for building from a steadier place, not for the acute middle of a hard
-              season. Nothing here is a diagnosis.</p>
-
-            <h2>What is included</h2>
-            <p>A printable workbook of reflective prompts for naming what you want and choosing toward it,
-              one honest step at a time. Work through it in order or dip into the prompts that fit where
-              you are.</p>
-
-            <h2>Format and size</h2>
-            <dl class="res-facts">
-              <dt>Format</dt><dd>PDF (printable)</dd>
-              <dt>Size</dt><dd>55 pages <dt>Size</dt><dd>About 83 KB</dd>middot; about 86 KB</dd>
-              <dt>Access</dt><dd>Open download, no email required</dd>
-            </dl>
-
-            <p class="disclaimer-inline">This workbook is education and reflection, not therapy, diagnosis,
-              or medical treatment. It can walk beside care from a licensed professional. It does not
-              replace it. If you are in crisis, the resources at the bottom of this page can help right now.</p>
-
-            <div class="btn-row" style="margin-top: var(--space-6);">
-              <a class="btn btn--primary" href="/assets/conscious-creation-workbook.pdf">Download the workbook (free)</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt section--tight reveal" aria-labelledby="related-title">
+    <!-- ============================================================
+         WHAT YOU GET: plain promises, no hype.
+         ============================================================ -->
+    <section class="section section--tight reveal" aria-labelledby="expect-title">
       <div class="container container-narrow">
         <div class="section-head">
-          <p class="eyebrow">Read alongside it</p>
-          <h2 id="related-title">Where this fits</h2>
+          <p class="eyebrow">What to expect</p>
+          <h2 id="expect-title">What arrives on Sunday</h2>
         </div>
-        <ul class="topic-links">
+        <ul class="topic-links topic-links--2">
           <li>
-            <h3><a href="/writing/nervous-system">Nervous system regulation</a></h3>
-            <p>Regulation comes first; creation grows from it. Essays on settling a nervous system so there
-              is finally room to build.</p>
+            <h3>One honest essay</h3>
+            <p>On trauma patterns, the nervous system, ADHD, and recovery. Written the way the
+              coaching works: precise about the science, gentle about the person.</p>
+          </li>
+          <li>
+            <h3>One small practice</h3>
+            <p>Something you can try the same day, in minutes. Not a program, not homework. A
+              door left open.</p>
+          </li>
+          <li>
+            <h3>First word on the memoir</h3>
+            <p>Subscribers hear it first when <em>Addicted to Trauma</em> has a date, an excerpt,
+              or early copies. Joining the letter is joining the book waitlist.</p>
+          </li>
+          <li>
+            <h3>Nothing else</h3>
+            <p>No spam, no funnels, no countdown timers. If a letter is not worth your Sunday,
+              unsubscribe with one click and no hard feelings.</p>
           </li>
         </ul>
-      </div>
-    </section><section class="section section--accent reveal" aria-labelledby="cta-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">The Sunday Letter</p>
-        <h2 id="cta-title">A quiet note every Sunday, when you want the next small step</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">Neuroscience precision, a poetic
-          reframe, and one small practice. No hustle, no shame, no urgency. Only if and when you want it.</p>
-        <div class="btn-row" style="justify-content: center; margin-top: var(--space-6);">
-          <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
-        </div>
       </div>
     </section>
 
   </main>
 
-<footer class="site-footer">
+  <!-- ============================================================
+       SITE FOOTER: copied verbatim.
+       ============================================================ -->
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
