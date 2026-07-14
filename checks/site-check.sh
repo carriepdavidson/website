@@ -102,15 +102,18 @@ if grep -rniE "$OLDHEX" $PAGES css/*.css assets/*.svg 2>/dev/null | grep -q .; t
   fail "old-palette hex found:"; grep -rniE "$OLDHEX" $PAGES css/*.css assets/*.svg
 else pass "no old-palette hex (html/css/svg)"; fi
 
-# 12. Banned words (brand voice). Exempt: her coined phrase "transformation-poor".
-#     Other exemptions (essay titles, "You are not broken", negations) are reviewed
-#     manually; none of the remaining banned terms appear on the site.
+# 12. Banned words (brand voice) in SITE COPY. Exemptions: her coined
+#     phrase "transformation-poor"; and the native article pages under
+#     writing/ (except the 3 hub pages), which reproduce Carrie's authored
+#     essays verbatim and are not subject to the marketing-voice rule.
+HUBS="writing/adhd.html writing/nervous-system.html writing/trauma-patterns.html"
 BANNED=0
 for f in $PAGES; do
-  m=$(grep -niE 'journey|empower|transformation|holistic|thrive|trauma-informed' "$f" | grep -viE 'transformation-poor')
+  case "$f" in writing/*) case " $HUBS " in *" $f "*) ;; *) continue;; esac;; esac
+  m=$(grep -niE "journey|empower|transformation|holistic|thrive|trauma-informed" "$f" | grep -viE "transformation-poor")
   [ -n "$m" ] && { fail "banned word in $f:"; echo "$m"; BANNED=1; }
 done
-[ "$BANNED" -eq 0 ] && pass "no banned words (transformation-poor exempt)"
+[ "$BANNED" -eq 0 ] && pass "no banned words (transformation-poor + article pages exempt)"
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "ALL CHECKS PASSED"; else echo "CHECKS FAILED"; fi
