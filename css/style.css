@@ -1322,6 +1322,60 @@ p { max-width: var(--measure); }
 }
 .site-header .btn { white-space: nowrap; }
 
+/* --- Course widgets (Rooted & Rising interactive practices) -------------- */
+.video-slot {
+  display: flex; align-items: center; gap: var(--space-5);
+  background: var(--color-surface); border: 1.5px dashed var(--color-copper);
+  border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6);
+}
+.video-slot__mark { flex: 0 0 64px; }
+.video-slot__mark svg { width: 64px; height: 64px; }
+.video-slot__title { font-family: var(--font-serif); font-style: italic;
+  font-size: var(--step-1); color: var(--color-accent); margin: 0 0 var(--space-1); }
+.widget {
+  background: var(--color-surface); border: var(--border-hair); border-radius: var(--radius-lg);
+  padding: var(--space-6); margin: var(--space-6) 0; box-shadow: var(--shadow-sm);
+}
+.widget h3 { margin-top: 0; }
+.widget__response { min-height: 1.5em; color: var(--color-ink-soft); font-style: italic;
+  margin: var(--space-3) 0 0; }
+.pacer__stage { display: flex; align-items: center; gap: var(--space-5);
+  margin: var(--space-4) 0; min-height: 7rem; }
+.pacer__circle {
+  flex: 0 0 auto; width: 4rem; height: 4rem; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #B8B2E4, #7C77C0);
+  transform: scale(1); opacity: 0.85;
+}
+.pacer__circle.is-in  { transform: scale(1.6); transition: transform 4s ease-in-out; }
+.pacer__circle.is-out { transform: scale(1.0); transition: transform 6s ease-in-out; }
+.pacer__cue { font-family: var(--font-serif); font-style: italic; font-size: var(--step-1);
+  color: var(--color-accent); }
+@media (prefers-reduced-motion: reduce) {
+  .pacer__circle.is-in, .pacer__circle.is-out { transition: none; transform: scale(1); }
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+.chip {
+  font-family: var(--font-sans); font-size: var(--step--1); cursor: pointer;
+  background: var(--color-bg); color: var(--color-ink); border: var(--border-hair);
+  border-radius: 999px; padding: var(--space-2) var(--space-4);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.chip:hover { border-color: var(--color-accent); }
+.chip.is-chosen { background: var(--color-accent); color: var(--color-on-accent, #FBF9F4);
+  border-color: var(--color-accent); }
+[data-state].is-chosen { border-color: var(--color-accent); color: var(--color-accent); }
+.journey-line svg { width: 100%; height: auto; }
+.journey-line path, .journey-line circle, .journey-line ellipse { opacity: 1; }
+.journey-line.is-drawing path[pathLength] {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: rr-draw 2.2s ease forwards;
+}
+.journey-line.is-drawing path[pathLength]:nth-of-type(2) { animation-delay: 1.6s; }
+.journey-line.is-drawing path[pathLength]:nth-of-type(3) { animation-delay: 3.4s; }
+.journey-line.is-drawing path[pathLength]:nth-of-type(4) { animation-delay: 4.4s; }
+.journey-line.is-drawing path[pathLength]:nth-of-type(5) { animation-delay: 5.6s; }
+@keyframes rr-draw { to { stroke-dashoffset: 0; } }
+
 /* Mobile hint for horizontally scrolling tables (coach-vs-therapist). */
 .table-hint { display: none; }
 @media (max-width: 40rem) {
