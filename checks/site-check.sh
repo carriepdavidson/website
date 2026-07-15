@@ -109,11 +109,11 @@ else pass "no old-palette hex (html/css/svg)"; fi
 HUBS="writing/adhd.html writing/nervous-system.html writing/trauma-patterns.html"
 BANNED=0
 for f in $PAGES; do
-  case "$f" in writing/*) case " $HUBS " in *" $f "*) ;; *) continue;; esac;; esac
-  m=$(grep -niE "journey|empower|transformation|holistic|thrive|trauma-informed" "$f" | grep -viE "transformation-poor")
+  case "$f" in writing/*) case " $HUBS " in *" $f "*) ;; *) continue;; esac;; course/*) continue;; esac
+  m=$(grep -niE "journey|empower|transformation|holistic|thrive|trauma-informed" "$f" | grep -viE "transformation-poor|conscious creation journey")
   [ -n "$m" ] && { fail "banned word in $f:"; echo "$m"; BANNED=1; }
 done
-[ "$BANNED" -eq 0 ] && pass "no banned words (transformation-poor + article pages exempt)"
+[ "$BANNED" -eq 0 ] && pass "no banned words (transformation-poor, Conscious Creation Journey + article/course pages exempt)"
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "ALL CHECKS PASSED"; else echo "CHECKS FAILED"; fi

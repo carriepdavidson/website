@@ -276,10 +276,10 @@ p { max-width: var(--measure); }
 }
 .brand span { color: var(--color-accent); }
 
-.nav { display: flex; align-items: center; gap: var(--space-5); }
-.nav__list { display: flex; align-items: center; gap: var(--space-5); list-style: none; padding: 0; margin: 0; }
+.nav { display: flex; align-items: center; gap: var(--space-4); }
+.nav__list { display: flex; align-items: center; gap: var(--space-3); list-style: none; padding: 0; margin: 0; }
 .nav__link {
-  font-size: var(--step--1); font-weight: 600; letter-spacing: 0.14em;
+  font-size: var(--step--1); font-weight: 600; letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink); text-decoration: none; padding: var(--space-1) 0;
   border-bottom: 2px solid transparent;
@@ -298,7 +298,7 @@ p { max-width: var(--measure); }
   content: ""; position: absolute; left: 0; width: 1.1rem; height: 2px; background: currentColor; }
 .nav-toggle__bars::before { top: -5px; } .nav-toggle__bars::after { top: 5px; }
 
-@media (max-width: 52rem) {
+@media (max-width: 64rem) {
   .nav-toggle { display: inline-flex; }
   .nav {
     position: absolute; inset: 4rem 0 auto 0;
@@ -1005,7 +1005,7 @@ p { max-width: var(--measure); }
 .editorial-card--letter .editorial-card__media img { width: 55%; opacity: 0.9; }
 .editorial-card--letter h3 { color: #fff; }
 .editorial-card--letter .editorial-card__eyebrow { color: var(--color-copper); }
-.editorial-card--letter .editorial-card__more { color: var(--color-footer-link); }
+.editorial-card--letter .editorial-card__more { color: var(--color-on-accent, #FBF9F4); }
 
 /* --- Substack embed band ------------------------------------------------ */
 .substack-embed { max-width: 100%; }
@@ -1311,10 +1311,26 @@ p { max-width: var(--measure); }
 }
 .press-bar a:hover { color: var(--color-accent); }
 
-/* Nav items never wrap (letterspaced caps need the room) */
+/* Nav items never wrap (letterspaced caps need the room). The 7-item nav
+   fits ~1250px+ comfortably; between the 64rem hamburger cutoff and 78rem
+   it runs tighter type so the CTA never leaves the viewport. */
 .nav__link { white-space: nowrap; }
-@media (min-width: 64rem) { .nav__list { gap: var(--space-5); } }
+@media (min-width: 64rem) and (max-width: 78rem) {
+  .nav__list { gap: var(--space-2); }
+  .nav__link { letter-spacing: 0.04em; font-size: 0.78rem; }
+  .site-header .btn--pill { padding-inline: var(--space-4); }
+}
 .site-header .btn { white-space: nowrap; }
+
+/* Mobile hint for horizontally scrolling tables (coach-vs-therapist). */
+.table-hint { display: none; }
+@media (max-width: 40rem) {
+  .table-hint { display: block; margin-bottom: var(--space-2); }
+  .table-wrap {
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+            mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+}
 
 /* Footer thread icons (from the board's one-continuous-line set) */
 .footer-icon { width: 16px; height: 16px; display: inline-block;
