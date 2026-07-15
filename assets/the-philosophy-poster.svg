@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="864" height="1080" viewBox="0 0 864 1080" role="img" aria-label="One continuous hand-drawn violet line travels upward: tangled loops that double back, loops that steady into rhythm, a pause holding one amethyst still point, a fork where a faint old path is left behind, and an open rising path where lavender blooms. Pattern, pause, choice, creation.">
+  <!-- THE PHILOSOPHY, DRAWN (poster). Pattern Line v2 family.
+       One gesture, read bottom to top. The line breaks only at the pause. -->
+
+  <rect width="864" height="1080" fill="#F6F4FB"/>
+
+  <!-- 1+2 PATTERN: tangled survival loops that double back, then regularize -->
+  <path d="M96 1002
+       C 128 1008, 148 964, 178 954 C 214 942, 236 978, 214 1000 C 196 1018, 164 1008, 172 980
+       C 180 952, 226 936, 256 950 C 288 966, 280 1010, 248 1014 C 224 1017, 214 998, 226 980
+       C 244 954, 292 946, 318 962 C 340 976, 336 1006, 312 1010 C 294 1013, 284 998, 292 984
+       C 316 950, 368 944, 402 952 C 438 960, 440 998, 404 1000 C 388 1001, 380 990, 390 976
+       C 412 948, 464 942, 498 950 C 534 958, 536 996, 500 998 C 484 999, 476 988, 486 974
+       C 508 946, 560 942, 592 952 C 622 961, 634 934, 622 902
+       C 610 872, 570 862, 536 872 C 500 883, 488 850, 508 822
+       C 528 794, 512 766, 478 762 C 440 757, 420 726, 442 700
+       C 460 679, 452 652, 430 640"
+       fill="none" stroke="#7C77C0" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 3 PAUSE: the line stops. The gap holds exactly one still point. -->
+  <circle cx="416" cy="560" r="9" fill="#5A55A0"/>
+  <circle cx="416" cy="560" r="19" fill="none" stroke="#B8B2E4" stroke-opacity="0.6" stroke-width="2"/>
+
+  <!-- 4 CHOICE: the line returns and forks. The old path stays visible,
+       dotted and fading, drifting flat toward the edge; the chosen path rises. -->
+  <path d="M436 486 C 494 490, 566 500, 636 512 C 692 521, 740 530, 776 538"
+       fill="none" stroke="#B8B2E4" stroke-opacity="0.55" stroke-width="2.5"
+       stroke-linecap="round" stroke-dasharray="1 12"/>
+  <path d="M404 500 C 414 494, 424 490, 436 486
+       C 478 472, 512 452, 538 424"
+       fill="none" stroke="#7C77C0" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 5 CREATION: open, spacious, rising, always wavering; blooms only here -->
+  <path d="M538 424
+       C 566 390, 548 356, 508 342 C 462 326, 408 336, 360 326
+       C 308 315, 282 282, 296 246 C 308 214, 352 200, 396 206
+       C 448 213, 500 198, 544 176 C 592 152, 640 148, 686 128
+       C 716 115, 736 104, 748 92"
+       fill="none" stroke="#7C77C0" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#7C77C0" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M360 326 C 352 306, 356 288, 370 274"/>
+    <path d="M544 176 C 554 158, 552 144, 544 130"/>
+  </g>
+  <g fill="#B8B2E4">
+    <ellipse cx="373" cy="268" rx="8" ry="12" transform="rotate(20 373 268)"/>
+    <ellipse cx="542" cy="124" rx="8" ry="12" transform="rotate(-14 542 124)"/>
+  </g>
+  <g fill="#B8B2E4" opacity="0.7">
+    <ellipse cx="357" cy="288" rx="5" ry="8" transform="rotate(30 357 288)"/>
+    <ellipse cx="552" cy="140" rx="5" ry="8" transform="rotate(-22 552 140)"/>
+  </g>
+  <circle cx="748" cy="92" r="5.5" fill="#7C77C0" fill-opacity="0.55"/>
+  <g font-family="Cormorant Garamond, Georgia, serif" font-style="italic" text-anchor="middle" fill="#3F3168">
+    <text x="432" y="1052" font-size="26" letter-spacing="6">Pattern. Pause. Choice. Creation.</text>
+  </g>
+</svg>
