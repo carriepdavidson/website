@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" fill="none">
+  <!-- Week 3 VISION: the fork. The not-taken path continues flat and dotted;
+       the chosen path bends upward. -->
+  <path d="M12 62 C 36 58, 58 62, 82 59"
+        stroke="#7C77C0" stroke-width="2.4" stroke-linecap="round" opacity="0.88"/>
+  <path d="M82 59 C 114 62, 148 66, 180 68 C 192 69, 200 68, 208 69"
+        stroke="#B8A9C9" stroke-width="1.8" stroke-linecap="round"
+        stroke-dasharray="1 8" opacity="0.5"/>
+  <path d="M82 59
+           C 108 52, 130 50, 154 42
+           C 176 35, 192 34, 206 28"
+        stroke="#7C77C0" stroke-width="2.4" stroke-linecap="round" opacity="0.88"/>
+</svg>

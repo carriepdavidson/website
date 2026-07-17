@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" fill="none">
+  <!-- Week 4 EMBODY: the chosen path finds a steady, breathing rhythm.
+       Gently rising, never straight. -->
+  <path d="M12 74
+           C 36 64, 56 72, 80 63
+           C 104 54, 124 62, 148 53
+           C 172 44, 190 50, 208 42"
+        stroke="#7C77C0" stroke-width="2.4" stroke-linecap="round" opacity="0.88"/>
+</svg>

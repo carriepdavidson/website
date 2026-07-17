@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" fill="none">
+  <!-- Week 6 TRUST: open and spacious. Two buds, and an ending that
+       never closes: a soft terminal dot, the path continuing. -->
+  <path d="M10 66
+           C 42 56, 70 60, 102 50
+           C 134 40, 160 44, 190 34
+           C 196 32, 200 31, 204 30"
+        stroke="#7C77C0" stroke-width="2.4" stroke-linecap="round" opacity="0.88"/>
+  <path d="M76 56 C 74 48, 73 42, 74 36" stroke="#B8A9C9" stroke-width="1.6" opacity="0.7"/>
+  <ellipse cx="74" cy="31" rx="4" ry="6" fill="#B8A9C9" opacity="0.7" transform="rotate(-10 74 31)"/>
+  <path d="M150 44 C 149 37, 149 31, 151 25" stroke="#B8A9C9" stroke-width="1.6" opacity="0.7"/>
+  <ellipse cx="152" cy="21" rx="4" ry="5.5" fill="#B8A9C9" opacity="0.7" transform="rotate(10 152 21)"/>
+  <circle cx="213" cy="28" r="3.4" fill="#7C77C0" opacity="0.58"/>
+</svg>

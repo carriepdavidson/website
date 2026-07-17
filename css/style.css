@@ -1108,6 +1108,19 @@ p { max-width: var(--measure); }
 /* Small variant: a quieter close (e.g. end-of-article slot in templates). */
 .pattern-strip--small { max-width: 460px; }
 
+/* Course variant (Rooted & Rising home): the six weeks as one line. */
+.pattern-strip--course { background-image: url("../assets/course/course-line-master.svg"); }
+
+/* Course week motif (Rooted & Rising week heroes): one beat of the line
+   per week, small and quiet beneath the lede. Decorative only. */
+.course-week-motif {
+  display: block;
+  width: min(200px, 55%);
+  height: auto;
+  margin-top: var(--space-5);
+  pointer-events: none;
+}
+
 /* Figure wrapper for the labelled feature strip (method page): the strip
    plus its visible microcopy. */
 .pattern-figure { margin: var(--space-8) auto; max-width: 760px; }
