@@ -14,7 +14,7 @@
            C 136 92, 142 99, 156 96"
         stroke="#7C77C0" stroke-width="2.4" stroke-linecap="round" opacity="0.88"/>
 
-  <!-- GROUND: the pause. The line stops; the gap holds one still point. -->
+  <!-- GROUND: the pause. The line pauses; the gap holds one still point. -->
   <circle cx="182" cy="93" r="5" fill="#5A55A0"/>
 
   <!-- CLEAR: the line resumes low and quiet; the old tangle hangs above it

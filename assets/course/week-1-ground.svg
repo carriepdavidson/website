@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" fill="none">
-  <!-- Week 1 GROUND: the line arrives, eases, and stops.
+  <!-- Week 1 GROUND: the line arrives, eases, and pauses.
        The gap holds exactly one still point. Nothing continues yet. -->
   <path d="M12 62
            C 34 52, 48 70, 66 63
