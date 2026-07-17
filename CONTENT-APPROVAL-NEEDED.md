@@ -21,13 +21,14 @@ The Conscious Creation Circle's $400/month (and $297 founding rate) is NOT publi
 the Circle stays invitation-only for ARC graduates per the playbook. Publish only if
 Carrie asks.
 
-## Payment plan math (RESOLVED 2026-07-16)
+## Payment plan math (RESOLVED 2026-07-16, final)
 The GTM playbook's "3 x $1,100/month" totals $3,300, which contradicted the "$3,000,
-and that is the whole price" copy sitewide. Carrie confirmed 2026-07-16: the plan is
-3 x $1,000/month, matching the stated whole price. Changed everywhere (faq, arc-program
-incl. JSON-LD offer price 3300->3000, coaching, llms.txt). Tell Lee the playbook's
-$1,100 figure needs correcting (or, if a 10% plan premium was intended, Carrie has
-overridden it).
+and that is the whole price" copy. Carrie's final decision (2026-07-16, reversing a
+brief change to $1,000): KEEP 3 x $1,100. The $300 premium is intentional, per the
+playbook, to encourage paying in full. To keep the copy honest, the $3,300 plan total
+is now stated plainly everywhere the plan appears (faq, arc-program incl. JSON-LD
+offer price 3300, coaching, llms.txt), and /arc-program says "Paying in full saves
+you $300" outright. Do not re-flatten the plan to $1,000.
 
 ## Discovery call: direct booking added (APPROVED by Carrie 2026-07-16)
 Added an inline Calendly scheduler (calendly.com/coaching-carriepdavidson) to
