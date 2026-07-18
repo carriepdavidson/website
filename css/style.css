@@ -1402,3 +1402,10 @@ p { max-width: var(--measure); }
 /* Footer thread icons (from the board's one-continuous-line set) */
 .footer-icon { width: 16px; height: 16px; display: inline-block;
   vertical-align: -2px; margin-right: 0.45em; }
+
+/* Photo band: full-bleed image breather between sections (calm rhythm). */
+.photo-band {
+  height: clamp(220px, 42vh, 420px);
+  background-size: cover;
+  background-position: center;
+}
