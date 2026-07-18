@@ -37,34 +37,34 @@
      Focus ring #3F3168 >=11:1 on all light backgrounds.
      Thread violet #7C77C0 as text ~3.5:1 -> DECORATIVE (threads/borders) only.
      ------------------------------------------------------------------ */
-  --color-bg:          #F6F4FB; /* light lavender: main page background */
-  --color-bg-deep:     #EEEAF8; /* deeper lavender: alternating / mist sections */
-  --color-surface:     #FDFCFF; /* ivory: cards / raised surfaces */
-  --color-ink:         #3F3168; /* deep plum-charcoal: body + headlines */
-  --color-ink-soft:    #3F3168; /* muted plum body / captions (>=6.6:1) */
-  --color-accent:      #3F3168; /* thread violet, AA: links, buttons, accents */
-  --color-accent-deep: #2E2352; /* hover/active */
-  --color-accent-soft: #ECEAF7; /* pale lavender tint: chip / soft fills */
-  --color-clay:        #3F3168; /* muted plum-violet: eyebrows, rules (was bronze) */
-  --color-clay-soft:   #F0E9DC; /* warm cream tint (crisis / lived blocks) */
-  --color-border:      #E3DEF0; /* lavender hairline */
-  --color-focus:       #3F3168; /* focus ring (>=6:1 on light) */
-  --color-on-accent:   #FBF9F4; /* near-white text on accent/band surfaces */
+  --color-bg:          #FFFDFA; /* light lavender: main page background */
+  --color-bg-deep:     #F5F1F8; /* deeper lavender: alternating / mist sections */
+  --color-surface:     #FFFDFA; /* ivory: cards / raised surfaces */
+  --color-ink:         #3D2B4F; /* deep plum-charcoal: body + headlines */
+  --color-ink-soft:    #574768; /* muted plum body / captions (>=6.6:1) */
+  --color-accent:      #5D4E7E; /* thread violet, AA: links, buttons, accents */
+  --color-accent-deep: #3D2B4F; /* hover/active */
+  --color-accent-soft: #F1EDF5; /* pale lavender tint: chip / soft fills */
+  --color-clay:        #5D4E7E; /* muted plum-violet: eyebrows, rules (was bronze) */
+  --color-clay-soft:   #F3EBDD; /* warm cream tint (crisis / lived blocks) */
+  --color-border:      #E9E2D6; /* lavender hairline */
+  --color-focus:       #3D2B4F; /* focus ring (>=6:1 on light) */
+  --color-on-accent:   #FFFDFA; /* near-white text on accent/band surfaces */
 
   /* Background aliases (cream washes) + thread-violet decorative accents */
-  --color-blush:       #F3EFFA; /* soft lavender wash */
-  --color-ivory:       #FDFCFF; /* near-white lavender */
-  --color-paper:       #ECE8F7; /* deep lavender wash (was paper cream) */
-  --color-mist:        #EEEAF8; /* lavender mist */
-  --color-mist-deep:   #E9E4F5; /* deeper lavender (grace moment) */
-  --color-plum:        #3F3168; /* deep plum-charcoal: dark anchor (letter card) */
-  --color-plum-deep:   #232030; /* deeper plum for gradients */
-  --color-copper:      #C7C0E8; /* RETIRED copper -> soft lilac: card borders (DECORATIVE) */
-  --color-bronze:      #7C77C0; /* thread violet: decorative */
-  --color-bronze-text: #3F3168; /* muted plum-violet: small-caps labels (AA) */
-  --color-orchid:      #7C77C0; /* thread violet: large/decorative */
-  --color-lilac:       #B8B2E4; /* harmonized lilac: blooms / ghost strokes */
-  --color-footer-text: #3F3168; /* muted plum text on cream footer */
+  --color-blush:       #F5F1F8; /* soft lavender wash */
+  --color-ivory:       #FFFDFA; /* near-white lavender */
+  --color-paper:       #F1EAE0; /* deep lavender wash (was paper cream) */
+  --color-mist:        #F5F1F8; /* lavender mist */
+  --color-mist-deep:   #EDE6F0; /* deeper lavender (grace moment) */
+  --color-plum:        #3D2B4F; /* deep plum-charcoal: dark anchor (letter card) */
+  --color-plum-deep:   #2A1D38; /* deeper plum for gradients */
+  --color-copper:      #C9A87C; /* RETIRED copper -> soft lilac: card borders (DECORATIVE) */
+  --color-bronze:      #B8A9C9; /* thread violet: decorative */
+  --color-bronze-text: #3D2B4F; /* muted plum-violet: small-caps labels (AA) */
+  --color-orchid:      #7B68A0; /* thread violet: large/decorative */
+  --color-lilac:       #B8A9C9; /* harmonized lilac: blooms / ghost strokes */
+  --color-footer-text: #3D2B4F; /* muted plum text on cream footer */
   --color-footer-link: #5A55A0; /* thread-violet links in the footer */
 
   /* Signature Thread tokens (new) */
