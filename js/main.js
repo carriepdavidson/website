@@ -100,3 +100,17 @@
     });
   });
 })();
+
+/* Sticky credential line (VBI): reveal "BSPH, BSN, RN · Trauma Recovery
+   Coach" under the name once the reader scrolls past the hero's edge. */
+(function () {
+  "use strict";
+  var header = document.querySelector(".site-header");
+  if (!header || !header.querySelector(".brand-stack__cred--scroll")) return;
+
+  var update = function () {
+    header.classList.toggle("is-scrolled", window.scrollY > 120);
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();

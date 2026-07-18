@@ -298,10 +298,10 @@ p { max-width: var(--measure); }
   content: ""; position: absolute; left: 0; width: 1.1rem; height: 2px; background: currentColor; }
 .nav-toggle__bars::before { top: -5px; } .nav-toggle__bars::after { top: 5px; }
 
-@media (max-width: 64rem) {
+@media (max-width: 72rem) {
   .nav-toggle { display: inline-flex; }
   .nav {
-    position: absolute; inset: 4rem 0 auto 0;
+    position: absolute; inset: 100% 0 auto 0;
     flex-direction: column; align-items: stretch; gap: 0;
     background: var(--color-surface); border-bottom: var(--border-hair);
     padding: var(--space-3) var(--space-5) var(--space-5);
@@ -827,6 +827,25 @@ p { max-width: var(--measure); }
 @media (max-width: 30rem) {
   .brand-stack__cred { letter-spacing: 0.12em; font-size: 0.56rem; }
 }
+/* Sticky credential line (VBI): hidden at the top of the page, revealed
+   in the sticky header once the reader scrolls. Absolutely positioned so
+   its width never widens the header (it overflowed 390px viewports and
+   pushed the Menu button off-screen when in flow). */
+.brand-stack { position: relative; }
+.brand-stack__cred--scroll {
+  position: absolute; top: calc(100% + 0.3em); left: 0;
+  opacity: 0; transform: translateY(-2px); pointer-events: none;
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+.site-header.is-scrolled .brand-stack__cred--scroll {
+  opacity: 1; transform: none;
+}
+@media (max-width: 44rem) {
+  .brand-stack__cred--scroll { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-stack__cred--scroll { transition: none; }
+}
 
 /* --- Pill CTA (rounded header/newsletter button) ------------------------- */
 .btn--pill { border-radius: 3px; padding-inline: 1.5em; } /* rectangle per Carrie 2026-07-13 (matches the board) */
@@ -1325,10 +1344,10 @@ p { max-width: var(--measure); }
 .press-bar a:hover { color: var(--color-accent); }
 
 /* Nav items never wrap (letterspaced caps need the room). The 7-item nav
-   fits ~1250px+ comfortably; between the 64rem hamburger cutoff and 78rem
+   fits ~1470px+ comfortably; between the 72rem hamburger cutoff and 92rem
    it runs tighter type so the CTA never leaves the viewport. */
 .nav__link { white-space: nowrap; }
-@media (min-width: 64rem) and (max-width: 78rem) {
+@media (min-width: 72rem) and (max-width: 92rem) {
   .nav__list { gap: var(--space-2); }
   .nav__link { letter-spacing: 0.04em; font-size: 0.78rem; }
   .site-header .btn--pill { padding-inline: var(--space-4); }
