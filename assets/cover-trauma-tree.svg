@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Cover of the free Trauma Tree Worksheet">
+  <rect width="480" height="300" fill="#F2ECF7"/>
+  <!-- gold arch framing the tree -->
+  <path d="M 330 262 L 330 132 A 65 65 0 0 1 460 132 L 460 262" stroke="#C9A87C" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- branches -->
+  <path d="M395 210 C 393 180, 395 165, 395 150 M395 165 C 380 150, 372 140, 368 128 M395 158 C 410 145, 418 136, 424 126 M395 178 C 382 170, 374 164, 366 156" stroke="#7B68A0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="366" cy="122" rx="7" ry="10" fill="#B8A9C9" transform="rotate(-18 366 122)"/>
+  <ellipse cx="427" cy="120" rx="7" ry="10" fill="#B8A9C9" transform="rotate(14 427 120)"/>
+  <ellipse cx="393" cy="140" rx="6" ry="9" fill="#B8A9C9"/>
+  <ellipse cx="362" cy="152" rx="5" ry="8" fill="#B8A9C9" transform="rotate(-24 362 152)"/>
+  <!-- trunk -->
+  <path d="M395 210 C 393 190, 395 175, 395 150" stroke="#7B68A0" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- roots -->
+  <path d="M395 210 C 385 225, 372 235, 358 242 M395 210 C 397 228, 396 240, 394 252 M395 210 C 407 224, 418 232, 432 238" stroke="#a4865e" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <line x1="318" y1="262" x2="472" y2="262" stroke="#a4865e" stroke-width="6" stroke-linecap="round"/>
+  <!-- title -->
+  <text x="36" y="96" font-family="Cormorant Garamond, Georgia, serif" font-size="34" fill="#3D2B4F">The Trauma Tree</text>
+  <text x="36" y="134" font-family="Cormorant Garamond, Georgia, serif" font-size="34" fill="#3D2B4F">Worksheet</text>
+  <text x="36" y="176" font-family="DM Sans, Arial, sans-serif" font-size="12" letter-spacing="3" fill="#5D4E7E">ROOTS &#183; TRUNK &#183; BRANCHES</text>
+  <text x="36" y="258" font-family="DM Sans, Arial, sans-serif" font-size="13" fill="#8A7A9B">Free download &#183; The heart of the Method</text>
+</svg>
