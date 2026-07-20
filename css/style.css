@@ -1491,6 +1491,27 @@ p { max-width: var(--measure); }
    FULL image shows, nothing cropped away. */
 .photo-band--natural { height: auto; aspect-ratio: 3 / 2; }
 
+/* Bookshelf: covers standing together on a wooden shelf, casting real
+   shadows. A bookstore moment for the memoir and its companions. */
+.bookshelf {
+  display: flex; justify-content: center; align-items: flex-end;
+  gap: var(--space-6); max-width: 640px;
+  margin: 0 auto var(--space-7); padding: var(--space-6) var(--space-5) 0;
+  border-bottom: 12px solid #a4865e; border-radius: 0 0 3px 3px;
+  position: relative;
+}
+.bookshelf::after {
+  content: ""; position: absolute; left: 5%; right: 5%; bottom: -26px;
+  height: 14px; background: rgba(61, 43, 79, 0.16);
+  filter: blur(9px); border-radius: 50%;
+}
+.bookshelf__book {
+  width: min(180px, 34%); height: auto;
+  border-radius: 2px 5px 5px 2px;
+  box-shadow: -10px 8px 24px rgba(61, 43, 79, 0.3);
+}
+.bookshelf__book--main { width: min(250px, 46%); }
+
 /* Phase cards: a journey rendered as arch-topped cards, tinted purple to
    gold in walking order. An explainer graphic built from the system, for
    step sequences that would otherwise be lists of text. */
