@@ -296,7 +296,10 @@
           <button class="btn btn--primary" type="button" id="start-btn">Start the quiz &rarr;</button>
         </div>
         <p class="meta" style="margin-top: var(--space-4);">No wrong answers &middot; Rate each statement honestly</p>
-        <p class="qz-privacy">Your answers never leave this page. Everything is scored right here in your browser. Nothing is sent anywhere.</p>
+        <p class="qz-privacy">Your answers are scored right here in your browser and never
+          leave this page. The only things that can ever be sent anywhere are your email
+          address and the name of your strongest response, and only if you choose to leave
+          your email after the quiz.</p>
 
         <p class="disclaimer" style="margin-top: var(--space-6);">This work is educational and reflective, not a substitute for medical or mental health treatment.</p>
       </div>
@@ -347,10 +350,43 @@
     </section>
 
     <!-- ============================================================
+         EMAIL SCREEN (optional): a copy of the profile, before results.
+         Posts ONLY the address + primary response name to MailerLite.
+         ============================================================ -->
+    <section class="section quiz" id="screen-email" aria-labelledby="qz-email-title" hidden>
+      <div class="container container-narrow text-center">
+        <p class="eyebrow">Optional, before your results</p>
+        <h2 id="qz-email-title" tabindex="-1">Your profile is ready. Want a copy for your inbox?</h2>
+        <p class="mx-auto">Results on a screen have a way of disappearing. Leave your email and
+          I will send your full profile, so you can come back to it when there is more room to
+          read. You will also start getting the Sunday Letter.</p>
+        <form class="signup__form mx-auto" id="qz-ml-form" method="post"
+              action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
+              style="margin-top: var(--space-5); max-width: 30rem;">
+          <label class="visually-hidden" for="qz-email">Email address</label>
+          <input class="input" id="qz-email" name="fields[email]" type="email"
+                 autocomplete="email" placeholder="Your email address" required>
+          <input type="hidden" name="fields[quiz_primary]" id="qz-ml-primary" value="">
+          <input type="hidden" name="ml-submit" value="1">
+          <button class="btn btn--primary" type="submit">Send me my profile</button>
+          <p class="signup__status" id="qz-ml-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="meta" style="margin-top: var(--space-4);"><a href="#" id="qz-skip">Skip this
+          and show my results &rarr;</a></p>
+        <p class="qz-privacy">Your answers never leave this page. If you leave your email, the
+          only things sent are your address and the name of your strongest response, never
+          your answers or your scores.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
          RESULT SCREEN
          ============================================================ -->
     <section class="section quiz" id="screen-result" aria-labelledby="qz-result-title" hidden>
       <div class="container container-narrow">
+
+        <p id="qz-mail-note" class="meta text-center" hidden>Check your inbox for a
+          confirmation email. Click it and your emailed profile follows.</p>
 
         <div class="qz-result-hero">
           <p class="eyebrow">Your primary response</p>
@@ -423,15 +459,18 @@
           <p class="mx-auto">Start with the free worksheet, let the Sunday Letter keep showing up, and reach out for coaching only if and when you&rsquo;re ready.</p>
           <div class="btn-row btn-row--center">
             <a class="btn btn--primary" href="/resources/trauma-tree-worksheet">Get the free Trauma Tree Worksheet</a>
-            <a class="btn btn--secondary" href="/subscribe">Subscribe to the Sunday Letter</a>
           </div>
-          <p class="meta" style="margin-top: var(--space-4);"><a href="/coaching">See how 1:1 coaching works &rarr;</a></p>
+          <p class="meta" style="margin-top: var(--space-4);"><a href="/subscribe">Get the
+            Sunday Letter</a> &middot; <a href="/coaching">See how 1:1 coaching works &rarr;</a></p>
         </div>
 
         <div class="btn-row btn-row--center">
           <button class="btn btn--ghost" type="button" id="qz-retake">Retake the quiz</button>
         </div>
-        <p class="qz-privacy">Your answers never left this page. This result was scored entirely in your browser.</p>
+        <p class="qz-privacy">Your answers never left this page. This result was scored
+          entirely in your browser. If you left your email, only your address and the name of
+          your strongest response went to my newsletter tool. Your answers and scores stayed
+          here.</p>
       </div>
     </section>
 
@@ -671,9 +710,12 @@
     var elBack         = document.getElementById("qz-back");
     var elNext         = document.getElementById("qz-next");
 
+    var elEmail = document.getElementById("screen-email");
+
     function show(screen) {
       elIntro.hidden = screen !== "intro";
       elQuiz.hidden = screen !== "quiz";
+      elEmail.hidden = screen !== "email";
       elResult.hidden = screen !== "result";
       window.scrollTo(0, 0);
     }
@@ -767,12 +809,47 @@
       } else {
         renderResult();
         withSectionPause(function () {
-          show("result");
-          var res = document.getElementById("screen-result");
-          if (res) res.classList.add("qz-result-enter");
+          show("email");
+          var h = document.getElementById("qz-email-title");
+          if (h) h.focus();
         });
       }
     }
+
+    // ---- Optional email capture, between quiz and results ----
+    function toResults() {
+      show("result");
+      var res = document.getElementById("screen-result");
+      if (res) res.classList.add("qz-result-enter");
+    }
+    (function () {
+      var mlForm = document.getElementById("qz-ml-form");
+      var mlStatus = document.getElementById("qz-ml-status");
+      var mlSkip = document.getElementById("qz-skip");
+      var mailNote = document.getElementById("qz-mail-note");
+      if (!mlForm) return;
+      mlSkip.addEventListener("click", function (e) { e.preventDefault(); toResults(); });
+      mlForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var btn = mlForm.querySelector("button[type=submit]");
+        btn.disabled = true; mlStatus.textContent = "Sending…";
+        fetch(mlForm.action, { method: "POST", body: new FormData(mlForm) })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (data && data.success) {
+              if (mailNote) mailNote.hidden = false;
+              toResults();
+            } else {
+              btn.disabled = false;
+              mlStatus.textContent = "That did not go through. Please check the address and try again.";
+            }
+          })
+          .catch(function () {
+            btn.disabled = false;
+            mlStatus.textContent = "Something interrupted the connection. Please try again in a moment, or skip ahead to your results.";
+          });
+      });
+    })();
 
     function goBack() {
       if (current > 0) { current--; renderQuestion(); elLegend.focus(); }
@@ -795,6 +872,8 @@
       var secondary = ordered[1];
 
       var p = PROFILES[primary];
+      var mlPrimary = document.getElementById("qz-ml-primary");
+      if (mlPrimary) mlPrimary.value = p.type;
       var pTier = tier(scores[primary]);
       var primaryPct = Math.round((scores[primary] / 20) * 100);
       var secondaryPct = Math.round((scores[secondary] / 20) * 100);
@@ -937,6 +1016,12 @@
     function retake() {
       current = 0;
       answers = new Array(16).fill(null);
+      var mlStatus = document.getElementById("qz-ml-status");
+      var mailNote = document.getElementById("qz-mail-note");
+      var mlBtn = document.querySelector("#qz-ml-form button[type=submit]");
+      if (mlStatus) mlStatus.textContent = "";
+      if (mailNote) mailNote.hidden = true;
+      if (mlBtn) mlBtn.disabled = false;
       show("intro");
     }
 
