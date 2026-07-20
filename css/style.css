@@ -1484,6 +1484,16 @@ p { max-width: var(--measure); }
    FULL image shows, nothing cropped away. */
 .photo-band--natural { height: auto; aspect-ratio: 3 / 2; }
 
+/* Program badge: every offer mark sits in the same square white card so
+   badge rows stay level regardless of each logo's own proportions. */
+.door-badge {
+  display: block; width: 100%; max-width: 200px; aspect-ratio: 1 / 1;
+  object-fit: contain; background: #fff; border-radius: 12px;
+  padding: 10px; border: 1px solid var(--color-border);
+  margin-bottom: var(--space-3);
+}
+.door-badge--hero { max-width: 230px; margin-inline: auto; margin-bottom: var(--space-5); }
+
 /* Banner hero (wireframe grammar): a full-bleed landscape photo with the
    copy overlaid on a darkened side. Landscape photos live here; only
    portrait crops belong beside text columns. */
