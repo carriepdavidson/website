@@ -1490,6 +1490,39 @@ p { max-width: var(--measure); }
    FULL image shows, nothing cropped away. */
 .photo-band--natural { height: auto; aspect-ratio: 3 / 2; }
 
+/* Phase cards: a journey rendered as arch-topped cards, tinted purple to
+   gold in walking order. An explainer graphic built from the system, for
+   step sequences that would otherwise be lists of text. */
+.phase-cards {
+  list-style: none; padding: 0; margin: var(--space-6) 0 0;
+  display: grid; gap: var(--space-4); grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 52rem) { .phase-cards { grid-template-columns: repeat(3, 1fr); } }
+.phase-card {
+  border-radius: 999px 999px var(--radius) var(--radius);
+  padding: var(--space-6) var(--space-4) var(--space-5);
+  text-align: center; border: 1px solid var(--color-border);
+}
+.phase-card__num {
+  font-family: var(--font-serif); font-size: var(--step-2);
+  line-height: 1; display: block; margin-bottom: var(--space-1);
+}
+.phase-card h3 { font-size: var(--step-1); margin: 0 0 var(--space-2); }
+.phase-card__stage {
+  display: block; font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--color-ink-soft);
+  margin-bottom: var(--space-2);
+}
+@media (min-width: 64rem) { .phase-cards--5 { grid-template-columns: repeat(5, 1fr); } }
+.phase-card p { font-size: var(--step--1); color: var(--color-ink-soft); margin: 0; }
+/* The purple-to-gold walk, one tint per phase. */
+.phase-card--1 { background: #EFE9F6; } .phase-card--1 .phase-card__num { color: #7B68A0; }
+.phase-card--2 { background: #F0EBF4; } .phase-card--2 .phase-card__num { color: #8471A5; }
+.phase-card--3 { background: #F3EEF2; } .phase-card--3 .phase-card__num { color: #93789B; }
+.phase-card--4 { background: #F6F0EA; } .phase-card--4 .phase-card__num { color: #A98A79; }
+.phase-card--5 { background: #F7F0E2; } .phase-card--5 .phase-card__num { color: #B08A50; }
+.phase-card--6 { background: #F8F0D9; } .phase-card--6 .phase-card__num { color: #a4865e; }
+
 /* Program badge: every offer mark sits in the same square white card so
    badge rows stay level regardless of each logo's own proportions. */
 .door-badge {
