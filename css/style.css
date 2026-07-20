@@ -779,6 +779,10 @@ p { max-width: var(--measure); }
   .resource-lead--bio { grid-template-columns: 1fr minmax(0, 380px); gap: var(--space-8); }
 }
 .resource-lead--bio h1 { font-size: var(--step-4); }
+/* Wide-photo variant: the photo takes a bigger share of the row. */
+@media (min-width: 44rem) {
+  .resource-lead--bio.resource-lead--wide-photo { grid-template-columns: 1fr minmax(0, 540px); }
+}
 /* Guide variant (About "Meet your guide"): portrait left, story right. */
 .resource-lead--guide { align-items: center; }
 @media (min-width: 44rem) {
