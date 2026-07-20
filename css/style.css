@@ -1257,7 +1257,9 @@ p { max-width: var(--measure); }
     linear-gradient(180deg, rgba(124,119,192,0.16), rgba(124,119,192,0.04)),
     url("../assets/carrie-gate-hero.jpg");
   background-size: cover, cover, cover;
-  background-position: center, center, right center;
+  /* Anchor the photo's top edge: cover-cropping takes from the bottom,
+     never the head. */
+  background-position: center, center, right top;
 }
 .hero__thread {
   position: absolute; z-index: -1; inset: 0 0 0 auto;
