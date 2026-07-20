@@ -1483,3 +1483,35 @@ p { max-width: var(--measure); }
 /* Natural variant: the container keeps the photo's own aspect ratio so the
    FULL image shows, nothing cropped away. */
 .photo-band--natural { height: auto; aspect-ratio: 3 / 2; }
+
+/* Banner hero (wireframe grammar): a full-bleed landscape photo with the
+   copy overlaid on a darkened side. Landscape photos live here; only
+   portrait crops belong beside text columns. */
+.hero-banner {
+  position: relative; display: grid; align-items: end;
+  min-height: clamp(420px, 62vh, 640px);
+  background-size: cover; background-position: center 30%;
+}
+.hero-banner::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(43, 29, 56, 0.72) 0%, rgba(43, 29, 56, 0.42) 48%,
+    rgba(43, 29, 56, 0.10) 100%);
+}
+.hero-banner__copy {
+  position: relative; max-width: 36rem;
+  padding: var(--space-8) var(--space-5) var(--space-7);
+  margin-inline: auto 0; width: 100%;
+}
+.hero-banner .container { position: relative; }
+.hero-banner__copy .eyebrow { color: #D9CBE8; }
+.hero-banner__copy h1 { color: #FFFDFA; font-size: var(--step-4); }
+.hero-banner__copy .lede { color: #F0E9F6; }
+.hero-banner__copy .meta { color: #CBBFDA; }
+.hero-banner__copy .meta a { color: #E8DCF3; }
+@media (max-width: 44rem) {
+  .hero-banner::before {
+    background: linear-gradient(180deg,
+      rgba(43, 29, 56, 0.20) 0%, rgba(43, 29, 56, 0.78) 70%);
+  }
+}
