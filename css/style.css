@@ -299,6 +299,25 @@ p { max-width: var(--measure); }
   content: ""; position: absolute; left: 0; width: 1.1rem; height: 2px; background: currentColor; }
 .nav-toggle__bars::before { top: -5px; } .nav-toggle__bars::after { top: 5px; }
 
+/* "More" overflow menu: persistent hamburger holding the secondary pages
+   (Home / Monthly Gathering / Contact) so the visible nav stays at five. */
+.nav__more { position: relative; }
+.nav__more-toggle {
+  display: inline-flex; align-items: center; background: none; cursor: pointer;
+  border: var(--border-hair); border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3); color: var(--color-ink);
+}
+.nav__more-toggle:hover { color: var(--color-accent); }
+.nav__more-menu {
+  display: none; position: absolute; right: 0; top: calc(100% + var(--space-2));
+  background: var(--color-surface); border: var(--border-hair); border-radius: var(--radius);
+  box-shadow: var(--shadow-md); padding: var(--space-2) var(--space-4);
+  min-width: 13rem; list-style: none; margin: 0; z-index: 60;
+}
+.nav__more-menu li { display: block; }
+.nav__more-menu .nav__link { display: block; padding: var(--space-2) 0; }
+.nav__more[data-open="true"] .nav__more-menu { display: block; }
+
 @media (max-width: 72rem) {
   .nav-toggle { display: inline-flex; }
   .nav {
@@ -314,6 +333,16 @@ p { max-width: var(--measure); }
   .nav__link { padding: var(--space-3) 0; border-bottom: var(--border-hair); }
   .nav__link[aria-current="page"] { border-bottom-color: var(--color-border); }
   .nav .btn { margin-top: var(--space-4); }
+
+  /* On mobile the collapsed menu already lists everything: flatten the
+     "More" submenu into the main list and hide its toggle. */
+  .nav__more { position: static; }
+  .nav__more-toggle { display: none; }
+  .nav__more-menu {
+    display: block; position: static; border: 0; box-shadow: none;
+    padding: 0; min-width: 0; background: transparent;
+  }
+  .nav__more-menu .nav__link { padding: var(--space-3) 0; border-bottom: var(--border-hair); }
 }
 
 /* 6. BUTTONS =============================================================== */

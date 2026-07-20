@@ -1,4 +1,4 @@
-/* main.js — minimal, progressive-enhancement only.
+/* main.js: minimal, progressive-enhancement only.
    Mobile nav toggle. Site works without JS (nav is visible on desktop;
    on mobile the menu simply defaults to hidden and this reveals it). */
 (function () {
@@ -19,6 +19,30 @@
       nav.setAttribute("data-open", "false");
       toggle.setAttribute("aria-expanded", "false");
     }
+  });
+})();
+
+/* Desktop "More" dropdown: hamburger holding the secondary nav pages. */
+(function () {
+  "use strict";
+  var more = document.querySelector(".nav__more");
+  if (!more) return;
+  var moreToggle = more.querySelector(".nav__more-toggle");
+  if (!moreToggle) return;
+
+  function setOpen(open) {
+    more.setAttribute("data-open", String(open));
+    moreToggle.setAttribute("aria-expanded", String(open));
+  }
+
+  moreToggle.addEventListener("click", function () {
+    setOpen(more.getAttribute("data-open") !== "true");
+  });
+  document.addEventListener("click", function (e) {
+    if (!more.contains(e.target) && more.getAttribute("data-open") === "true") setOpen(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && more.getAttribute("data-open") === "true") setOpen(false);
   });
 })();
 

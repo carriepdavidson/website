@@ -132,13 +132,21 @@
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
+          <li><a class="nav__link" href="/">Home</a></li>
           <li><a class="nav__link" href="/about">About</a></li>
           <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-          <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
           <li><a class="nav__link" href="/book">The Memoir</a></li>
           <li><a class="nav__link" href="/writing">Blog</a></li>
-          <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
-          <li><a class="nav__link" href="/contact">Contact</a></li>
+          <li class="nav__more">
+            <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu" aria-label="More pages">
+              <span class="nav-toggle__bars" aria-hidden="true"></span>
+            </button>
+            <ul class="nav__more-menu" id="nav-more-menu">
+              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
+              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
+              <li><a class="nav__link" href="/contact">Contact</a></li>
+            </ul>
+          </li>
         </ul>
         <a class="btn btn--primary btn--pill" href="/discovery-call">Book a Call</a>
       </nav>
