@@ -772,21 +772,24 @@ p { max-width: var(--measure); }
 @media (min-width: 44rem) {
   .resource-lead--cover { grid-template-columns: minmax(0, 240px) 1fr; gap: var(--space-7); }
 }
-/* Bio variant (About hero): text and portrait share the row so the page
-   doesn't list left, and the headline steps down to match the portrait. */
+/* Media-row system (2026-07-20): side-by-side photo/text rows keep a
+   PROPORTIONAL split (photo ~40-50% of the row) instead of a fixed pixel
+   column, so the photo scales with the viewport and never shrinks to a
+   stamp on wide screens. Ratios, not pixels. */
 .resource-lead--bio { align-items: center; }
 @media (min-width: 44rem) {
-  .resource-lead--bio { grid-template-columns: 1fr minmax(0, 380px); gap: var(--space-8); }
+  /* text 7 : photo 5 (photo ~42% of the row) */
+  .resource-lead--bio { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-8); }
 }
 .resource-lead--bio h1 { font-size: var(--step-4); }
-/* Wide-photo variant: the photo takes a bigger share of the row. */
+/* Wide-photo variant: an even 1:1 split for photo-forward heroes. */
 @media (min-width: 44rem) {
-  .resource-lead--bio.resource-lead--wide-photo { grid-template-columns: 1fr minmax(0, 540px); }
+  .resource-lead--bio.resource-lead--wide-photo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
-/* Guide variant (About "Meet your guide"): portrait left, story right. */
+/* Guide variant (photo leads): photo 5 : text 7. */
 .resource-lead--guide { align-items: center; }
 @media (min-width: 44rem) {
-  .resource-lead--guide { grid-template-columns: minmax(0, 340px) 1fr; gap: var(--space-8); }
+  .resource-lead--guide { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-8); }
 }
 .resource-cover {
   width: 100%; height: auto; border-radius: var(--radius);
