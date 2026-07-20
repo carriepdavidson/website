@@ -1183,11 +1183,11 @@ p { max-width: var(--measure); }
 .pattern-divider::before {
   content: "";
   display: block;
-  width: 3.5px; height: 3.5px; border-radius: 50%;
+  width: 6px; height: 6px; border-radius: 50%;
   margin: 0 auto;
   background: var(--color-copper);
-  box-shadow: -17.5px 0 0 var(--color-copper), 17.5px 0 0 var(--color-copper);
-  opacity: 0.8;
+  box-shadow: -26px 0 0 var(--color-copper), 26px 0 0 var(--color-copper);
+  opacity: 0.85;
 }
 
 /* Feature strip: the whole movement drawn once (master, 1200x160). Feature
