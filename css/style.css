@@ -142,10 +142,12 @@ h1, h2, h3, h4 {
   color: var(--color-ink);
   text-wrap: balance;
 }
-h1 { font-size: var(--step-5); font-weight: 600; }
-h2 { font-size: var(--step-3); }
-h3 { font-size: var(--step-2); }
-h4 { font-size: var(--step-1); }
+/* Scale flattened 2026-07-20 (Carrie): headings sit nearer 2x body, per
+   the wireframe proportions, instead of towering over the text. */
+h1 { font-size: var(--step-3); font-weight: 600; }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); }
+h4 { font-size: var(--step-0); }
 
 p { max-width: var(--measure); }
 
@@ -786,7 +788,7 @@ p { max-width: var(--measure); }
   /* text 7 : photo 5 (photo ~42% of the row) */
   .resource-lead--bio { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-8); }
 }
-.resource-lead--bio h1 { font-size: var(--step-4); }
+.resource-lead--bio h1 { font-size: var(--step-3); }
 /* Media-row photos style themselves; pages need no inline styling. */
 .resource-lead--bio > img, .resource-lead--guide > img {
   width: 100%; height: auto; border-radius: var(--radius);
@@ -1304,7 +1306,7 @@ p { max-width: var(--measure); }
       rgba(250,247,240,0.60) 54%, rgba(124,119,192,0.10) 76%,
       rgba(90,85,160,0.32) 100%),
     linear-gradient(180deg, rgba(124,119,192,0.16), rgba(124,119,192,0.04)),
-    url("../assets/carrie-gothic-gate-hero.jpg");
+    url("../assets/carrie-gate-hero-full.jpg");
   background-size: cover, cover, cover;
   /* CD-035: Carrie stands right of frame, head in the upper third. Anchor
      the crop there so she stays whole. */
@@ -1327,7 +1329,7 @@ p { max-width: var(--measure); }
         rgba(250,247,240,0.30) 0%, rgba(250,247,240,0.72) 46%,
         var(--color-bg) 82%),
       linear-gradient(180deg, rgba(124,119,192,0.14), rgba(124,119,192,0.04)),
-      url("../assets/carrie-gothic-gate-hero.jpg");
+      url("../assets/carrie-gate-hero-full.jpg");
     /* Subject stands right of frame: keep her in view on narrow screens. */
     background-position: center top, center, 80% 22%;
   }
@@ -1596,12 +1598,20 @@ p { max-width: var(--measure); }
 }
 .hero-banner .container { position: relative; }
 .hero-banner__copy .eyebrow { color: #D9CBE8; }
-.hero-banner__copy h1 { color: #FFFDFA; font-size: var(--step-4); }
+.hero-banner__copy h1 { color: #FFFDFA; font-size: var(--step-3); }
 .hero-banner__copy .lede { color: #F0E9F6; }
 .hero-banner__copy .meta { color: #CBBFDA; }
 .hero-banner__copy .meta a { color: #E8DCF3; }
+/* Right-hand variant: subject stands left of frame, copy sits right. */
+.hero-banner--right::before {
+  background: linear-gradient(270deg,
+    rgba(43, 29, 56, 0.72) 0%, rgba(43, 29, 56, 0.42) 48%,
+    rgba(43, 29, 56, 0.10) 100%);
+}
+.hero-banner--right .hero-banner__copy { margin-inline: auto 0; }
 @media (max-width: 44rem) {
-  .hero-banner::before {
+  .hero-banner::before,
+  .hero-banner--right::before {
     background: linear-gradient(180deg,
       rgba(43, 29, 56, 0.20) 0%, rgba(43, 29, 56, 0.78) 70%);
   }

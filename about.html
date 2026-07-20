@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260720q">
+  <link rel="stylesheet" href="css/style.css?v=20260720r">
 
   <!-- Person JSON-LD (Carrie): reused verbatim from index.html head.
        Defines @id #carrie, referenced by Organization + Book. hasCredential surfaces RN/BSN/BSPH E-E-A-T. -->
@@ -135,21 +135,18 @@
   <main id="main">
 
     <!-- HERO: locked About tagline block. Steps portrait. -->
-    <section class="hero">
+    <section class="hero-banner hero-banner--right"
+             style="background-image: url(/assets/carrie-nurse-shirt.jpg); background-position: 25% 30%;"
+             aria-label="Carrie Davidson barefoot in the branches of a big oak tree">
       <div class="container">
-        <div class="resource-lead resource-lead--bio">
-          <div>
-            <p class="eyebrow">About</p>
-            <h1>You&rsquo;ve done the work. So why does so little change?</h1>
-            <p class="lede">You understand your patterns. You can explain them in detail.
-              That question, the gap between knowing and changing, is why this practice
-              exists.</p>
-            <div class="btn-row" style="margin-top: var(--space-5);">
-              <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
-            </div>
+        <div class="hero-banner__copy">
+          <p class="eyebrow">About</p>
+          <h1>You&rsquo;ve done the work. So why does so little change?</h1>
+          <p class="lede">That question, the gap between knowing and changing, is why this
+            practice exists.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
           </div>
-          <img src="/assets/carrie-laughing.jpg" alt="Carrie Davidson laughing on stone steps"
-              >
         </div>
       </div>
     </section>
@@ -175,9 +172,8 @@
     <section class="section reveal" aria-labelledby="guide-title">
       <div class="container">
         <div class="resource-lead resource-lead--guide resource-lead--wide-photo">
-          <img src="/assets/carrie-nurse-shirt.jpg"
-               alt="Carrie Davidson in a purple I'm A Nurse t-shirt, barefoot in the branches of a big oak tree"
-              >
+          <img src="/assets/carrie-laughing.jpg"
+               alt="Carrie Davidson laughing on stone steps">
           <div class="prose">
             <h2 id="guide-title">The nurse who became her own patient</h2>
             <p>I learned to read a room for danger before I learned to read a book. That
