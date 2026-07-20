@@ -1562,6 +1562,15 @@ p { max-width: var(--measure); }
   display: grid; gap: var(--space-4); grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 52rem) { .phase-cards { grid-template-columns: repeat(3, 1fr); } }
+/* In the 2-up mobile grid, an odd last card centers under the pair
+   instead of hanging bottom-left. */
+@media (max-width: 51.999rem) {
+  .phase-cards > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - var(--space-4) / 2);
+    justify-self: center;
+  }
+}
 .phase-card {
   border-radius: 999px 999px var(--radius) var(--radius);
   padding: var(--space-6) var(--space-4) var(--space-5);
