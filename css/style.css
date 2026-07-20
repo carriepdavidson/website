@@ -226,8 +226,10 @@ p { max-width: var(--measure); }
   padding-inline: var(--space-5); }
 .container-narrow { max-width: var(--container-narrow); }
 
-.section { padding-block: var(--space-9); }
-.section--tight { padding-block: var(--space-8); }
+/* Rhythm tightened 2026-07-20 (Carrie: too much blank space): 4rem block
+   padding gives 8rem between sections instead of 12rem. */
+.section { padding-block: var(--space-8); }
+.section--tight { padding-block: var(--space-7); }
 .section--alt { background-color: var(--color-bg-deep); }
 .section--accent { background-color: var(--color-accent); color: var(--color-on-accent); }
 .section--accent h1, .section--accent h2, .section--accent h3 { color: var(--color-on-accent); }
