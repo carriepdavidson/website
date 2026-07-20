@@ -1513,26 +1513,30 @@ p { max-width: var(--measure); }
   transform: rotate(18deg); filter: blur(7px);
 }
 
-/* Bookshelf: covers standing together on a wooden shelf, casting real
-   shadows. A bookstore moment for the memoir and its companions. */
-.bookshelf {
-  display: flex; justify-content: center; align-items: flex-end;
-  gap: var(--space-6); max-width: 640px;
-  margin: 0 auto var(--space-7); padding: var(--space-6) var(--space-5) 0;
-  border-bottom: 12px solid #a4865e; border-radius: 0 0 3px 3px;
-  position: relative;
+/* Bookwall: an edge-to-edge bookshelf in plum and gold. Illustrated
+   spines in the palette; the one real, face-out book is the memoir. */
+.bookwall {
+  background: linear-gradient(180deg, #4A3660 0%, #3D2B4F 100%);
+  padding-top: var(--space-5); overflow: hidden;
 }
-.bookshelf::after {
-  content: ""; position: absolute; left: 5%; right: 5%; bottom: -26px;
-  height: 14px; background: rgba(61, 43, 79, 0.16);
-  filter: blur(9px); border-radius: 50%;
+.bookwall__shelf {
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: 7px; height: 190px; padding: 0 3vw;
+  border-bottom: 13px solid #a4865e;
 }
-.bookshelf__book {
-  width: min(180px, 34%); height: auto;
-  border-radius: 2px 5px 5px 2px;
-  box-shadow: -10px 8px 24px rgba(61, 43, 79, 0.3);
+.bookwall__shelf--lower { height: 165px; }
+.spine { width: 26px; height: 140px; background: #7B68A0; border-radius: 3px 3px 0 0; flex: 0 0 auto; }
+.spine--b { width: 20px; height: 155px; background: #B8A9C9; }
+.spine--c { width: 34px; height: 126px; background: #C9A87C; }
+.spine--d { width: 16px; height: 148px; background: #E8D5B7; }
+.spine--e { width: 24px; height: 160px; background: #5D4E7E; }
+.spine--f { width: 30px; height: 133px; background: #F2ECF7; }
+.spine--lean { transform: rotate(-7deg); transform-origin: bottom left; margin-right: 12px; }
+.bookwall__cover {
+  height: 172px; width: auto; margin: 0 16px; align-self: flex-end;
+  border-radius: 2px 4px 4px 2px;
+  box-shadow: -10px 6px 20px rgba(0, 0, 0, 0.4);
 }
-.bookshelf__book--main { width: min(250px, 46%); }
 
 /* Phase cards: a journey rendered as arch-topped cards, tinted purple to
    gold in walking order. An explainer graphic built from the system, for
