@@ -357,6 +357,8 @@ p { max-width: var(--measure); }
               border-color var(--transition), transform var(--transition);
 }
 .btn:active { transform: translateY(1px); }
+/* Centered CTA row: replaces the inline justify-content pattern. */
+.btn-row--center { justify-content: center; margin-top: var(--space-6); }
 
 /* Primary: deep purple, for the page's single main CTA */
 .btn--primary { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
@@ -784,6 +786,10 @@ p { max-width: var(--measure); }
   .resource-lead--bio { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-8); }
 }
 .resource-lead--bio h1 { font-size: var(--step-4); }
+/* Media-row photos style themselves; pages need no inline styling. */
+.resource-lead--bio > img, .resource-lead--guide > img {
+  width: 100%; height: auto; border-radius: var(--radius);
+}
 /* Wide-photo variant: an even 1:1 split for photo-forward rows. */
 @media (min-width: 44rem) {
   .resource-lead--bio.resource-lead--wide-photo,
