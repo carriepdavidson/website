@@ -1466,7 +1466,7 @@ p { max-width: var(--measure); }
 
 /* Photo band: full-bleed image breather between sections (calm rhythm). */
 .photo-band {
-  height: clamp(220px, 42vh, 420px);
+  height: clamp(360px, 62vh, 640px);
   background-size: cover;
   background-position: center;
 }
