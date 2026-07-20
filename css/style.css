@@ -759,6 +759,11 @@ p { max-width: var(--measure); }
   .resource-lead--bio { grid-template-columns: 1fr minmax(0, 380px); gap: var(--space-8); }
 }
 .resource-lead--bio h1 { font-size: var(--step-4); }
+/* Guide variant (About "Meet your guide"): portrait left, story right. */
+.resource-lead--guide { align-items: center; }
+@media (min-width: 44rem) {
+  .resource-lead--guide { grid-template-columns: minmax(0, 340px) 1fr; gap: var(--space-8); }
+}
 .resource-cover {
   width: 100%; height: auto; border-radius: var(--radius);
   border: var(--border-hair); box-shadow: var(--shadow-md);
