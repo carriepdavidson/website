@@ -1505,13 +1505,15 @@ p { max-width: var(--measure); }
 .gold-mirror__glass {
   border-radius: 999px 999px 9px 9px;
   aspect-ratio: 3 / 4.1; position: relative; overflow: hidden;
-  background: linear-gradient(168deg, #CFC3E2 0%, #B6A6CF 40%, #9C88BC 75%, #8A76AC 100%);
-  box-shadow: inset 0 0 0 5px #E8D5B7, inset 0 6px 18px rgba(43, 29, 56, 0.35);
+  background:
+    linear-gradient(115deg, rgba(255,255,255,0) 38%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 62%),
+    linear-gradient(168deg, #F7F4FB 0%, #EAE3F4 42%, #DDD3EB 76%, #CFC3E2 100%);
+  box-shadow: inset 0 0 0 5px #E8D5B7, inset 0 6px 16px rgba(43, 29, 56, 0.12);
 }
 .gold-mirror__glass::before {
   content: ""; position: absolute; top: -15%; left: 8%;
   width: 18%; height: 135%;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
   transform: rotate(20deg);
 }
 .gold-mirror__glass::after {
