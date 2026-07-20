@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="40" viewBox="0 0 1200 40" aria-hidden="true" focusable="false">
-  <!-- FOOTER LINE: the path continuing into the evening. Violet on cream,
-       gently wavering, open at both ends. -->
-  <path d="M0 26 C 140 23, 280 20, 420 22 C 540 24, 660 18, 780 20 C 900 22, 1040 14, 1200 18"
-        fill="none" stroke="#7C77C0" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
-  <circle cx="600" cy="21" r="2.5" fill="#5A55A0" opacity="0.8"/>
-</svg>

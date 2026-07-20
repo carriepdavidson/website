@@ -1127,53 +1127,42 @@ p { max-width: var(--measure); }
    and image ratio match, background-size: contain fills the box perfectly
    and never crops the line or its still point (contain over cover so no
    loop, bloom, or terminal dot is ever clipped). */
+/* THE THREE DOTS (Carrie's pick, 2026-07-19): the only mark the site draws.
+   A book's scene-break asterism in the brand gold, sized like punctuation.
+   Replaces the graded Pattern Line dividers; the old --loop/--easing/--open
+   modifier classes remain in the HTML but no longer change anything. */
 .pattern-divider {
   display: block;
   width: 100%;
-  aspect-ratio: 1200 / 60;
   margin: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  padding-block: var(--space-4);
   pointer-events: none;
 }
-.pattern-divider--loop   { background-image: url("../assets/pattern-divider-1.svg"); } /* grade 1: coils still running   (FIRST divider, after the hero) */
-.pattern-divider--easing { background-image: url("../assets/pattern-divider-2.svg"); } /* grade 2: one loop opening, still point appears (MID-page) */
-.pattern-divider--open   { background-image: url("../assets/pattern-divider-3.svg"); } /* grade 3: nearly straight, rising, unfinished (LAST, pre-invitation) */
+.pattern-divider::before {
+  content: "";
+  display: block;
+  width: 3.5px; height: 3.5px; border-radius: 50%;
+  margin: 0 auto;
+  background: var(--color-copper);
+  box-shadow: -17.5px 0 0 var(--color-copper), 17.5px 0 0 var(--color-copper);
+  opacity: 0.8;
+}
 
 /* Feature strip: the whole movement drawn once (master, 1200x160). Feature
    moments ONLY (method page + about "What I built from it"); never more than
    once per page. Centered in a capped-width container with generous vertical
    breathing room. aspect-ratio again prevents layout shift. */
-.pattern-strip {
-  display: block;
-  width: 100%;
-  max-width: 760px;
-  margin: var(--space-8) auto;
-  aspect-ratio: 1200 / 160;
-  background: url("../assets/pattern-line-master.svg") center / contain no-repeat;
-  pointer-events: none;
-}
-/* Small variant: a quieter close (e.g. end-of-article slot in templates). */
-.pattern-strip--small { max-width: 460px; }
-
-/* Course variant (Rooted & Rising home): the six weeks as one line. */
-.pattern-strip--course { background-image: url("../assets/course/course-line-master.svg"); }
-
-/* Course week motif (Rooted & Rising week heroes): one beat of the line
-   per week, small and quiet beneath the lede. Decorative only. */
-.course-week-motif {
-  display: block;
-  width: min(200px, 55%);
-  height: auto;
-  margin-top: var(--space-5);
-  pointer-events: none;
-}
+/* RETIRED with the Pattern Line (2026-07-19): feature strips, course strips,
+   and week motifs no longer render. Markup can be pruned in the v2.0 batch. */
+.pattern-strip,
+.pattern-strip--small,
+.pattern-strip--course,
+.course-week-motif,
+.pattern-draw { display: none; }
 
 /* Figure wrapper for the labelled feature strip (method page): the strip
    plus its visible microcopy. */
-.pattern-figure { margin: var(--space-8) auto; max-width: 760px; }
-.pattern-figure .pattern-strip { margin-block: 0 var(--space-4); }
+.pattern-figure { display: none; }
 .pattern-figure figcaption {
   max-width: 52ch;
   margin: 0 auto;
@@ -1240,20 +1229,9 @@ p { max-width: var(--measure); }
    footer line. All derive from the one hand-drawn line; see
    docs/pattern-language.md.
    ============================================================ */
-.hero {
-  background-image: url("../assets/motif-contour.svg");
-  background-repeat: no-repeat;
-  background-position: right -130px top -150px;
-  background-size: 460px 460px;
-}
-/* The violet thread runs along the BOTTOM edge of the cream footer. */
-.site-footer {
-  background-image: url("../assets/pattern-footer.svg");
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: min(1200px, 100%) 34px;
-  padding-bottom: var(--space-8);
-}
+/* Corner contour motif and footer thread line: RETIRED 2026-07-19 with the
+   Pattern Line. Heroes and the footer now rest on color and type alone. */
+.site-footer { padding-bottom: var(--space-8); }
 
 /* ========================================================================
    SIGNATURE THREAD (redesign 2026-07-13): index homepage components.
