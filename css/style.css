@@ -784,9 +784,10 @@ p { max-width: var(--measure); }
   .resource-lead--bio { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-8); }
 }
 .resource-lead--bio h1 { font-size: var(--step-4); }
-/* Wide-photo variant: an even 1:1 split for photo-forward heroes. */
+/* Wide-photo variant: an even 1:1 split for photo-forward rows. */
 @media (min-width: 44rem) {
-  .resource-lead--bio.resource-lead--wide-photo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .resource-lead--bio.resource-lead--wide-photo,
+  .resource-lead--guide.resource-lead--wide-photo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
 /* Guide variant (photo leads): photo 5 : text 7. */
 .resource-lead--guide { align-items: center; }
