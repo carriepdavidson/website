@@ -33,9 +33,10 @@
        #FDFCFF 13.3 | blush #F3EFFA 12.1 | mist-deep #E9E4F5 11.2 |
        clay-soft #F0E9DC 11.3  ALL AAA.
      Buttons: near-white #FBF9F4 on #3F3168 12.2 AAA; hover #2E2352 14.9 AAA.
-     Lavender band #6A64AC: near-white text 4.95 AA | white thread 5.21 AA.
+     Lavender band #7B68A0 (VBI): near-white text 4.84 AA.
      Focus ring #3F3168 >=11:1 on all light backgrounds.
-     Thread violet #7C77C0 as text ~3.5:1 -> DECORATIVE (threads/borders) only.
+     VBI purple #7B68A0 as text ~4.2:1 on tinted bgs -> DECORATIVE (threads/borders) only;
+     text links use text-safe #5D4E7E (>=6.3:1 on all light bands).
      ------------------------------------------------------------------ */
   --color-bg:          #FFFDFA; /* light lavender: main page background */
   --color-bg-deep:     #F5F1F8; /* deeper lavender: alternating / mist sections */
@@ -65,14 +66,14 @@
   --color-orchid:      #7B68A0; /* thread violet: large/decorative */
   --color-lilac:       #B8A9C9; /* harmonized lilac: blooms / ghost strokes */
   --color-footer-text: #3D2B4F; /* muted plum text on cream footer */
-  --color-footer-link: #5A55A0; /* thread-violet links in the footer */
+  --color-footer-link: #5D4E7E; /* VBI text-safe violet links in the footer */
 
-  /* Signature Thread tokens (new) */
-  --color-thread:       #7C77C0; /* the thread violet (line, decorative) */
-  --color-thread-still: #5A55A0;
-  --color-link:        #5A55A0; /* text-safe thread violet: links (AA on all lavender bgs) */
-  --color-link-deep:   #47437F; /* link hover */ /* the still point (deep violet) */
-  --color-lavender-band:#6A64AC; /* newsletter / accent band (AA near-white text) */
+  /* Signature Thread tokens (VBI palette, 2026-07-19) */
+  --color-thread:       #7B68A0; /* VBI purple (line, decorative) */
+  --color-thread-still: #3D2B4F;
+  --color-link:        #5D4E7E; /* text-safe VBI violet: links (AA on all lavender bgs) */
+  --color-link-deep:   #3D2B4F; /* link hover: deep plum */
+  --color-lavender-band:#7B68A0; /* newsletter / accent band (AA near-white text) */
 
   /* Typography: Cormorant Garamond (literary display) + DM Sans (humanist body).
      Loaded via Google Fonts in each page <head> with font-display: swap. */
@@ -494,7 +495,7 @@ p { max-width: var(--measure); }
 /* Light Cream footer (Signature Thread redesign): paper-cream background,
    deep-plum text, violet links. The violet thread runs along the BOTTOM edge
    (pattern-footer.svg, see v2 block). Plum dark footer retired. Verified:
-   ink h2 12.03:1 | meta #55506A 6.62:1 | link #5A55A0 5.60:1 on #F3EEE3. */
+   ink h2 12.03:1 | meta #55506A 6.62:1 | link #5D4E7E 6.36:1 on #F3EEE3. */
 .site-footer { background: var(--color-bg-deep); border-top: 1px solid var(--color-copper);
   padding-block: var(--space-8) var(--space-6); font-size: var(--step--1);
   color: var(--color-footer-text); }
@@ -1375,7 +1376,7 @@ p { max-width: var(--measure); }
   margin: var(--space-4) 0; min-height: 7rem; }
 .pacer__circle {
   flex: 0 0 auto; width: 4rem; height: 4rem; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #B8B2E4, #7C77C0);
+  background: radial-gradient(circle at 35% 30%, #B8A9C9, #7B68A0);
   transform: scale(1); opacity: 0.85;
 }
 .pacer__circle.is-in  { transform: scale(1.6); transition: transform 4s ease-in-out; }
