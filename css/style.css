@@ -1491,6 +1491,26 @@ p { max-width: var(--measure); }
    FULL image shows, nothing cropped away. */
 .photo-band--natural { height: auto; aspect-ratio: 3 / 2; }
 
+/* Gold mirror: an arch-topped mirror in a gold frame, the Awareness
+   symbol. The glass holds a quiet lavender light with one soft streak. */
+.gold-mirror {
+  max-width: 300px; margin-inline: auto;
+  background: linear-gradient(135deg, #C9A87C 0%, #a4865e 55%, #C9A87C 100%);
+  border-radius: 999px 999px 16px 16px;
+  padding: 12px; box-shadow: var(--shadow-md);
+}
+.gold-mirror__glass {
+  border-radius: 999px 999px 9px 9px;
+  aspect-ratio: 3 / 4.2; position: relative; overflow: hidden;
+  background: linear-gradient(160deg, #F6F2FA 0%, #E9E0F2 45%, #D6C9E6 100%);
+}
+.gold-mirror__glass::after {
+  content: ""; position: absolute; top: -20%; left: 14%;
+  width: 24%; height: 140%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(18deg); filter: blur(7px);
+}
+
 /* Bookshelf: covers standing together on a wooden shelf, casting real
    shadows. A bookstore moment for the memoir and its companions. */
 .bookshelf {
