@@ -1579,6 +1579,14 @@ p { max-width: var(--measure); }
 .phase-card--5 { background: #F7F0E2; } .phase-card--5 .phase-card__num { color: #B08A50; }
 .phase-card--6 { background: #F8F0D9; } .phase-card--6 .phase-card__num { color: #a4865e; }
 
+/* Library cards: every cover renders in the same 8:5 frame regardless of
+   the source image's size, so resource grids sit level and calm. */
+.card > img {
+  width: 100%; aspect-ratio: 8 / 5; object-fit: cover;
+  border-radius: var(--radius); border: var(--border-hair);
+  margin-bottom: var(--space-3);
+}
+
 /* Program badge: every offer mark sits in the same square white card so
    badge rows stay level regardless of each logo's own proportions. */
 .door-badge {

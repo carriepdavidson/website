@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260720u">
+  <link rel="stylesheet" href="css/style.css?v=20260720v">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -79,11 +79,10 @@
         <p class="eyebrow">Free trauma recovery resources</p>
         <h1>Free trauma recovery worksheets, a quiz, and a weekly letter</h1>
         <p class="lede">Start where you are.</p>
-        <p>You don&rsquo;t have to be ready to hire a coach to begin. You just have to be tired of
-          the loop. Start free with the Trauma Tree Worksheet, the 3-minute quiz, and the Sunday Letter.</p>
+        <p>You don&rsquo;t have to be ready to hire a coach to begin. You just have to be
+          tired of the loop.</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="/resources/trauma-tree-worksheet">Get the free workbook &rarr;</a>
-          <a class="btn btn--secondary" href="/quiz">Take the 3-minute quiz</a>
         </div>
       </div>
     </section>
@@ -101,58 +100,29 @@
           <p>Begin with the quiz, then the worksheet, then the weekly letter: each one takes the next
             small step, in order.</p>
         </div>
-        <ol class="steps" aria-label="How to begin, in four steps">
-          <li class="step"><h3>Take the quiz</h3><p>Three minutes to see where your nervous system is stuck, and what it&rsquo;s asking for.</p></li>
-          <li class="step"><h3>Map your roots</h3><p>Download the Trauma Tree Worksheet and trace the loop to the wound beneath the behavior.</p></li>
-          <li class="step"><h3>Subscribe</h3><p>Get the Sunday Letter so the work continues in your inbox, one small practice at a time.</p></li>
-          <li class="step"><h3>Go deeper</h3><p>Explore the free PDF library, or step into community and coaching when you&rsquo;re ready.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         THREE FREE STARTERS: worksheet / quiz / newsletter.
-         ============================================================ -->
-    <!-- COPY-PASS -->
-    <section class="section reveal" aria-labelledby="starters-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">The three free starters</p>
-          <h2 id="starters-title">What can I get for free right now?</h2>
-          <p>Three no-cost tools, each answering a question you&rsquo;ve probably already asked yourself.
-            All free, all yours to keep: in the order most people use them.</p>
-        </div>
-        <div class="grid grid--3">
-
-          <article class="door door--start">
-            <p class="door__kicker">Step 1 &middot; &ldquo;Am I in survival mode?&rdquo;</p>
-            <h3>The 3-minute quiz</h3>
-            <p>A quick, honest self-assessment: where is your nervous system living: survival mode,
-              shutdown, or somewhere in between? Get your result and a first next step in about three minutes.</p>
-            <div class="door__spacer"></div>
-            <a class="btn btn--primary btn--full" href="/quiz">Take the quiz</a>
-          </article>
-
-          <article class="door door--fix">
-            <p class="door__kicker">Step 2 &middot; &ldquo;Why do I keep repeating this?&rdquo;</p>
-            <h3>The Trauma Tree Worksheet</h3>
-            <p>Map the roots (what happened), the trunk (the
-              beliefs), and the branches (the patterns), and finally see the loop as one whole thing,
-              not a hundred separate failures.</p>
-            <div class="door__spacer"></div>
-            <a class="btn btn--secondary btn--full" href="/resources/trauma-tree-worksheet">Download the worksheet</a>
-          </article>
-
-          <article class="door door--read">
-            <p class="door__kicker">Step 3 &middot; &ldquo;Why can&rsquo;t I just relax?&rdquo;</p>
-            <h3>The Sunday Letter</h3>
-            <p>A weekly note for the ones who know their patterns and want them to change: neuroscience precision, a poetic
-              reframe, and one small practice, every Sunday. No hustle, no shame, no urgency.</p>
-            <div class="door__spacer"></div>
-            <a class="btn btn--ghost btn--full" href="/subscribe">Get the Sunday Letter</a>
-          </article>
-
-        </div>
+        <ul class="phase-cards" style="grid-template-columns: repeat(2, 1fr);"
+            aria-label="How to begin, in four steps">
+          <li class="phase-card phase-card--1">
+            <span class="phase-card__num" aria-hidden="true">1</span>
+            <h3>Take the quiz</h3>
+            <p>Three minutes to see your pattern&rsquo;s shape.</p>
+          </li>
+          <li class="phase-card phase-card--3">
+            <span class="phase-card__num" aria-hidden="true">2</span>
+            <h3>Map your roots</h3>
+            <p>The Trauma Tree Worksheet, free.</p>
+          </li>
+          <li class="phase-card phase-card--5">
+            <span class="phase-card__num" aria-hidden="true">3</span>
+            <h3>Subscribe</h3>
+            <p>The Sunday Letter, one practice a week.</p>
+          </li>
+          <li class="phase-card phase-card--6">
+            <span class="phase-card__num" aria-hidden="true">4</span>
+            <h3>Go deeper</h3>
+            <p>The free library, then coaching when ready.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -179,7 +149,7 @@
               <img src="assets/cover-befriending-nervous-system.svg"
                    alt="Cover of the free workbook: Befriending Your Nervous System"
                    loading="lazy" width="480" height="300"
-                   style="width:100%; height:auto; border-radius: var(--radius); border: var(--border-hair);">
+                  >
               <h4><a href="/resources/befriending-your-nervous-system">Befriending Your Nervous System</a></h4>
               <p>A workbook for making peace with the alarm system that kept you alive: learn to read
                 your own body, then work with it instead of against it.</p>
@@ -200,7 +170,7 @@
               <img src="assets/cover-trauma-tree.svg"
                    alt="Cover of the free Trauma Tree Worksheet"
                    loading="lazy" width="480" height="300"
-                   style="width:100%; height:auto; border-radius: var(--radius); border: var(--border-hair);">
+                  >
               <h4><a href="/resources/trauma-tree-worksheet">The Trauma Tree Worksheet</a></h4>
               <p>The free download at the heart of the Method. Map the roots (what happened), the trunk
                 (the beliefs), and the branches (the patterns) as one system.</p>
@@ -212,7 +182,7 @@
               <img src="assets/cover-small-leavings-journal.svg"
                    alt="Cover of the free journal: The Small Leavings Journal"
                    loading="lazy" width="480" height="300"
-                   style="width:100%; height:auto; border-radius: var(--radius); border: var(--border-hair);">
+                  >
               <h4><a href="/resources/small-leavings-journal">The Small Leavings Journal</a></h4>
               <p>Named for the way we lose ourselves: one small leaving at a time. A journal for noticing
                 the exits, and choosing to stay.</p>
@@ -224,7 +194,7 @@
               <img src="assets/the-philosophy-poster.svg"
                    alt="The philosophy poster: one continuous hand-drawn violet line moves through tangled loops, a pause at a still point, a choice, and an open blooming rise, above the words Pattern, Pause, Choice, Creation"
                    loading="lazy" width="480" height="600"
-                   style="width:100%; height:auto; border-radius: var(--radius); border: var(--border-hair);">
+                  >
               <h4><a href="assets/the-philosophy-poster.svg">The Philosophy Poster</a></h4>
               <p>The whole method in one unbroken line, for your wall: the loop, the pause, the choice,
                 and the open path. A quiet daily reminder that the pattern is not the ending.</p>
@@ -255,7 +225,7 @@
               <img src="assets/cover-adhd-affirmation-cards.svg"
                    alt="Cover of the free printable: ADHD Affirmation Cards"
                    loading="lazy" width="480" height="300"
-                   style="width:100%; height:auto; border-radius: var(--radius); border: var(--border-hair);">
+                  >
               <h4><a href="/resources/adhd-affirmation-cards">ADHD Affirmation Cards</a></h4>
               <p>Printable cards with gentle reframes for the ADHD brain: for the days when executive
                 function feels out of reach.</p>
@@ -276,7 +246,7 @@
               <img src="assets/cover-conscious-creation-workbook.svg"
                    alt="Cover of the free workbook: The Conscious Creation Workbook"
                    loading="lazy" width="480" height="300"
-                   style="width:100%; height:auto; border-radius: var(--radius); border: var(--border-hair);">
+                  >
               <h4><a href="/resources/conscious-creation-workbook">The Conscious Creation Workbook</a></h4>
               <p>The workbook at the heart of the Method: prompts for all five steps and for building the intentional life that comes after
                 regulation, one honest choice at a time.</p>
@@ -338,7 +308,7 @@
         <nav class="footer-col" aria-label="Footer">
           <h2>Explore</h2>
           <ul>
-            <li><a href="/start-here">Start Here</a></li>
+            <li><a href="/resources">Start Here</a></li>
             <li><a href="/coaching">Coaching</a></li>
             <li><a href="/method">The Method</a></li>
             <li><a href="/book">The Book</a></li>
