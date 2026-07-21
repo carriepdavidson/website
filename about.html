@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260721f">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721g">
 
   <!-- Page-only styles (candidates for dc.css consolidation):
        story pull-quote, credential row-cards, standalone press strip. -->
@@ -129,32 +129,65 @@
        border. Wordmark + 5 links + persistent "more" dropdown +
        Book a Call pill. Same structural classes as js/main.js.
        ============================================================ -->
+  <!-- ANNOUNCEMENT BAR: memoir pre-order. The button carries
+       data-preorder so js/preorder.js upgrades it to the retailer
+       link the day it exists; until then it routes to the notify
+       form, which is the honest promise. Dismiss stored per session. -->
+  <div class="announce" data-announce hidden>
+    <div class="announce__inner">
+      <strong>Pre-order my memoir:</strong> <em>Addicted to Trauma</em>
+      <span>Releasing August 8, 2026</span>
+      <a class="announce__btn" href="/book#launch" data-preorder>Be first to read</a>
+      <button class="announce__close" type="button" aria-label="Dismiss announcement" data-announce-close>&times;</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SITE HEADER (dc): letterspaced wordmark + logo mark, CSS
+       dropdown nav (My Story / Coaching / Resources / Blog /
+       Contact), Book a Call pill. Same hooks as js/main.js.
+       ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="/">Home</a></li>
-          <li><a class="nav__link" aria-current="page" href="/about">About</a></li>
-          <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-          <li><a class="nav__link" href="/book">The Memoir</a></li>
-          <li><a class="nav__link" href="/writing">Blog</a></li>
-          <li class="nav__more">
-            <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu" aria-label="More pages">
-              <span class="nav-toggle__bars" aria-hidden="true"></span>
-            </button>
-            <ul class="nav__more-menu" id="nav-more-menu">
-              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
-              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
-              <li><a class="nav__link" href="/contact">Contact</a></li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">My Story</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/about">About Carrie</a></li>
+              <li><a class="nav__link" href="/book">The Memoir</a></li>
+              <li><a class="nav__link" href="/media">Speaking &amp; Media</a></li>
             </ul>
           </li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">Coaching</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/coaching">Work with Me</a></li>
+              <li><a class="nav__link" href="/arc-program">The ARC Program</a></li>
+              <li><a class="nav__link" href="/rooted-and-rising">Rooted &amp; Rising</a></li>
+              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
+              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
+            </ul>
+          </li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">Resources</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/resources">Free Resources</a></li>
+              <li><a class="nav__link" href="/quiz">The Pattern Quiz</a></li>
+              <li><a class="nav__link" href="/subscribe">The Sunday Letter</a></li>
+              <li><a class="nav__link" href="/for-nurses">For Nurses &amp; Caregivers</a></li>
+              <li><a class="nav__link" href="/faq">FAQ</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="/writing">Blog</a></li>
+          <li><a class="nav__link" href="/contact">Contact</a></li>
         </ul>
         <a class="btn btn--primary btn--pill" href="/discovery-call">Book a Call</a>
       </nav>
@@ -163,142 +196,125 @@
 
   <main id="main">
 
-    <!-- HERO -->
+    <!-- HERO (mockup 4): The nurse who became her own patient. -->
     <section class="hero">
       <div class="container">
-        <div class="split split--even">
+        <div class="split">
           <div>
-            <p class="eyebrow">About Carrie</p>
-            <h1 class="h1-display">A nurse who has been <em class="plum">the patient.</em></h1>
-            <p class="lede measure" style="margin: 24px 0 0; font-size: 19px;">I&rsquo;m Carrie
-              Davidson. For years I was the nurse reading the chart and, quietly, the patient
-              inside the chart. I coach from that place:
-              <strong style="color: var(--ink);">trauma experienced, not just informed.</strong></p>
-            <p class="measure" style="margin: 20px 0 0; font-size: 18px; color: var(--text-muted);">I
-              don&rsquo;t teach this work from the outside. I lived the loop, and I found my way
-              out of it. That&rsquo;s what I bring to the room.</p>
+            <div class="diamond-divider" style="justify-content: flex-start; margin: 0 0 18px; max-width: 220px;" aria-hidden="true">
+              <span class="eyebrow" style="margin: 0; color: var(--gold);">About</span><span>&#10022;</span>
+            </div>
+            <h1 class="h1-display">The nurse who became her own patient.</h1>
+            <p class="lede measure" style="margin: 26px 0 0;">I learned to read a room for
+              danger before I learned to read a book. That vigilance made me an exceptional
+              nurse. It also nearly cost me my life. Then came the day I became the patient in
+              the white hallway who could not remember her own name.</p>
+            <p class="support-strong measure" style="margin: 20px 0 0;">I have been the nurse
+              reading the chart and the patient inside the chart.</p>
+            <p class="lede-serif-italic" style="margin: 10px 0 0;">Both sides of it are what I
+              bring to this work.</p>
+            <div class="cred-row" style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 34px;">
+              <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
+                <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4Z"/><path d="M6 10.5V15c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>
+                <span>BSPH, BSN, RN</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
+                <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4.5 6v5c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg>
+                <span>Certified Trauma<br>Recovery Coach</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
+                <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20h16M13.5 4.5l4 4L9 17l-5 1 1-5 8.5-8.5Z"/></svg>
+                <span>Author of <em style="text-transform: none;">Addicted to Trauma</em><br>Releasing August 8, 2026</span>
+              </div>
+            </div>
           </div>
           <div>
-            <div class="portrait-frame portrait-frame--square">
-              <img src="/assets/carrie-laughing.jpg" fetchpriority="high"
-                   alt="Carrie Davidson laughing on stone steps"
-                   width="1024" height="1280">
+            <div class="portrait-frame portrait-frame--4x5">
+              <img src="/assets/carrie-davidson.jpg" fetchpriority="high"
+                   alt="Carrie Davidson standing on stone steps in a white blazer, looking at the camera"
+                   width="1200" height="1500">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MY STORY (tint) -->
-    <section class="section section--tint reveal" aria-labelledby="story-title">
-      <div class="container container--read">
-        <p class="eyebrow" style="margin-bottom: 16px;">My story</p>
-        <h2 id="story-title" style="margin-bottom: 32px; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.12;">I
-          knew the science. I was still running the pattern.</h2>
-        <div class="story-flow">
-          <p>For years I could explain exactly what was happening to me. I had the language,
-            the nursing training, the insight. And I was still living the same story on repeat,
-            watching myself react in ways I swore I&rsquo;d changed.</p>
-          <p>That&rsquo;s the cruel part of a trauma pattern: understanding it isn&rsquo;t the
-            same as being free of it. The loop doesn&rsquo;t live in the intellect. It lives in
-            the body, in a nervous system that learned, long ago, how to keep me safe.</p>
-          <p>What finally moved things wasn&rsquo;t more insight. It was learning to work
-            through the body, to build a real pause between the trigger and the old response,
-            and to make something new inside that pause.</p>
-          <p>I wrote <em>Addicted to Trauma</em> about what
-            it took. Now I do this work alongside people who are done surviving the same story
-            and ready to build a different one.</p>
-        </div>
-        <blockquote class="story-quote">You do not have to think your way out. You have to
-          feel your way home.</blockquote>
-      </div>
-    </section>
-
-    <!-- PHOTO BAND: edge to edge, professional. -->
-    <div class="photo-band" style="background-image: url(/assets/carrie-gate-hero-full.jpg); background-position: right 22%;"
-         role="img" aria-label="Carrie Davidson in a white blazer standing before a wrought-iron garden gate"></div>
-
-    <!-- CREDENTIALS -->
-    <section class="section reveal" aria-labelledby="creds-title">
+    <!-- WHY I DO THIS WORK (tint, mockup 4) -->
+    <section class="section section--tint reveal" aria-labelledby="why-title">
       <div class="container">
-        <div class="section-head center measure-wide mx-auto" style="margin-bottom: 48px;">
-          <p class="eyebrow">Training &amp; credentials</p>
-          <h2 id="creds-title" style="font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12;">Clinically
-            trained. Personally acquainted.</h2>
-        </div>
-        <div class="cards-2 cred-grid">
-          <div class="card cred-card">
-            <span class="chip" aria-hidden="true">RN</span>
-            <div>
-              <h3>Registered Nurse</h3>
-              <p>BSPH, BSN, RN. A clinical foundation in how the body holds what the mind
-                can&rsquo;t reach.</p>
+        <div class="split">
+          <div>
+            <div class="diamond-divider" style="justify-content: flex-start; margin: 0 0 18px; max-width: 280px;" aria-hidden="true">
+              <span class="eyebrow" style="margin: 0;">Why I do this work</span><span>&#10022;</span>
             </div>
+            <h2 id="why-title">I do not coach from a podium.</h2>
+            <p class="lede-serif-italic" style="margin: 12px 0 0;">I coach from the floor I
+              once found myself on, now standing.</p>
+            <div class="diamond-divider" style="justify-content: flex-start; max-width: 180px;" aria-hidden="true"><span>&#10022;</span></div>
+            <p class="measure" style="margin: 0 0 14px;">I know exactly how it feels to
+              understand everything and still be stuck, and I know the way through was never
+              one more explanation.</p>
+            <p class="support-strong measure" style="margin: 0 0 6px;">Insight alone does not
+              always interrupt the pattern.</p>
+            <p class="measure" style="margin: 0 0 26px;">You need someone who has walked it,
+              walking beside you.</p>
+            <p style="display: flex; align-items: center; gap: 12px; margin: 0; font-size: 14.5px; color: var(--text-muted);">
+              <svg style="width: 22px; height: 22px; color: var(--plum); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20s-7-4.5-9-9c-1.2-2.8.6-6 3.8-6 2 0 3.4 1.1 5.2 3 1.8-1.9 3.2-3 5.2-3 3.2 0 5 3.2 3.8 6-2 4.5-9 9-9 9Z"/></svg>
+              My work is LGBTQ+ affirming and inclusive of all identities and relationship
+              structures.
+            </p>
           </div>
-          <div class="card cred-card">
-            <span class="chip" aria-hidden="true">TRC</span>
-            <div>
-              <h3>Certified Trauma Recovery Coach</h3>
-              <p>Trained to work present-and-forward on patterns, regulation, and what comes
-                next.</p>
-            </div>
-          </div>
-          <div class="card cred-card">
-            <span class="chip" aria-hidden="true">AT</span>
-            <div>
-              <h3>Author, <em style="font-family: var(--serif); font-style: italic;">Addicted to Trauma</em></h3>
-              <p>A memoir of the loop and the way out. Releasing August 8, 2026.</p>
-            </div>
-          </div>
-          <div class="card cred-card">
-            <span class="chip" aria-hidden="true">CCM</span>
-            <div>
-              <h3>Creator, Conscious Creation Method&trade;</h3>
-              <p>The ARC framework: Awareness, Regulation, Creation.</p>
+          <div>
+            <div class="portrait-frame portrait-frame--4x5">
+              <img src="/assets/carrie-writing.jpg" loading="lazy"
+                   alt="Carrie Davidson writing in a notebook at a sunlit cafe table"
+                   width="1200" height="1500">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT I BELIEVE (dark) -->
-    <section class="section section--dark reveal" aria-labelledby="beliefs-title">
+    <!-- VALUES ROW (mockup 4): four quiet commitments. -->
+    <section class="section reveal" aria-label="What I bring to this work">
       <div class="container">
-        <div class="section-head center mx-auto" style="max-width: 40em; margin-bottom: 48px;">
-          <p class="eyebrow">What I believe</p>
-          <h2 id="beliefs-title" style="font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12;">The
-            convictions this work is built on.</h2>
-        </div>
-        <div class="cards-3">
-          <div class="card card--dark">
-            <h3>You are not broken.</h3>
-            <p>Everything you survived taught your nervous system how to protect you. That
-              isn&rsquo;t damage. It&rsquo;s a pattern, and patterns can change.</p>
+        <div class="values-row">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <h3>I see the whole picture.</h3>
+            <p>My background in nursing taught me to look beyond symptoms and understand the
+              whole human.</p>
           </div>
-          <div class="card card--dark">
-            <h3>Through the body, not around it.</h3>
-            <p>You can&rsquo;t think your way out of a loop that lives below thought. The work
-              happens where the pattern actually lives.</p>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 21c-2 0-3.5-1.6-3.5-3.5 0-1.6 1-2.9 2.5-3.3M17 21c2 0 3.5-1.6 3.5-3.5 0-1.6-1-2.9-2.5-3.3"/><path d="M12 13s-4-2.6-5.2-5.2C6.1 6.2 7.2 4.4 9 4.4c1.2 0 2 .6 3 1.7 1-1.1 1.8-1.7 3-1.7 1.8 0 2.9 1.8 2.2 3.4C16 10.4 12 13 12 13Z"/><path d="M6 17.4c1.6.8 3.7 1.3 6 1.3s4.4-.5 6-1.3"/></svg>
+            <h3>I honor the body.</h3>
+            <p>Healing lives in the nervous system. We work with your body, not against it.</p>
           </div>
-          <div class="card card--dark">
-            <h3>Made slowly, on purpose.</h3>
-            <p>A nervous system changes at its own pace. This is companionship for that pace,
-              not a rush toward a finish line.</p>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4c4.4 0 8 2.7 8 6.5 0 2.4-1.5 4.4-3.8 5.5.3 1.2 1 2.2 1.8 2.9-1.7-.2-3.2-.9-4.3-1.8-.5.1-1.1.1-1.7.1-4.4 0-8-2.7-8-6.5S7.6 4 12 4Z"/><path d="M8.5 10.5c1-.8 2.2-1.2 3.5-1.2s2.5.4 3.5 1.2"/></svg>
+            <h3>I believe in choice.</h3>
+            <p>You are not your past. Inside the pause, a different choice becomes possible.</p>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/><circle cx="12" cy="12" r="2.2"/></svg>
+            <h3>I walk with you.</h3>
+            <p>This is not about fixing you. It is about building a life that feels like
+              yours.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA (tint) -->
-    <section class="section section--tint reveal" aria-labelledby="cta-title">
-      <div class="container container--read center">
-        <h2 id="cta-title" style="font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12;">If
-          something in you recognized something here</h2>
-        <p style="margin: 18px 0 32px; font-size: 18px;">If my story sounds anything like
-          yours, the next step is a conversation.</p>
-        <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
-          <a class="btn btn--secondary" href="/quiz">Take the 3-minute quiz</a>
+    <!-- PLUM CTA BAND (mockup 4): Healing is possible. -->
+    <section class="cta-band reveal" aria-label="Next step">
+      <div class="cta-band__inner">
+        <div>
+          <h2>Healing is possible.</h2>
+          <p class="cta-band__sub">You do not have to do it alone.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--lavender" href="/coaching">Explore Coaching &rarr;</a>
+          <a class="btn btn--ghost-dark" href="/book">Read the Memoir</a>
         </div>
       </div>
     </section>
