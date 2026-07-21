@@ -735,3 +735,18 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   margin: 10px 0 0; font-size: 12.5px; letter-spacing: 0.18em;
   text-transform: uppercase; color: #f0eaf8; opacity: 0.85;
 }
+
+/* ARC arrow flow (brief): Awareness -> Regulation -> Creation */
+.arc-flow2 { display: flex; align-items: flex-start; justify-content: center; gap: 10px; }
+.arc-step { text-align: center; max-width: 230px; flex: 1; }
+.arc-step h3 {
+  font-family: var(--sans); font-size: 14.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 8px;
+}
+.arc-step p { font-size: 15.5px; color: var(--text-muted); margin: 0; }
+.arc-arrow { flex: 0 0 auto; color: var(--gold); padding-top: 22px; }
+.arc-arrow svg { width: 30px; height: 30px; }
+@media (max-width: 700px) {
+  .arc-flow2 { flex-direction: column; align-items: center; gap: 14px; }
+  .arc-arrow { padding: 0; transform: rotate(90deg); }
+}
