@@ -138,3 +138,14 @@
   window.addEventListener("scroll", update, { passive: true });
   update();
 })();
+
+/* Analytics loader: measurement lives in its own file and no-ops until a
+   GA4 measurement ID is set there. Kept out of main.js so site behavior
+   and measurement stay separate concerns. */
+(function () {
+  "use strict";
+  var s = document.createElement("script");
+  s.src = "/js/analytics.js";
+  s.defer = true;
+  document.head.appendChild(s);
+})();

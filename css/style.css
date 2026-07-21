@@ -1811,10 +1811,6 @@ p { max-width: var(--measure); }
 
 /* Carrie's line artwork, used as itself (Design.png + CD.png, 2026-07-21). */
 .art-full { display: block; width: 100%; height: auto; }
-.line-lockup {
-  display: block; width: min(380px, 74vw); height: auto;
-  margin: 0 auto var(--space-5);
-}
 
 /* SHAPELINE v3 (2026-07-21, per Carrie's ADHD feedback): no more tall
    scroll runway or sticky stage. Compact section; the line draws itself
@@ -1852,9 +1848,9 @@ p { max-width: var(--measure); }
 .gold-mirror__glass::before, .gold-mirror__glass::after { z-index: 2; }
 [data-flood] { transition: opacity 2.6s ease; }
 .gold-mirror__glass.is-seen [data-flood] { opacity: 1; }
-html:not(.js) .mirror-line path { mask: none; }
+html:not(.js) .mirror-line g[mask] { mask: none; }
 @media (prefers-reduced-motion: reduce) {
-  .mirror-line path { mask: none; }
+  .mirror-line g[mask] { mask: none; }
   [data-flood] { transition: none; }
 }
 .mirror-hint { margin-top: var(--space-3); }
