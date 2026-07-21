@@ -1763,3 +1763,22 @@ p { max-width: var(--measure); }
 /* Stage motifs on the ARC cards and the closing sprout. */
 .phase-card__motif { display: block; width: 30px; height: 30px; margin: 0 auto var(--space-2); }
 .cta-sprout { display: block; margin: 0 auto var(--space-3); }
+
+/* ============================================================
+   CONTINUOUS LINE SYSTEM: one line, one life. The shapeline now
+   grows into a botanical sprout and resolves into the philosophy;
+   a single line threads through the ARC stages; a small S-curve
+   divider carries the line between chapters.
+   ============================================================ */
+.shapeline__coda {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: var(--step-1); color: var(--color-ink);
+}
+.arc-flow { position: relative; }
+.arc-connector {
+  display: none; position: absolute; left: 2%; right: 2%; top: 42%;
+  width: 96%; height: 60px; z-index: 0; opacity: .55;
+}
+@media (min-width: 52rem) { .arc-connector { display: block; } }
+.arc-flow .phase-cards { position: relative; z-index: 1; }
+.line-divider { display: block; margin: 0 auto; }
