@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Micro ARC mark for tiny contexts: the arch alone, purple to gold. -->
+  <defs>
+    <linearGradient id="arcmg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7B68A0"/>
+      <stop offset="0.55" stop-color="#98A5C6"/>
+      <stop offset="1" stop-color="#C9A87C"/>
+    </linearGradient>
+  </defs>
+  <path d="M 24 90 L 24 46 A 26 26 0 0 1 76 46 L 76 90"
+        stroke="url(#arcmg)" stroke-width="7" stroke-linecap="round"/>
+</svg>

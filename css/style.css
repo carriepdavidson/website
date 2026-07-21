@@ -1727,10 +1727,10 @@ p { max-width: var(--measure); }
 
 /* Header: compact mark beside the wordmark. CSS-only, decorative. */
 .brand-stack {
-  padding-left: 46px;
-  background: url(/assets/arc-mark.svg) no-repeat left center / 36px auto;
+  padding-left: 42px;
+  background: url(/assets/arc-mark-micro.svg) no-repeat left center / 32px auto;
 }
-.brand-stack__cred--scroll { left: 46px; }
+.brand-stack__cred--scroll { left: 42px; }
 
 /* Footer: refined mark above the name. */
 .footer-mark { display: block; width: 52px; height: 52px; margin-bottom: var(--space-3); }
