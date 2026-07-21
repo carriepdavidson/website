@@ -1730,8 +1730,8 @@ p { max-width: var(--measure); }
 
 /* Footer: the original ARC logo above the name. */
 .footer-mark {
-  display: block; width: 64px; height: 64px;
-  margin-bottom: var(--space-3); border-radius: 10px;
+  display: block; width: 64px; height: auto;
+  margin-bottom: var(--space-3);
 }
 
 /* ARC section: the original logo, full and unaltered. */
@@ -1841,3 +1841,32 @@ p { max-width: var(--measure); }
   }
   .js .shapeline [data-at] { opacity: 1 !important; transition: none !important; }
 }
+
+/* MIRROR REVEAL (2026-07-21): the line beneath the glass. The pointer
+   uncovers what was already there. Fully revealed for touch, reduced
+   motion, and no-JS visitors. */
+.gold-mirror__glass { cursor: crosshair; }
+.mirror-line {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
+}
+.gold-mirror__glass::before, .gold-mirror__glass::after { z-index: 2; }
+[data-flood] { transition: opacity 2.6s ease; }
+.gold-mirror__glass.is-seen [data-flood] { opacity: 1; }
+html:not(.js) .mirror-line path { mask: none; }
+@media (prefers-reduced-motion: reduce) {
+  .mirror-line path { mask: none; }
+  [data-flood] { transition: none; }
+}
+.mirror-hint { margin-top: var(--space-3); }
+@media (pointer: coarse) { .mirror-hint { display: none; } }
+
+/* Mirror section, per Carrie's MIRROR mockup (2026-07-21): two-tone
+   headline, cursor hint, three truth notes beside the glass. */
+.mirror-h2-gold { display: block; color: #8A6B42; font-style: italic; }
+.mirror-notes { margin-top: var(--space-6); }
+.mirror-notes > div + div { margin-top: var(--space-4); }
+.mirror-notes dt {
+  font-family: var(--font-sans); font-size: var(--step--1); font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--color-clay);
+}
+.mirror-notes dd { margin: 2px 0 0; color: var(--color-ink-soft); }
