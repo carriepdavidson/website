@@ -11,7 +11,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Carrie Davidson, RN | Trauma Recovery Coach &amp; Author of Addicted to Trauma">
-  <meta property="og:description" content="You are not broken. You are patterned. And patterns can change. Trauma–addiction recovery coaching, the memoir Addicted to Trauma, and free resources.">
+  <meta property="og:description" content="You are not broken. You are patterned. And patterns can change. Trauma recovery coaching, the memoir Addicted to Trauma, and free resources.">
   <meta property="og:url" content="https://carriepdavidson.com/">
   <meta property="og:site_name" content="Carrie Davidson">
   <meta property="og:image" content="https://carriepdavidson.com/assets/og-arc.png">
@@ -23,15 +23,14 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="css/dc.css?v=20260721i">
 
-  <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T.
-       Reuse this verbatim on about.html; see docs/design-system.md. -->
+  <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,60 +76,59 @@
     ]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What is the trauma loop?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The trauma loop is the cycle where an old wound drives a present reaction. A trigger fires, the nervous system responds the way it learned to long ago, and the same story repeats. Insight alone does not always interrupt the pattern, because the loop lives in the body as much as the mind." } },
-      { "@type": "Question", "name": "How do you break a trauma pattern?",
-        "acceptedAnswer": { "@type": "Answer", "text": "You break a pattern in three stages. Awareness: see the loop and name the story underneath it. Regulation: build the pause between trigger and response. Creation: make something new, because the act of making can reach places insight alone has not. That sequence is the Conscious Creation Method." } },
-      { "@type": "Question", "name": "What is the difference between trauma coaching and therapy?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Therapy often looks back to diagnose and treat. Coaching works present-and-forward on patterns, regulation, and building what comes next. Carrie Davidson is a registered nurse and certified trauma recovery coach, not a therapist, and coaching can walk beside therapy without replacing it." } },
-      { "@type": "Question", "name": "Where do I start with trauma recovery coaching?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Start free. Take the three-minute pattern quiz, download the Trauma Tree Workbook, or subscribe to the Sunday Letter. When you are ready for more, Rooted and Rising is the self-paced course and the ARC Program is 12 weeks of private coaching." } }
-    ]
-  }
-  </script>
+
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ANNOUNCEMENT BAR: memoir pre-order. The button carries
+       data-preorder so js/preorder.js upgrades it to the retailer
+       link the day it exists; until then it routes to the notify
+       form, which is the honest promise. Dismiss stored per session. -->
+  <div class="announce" data-announce hidden>
+    <div class="announce__inner">
+      <strong>Pre-order my memoir:</strong> <em>Addicted to Trauma</em>
+      <span>Releasing August 8, 2026</span>
+      <a class="announce__btn" href="/book#launch" data-preorder>Be first to read</a>
+      <button class="announce__close" type="button" aria-label="Dismiss announcement" data-announce-close>&times;</button>
+    </div>
+  </div>
+
   <!-- ============================================================
-       SITE HEADER (Signature Thread): single-line letterspaced brand,
-       6-item uppercase nav, "Work with me" pill CTA to Calendly.
-       Credential line dropped to the brand aria-label (board shows name
-       only). Sunday Letter moved to the newsletter band + footer.
-       (Interior pages restyle in propagation.)
+       SITE HEADER (dc): letterspaced wordmark + logo mark, CSS
+       dropdown nav (My Story / Coaching / Resources / Blog /
+       Contact), Book a Call pill. Same hooks as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" aria-current="page" href="/">Home</a></li>
-          <li><a class="nav__link" href="/about">About</a></li>
-          <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-          <li><a class="nav__link" href="/book">The Memoir</a></li>
-          <li><a class="nav__link" href="/writing">Blog</a></li>
-          <li class="nav__more">
-            <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu" aria-label="More pages">
-              <span class="nav-toggle__bars" aria-hidden="true"></span>
-            </button>
-            <ul class="nav__more-menu" id="nav-more-menu">
-              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
-              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
-              <li><a class="nav__link" href="/contact">Contact</a></li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">My Story</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/about">About</a></li>
+              <li><a class="nav__link" href="/book">The Memoir</a></li>
             </ul>
           </li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">Coaching</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/coaching">Work with Me</a></li>
+              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
+              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
+          <li><a class="nav__link" href="/writing">Blog</a></li>
+          <li><a class="nav__link" href="/contact">Contact</a></li>
         </ul>
         <a class="btn btn--primary btn--pill" href="/discovery-call">Book a Call</a>
       </nav>
@@ -139,65 +137,70 @@
 
   <main id="main">
 
-    <!-- HERO: locked Brand Story HOME block. One CTA. Gate photo stays. -->
-    <section class="hero hero--immersive">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <div class="container hero__inner">
-        <div class="hero__copy">
-          <h1>You are not broken.<br>You are patterned.</h1>
-          <p class="support"><em>And patterns can change.</em></p>
-          <p class="support">Trauma recovery coaching through nervous system regulation and
-            deliberate creation. For people who are done surviving the same story and ready
-            to build a different one.</p>
-          <p class="support"><strong>Create an Intentional Life.</strong></p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
+    <!-- HERO (mockup 1): swash headline, diamond divider, question
+         lead-in, lavender Explore Resources, credential card overlay. -->
+    <section class="hero hero--home">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h1 class="h1-display">You are not broken.<br>You are <span class="swash">patterned.</span></h1>
+            <p class="lede-serif-italic" style="margin: 22px 0 0;">And patterns can change.</p>
+            <div class="diamond-divider" aria-hidden="true"><span>&#10022;</span></div>
+            <p class="support-strong measure" style="margin: 0 0 10px;">Are you done surviving
+              the same story, and ready to build a different one?</p>
+            <p class="lede measure" style="margin: 0 0 8px;">Trauma recovery coaching through
+              nervous system regulation and deliberate creation.</p>
+            <p class="measure" style="margin: 0 0 30px; color: var(--text-muted);">Guided by a
+              registered nurse who has also been the patient.</p>
+            <div class="btn-row">
+              <a class="btn btn--lavender" href="/resources">
+                <svg style="width: 18px; height: 18px; margin-right: 9px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 20c0-6 3-11 13-13-1 9-5 12-10 12-1.2 0-2.2-.2-3 1Z"/><path d="M5 20c1.5-4.5 4.5-8 9-10"/></svg>
+                Explore Resources &rarr;</a>
+            </div>
+            <p class="meta" style="margin: 14px 0 0;">Tools, insights and practices to support
+              your healing.</p>
           </div>
-          <p class="hero__cred">BSPH, BSN, RN &middot; Certified Trauma Recovery Coach &middot;
-            Author of <em>Addicted to Trauma</em></p>
+          <div class="hero-photo-wrap">
+            <div class="portrait-frame portrait-frame--4x5">
+              <img src="/assets/carrie-gate-hero-full.jpg" fetchpriority="high"
+                   style="object-position: 86% center;"
+                   alt="Carrie Davidson standing beside a brick garden gate on a tree-lined path"
+                   width="2500" height="1667">
+            </div>
+            <div class="cred-card-float" aria-label="Credentials">
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4Z"/><path d="M6 10.5V15c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>
+                <span>BSPH, BSN, RN</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4.5 6v5c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg>
+                <span>Certified Trauma<br>Recovery Coach</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20h16M13.5 4.5l4 4L9 17l-5 1 1-5 8.5-8.5Z"/></svg>
+                <span>Author of<br><em>Addicted to Trauma</em></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="press-strip" aria-label="Featured in">
+          <span class="press-strip__label">As featured in</span>
+          <a href="https://womensinsider.com/lifestyle/carrie-davidson-where-neuroscience-meets-the-soul-of-healing/">Women&rsquo;s Insider</a>
+          <span class="press-strip__sep" aria-hidden="true">/</span>
+          <a href="https://usanews.com/newsroom/conscious-coaching-collective-and-the-work-behind-my-coaching-practice">USA News</a>
         </div>
       </div>
     </section>
 
-    <!-- PRESS BAR: verified features only. -->
-    <section class="press-bar" aria-label="Featured in">
-      <div class="container press-bar__inner">
-        <span class="press-bar__label">As featured in</span>
-        <a href="https://womensinsider.com/lifestyle/carrie-davidson-where-neuroscience-meets-the-soul-of-healing/">Women&rsquo;s Insider</a>
-        <a href="https://usanews.com/newsroom/conscious-coaching-collective-and-the-work-behind-my-coaching-practice">USA News</a>
-      </div>
-    </section>
-
-    <!-- TAGLINE BAND: one sentence, wireframe grammar. -->
-    <section class="tag-band" aria-label="What this practice is">
-      <p>Trauma recovery coaching from a nurse who has been the patient.</p>
-    </section>
-
-    <!-- SOUND FAMILIAR: the client's mirror, one voice with /about. -->
-    <section class="section section--alt reveal" aria-labelledby="loop-title">
+    <!-- THE MIRROR (dark): interactive reveal, ported from v2.
+         Move a cursor or finger over the glass to clear it and
+         surface Carrie's line artwork. Fully revealed without JS
+         or with reduced motion (js/mirror.js handles both). -->
+    <section class="section section--dark reveal" aria-labelledby="loop-title">
       <div class="container">
-        <div class="resource-lead resource-lead--guide">
-          <div class="prose">
-            <p class="eyebrow">This isn&rsquo;t about becoming someone new. It&rsquo;s about
-              seeing what&rsquo;s been there all along.</p>
-            <h2 id="loop-title">The mirror doesn&rsquo;t show who you are.
-              <span class="mirror-h2-gold">It shows the pattern you&rsquo;ve been living.</span></h2>
-            <p>I spent years asking, &ldquo;What&rsquo;s wrong with me?&rdquo; Things started
-              to move when the question changed: &ldquo;What pattern am I living?&rdquo;</p>
-            <p class="meta mirror-hint">Move your cursor, or your finger, over the mirror to reveal the pattern.</p>
-            <dl class="mirror-notes">
-              <div><dt>The pattern</dt><dd>Loops that once kept you safe now keep you stuck.</dd></div>
-              <div><dt>Awareness</dt><dd>is the first step toward change.</dd></div>
-              <div><dt>The rest</dt><dd>is what you build from there.</dd></div>
-            </dl>
-          </div>
-          <div class="gold-mirror" role="img"
-               aria-label="A gold arch mirror leaning against the wall. Beneath its misted glass, one continuous line untangles from repeated loops and grows into a golden sprig.">
-            <picture>
-              <source srcset="/assets/mirror-photo.webp" type="image/webp">
-              <img class="gold-mirror__photo" src="/assets/mirror-photo-fallback.png" alt=""
-                   width="1040" height="1137" loading="lazy" decoding="async">
-            </picture>
+        <div class="split split--media-left">
+          <div class="mirror-circle" role="img"
+               aria-label="A round, misted mirror. Beneath the mist, one continuous line untangles from repeated loops and grows into a golden sprig.">
             <div class="gold-mirror__glass" data-mirror>
               <svg class="mirror-line" viewBox="0 0 300 326" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <defs>
@@ -212,325 +215,106 @@
                   </mask>
                 </defs>
                 <g mask="url(#mirrorMask)">
+                  <rect width="300" height="326" fill="#efe8f7"/>
                   <image href="/assets/carrie-line-mark.png" x="18" y="0" width="264" height="326"
                          preserveAspectRatio="xMidYMid meet"/>
                 </g>
               </svg>
             </div>
           </div>
+          <div>
+            <p class="eyebrow">The shape of healing</p>
+            <h2 id="loop-title" style="font-size: clamp(28px, 3.4vw, 40px); line-height: 1.14;">You
+              have done the work. So why does the same pattern keep returning?</h2>
+            <p class="measure" style="margin: 24px 0 0; font-size: 18px;">You can predict your
+              triggers. You can narrate your own story with clinical accuracy. And the pattern
+              still runs, because you are not broken, you are patterned.</p>
+            <p class="measure" style="margin: 20px 0 0; color: var(--on-dark-3);">Insight can
+              help you understand the pattern, but understanding alone does not always
+              interrupt it. Lasting change requires a new experience in the body.</p>
+            <p class="meta mirror-hint" style="margin: 20px 0 0; color: var(--on-dark-4);">Move
+              your cursor, or your finger, over the mirror to reveal the pattern.</p>
+          </div>
         </div>
       </div>
     </section>
 
 
-    <!-- THE PLAN: ARC three nodes. Method before offers. -->
-    <section class="section reveal" aria-labelledby="method-title">
+    <!-- TESTIMONIALS: built per the handoff, HELD until real client
+         quotes are cleared (nothing invented ships). Uncomment and
+         fill with approved quotes only.
+    <section class="section reveal" aria-label="In their words">
       <div class="container">
-        <div class="section-head section-head--center">
-          <p class="eyebrow">The Conscious Creation Method&trade;</p>
-          <h2 id="method-title">Three stages. One word to remember: ARC.</h2>
-        </div>        <div class="arc-flow">
-        <svg class="arc-connector" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="conng" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#7B68A0"/>
-              <stop offset="0.55" stop-color="#98A5C6"/>
-              <stop offset="1" stop-color="#C9A87C"/>
-            </linearGradient>
-          </defs>
-          <path d="M 0 34 C 180 16, 320 48, 500 30 C 680 12, 820 46, 1000 26"
-                stroke="url(#conng)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        </svg>
-        <ul class="phase-cards">
-          <li class="phase-card phase-card--1">
-            <span class="phase-card__num" aria-hidden="true">A</span>
-            <h3>Awareness</h3>
-            <p>See the pattern.</p>
-          </li>
-          <li class="phase-card phase-card--3">
-            <span class="phase-card__num" aria-hidden="true">R</span>
-            <h3>Regulation</h3>
-            <p>Build the pause.</p>
-          </li>
-          <li class="phase-card phase-card--6">
-            <span class="phase-card__num" aria-hidden="true">C</span>
-            <h3>Creation</h3>
-            <p>Make something new.</p>
-          </li>
-        </ul>
+        <p class="eyebrow center" style="margin-bottom: 44px;">In their words</p>
+        <div class="cards-3">
+          <figure class="quote-card">
+            <blockquote>&ldquo;QUOTE&rdquo;</blockquote>
+            <figcaption>ATTRIBUTION</figcaption>
+          </figure>
         </div>
-        <p class="text-center mx-auto" style="margin-top: var(--space-6); max-width: 46rem;">ARC
-          is the method. Pattern, Pause, Choice, Creation is the same healing, felt from the
-          inside. Awareness reveals the pattern. Regulation creates the pause. Inside that
-          pause, choice becomes possible. And choice is how creation begins.</p>        <p class="text-center" style="margin-top: var(--space-4);"><a href="/method">How the
-          Method works &rarr;</a></p>
       </div>
     </section>
+    -->
 
-    <!-- THE SHAPE OF HEALING: signature scroll section. One line drawn
-         through four states as the visitor scrolls. Fully drawn and
-         static without JS or with reduced motion. -->
-    <section class="shapeline reveal" aria-labelledby="shapeline-title">
-      <div class="shapeline__intro container container-narrow text-center">
-        <p class="eyebrow">The shape of healing</p>
-        <h2 id="shapeline-title">Pattern. Pause. Choice. Creation.</h2>
-        <p class="mx-auto">Everything you survived taught your nervous system how to
-          protect you. Now you can teach it something new.</p>
-      </div>
-      <div class="shapeline__stage">
-        <svg class="shapeline__svg" viewBox="0 0 1200 560" role="img"
-             aria-label="One continuous fine line tangles in dense loops labeled pattern, unwinds through gentle waves labeled pause, begins to rise at the word choice, and grows into a gold botanical branch labeled creation">
-          <defs>
-            <linearGradient id="slg1" gradientUnits="userSpaceOnUse" x1="392" y1="0" x2="792" y2="0">
-              <stop offset="0" stop-color="#7B68A0"/>
-              <stop offset="1" stop-color="#C9A87C"/>
-            </linearGradient>
-            <linearGradient id="slg2" gradientUnits="userSpaceOnUse" x1="792" y1="0" x2="1022" y2="0">
-              <stop offset="0" stop-color="#C9A87C"/>
-              <stop offset="1" stop-color="#a4865e"/>
-            </linearGradient>
-          </defs>
-          <text class="shapeline__word" x="96" y="512" data-at="0.12" style="transition-delay:.3s">PATTERN</text>
-          <text class="shapeline__word" x="540" y="512" data-at="0.44" style="transition-delay:1.8s">PAUSE</text>
-          <text class="shapeline__word" x="700" y="512" data-at="0.60" style="transition-delay:2.7s">CHOICE</text>
-          <text class="shapeline__word shapeline__word--creation" x="928" y="512" data-at="0.84" style="transition-delay:3.4s">CREATION</text>
-          <path class="shapeline__seg shapeline__seg--pattern" pathLength="1"
-                d="M 50 396 C 76 396, 90 382, 86 350 C 82 320, 52 320, 52 350 C 52 376, 80 392, 116 396 C 142 396, 156 382, 152 350 C 148 320, 118 320, 118 350 C 118 376, 146 392, 182 396 C 208 396, 222 382, 218 350 C 214 320, 184 320, 184 350 C 184 376, 212 392, 248 396 C 274 396, 288 382, 284 350 C 280 320, 250 320, 250 350 C 250 376, 278 392, 314 396 C 340 396, 354 382, 350 350 C 346 320, 316 320, 316 350 C 316 376, 344 392, 380 396 C 400 398, 408 388, 414 378"/>
-          <path class="shapeline__seg shapeline__seg--pause" pathLength="1"
-                d="M 414 378 C 452 372, 474 356, 512 362 C 550 368, 570 386, 610 380 C 640 375, 652 362, 684 364 C 708 366, 720 372, 744 370 C 762 368, 776 366, 792 364"/>
-          <path class="shapeline__seg shapeline__seg--rise" pathLength="1"
-                d="M 792 364 C 850 358, 900 330, 940 290 C 972 258, 990 224, 1004 192 C 1012 174, 1018 158, 1022 144"/>
-          <path class="shapeline__leaf" data-at="0.84" style="transition-delay:3.2s" d="M 966 262 q 16 -20 34 -22 q -12 20 -34 22 z"/>
-          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.87" style="transition-delay:3.4s" d="M 988 232 q -22 -10 -30 -26 q 22 6 30 26 z"/>
-          <path class="shapeline__leaf" data-at="0.90" style="transition-delay:3.6s" d="M 1002 204 q 16 -20 32 -22 q -10 20 -32 22 z"/>
-          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.93" style="transition-delay:3.8s" d="M 1014 176 q -22 -10 -28 -26 q 20 6 28 26 z"/>
-          <path class="shapeline__leaf" data-at="0.95" style="transition-delay:4s" d="M 1022 148 q 14 -20 30 -24 q -8 20 -30 24 z"/>
-          <circle class="shapeline__berry" data-at="0.96" style="transition-delay:4.15s" cx="1052" cy="150" r="3"/>
-          <circle class="shapeline__berry" data-at="0.97" style="transition-delay:4.3s" cx="1040" cy="120" r="2.5"/>
-          <circle class="shapeline__berry" data-at="0.98" style="transition-delay:4.45s" cx="1062" cy="128" r="2"/>
-        </svg>
-      </div>
-    </section>
-    <p class="shapeline__coda text-center">You are not broken. You are patterned.
-      And patterns can change.</p>
-
-    <!-- PHOTO BAND: the destination, over the pond. -->
-    <div class="photo-band photo-band--natural" style="background-image: url(/assets/carrie-pond-full.jpg);"
+    <!-- PHOTO BAND: edge to edge, attributed pull-quote over a
+         darkened gradient for legibility (brief, quote treatment). -->
+    <div class="photo-band photo-band--overlay" style="background-image: url(/assets/carrie-pond-full.jpg); background-position: center 30%;"
          role="img" aria-label="Carrie Davidson seated at the edge of a garden pond at golden hour">
-      <p class="photo-band__line">Whatever we tend, grows.</p>
+      <div class="center">
+        <p class="photo-band__line">&ldquo;Whatever we tend, grows.&rdquo;</p>
+        <p class="photo-band__attr">Carrie Davidson</p>
+      </div>
     </div>
 
-    <div class="pattern-divider" aria-hidden="true"></div>
-
-
-    <!-- MEET YOUR GUIDE: after the method, before the offers. -->
-    <section class="section reveal" aria-labelledby="guide-title">
+    <!-- POINTER: offers live on Work with Me only (her no-duplication rule).
+         One quiet button so the bridge to the offers can't be scrolled past. -->
+    <section class="section section--snug reveal center" aria-label="Ways to work together">
       <div class="container">
-        <div class="resource-lead resource-lead--guide resource-lead--wide-photo">
-          <div class="arch-photo">
-            <img src="/assets/carrie-welcome.jpg" loading="lazy"
-                 alt="Carrie Davidson laughing with open arms at a garden doorway">
-          </div>
-          <div class="prose">
-            <h2 id="guide-title">Welcome to Conscious Coaching Collective</h2>
-            <p>I am a registered nurse, certified trauma recovery coach, and author of
-              <a href="/book"><em>Addicted to Trauma</em></a>. I help people who are
-              insight-rich and still stuck interrupt the pattern at its source:
-              <strong>through the body, not around it</strong>.</p>
-            <p><a href="/about">More about me &rarr;</a></p>
-          </div>
-        </div>
+        <p class="lede" style="margin: 0 0 22px;">A free letter, a self-paced course, and
+          private coaching. Whichever fits the season you&rsquo;re in.</p>
+        <a class="btn btn--secondary" href="/coaching">See the three ways to work together</a>
       </div>
     </section>
 
-    <!-- THREE DOORS -->
-    <section class="section section--paper reveal" aria-labelledby="doors-title">
-      <div class="container">
-        <div class="section-head section-head--center">
-          <p class="eyebrow">Three ways to begin</p>
-          <h2 id="doors-title">Choose your door</h2>
-        </div>
-        <ul class="topic-links topic-links--3">
-          <li>
-            <h3>The ARC Program</h3>
-            <p><strong>Break the Trauma Loop.</strong> 12 weeks of private coaching built on the
-              Conscious Creation Method&trade;. $3,000.</p>
-            <p><a href="/arc-program">See the program &rarr;</a></p>
-          </li>
-          <li>
-            <h3>Rooted &amp; Rising</h3>
-            <p><strong>Build the Intentional Life. At Your Own Pace.</strong> A six-week
-              self-paced course. $222.</p>
-            <p><a href="/rooted-and-rising">See the course &rarr;</a></p>
-          </li>
-          <li>
-            <h3>The Sunday Letter</h3>
-            <p><strong>The wide door, free.</strong> One letter, most Sundays: one thing I
-              know, one small thing to try.</p>
-            <p><a href="/subscribe">Get the letter &rarr;</a></p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- GETTING STARTED: the plan, three steps. -->
-    <section class="section reveal" aria-labelledby="start-title">
-      <div class="container container-narrow">
-        <div class="section-head section-head--center">
-          <h2 id="start-title">Getting started is simple</h2>
-        </div>
-        <ul class="phase-cards">
-          <li class="phase-card phase-card--1">
-            <span class="phase-card__num" aria-hidden="true">1</span>
-            <h3>Book a Call</h3>
-            <p>A free conversation, not a pitch.</p>
-          </li>
-          <li class="phase-card phase-card--3">
-            <span class="phase-card__num" aria-hidden="true">2</span>
-            <h3>Get your plan</h3>
-            <p>We find the honest fit, even if it isn&rsquo;t me.</p>
-          </li>
-          <li class="phase-card phase-card--6">
-            <span class="phase-card__num" aria-hidden="true">3</span>
-            <h3>Do the work, accompanied</h3>
-            <p>Weekly sessions. A nervous system learning something new.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- LINE DIVIDER: the same line continues into her story. -->
-    <svg class="line-divider" viewBox="0 0 240 24" width="240" height="24" aria-hidden="true">
-      <path d="M 0 12 C 60 2, 90 22, 120 12 C 150 2, 180 22, 240 12"
-            stroke="#B8A9C9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    </svg>
-
-    <!-- MEMOIR BAND -->
-    <section class="section section--alt reveal" aria-labelledby="memoir-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow">The memoir &middot; August 8, 2026</p>
-        <h2 id="memoir-title">Proof the Loop Can Break.</h2>
-        <p>The story of what it took to stop running the patterns that almost killed me.</p>
-        <div class="btn-row btn-row--center">
-          <a class="btn btn--secondary" href="/book" data-preorder>Pre-order <em>Addicted to Trauma</em></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SUNDAY LETTER -->
-    <section class="section section--lavender reveal" aria-labelledby="signup-title">
-      <div class="container container-narrow text-center" style="position: relative;">
+    <!-- SUNDAY LETTER CAPTURE (tint) -->
+    <section class="section section--tint section--snug reveal" aria-labelledby="signup-title">
+      <div class="container center" style="max-width: 640px;">
         <p class="eyebrow">The Sunday Letter</p>
-        <h2 id="signup-title">One letter, most Sundays.</h2>
-        <p class="mx-auto">One thing I know, one small thing to try, and not a drop of homework
-          guilt.</p>
-        <form class="signup__form mx-auto" method="post"
+        <h2 id="signup-title" class="h2-small" style="line-height: 1.12;">One letter, most Sundays.</h2>
+        <p class="lede" style="margin: 18px 0 32px;">One thing I know, one small thing to try,
+          and not a drop of homework guilt.</p>
+        <form class="signup__form" method="post"
               action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
-              data-ml-form style="margin-top: var(--space-5); max-width: 30rem;">
+              data-ml-form>
           <label class="visually-hidden" for="signup-email">Email address</label>
           <input class="input" id="signup-email" name="fields[email]" type="email"
-                 autocomplete="email" placeholder="Your email address" required>
+                 autocomplete="email" placeholder="Email address" required>
           <input type="hidden" name="ml-submit" value="1">
-          <button class="btn btn--primary" type="submit">Get the Sunday Letter</button>
+          <button class="btn btn--primary" type="submit">Get the letter</button>
           <p class="signup__status" role="status" aria-live="polite"></p>
         </form>
-        <p class="meta mx-auto" style="margin-top: var(--space-3);">No spam. Unsubscribe anytime.</p>
-      </div>
-    </section>
-
-    <div class="pattern-divider" aria-hidden="true"></div>
-
-    <!-- FINAL CTA: two honest paths, no pressure. -->
-    <section class="section reveal" aria-labelledby="final-cta-title">
-      <div class="container container-narrow text-center">
-        <h2 id="final-cta-title">If something in you recognized something in this</h2>
-        <div class="grid grid--2" style="margin-top: var(--space-6); gap: var(--space-6);">
-          <div>
-            <h3>Ready for support?</h3>
-            <div class="btn-row" style="justify-content: center; margin-top: var(--space-4);">
-              <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
-            </div>
-            <p class="meta" style="margin-top: var(--space-3);">A conversation, not a pitch.</p>
-          </div>
-          <div>
-            <h3>Not ready yet?</h3>
-            <div class="btn-row" style="justify-content: center; margin-top: var(--space-4);">
-              <a class="btn btn--secondary" href="/quiz">Take the Pattern Quiz</a>
-            </div>
-            <p class="meta" style="margin-top: var(--space-3);">Three minutes, on your own.</p>
-          </div>
-        </div>
-        <p class="meta" style="margin-top: var(--space-6);">Deciding slowly is allowed here.</p>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section section--alt reveal" aria-labelledby="faq-title">
-      <div class="container container-narrow">
-        <div class="section-head">
-          <p class="eyebrow">Questions, answered plainly</p>
-          <h2 id="faq-title">Start with the questions everyone asks</h2>
-        </div>
-        <div class="faq">
-          <details class="faq__item">
-            <summary>What is the trauma loop?</summary>
-            <div class="faq__answer">
-              <p>The trauma loop is the cycle where an old wound drives a present reaction. A
-                trigger fires, the nervous system responds the way it learned to long ago, and
-                the same story repeats. Insight alone does not always interrupt the pattern,
-                because the loop lives in the body as much as the mind.</p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary>How do you break a trauma pattern?</summary>
-            <div class="faq__answer">
-              <p>You break a pattern in three stages. Awareness: see the loop and name the story
-                underneath it. Regulation: build the pause between trigger and response.
-                Creation: make something new, because the act of making can reach places insight
-                alone has not. That sequence is the Conscious Creation Method&trade;.</p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary>What is the difference between trauma coaching and therapy?</summary>
-            <div class="faq__answer">
-              <p>Therapy often looks back to diagnose and treat. Coaching works present-and-forward
-                on patterns, regulation, and building what comes next. I am a registered nurse and
-                certified trauma recovery coach, not a therapist, and my coaching can walk beside
-                therapy without replacing it.</p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary>Where do I start?</summary>
-            <div class="faq__answer">
-              <p>Start free. Take the <a href="/quiz">three-minute pattern quiz</a>, download the
-                <a href="/resources/trauma-tree-worksheet">Trauma Tree Workbook</a>, or subscribe
-                to the Sunday Letter. When you are ready for more, Rooted &amp; Rising is the
-                self-paced course and the ARC Program is private coaching.</p>
-            </div>
-          </details>
-        </div>
+        <p class="meta" style="margin: 16px 0 0;">No spam. Unsubscribe anytime.</p>
       </div>
     </section>
 
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
-  <footer class="site-footer" style="background-image: none;">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -558,9 +342,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -601,7 +385,7 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
@@ -609,7 +393,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/preorder.js"></script>
   <script src="js/mirror.js"></script>
 </body>
 </html>

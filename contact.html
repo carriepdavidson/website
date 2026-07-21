@@ -21,12 +21,22 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721i">
+
+  <style>
+    /* Page-only form chrome: rectangular fields on dc tokens. */
+    .form-field { margin-bottom: 26px; }
+    .form-field label { color: var(--ink); }
+    .form-field .input { display: block; width: 100%; margin-top: 8px; border-radius: 12px; }
+    textarea.input { resize: vertical; line-height: 1.55; }
+    .form__hint { margin: 8px 0 0; font-size: 14px; color: var(--text-faint); line-height: 1.55; }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -91,35 +101,55 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copied verbatim. /contact is not in the nav
-       yet (VBI restructure pending), so no aria-current.
+       SITE HEADER (dc): copied verbatim from index, no aria-current.
+       ============================================================ -->
+  <!-- ANNOUNCEMENT BAR: memoir pre-order. The button carries
+       data-preorder so js/preorder.js upgrades it to the retailer
+       link the day it exists; until then it routes to the notify
+       form, which is the honest promise. Dismiss stored per session. -->
+  <div class="announce" data-announce hidden>
+    <div class="announce__inner">
+      <strong>Pre-order my memoir:</strong> <em>Addicted to Trauma</em>
+      <span>Releasing August 8, 2026</span>
+      <a class="announce__btn" href="/book#launch" data-preorder>Be first to read</a>
+      <button class="announce__close" type="button" aria-label="Dismiss announcement" data-announce-close>&times;</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SITE HEADER (dc): letterspaced wordmark + logo mark, CSS
+       dropdown nav (My Story / Coaching / Resources / Blog /
+       Contact), Book a Call pill. Same hooks as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="/">Home</a></li>
-          <li><a class="nav__link" href="/about">About</a></li>
-          <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-          <li><a class="nav__link" href="/book">The Memoir</a></li>
-          <li><a class="nav__link" href="/writing">Blog</a></li>
-          <li class="nav__more">
-            <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu" aria-label="More pages">
-              <span class="nav-toggle__bars" aria-hidden="true"></span>
-            </button>
-            <ul class="nav__more-menu" id="nav-more-menu">
-              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
-              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
-              <li><a class="nav__link" aria-current="page" href="/contact">Contact</a></li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">My Story</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/about">About</a></li>
+              <li><a class="nav__link" href="/book">The Memoir</a></li>
             </ul>
           </li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">Coaching</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/coaching">Work with Me</a></li>
+              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
+              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
+          <li><a class="nav__link" href="/writing">Blog</a></li>
+          <li><a class="nav__link" href="/contact">Contact</a></li>
         </ul>
         <a class="btn btn--primary btn--pill" href="/discovery-call">Book a Call</a>
       </nav>
@@ -128,37 +158,38 @@
 
   <main id="main">
 
-    <!-- HERO: approved 2026-07-17. -->
+    <!-- HERO: approved 2026-07-17. Simple, centered. -->
     <section class="hero">
-      <div class="container container-narrow text-center">
+      <div class="container container--narrow center">
         <p class="eyebrow">Contact</p>
-        <h1>Write to me.</h1>
-        <p class="lede">A real note, read by me. Not a funnel, not an assistant.</p>
+        <h1 style="font-size: clamp(34px, 4.4vw, 54px); line-height: 1.08;">Write to me.</h1>
+        <p class="lede-serif-italic" style="margin: 20px 0 0;">A real note, read by me. Not a
+          funnel, not an assistant.</p>
       </div>
     </section>
 
     <!-- THANK-YOU STATE: shown via JS when the form relay redirects
          back with ?sent=1. -->
-    <section class="section section--alt reveal" id="thanks-block" hidden aria-labelledby="thanks-title">
-      <div class="container container-narrow text-center">
-        <h2 id="thanks-title">Your note is with me</h2>
-        <p class="mx-auto">It landed in my inbox, not a queue. I read every message myself and
-          answer most within two or three days. Until then, the Sunday Letter and the free
-          resources are here whenever you want them.</p>
+    <section class="section section--tint reveal" id="thanks-block" hidden aria-labelledby="thanks-title">
+      <div class="container container--narrow center">
+        <h2 id="thanks-title" class="h2-small">Your note is with me</h2>
+        <p class="mx-auto" style="margin: 18px 0 0; max-width: 40em;">It landed in my inbox, not
+          a queue. I read every message myself and answer most within two or three days. Until
+          then, the Sunday Letter and the free resources are here whenever you want them.</p>
       </div>
     </section>
 
     <!-- CONTACT FORM -->
-    <section class="section section--alt reveal" id="request-block" aria-labelledby="form-title">
-      <div class="container container-narrow">
-        <div class="section-head">
-          <h2 id="form-title">Send a note</h2>
-          <p>Coaching questions, speaking and podcast invitations, something the writing stirred
-            up, or a thing you simply need to say to someone who gets it. All of it is welcome
-            here.</p>
+    <section class="section section--tint reveal" id="request-block" aria-labelledby="form-title">
+      <div class="container container--narrow">
+        <div class="section-head center">
+          <h2 id="form-title" class="h2-small">Send a note</h2>
+          <p class="mx-auto" style="margin: 18px 0 0; max-width: 40em;">Coaching questions,
+            speaking and podcast invitations, something the writing stirred up, or a thing you
+            simply need to say to someone who gets it. All of it is welcome here.</p>
         </div>
 
-        <div class="signup">
+        <div style="max-width: 640px; margin-inline: auto;">
           <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="a0b23a13-b7c3-4694-a4fa-f7854c688f79">
             <input type="hidden" name="subject" value="Note from the website contact page">
@@ -166,45 +197,45 @@
             <input type="hidden" name="redirect" value="https://carriepdavidson.com/contact?sent=1">
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-            <div class="form-field" style="margin-bottom: var(--space-5);">
+            <div class="form-field">
               <label for="note-name"><strong>Your first name</strong></label>
               <input class="input" id="note-name" name="First name" type="text"
-                     autocomplete="given-name" required style="margin-top: var(--space-2);">
+                     autocomplete="given-name" required>
             </div>
 
-            <div class="form-field" style="margin-bottom: var(--space-5);">
+            <div class="form-field">
               <label for="note-email"><strong>Your email</strong></label>
               <input class="input" id="note-email" name="Email" type="email"
-                     autocomplete="email" required style="margin-top: var(--space-2);">
-              <p class="form__hint" style="margin-top: var(--space-2);">I reply here. Nothing else
+                     autocomplete="email" required>
+              <p class="form__hint">I reply here. Nothing else
                 happens with it unless you choose to subscribe to the Sunday Letter separately.</p>
             </div>
 
-            <div class="form-field" style="margin-bottom: var(--space-5);">
+            <div class="form-field">
               <label for="note-message"><strong>Your note</strong></label>
-              <p class="form__hint" style="margin: var(--space-1) 0 var(--space-2);">However it
+              <p class="form__hint" style="margin: 4px 0 0;">However it
                 comes out is fine. Two sentences or twenty.</p>
-              <textarea class="textarea" id="note-message" name="Message" rows="6" required></textarea>
+              <textarea class="input" id="note-message" name="Message" rows="6" required></textarea>
             </div>
 
             <button class="btn btn--primary" type="submit">Send the note</button>
-            <p class="form__hint" style="margin-top: var(--space-3);">Your words go directly to my
+            <p class="form__hint" style="margin-top: 14px;">Your words go directly to my
               inbox and nowhere else. Prefer email? Write to
               <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a>.</p>
           </form>
-        </div>
 
-        <p class="meta" style="margin-top: var(--space-7);">Looking to talk about coaching?
-          <a href="/discovery-call">The discovery call is the faster door &rarr;</a></p>
+          <p class="meta" style="margin-top: 48px;">Looking to talk about coaching?
+            <a href="/discovery-call">The discovery call is the faster door &rarr;</a></p>
+        </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section class="section reveal" aria-labelledby="faq-title">
-      <div class="container container-narrow">
-        <div class="section-head">
-          <p class="eyebrow">Questions, answered plainly</p>
-          <h2 id="faq-title">About writing to me</h2>
+      <div class="container container--narrow">
+        <div class="section-head center">
+          <p class="eyebrow" style="margin-bottom: 12px;">Questions, answered plainly</p>
+          <h2 id="faq-title" class="h2-small">About writing to me</h2>
         </div>
         <div class="faq">
           <details class="faq__item">
@@ -251,20 +282,21 @@
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copied verbatim.
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copied verbatim from index.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -292,14 +324,15 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
       </div>
 
+      <!-- Crisis resources: ethical + trust signal. Keep on every page. -->
       <section class="crisis" aria-label="Crisis resources">
         <h2>If you are in crisis, reach out now</h2>
         <p>You deserve immediate support. In the U.S.: call or text <strong>988</strong>
@@ -308,6 +341,7 @@
           If you are in immediate danger, call 911.</p>
       </section>
 
+      <!-- Scope disclaimer: in Carrie's voice; YMYL trust. -->
       <p class="disclaimer">Coaching is companionship alongside care, not a replacement for it.
         This work is trauma recovery coaching and education. It is not therapy, diagnosis, or medical
         treatment, and it is not a substitute for care from a licensed mental-health or medical
@@ -320,6 +354,7 @@
       </div>
     </div>
 
+    <!-- Organization JSON-LD: sitewide entity (one canonical name). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -332,14 +367,13 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
     </script>
   </footer>
 
-  <script src="/js/main.js"></script>
   <script>
     /* Thank-you state: the form relay redirects back with ?sent=1. */
     (function () {
@@ -351,5 +385,6 @@
       }
     })();
   </script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

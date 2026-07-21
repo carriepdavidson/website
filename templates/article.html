@@ -49,12 +49,13 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721i">
 
   <script type="application/ld+json">
   {
@@ -92,14 +93,16 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copied verbatim from start-here.html.
-       aria-current marks Writing (articles live under Writing).
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
+       aria-current marks Blog (articles live under /writing).
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -130,45 +133,44 @@
   <main id="main">
 
     <!-- ============================================================
-         ARTICLE HEADER: breadcrumb, topic label, two-layer title,
-         byline + dates + reading time.
+         ARTICLE HEAD (dc): breadcrumb, topic kicker, two-layer title
+         (search-language H1 + .dek poetic payoff), byline + dates +
+         reading time in .article-meta.
          ============================================================ -->
     <article>
-      <header class="hero">
-        <div class="container container-narrow">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol>
-              <li><a href="/">Home</a></li>
-              <li><a href="/writing">Writing</a></li>
-              <li><a href="/writing/TODO-topic">TODO Topic</a></li>
-              <li><span aria-current="page">TODO Article Title</span></li>
-            </ol>
-          </nav>
+      <header class="article-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/writing">Writing</a></li>
+            <li><a href="/writing/TODO-topic">TODO Topic</a></li>
+            <li><span aria-current="page">TODO Article Title</span></li>
+          </ol>
+        </nav>
 
-          <p class="eyebrow"><a href="/writing/TODO-topic" style="color: inherit;">TODO Topic</a></p>
+        <p class="eyebrow"><a href="/writing/TODO-topic" style="color: inherit;">TODO Topic</a></p>
 
-          <!-- ONE H1 per page: the search-language title. -->
-          <h1>TODO: the literal question a tired woman would type at 11pm</h1>
-          <!-- Subtitle / poetic payoff. -->
-          <p class="lede">TODO: the poetic reframe that lands beneath the search-language title.</p>
+        <!-- ONE H1 per page: the search-language title. -->
+        <h1>TODO: the literal question a tired woman would type at 11pm</h1>
+        <!-- Subtitle / poetic payoff. -->
+        <p class="dek">TODO: the poetic reframe that lands beneath the search-language title.</p>
 
-          <!-- Byline + dates + reading time. -->
-          <p class="meta">
-            By <strong>Carrie Davidson, BSPH, BSN, RN</strong> &middot; Registered nurse &amp; certified
-            trauma recovery coach<br>
-            Published <time datetime="TODO-YYYY-MM-DD">TODO Month D, YYYY</time> &middot;
-            Last updated <time datetime="TODO-YYYY-MM-DD">TODO Month D, YYYY</time> &middot;
-            TODO&nbsp;min read
-          </p>
-        </div>
+        <!-- Byline + dates + reading time. -->
+        <p class="article-meta">
+          By <strong>Carrie Davidson, BSPH, BSN, RN</strong> &middot; Registered nurse &amp; certified
+          trauma recovery coach<br>
+          Published <time datetime="TODO-YYYY-MM-DD">TODO Month D, YYYY</time> &middot;
+          Last updated <time datetime="TODO-YYYY-MM-DD">TODO Month D, YYYY</time> &middot;
+          TODO&nbsp;min read
+        </p>
       </header>
 
       <!-- ============================================================
            SCOPE DISCLAIMER: place near the top for sensitive topics.
            Voice mirrors the footer disclaimer. Keep for YMYL trust.
            ============================================================ -->
-      <div class="container container-narrow">
-        <blockquote class="disclaimer" style="margin-top: var(--space-6);">
+      <div class="container container--read">
+        <blockquote class="disclaimer-inline" style="margin: 28px 0 0;">
           This article is trauma recovery education, not therapy, diagnosis, or medical treatment. It is
           not a substitute for care from a licensed mental-health or medical professional. If you are
           working with a therapist or physician, let this walk beside that care. It does not replace it.
@@ -176,103 +178,94 @@
       </div>
 
       <!-- ============================================================
-           TABLE OF CONTENTS: for long educational pieces only. Delete
-           for short essays. Anchors must match the H2 ids below.
+           BODY: the .prose reading column (680px). Answer-first under
+           every H2. First 40 to 60 words after each heading directly
+           answer that heading (AEO). Keep neuroscience precise; no
+           fear, no shame, no diagnosis.
            ============================================================ -->
       <div class="section section--tight">
-        <div class="container container-narrow">
-          <nav class="article-toc" aria-label="On this page">
-            <h2>On this page</h2>
-            <ol>
-              <li><a href="#section-1">TODO: first section heading</a></li>
-              <li><a href="#section-2">TODO: second section heading</a></li>
-              <li><a href="#section-3">TODO: third section heading</a></li>
-              <li><a href="#references">References</a></li>
+        <div class="container">
+          <div class="prose">
+
+            <!-- TABLE OF CONTENTS: for long educational pieces only.
+                 Delete for short essays. Anchors must match the H2 ids. -->
+            <nav class="article-toc" aria-label="On this page">
+              <h2>On this page</h2>
+              <ol>
+                <li><a href="#section-1">TODO: first section heading</a></li>
+                <li><a href="#section-2">TODO: second section heading</a></li>
+                <li><a href="#section-3">TODO: third section heading</a></li>
+                <li><a href="#references">References</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="section-1">TODO: first section heading (a real question)</h2>
+            <p>TODO: answer the heading directly in the first 40 to 60 words, so this paragraph can stand
+              alone as a citable unit. Then expand.</p>
+
+            <!-- PULL-QUOTE pattern: a single resonant line, sparingly. -->
+            <blockquote class="pullquote">TODO: one resonant line worth pulling out. Signature voice, no
+              hype.</blockquote>
+
+            <h2 id="section-2">TODO: second section heading</h2>
+            <p>TODO: answer-first paragraph, then supporting detail. Cite any statistic or clinical claim
+              with a linked primary source in the References section below.</p>
+
+            <!-- ============================================================
+                 CLINICAL PERSPECTIVE vs LIVED PERSPECTIVE callout: the
+                 two-card pair. Use to hold both the nurse's precision and
+                 the survivor's experience side by side. Carrie is both.
+                 ============================================================ -->
+            <div class="grid grid--2" style="margin: 32px 0;">
+              <div class="card">
+                <h3>The clinical perspective</h3>
+                <p>TODO: what the neuroscience or nursing lens says about this, precisely and without
+                  pathologizing.</p>
+              </div>
+              <div class="card">
+                <h3>The lived perspective</h3>
+                <p>TODO: what this actually feels like from the inside, in Carrie's first-person voice.
+                  No new private details beyond what is already public.</p>
+              </div>
+            </div>
+
+            <!-- SCENE BREAK: three gold dots (.pattern-divider). Repeat
+                 between major movements; delete where unused. -->
+            <div class="pattern-divider" aria-hidden="true"></div>
+
+            <h2 id="section-3">TODO: third section heading</h2>
+            <p>TODO: answer-first paragraph. Close the body by pointing gently toward a next step, never a
+              cure or a promise.</p>
+
+            <!-- ============================================================
+                 REFERENCES: every statistic or clinical claim, with a linked
+                 primary source. Delete rows you do not use.
+                 ============================================================ -->
+            <h2 id="references">References</h2>
+            <ol class="meta">
+              <li>TODO: Author / Organization. <em>Source title</em>. <a href="TODO-url">Primary source</a>.</li>
+              <li>TODO: Author / Organization. <em>Source title</em>. <a href="TODO-url">Primary source</a>.</li>
             </ol>
-          </nav>
-        </div>
-      </div>
-
-      <!-- ============================================================
-           BODY: answer-first under every H2. First 40 to 60 words after
-           each heading directly answer that heading (AEO). Keep neuroscience
-           precise; no fear, no shame, no diagnosis.
-           ============================================================ -->
-      <div class="section section--tight">
-        <div class="container container-narrow prose">
-
-          <h2 id="section-1">TODO: first section heading (a real question)</h2>
-          <p>TODO: answer the heading directly in the first 40 to 60 words, so this paragraph can stand
-            alone as a citable unit. Then expand.</p>
-
-          <!-- PULL-QUOTE pattern: a single resonant line, sparingly. -->
-          <blockquote class="pullquote">TODO: one resonant line worth pulling out. Signature voice, no
-            hype.</blockquote>
-
-          <h2 id="section-2">TODO: second section heading</h2>
-          <p>TODO: answer-first paragraph, then supporting detail. Cite any statistic or clinical claim
-            with a linked primary source in the References section below.</p>
-
-          <!-- ============================================================
-               CLINICAL PERSPECTIVE vs LIVED PERSPECTIVE callout: the two-tone
-               card pair. Use to hold both the nurse's precision and the
-               survivor's experience side by side. Carrie is both.
-               ============================================================ -->
-          <div class="perspective-pair" style="margin: var(--space-6) 0;">
-            <div class="perspective-card perspective-card--clinical">
-              <p class="perspective-card__label">The clinical perspective</p>
-              <p>TODO: what the neuroscience or nursing lens says about this, precisely and without
-                pathologizing.</p>
-            </div>
-            <div class="perspective-card perspective-card--lived">
-              <p class="perspective-card__label">The lived perspective</p>
-              <p>TODO: what this actually feels like from the inside, in Carrie's first-person voice.
-                No new private details beyond what is already public.</p>
-            </div>
           </div>
-
-          <h2 id="section-3">TODO: third section heading</h2>
-          <p>TODO: answer-first paragraph. Close the body by pointing gently toward a next step, never a
-            cure or a promise.</p>
-
-          <!-- ============================================================
-               REFERENCES: every statistic or clinical claim, with a linked
-               primary source. Delete rows you do not use.
-               ============================================================ -->
-          <h2 id="references">References</h2>
-          <ol class="meta">
-            <li>TODO: Author / Organization. <em>Source title</em>. <a href="TODO-url">Primary source</a>.</li>
-            <li>TODO: Author / Organization. <em>Source title</em>. <a href="TODO-url">Primary source</a>.</li>
-          </ol>
         </div>
       </div>
     </article>
 
-    <!-- ============================================================
-         PATTERN LANGUAGE (optional): the master strip, small, as a quiet
-         end-of-article close. Decorative (aria-hidden). Uncomment to use;
-         keep it the ONLY strip on the page (restraint: max 1 per page).
-         ============================================================ -->
-    <!--
-    <div class="section section--tight">
-      <div class="container container-narrow">
-        <div class="pattern-strip pattern-strip--small" aria-hidden="true"></div>
-      </div>
-    </div>
-    -->
+    <div class="pattern-divider" aria-hidden="true"></div>
 
     <!-- ============================================================
          AUTHOR BOX: Carrie + credentials + photo.
          ============================================================ -->
     <div class="section section--tight">
-      <div class="container container-narrow">
-        <div class="author-box">
-          <img class="author-box__photo" src="/assets/carrie-davidson.jpg"
+      <div class="container container--read">
+        <div class="card" style="display: flex; gap: 22px; align-items: flex-start;">
+          <img src="/assets/carrie-davidson.jpg"
                alt="Carrie Davidson, registered nurse and trauma recovery coach"
-               width="84" height="84" loading="lazy">
+               width="84" height="84" loading="lazy"
+               style="border-radius: 999px; flex-shrink: 0; width: 84px; height: 84px; object-fit: cover;">
           <div>
-            <h2>Carrie Davidson, BSPH, BSN, RN</h2>
-            <p class="meta">Registered nurse and certified trauma recovery coach; the nurse who became her
+            <h2 style="font-size: 22px; margin-bottom: 8px;">Carrie Davidson, BSPH, BSN, RN</h2>
+            <p class="meta" style="margin-bottom: 8px;">Registered nurse and certified trauma recovery coach; the nurse who became her
               own patient. She writes about the overlap of complex trauma and addiction: the same wound,
               telling itself in two different languages. Author of the memoir <em>Addicted to Trauma</em>.</p>
             <p class="meta"><a href="/about">More about Carrie &rarr;</a></p>
@@ -282,9 +275,10 @@
     </div>
 
     <!-- ============================================================
-         RELATED-CONTENT ENDCAP: 2 to 3 related links + one free resource
-         + ONE primary next step. Vary the primary CTA by article context
-         (quiz for patterns, Sunday Letter for essays, waitlist for memoir).
+         RELATED-CONTENT ENDCAP: 2 to 3 related links (.topic-links)
+         + one free resource + ONE primary next step. Vary the primary
+         CTA by article context (quiz for patterns, Sunday Letter for
+         essays, waitlist for memoir).
          ============================================================ -->
     <section class="section section--alt" aria-labelledby="endcap-title">
       <div class="container container-narrow">
@@ -292,56 +286,74 @@
           <p class="eyebrow">Keep reading</p>
           <h2 id="endcap-title">If this spoke to you</h2>
         </div>
-        <div class="keep-reading">
-          <ul class="topic-links">
-            <li>
-              <h3><a href="TODO-related-1">TODO: related article or essay title</a></h3>
-              <p>TODO: one-line description.</p>
-            </li>
-            <li>
-              <h3><a href="TODO-related-2">TODO: related article or essay title</a></h3>
-              <p>TODO: one-line description.</p>
-            </li>
-            <li>
-              <h3><a href="/writing/TODO-topic">TODO: the topic hub</a></h3>
-              <p>TODO: the guide that gathers everything on this theme.</p>
-            </li>
-          </ul>
+        <ul class="topic-links">
+          <li>
+            <h3><a href="TODO-related-1">TODO: related article or essay title</a></h3>
+            <p>TODO: one-line description.</p>
+          </li>
+          <li>
+            <h3><a href="TODO-related-2">TODO: related article or essay title</a></h3>
+            <p>TODO: one-line description.</p>
+          </li>
+          <li>
+            <h3><a href="/writing/TODO-topic">TODO: the topic hub</a></h3>
+            <p>TODO: the guide that gathers everything on this theme.</p>
+          </li>
+        </ul>
 
-          <div class="card">
-            <p class="eyebrow">A free companion</p>
-            <h3>TODO: resource name</h3>
-            <p>TODO: one sentence on what it is and who it helps. Education, not treatment.</p>
-            <p class="meta"><a href="/assets/TODO-resource.pdf">Download it free &rarr;</a></p>
-          </div>
+        <div class="card" style="margin-top: 24px;">
+          <p class="eyebrow">A free companion</p>
+          <h3>TODO: resource name</h3>
+          <p style="margin-bottom: 8px;">TODO: one sentence on what it is and who it helps. Education, not treatment.</p>
+          <p class="meta"><a href="/assets/TODO-resource.pdf">Download it free &rarr;</a></p>
         </div>
 
         <!-- ONE primary next step. Choose the single best CTA for this article. -->
-        <div class="btn-row" style="margin-top: var(--space-7);">
+        <div class="btn-row" style="margin-top: 40px;">
           <a class="btn btn--primary" href="TODO-primary-cta">TODO: one primary next step</a>
         </div>
+      </div>
+    </section>
+
+    <!-- SUNDAY LETTER CAPTURE (tint) -->
+    <section class="section section--tint section--snug reveal" aria-labelledby="signup-title">
+      <div class="container center" style="max-width: 640px;">
+        <p class="eyebrow">The Sunday Letter</p>
+        <h2 id="signup-title" class="h2-small" style="line-height: 1.12;">One letter, most Sundays.</h2>
+        <p class="lede" style="margin: 18px 0 32px;">One thing I know, one small thing to try,
+          and not a drop of homework guilt.</p>
+        <form class="signup__form" method="post"
+              action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
+              data-ml-form>
+          <label class="visually-hidden" for="signup-email">Email address</label>
+          <input class="input" id="signup-email" name="fields[email]" type="email"
+                 autocomplete="email" placeholder="Email address" required>
+          <input type="hidden" name="ml-submit" value="1">
+          <button class="btn btn--primary" type="submit">Get the letter</button>
+          <p class="signup__status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="meta" style="margin: 16px 0 0;">No spam. Unsubscribe anytime.</p>
       </div>
     </section>
 
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copied verbatim from start-here.html.
-       Only change for this subdirectory template: the worksheet link is
-       root-relative (/assets/...) so it resolves from /templates/ and root.
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -369,9 +381,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -412,7 +424,7 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }

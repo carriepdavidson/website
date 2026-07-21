@@ -149,3 +149,20 @@
   s.defer = true;
   document.head.appendChild(s);
 })();
+
+/* Announcement bar: show unless dismissed this session. Appended for
+   the mockup restyle; does not touch existing behaviors above. */
+(function () {
+  "use strict";
+  var bar = document.querySelector("[data-announce]");
+  if (!bar) return;
+  var KEY = "ccc-announce-dismissed";
+  try { if (sessionStorage.getItem(KEY) === "1") return; } catch (e) {}
+  window.setTimeout(function () { bar.hidden = false; }, 10000);
+  var close = bar.querySelector("[data-announce-close]");
+  if (!close) return;
+  close.addEventListener("click", function () {
+    bar.hidden = true;
+    try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
+  });
+})();

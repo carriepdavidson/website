@@ -22,47 +22,71 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721i">
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
-       (For Nurses is intentionally NOT in the nav, so no aria-current here.)
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
+       (For Nurses is intentionally NOT in the nav, so no aria-current.)
+       ============================================================ -->
+  <!-- ANNOUNCEMENT BAR: memoir pre-order. The button carries
+       data-preorder so js/preorder.js upgrades it to the retailer
+       link the day it exists; until then it routes to the notify
+       form, which is the honest promise. Dismiss stored per session. -->
+  <div class="announce" data-announce hidden>
+    <div class="announce__inner">
+      <strong>Pre-order my memoir:</strong> <em>Addicted to Trauma</em>
+      <span>Releasing August 8, 2026</span>
+      <a class="announce__btn" href="/book#launch" data-preorder>Be first to read</a>
+      <button class="announce__close" type="button" aria-label="Dismiss announcement" data-announce-close>&times;</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SITE HEADER (dc): letterspaced wordmark + logo mark, CSS
+       dropdown nav (My Story / Coaching / Resources / Blog /
+       Contact), Book a Call pill. Same hooks as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="/">Home</a></li>
-          <li><a class="nav__link" href="/about">About</a></li>
-          <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-          <li><a class="nav__link" href="/book">The Memoir</a></li>
-          <li><a class="nav__link" href="/writing">Blog</a></li>
-          <li class="nav__more">
-            <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu" aria-label="More pages">
-              <span class="nav-toggle__bars" aria-hidden="true"></span>
-            </button>
-            <ul class="nav__more-menu" id="nav-more-menu">
-              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
-              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
-              <li><a class="nav__link" href="/contact">Contact</a></li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">My Story</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/about">About</a></li>
+              <li><a class="nav__link" href="/book">The Memoir</a></li>
             </ul>
           </li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">Coaching</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/coaching">Work with Me</a></li>
+              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
+              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
+          <li><a class="nav__link" href="/writing">Blog</a></li>
+          <li><a class="nav__link" href="/contact">Contact</a></li>
         </ul>
         <a class="btn btn--primary btn--pill" href="/discovery-call">Book a Call</a>
       </nav>
@@ -72,100 +96,114 @@
   <main id="main">
 
     <!-- ============================================================
-         HERO: search-language H1 + the recognition lede + RN credibility early.
+         HERO: search-language H1 + the recognition lede + RN
+         credibility early. Portrait right, copy left.
          ============================================================ -->
-    <section class="hero-banner hero-banner--right"
-             style="background-image: url(/assets/carrie-nurse-casual.jpg); background-position: 15% 30%;"
-             aria-label="Carrie Davidson in a purple I'm A Nurse t-shirt, sitting barefoot on a garden wall">
+    <section class="hero">
       <div class="container">
-        <div class="hero-banner__copy">
-          <p class="eyebrow">For nurses &amp; caregivers</p>
-          <h1>Trauma recovery coaching for nurses and caregivers</h1>
-          <p class="lede">The vigilance that makes you exceptional at work may be costing you
-            outside of it.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
+        <div class="split">
+          <div>
+            <p class="eyebrow">For nurses &amp; caregivers</p>
+            <h1 style="font-size: clamp(36px, 4.6vw, 58px);">Trauma recovery coaching for
+              nurses and caregivers</h1>
+            <p class="lede measure" style="margin: 24px 0 0;">The vigilance that makes you
+              exceptional at work may be costing you outside of it.</p>
+            <div class="btn-row" style="margin-top: 32px;">
+              <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
+            </div>
+            <p class="cred-line" style="margin: 30px 0 0;">BSPH, BSN, RN &middot; Certified
+              Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
           </div>
-          <p class="meta" style="margin-top: var(--space-3);">BSPH, BSN, RN &middot; Certified
-            Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
+          <div>
+            <div class="portrait-frame portrait-frame--4x5">
+              <img src="/assets/carrie-nurse-casual.jpg" fetchpriority="high"
+                   style="object-position: 10% center;"
+                   alt="Carrie Davidson in a purple I'm A Nurse t-shirt, sitting barefoot on a garden wall"
+                   width="1200" height="1500">
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="pattern-divider pattern-divider--loop" aria-hidden="true"></div>
+    <div class="pattern-divider" aria-hidden="true"></div>
 
     <!-- ============================================================
          RECOGNITION: the specific textures, second person, may/might.
          No claim that all healthcare workers have trauma. No burnout-as-frame.
          ============================================================ -->
-    <section class="section section--alt reveal" aria-labelledby="recognition-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">You might recognize this</p>
-          <h2 id="recognition-title">When the skills that keep you safe at work do not switch off</h2>
-          <p>Not everyone in a caregiving role carries trauma, and this is not a diagnosis of you. But if
-            some of this feels familiar, it might be worth your attention.</p>
-        </div>
-        <div class="prose">
-          <p>You might still be reading a room for danger hours after the shift ends. You
-            might be the one everyone relies on, and quietly wonder who holds it for you.</p>
-          <p>You might come home with nothing left, and somewhere in there, the creative life
-            you used to have has gone quiet. Useful started to feel like the same thing as
-            worthy.</p>
-          <p><strong>You are not doing it wrong.</strong> A nervous system that learned to
-            stay ready does not stand down because the shift ended. It is doing what it was
-            trained to do, until it is given new evidence.</p>
-        </div>
+    <section class="section section--tint reveal" aria-labelledby="recognition-title">
+      <div class="container container--read">
+        <p class="eyebrow">You might recognize this</p>
+        <h2 id="recognition-title" class="h2-small">When the skills that keep you safe at work
+          do not switch off</h2>
+        <p style="margin: 22px 0 0; font-size: 18px;">Not a diagnosis. Only recognition.</p>
+        <ul class="cards-3" style="list-style: none; margin: 30px 0 0; padding: 0;">
+          <li class="card" style="background: var(--bg);">
+            <p>Still reading the room for danger, hours after the shift ends.</p>
+          </li>
+          <li class="card" style="background: var(--bg);">
+            <p>The one everyone relies on, quietly wondering who holds it for you.</p>
+          </li>
+          <li class="card" style="background: var(--bg);">
+            <p>Home with nothing left, and the creative life you used to have gone quiet.</p>
+          </li>
+        </ul>
+        <p style="margin: 32px 0 0; font-size: 18px;"><strong>You are not doing it
+          wrong.</strong> A nervous system that learned to stay ready does not stand down
+          because the shift ended.</p>
       </div>
     </section>
 
     <!-- ============================================================
          EDUCATION: compassion fatigue + secondary traumatic stress named
-         gently, educationally, non-diagnostically. Personal pattern as a question.
+         gently, educationally, non-diagnostically, as cards. Personal
+         pattern as a question.
          ============================================================ -->
     <section class="section reveal" aria-labelledby="education-title">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head center measure-wide mx-auto">
           <p class="eyebrow">A little language for it</p>
-          <h2 id="education-title">There are names for some of what caregivers carry</h2>
+          <h2 id="education-title" class="h2-small">There are names for some of what
+            caregivers carry</h2>
         </div>
-        <ul class="phase-cards">
-          <li class="phase-card phase-card--1">
+        <ul class="cards-3" style="list-style: none; margin: 0; padding: 0;">
+          <li class="card">
             <h3>Compassion fatigue</h3>
             <p>The slow erosion of caring for people in pain, day after day.</p>
           </li>
-          <li class="phase-card phase-card--3">
+          <li class="card">
             <h3>Secondary traumatic stress</h3>
             <p>Absorbing other people&rsquo;s worst moments as part of the job.</p>
           </li>
-          <li class="phase-card phase-card--6">
+          <li class="card">
             <h3>Burnout</h3>
             <p>Real, and not always the whole story.</p>
           </li>
         </ul>
-        <div class="prose" style="margin-top: var(--space-5);">
-          <p>Naming these is not a diagnosis, only language. And sometimes a quieter question
-            sits underneath: <strong>was some of the vigilance already there, before the first
-            shift?</strong> You do not have to know today. You only have to be willing to ask.</p>
-        </div>
+        <p class="center measure-wide mx-auto" style="margin-top: 40px; font-size: 18px;">And
+          sometimes a quieter question sits underneath:
+          <strong style="color: var(--ink);">was some of the vigilance already there, before
+          the first shift?</strong></p>
       </div>
     </section>
+
+    <!-- PHOTO BAND: edge to edge, barefoot in the oak (moved from About). -->
+    <div class="photo-band" style="background-image: url(/assets/carrie-nurse-shirt.jpg); background-position: center 35%;"
+         role="img" aria-label="Carrie Davidson in a nurse t-shirt, standing barefoot in the roots of a large oak tree"></div>
 
     <!-- ============================================================
          THE CREATIVE PATH BACK: the Method connection, creativity as return.
          ============================================================ -->
-    <section class="section section--alt reveal" aria-labelledby="creative-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">The way back</p>
-          <h2 id="creative-title">Creativity is how you find your way back to yourself</h2>
-        </div>
-        <div class="prose">
-          <p>You cannot reason your way back from this. The return happens in the body, and
-            for many of us it runs straight through the creative life that went quiet.</p>
-          <p><strong>Creativity is the opposite of stuck.</strong> Making becomes the evidence
-            that a different life is possible. It is not about becoming an artist; it is about
-            coming back to the parts of you the job asked you to set down.</p>
+    <section class="section section--tint reveal" aria-labelledby="creative-title">
+      <div class="container container--read">
+        <p class="eyebrow">The way back</p>
+        <h2 id="creative-title" class="h2-small">Creativity is how you find your way back to
+          yourself</h2>
+        <div class="prose" style="margin-top: 26px;">
+          <p>The return happens in the body, and for many of us it runs straight through the
+            creative life that went quiet. <strong>Making becomes the evidence that a
+            different life is possible.</strong></p>
           <p><a href="/method">Read how the Method works &rarr;</a></p>
         </div>
       </div>
@@ -175,68 +213,60 @@
          SCOPE + DISCLAIMER: reuse the inline disclaimer pattern.
          ============================================================ -->
     <section class="section reveal" aria-labelledby="scope-title">
-      <div class="container container-narrow">
-        <div class="section-head">
-          <p class="eyebrow">Where the edges are</p>
-          <h2 id="scope-title">What this is, and what it is not</h2>
-          <p>I want the boundary to be clear, because you of all people know why it matters.</p>
-        </div>
-        <div class="prose">
-          <p>This is coaching and education, present-and-forward companionship as you build a new pattern at
-            the pace your nervous system can hold. My RN background informs how I understand trauma and the
-            body, but coaching is not nursing, medical treatment, or clinical care, and it does not diagnose or
-            treat anything. If you are in acute crisis, or you need diagnosis, medication, or treatment,
-            licensed care comes first, and coaching can walk beside it.</p>
-          <p class="disclaimer-inline">This work is trauma recovery coaching and education. It is not therapy,
-            diagnosis, or medical treatment, and it is not a substitute for care from a licensed mental-health
-            or medical professional. It can walk beside that care. It does not replace it. If you are in
-            crisis, the resources at the bottom of this page can help right now.</p>
+      <div class="container container--read">
+        <p class="eyebrow">Where the edges are</p>
+        <h2 id="scope-title" class="h2-small">What this is, and what it is not</h2>
+        <p style="margin: 22px 0 0; font-size: 18px;">You of all people know why the boundary
+          matters.</p>
+        <div class="prose" style="margin-top: 26px;">
+          <p class="disclaimer-inline">This is trauma recovery coaching and education, not
+            nursing, therapy, diagnosis, or medical treatment. If you are in acute crisis or
+            need clinical care, licensed care comes first, and coaching can walk beside it.
+            The crisis resources at the bottom of this page are there for you right now.</p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         INVITATIONS: Sunday Letter (primary), ARC Program (secondary),
-         free resource. One primary CTA visually.
+         INVITATIONS (dark): Sunday Letter (primary), ARC Program +
+         free workbook as inline text links. One primary CTA visually.
          ============================================================ -->
-    <section class="section section--accent reveal" aria-labelledby="invite-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">If any of this sounds like you</p>
-        <h2 id="invite-title">Start gently, wherever you are</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">You do not have to be ready. You have to
-          be willing. The Sunday Letter is the easiest place to begin: a weekly note that pairs neuroscience
-          with a gentler way home, written in the same voice as this page. When you want more, The ARC Program
-          is the 1:1 coaching container, and <em>Befriending Your Nervous System</em> is a free workbook you
-          can start today.</p>
-        <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
+    <section class="section section--dark reveal" aria-labelledby="invite-title">
+      <div class="container center" style="max-width: 680px;">
+        <p class="eyebrow">If any of this sounds like you</p>
+        <h2 id="invite-title" class="h2-small">Start gently, wherever you are</h2>
+        <p class="mx-auto" style="margin: 20px 0 0;">You do not have to be ready. Willing is
+          enough.</p>
+        <div class="btn-row btn-row--center" style="margin-top: 32px;">
+          <a class="btn btn--primary" style="background: var(--bg); color: var(--ink);" href="/subscribe">Get the Sunday Letter</a>
         </div>
-        <p class="meta" style="margin-top: var(--space-4); color: var(--color-accent-soft);">
-          When you want more: <a href="/arc-program" style="color: inherit;">the ARC Program</a>,
-          or the free workbook
-          <a href="/resources/befriending-your-nervous-system" style="color: inherit;"><em>Befriending Your Nervous System</em></a>.</p>
+        <p style="margin: 24px 0 0; font-size: 15.5px; color: var(--on-dark-3);">
+          When you want more: <a href="/arc-program" style="color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px;">the ARC Program</a>,
+          the free workbook
+          <a href="/resources/befriending-your-nervous-system" style="color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px;"><em>Befriending Your Nervous System</em></a>,
+          or, when you&rsquo;re ready to talk,
+          <a href="/discovery-call" style="color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px;">book a call</a>.</p>
       </div>
     </section>
 
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -264,9 +294,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -307,13 +337,13 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
     </script>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

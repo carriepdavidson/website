@@ -22,12 +22,13 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721i">
 
   <!-- WebPage JSON-LD: plain page semantics (Organization schema lives in the footer). -->
   <script type="application/ld+json">
@@ -46,184 +47,194 @@
   }
   </script>
 
-  <!-- Quiz-scoped styles: no component existed for the scale + score bars.
-       Uses design-system tokens only; css/style.css is untouched. -->
+  <!-- Quiz-scoped styles: no dc component existed for the scale + score
+       bars. Rewritten onto dc.css tokens; css/dc.css is untouched. -->
   <style>
-    .quiz { padding-block: clamp(var(--space-7), 6vw, var(--space-9)); }
+    .quiz { padding-block: clamp(56px, 7vw, 92px); }
     .quiz [hidden] { display: none !important; }
 
     /* H1 emphasis: keeps Carrie's title, adds the underline accent */
-    #quiz-title { color: var(--color-ink); }
     #quiz-title .qz-underline {
-      font-style: italic; color: var(--color-accent);
+      font-style: italic; color: var(--plum);
       text-decoration: underline;
-      text-decoration-color: var(--color-clay);
+      text-decoration-color: var(--gold);
       text-decoration-thickness: 2px;
-      text-underline-offset: 6px;
+      text-underline-offset: 8px;
     }
 
+    /* Fact pills under the intro */
+    .pill-row { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      font-family: var(--sans); font-size: 13.5px; color: var(--text-muted);
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 999px; padding: 7px 15px;
+    }
+
+    /* Disabled state for the quiz nav buttons (dc.css defines none) */
+    .quiz .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
     /* Progress */
-    .qz-progress { margin-bottom: var(--space-6); }
+    .qz-progress { margin-bottom: 36px; }
     .qz-progress__meta {
       display: flex; justify-content: space-between; align-items: baseline;
-      font-family: var(--font-sans); font-size: var(--step--1);
-      color: var(--color-ink-soft); margin-bottom: var(--space-2);
+      font-size: 14px; color: var(--text-faint); margin-bottom: 8px;
     }
     .qz-progress__track {
-      height: 6px; border-radius: 999px; background: var(--color-border); overflow: hidden;
+      height: 6px; border-radius: 999px; background: var(--card-border); overflow: hidden;
     }
     .qz-progress__fill {
-      height: 100%; border-radius: 999px; background: var(--color-accent);
-      width: 0%; transition: width var(--transition);
+      height: 100%; border-radius: 999px; background: var(--plum);
+      width: 0%; transition: width 300ms ease;
     }
 
     /* Section intro band */
     .qz-sectionintro {
-      font-family: var(--font-serif); font-style: italic; font-size: var(--step-1);
-      line-height: 1.4; color: var(--color-accent-deep);
-      background: var(--color-accent-soft); border-radius: var(--radius);
-      border-left: 3px solid var(--color-accent);
-      padding: var(--space-4) var(--space-5); margin-bottom: var(--space-6);
-      max-width: none;
+      font-family: var(--serif); font-style: italic; font-size: 20px;
+      line-height: 1.4; color: var(--ink-2);
+      background: var(--bg-tint); border-radius: 12px;
+      border-left: 3px solid var(--gold);
+      padding: 18px 24px; margin: 0 0 36px;
     }
 
     /* Question */
-    .qz-question { border: 0; padding: 0; margin: 0 0 var(--space-6); }
+    .qz-question { border: 0; padding: 0; margin: 0 0 36px; }
     .qz-question legend {
-      font-family: var(--font-serif); font-size: var(--step-2); line-height: 1.3;
-      color: var(--color-ink); padding: 0; margin-bottom: var(--space-5);
+      font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); line-height: 1.25;
+      color: var(--ink); padding: 0; margin-bottom: 26px;
     }
 
-    /* 1–5 scale as radio group */
+    /* 1&ndash;5 scale as radio group */
     .qz-scale__ends {
       display: flex; justify-content: space-between;
-      font-family: var(--font-sans); font-size: var(--step--1);
-      color: var(--color-ink-soft); margin-bottom: var(--space-3);
+      font-size: 14px; color: var(--text-faint); margin-bottom: 12px;
     }
     .qz-scale {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-2);
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
     }
     .qz-opt { position: relative; }
     .qz-opt input {
       position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0;
     }
     .qz-opt__box {
-      display: flex; flex-direction: column; align-items: center; gap: var(--space-1);
-      background: var(--color-surface); border: 2px solid var(--color-border);
-      border-radius: var(--radius); padding: var(--space-4) var(--space-2);
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      background: var(--bg); border: 2px solid var(--card-border);
+      border-radius: 12px; padding: 16px 8px;
       cursor: pointer; text-align: center; min-height: 100%;
-      transition: border-color var(--transition), background var(--transition);
+      transition: border-color 150ms ease, background 150ms ease;
     }
     .qz-opt__num {
-      font-family: var(--font-serif); font-size: var(--step-2); font-weight: 500;
-      color: var(--color-ink-soft); line-height: 1;
+      font-family: var(--serif); font-size: 26px; font-weight: 500;
+      color: var(--text-muted); line-height: 1;
     }
-    .qz-opt__desc {
-      font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
-    }
-    .qz-opt input:hover + .qz-opt__box { border-color: var(--color-accent); }
+    .qz-opt__desc { font-size: 13.5px; color: var(--text-faint); }
+    .qz-opt input:hover + .qz-opt__box { border-color: var(--plum); }
     .qz-opt input:checked + .qz-opt__box {
-      border-color: var(--color-accent); background: var(--color-accent-soft);
+      border-color: var(--plum); background: var(--card);
     }
-    .qz-opt input:checked + .qz-opt__box .qz-opt__num { color: var(--color-accent-deep); }
+    .qz-opt input:checked + .qz-opt__box .qz-opt__num { color: var(--plum); }
     .qz-opt input:focus-visible + .qz-opt__box {
-      outline: 3px solid var(--color-accent); outline-offset: 2px;
+      outline: 3px solid var(--plum); outline-offset: 2px;
     }
 
     .qz-nav {
-      display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
-      margin-top: var(--space-7); padding-top: var(--space-5);
-      border-top: 1px solid var(--color-border);
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      margin-top: 44px; padding-top: 26px;
+      border-top: 1px solid var(--card-border);
     }
 
-    /* Result hero */
+    /* Result hero: deep-purple panel, dc dark-section idiom */
     .qz-result-hero {
-      text-align: center; background: var(--color-accent); color: #fff;
-      border-radius: var(--radius-lg); padding: clamp(var(--space-6), 6vw, var(--space-8));
-      margin-bottom: var(--space-7);
+      text-align: center; background: var(--ink); color: var(--on-dark);
+      border-radius: 16px; padding: clamp(36px, 6vw, 56px);
+      margin-bottom: 44px;
     }
-    .qz-result-hero .eyebrow { color: var(--color-accent-soft); }
-    .qz-result-hero h2 { color: #fff; margin: 0 0 var(--space-3); }
+    .qz-result-hero .eyebrow { color: var(--gold-light); }
+    .qz-result-hero h2 { color: var(--on-dark); margin: 0 0 14px; }
     .qz-result-hero__badge {
-      display: inline-block; font-family: var(--font-sans); font-size: var(--step--1);
-      font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.5); border-radius: 999px;
-      padding: 0.3em 0.9em; margin-bottom: var(--space-4);
+      display: inline-block; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold-light); border: 1px solid var(--dark-outline);
+      border-radius: 999px; padding: 0.35em 0.95em; margin-bottom: 18px;
     }
     .qz-result-hero__tagline {
-      font-family: var(--font-serif); font-style: italic; font-size: var(--step-2);
-      line-height: 1.35; color: rgba(255,255,255,0.9); max-width: 34ch; margin: 0 auto;
+      font-family: var(--serif); font-style: italic;
+      font-size: clamp(20px, 2.4vw, 26px);
+      line-height: 1.35; color: var(--on-dark-2); max-width: 34ch; margin: 0 auto;
     }
 
     /* Score bars */
-    .qz-bars { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-4); }
-    .qz-bar { display: grid; grid-template-columns: 5.5rem 1fr auto; align-items: center; gap: var(--space-4); }
+    .qz-bars { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 16px; }
+    .qz-bar { display: grid; grid-template-columns: 5.5rem 1fr auto; align-items: center; gap: 16px; }
     .qz-bar__label {
-      font-family: var(--font-sans); font-weight: 600; font-size: var(--step--1);
-      text-transform: capitalize; color: var(--color-ink);
+      font-weight: 600; font-size: 14.5px;
+      text-transform: capitalize; color: var(--ink);
     }
-    .qz-bar__track { height: 10px; border-radius: 999px; background: var(--color-border); overflow: hidden; }
-    .qz-bar__fill { height: 100%; border-radius: 999px; background: var(--color-accent-soft); width: 0%; transition: width 0.9s ease; }
-    .qz-bar--primary .qz-bar__fill { background: var(--color-accent); }
-    .qz-bar--secondary .qz-bar__fill { background: var(--color-clay); }
+    .qz-bar__track { height: 10px; border-radius: 999px; background: var(--card-border); overflow: hidden; }
+    .qz-bar__fill { height: 100%; border-radius: 999px; background: var(--outline); width: 0%; transition: width 0.9s ease; }
+    .qz-bar--primary .qz-bar__fill { background: var(--plum); }
+    .qz-bar--secondary .qz-bar__fill { background: var(--gold); }
     .qz-bar__val {
-      font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
+      font-size: 14px; color: var(--text-muted);
       white-space: nowrap; min-width: 8.5rem; text-align: right;
     }
 
     /* Intensity tier grid */
-    .qz-tiers { display: grid; gap: var(--space-4); margin-top: var(--space-5); }
+    .qz-tiers { display: grid; gap: 16px; margin-top: 24px; }
     @media (min-width: 40rem) { .qz-tiers { grid-template-columns: repeat(3, 1fr); } }
     .qz-tier {
-      background: var(--color-surface); border: 2px solid var(--color-border);
-      border-radius: var(--radius); padding: var(--space-5);
+      background: var(--bg); border: 2px solid var(--card-border);
+      border-radius: 14px; padding: 24px 22px;
     }
-    .qz-tier--current { border-color: var(--color-accent); background: var(--color-accent-soft); }
+    .qz-tier--current { border-color: var(--plum); background: var(--card); }
     .qz-tier__level {
-      font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink-soft);
-      display: block; margin-bottom: var(--space-2);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint);
+      display: block; margin-bottom: 8px;
     }
-    .qz-tier--current .qz-tier__level { color: var(--color-accent-deep); }
-    .qz-tier h4 { font-family: var(--font-serif); font-size: var(--step-1); margin-bottom: var(--space-2); }
-    .qz-tier p { font-size: var(--step-0); color: var(--color-ink-soft); margin: 0; }
+    .qz-tier--current .qz-tier__level { color: var(--plum); }
+    .qz-tier h4 { font-size: 20px; font-weight: 500; margin: 0 0 8px; }
+    .qz-tier p { font-size: 15.5px; color: var(--text-muted); margin: 0; }
     .qz-tier__here {
-      display: block; margin-top: var(--space-3); font-family: var(--font-sans);
-      font-size: var(--step--1); font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--color-accent-deep);
+      display: block; margin-top: 12px;
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--plum);
     }
 
     /* Pattern chips */
-    .qz-patterns { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+    .qz-patterns { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
     @media (min-width: 40rem) { .qz-patterns { grid-template-columns: 1fr 1fr; } }
     .qz-patterns li {
-      background: var(--color-surface); border: var(--border-hair);
-      border-left: 3px solid var(--color-clay); border-radius: var(--radius);
-      padding: var(--space-3) var(--space-4); font-family: var(--font-serif);
-      color: var(--color-ink);
+      background: var(--card); border: 1px solid var(--card-border);
+      border-left: 3px solid var(--gold); border-radius: 12px;
+      padding: 14px 18px; font-family: var(--serif); font-size: 17.5px;
+      color: var(--ink-2);
     }
 
-    .qz-result-section { margin-bottom: var(--space-8); }
-    .qz-result-section > h3 { margin-bottom: var(--space-4); }
-    .qz-result-section p + p { margin-top: var(--space-4); }
+    .qz-result-section { margin-bottom: 56px; }
+    .qz-result-section > h3 { margin-bottom: 16px; }
+    .qz-result-section p + p { margin-top: 16px; }
+
+    /* Result pullquote spacing (dc .pullquote sets type only) */
+    .quiz .pullquote { margin: 0 0 56px; padding: 4px 0 4px 24px; border-left: 3px solid var(--gold); }
 
     .qz-secondary {
-      background: var(--color-surface); border: var(--border-hair);
-      border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-8);
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 32px 30px; margin-bottom: 56px;
     }
+    .qz-secondary h3 { margin-bottom: 8px; }
 
     .qz-privacy {
-      font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-ink-soft);
-      text-align: center; margin-top: var(--space-6);
+      font-size: 14px; color: var(--text-faint);
+      text-align: center; margin-top: 32px;
     }
 
     /* The pause between sections: one still point, briefly held. */
     .qz-pause { display: flex; align-items: center; justify-content: center;
       position: relative; min-height: 12rem; }
     .qz-pause__dot { width: 14px; height: 14px; border-radius: 50%;
-      background: var(--color-accent); }
+      background: var(--plum); }
     .qz-pause__halo { position: absolute; width: 34px; height: 34px;
-      border-radius: 50%; border: 1.5px solid #B8A9C999; }
+      border-radius: 50%; border: 1.5px solid var(--outline); }
     @media (prefers-reduced-motion: no-preference) {
       .qz-pause__dot, .qz-pause__halo { opacity: 0; animation: qzBreath 0.9s ease-out forwards; }
       .qz-pause__halo { animation-delay: 0.15s; }
@@ -231,41 +242,65 @@
       .qz-result-enter { animation: qzArrive 0.8s ease-out; }
       @keyframes qzArrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
     }
+    @media (prefers-reduced-motion: reduce) {
+      .qz-progress__fill, .qz-bar__fill, .qz-opt__box { transition: none; }
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copied verbatim from index.html.
+       SITE HEADER (dc): copied verbatim from index.html.
        Quiz is not in the nav, so NO aria-current here.
+       ============================================================ -->
+  <!-- ANNOUNCEMENT BAR: memoir pre-order. The button carries
+       data-preorder so js/preorder.js upgrades it to the retailer
+       link the day it exists; until then it routes to the notify
+       form, which is the honest promise. Dismiss stored per session. -->
+  <div class="announce" data-announce hidden>
+    <div class="announce__inner">
+      <strong>Pre-order my memoir:</strong> <em>Addicted to Trauma</em>
+      <span>Releasing August 8, 2026</span>
+      <a class="announce__btn" href="/book#launch" data-preorder>Be first to read</a>
+      <button class="announce__close" type="button" aria-label="Dismiss announcement" data-announce-close>&times;</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SITE HEADER (dc): letterspaced wordmark + logo mark, CSS
+       dropdown nav (My Story / Coaching / Resources / Blog /
+       Contact), Book a Call pill. Same hooks as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="/">Home</a></li>
-          <li><a class="nav__link" href="/about">About</a></li>
-          <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-          <li><a class="nav__link" href="/book">The Memoir</a></li>
-          <li><a class="nav__link" href="/writing">Blog</a></li>
-          <li class="nav__more">
-            <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu" aria-label="More pages">
-              <span class="nav-toggle__bars" aria-hidden="true"></span>
-            </button>
-            <ul class="nav__more-menu" id="nav-more-menu">
-              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
-              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
-              <li><a class="nav__link" href="/contact">Contact</a></li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">My Story</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/about">About</a></li>
+              <li><a class="nav__link" href="/book">The Memoir</a></li>
             </ul>
           </li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">Coaching</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/coaching">Work with Me</a></li>
+              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
+              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
+          <li><a class="nav__link" href="/writing">Blog</a></li>
+          <li><a class="nav__link" href="/contact">Contact</a></li>
         </ul>
         <a class="btn btn--primary btn--pill" href="/discovery-call">Book a Call</a>
       </nav>
@@ -281,27 +316,27 @@
       <div class="container container-narrow text-center">
         <p class="eyebrow">Free quiz &middot; About 3 minutes</p>
         <h1 id="quiz-title">Which F Response Is <em class="qz-underline">Running Your Life?</em></h1>
-        <p class="lede mx-auto" style="max-width: 32ch;">We all have stress response patterns, ways our nervous system learned to cope.</p>
-        <p class="mx-auto">This quiz measures the intensity of all four responses (fight, flight, freeze, and
+        <p class="lede mx-auto" style="max-width: 32ch; margin-top: 22px;">We all have stress response patterns, ways our nervous system learned to cope.</p>
+        <p class="measure mx-auto" style="margin-top: 18px;">This quiz measures the intensity of all four responses (fight, flight, freeze, and
           fawn) so you get a full picture rather than just a label. There are no wrong answers.</p>
 
-        <ul class="pill-row" style="justify-content: center; margin-top: var(--space-6);">
+        <ul class="pill-row" style="justify-content: center; margin-top: 32px;">
           <li class="pill">16 questions</li>
           <li class="pill">Scale of 1&ndash;5</li>
           <li class="pill">Full response profile</li>
           <li class="pill">For everyone, trauma history or not</li>
         </ul>
 
-        <div class="btn-row" style="justify-content: center; margin-top: var(--space-7);">
+        <div class="btn-row" style="justify-content: center; margin-top: 40px;">
           <button class="btn btn--primary" type="button" id="start-btn">Start the quiz &rarr;</button>
         </div>
-        <p class="meta" style="margin-top: var(--space-4);">No wrong answers &middot; Rate each statement honestly</p>
+        <p class="meta" style="margin-top: 16px;">No wrong answers &middot; Rate each statement honestly</p>
         <p class="qz-privacy">Your answers are scored right here in your browser and never
           leave this page. The only things that can ever be sent anywhere are your email
           address and the name of your strongest response, and only if you choose to leave
           your email after the quiz.</p>
 
-        <p class="disclaimer" style="margin-top: var(--space-6);">This work is educational and reflective, not a substitute for medical or mental health treatment.</p>
+        <p class="disclaimer-inline" style="margin-top: 32px;">This work is educational and reflective, not a substitute for medical or mental health treatment.</p>
       </div>
     </section>
 
@@ -341,7 +376,7 @@
           </fieldset>
 
           <div class="qz-nav">
-            <button class="btn btn--ghost" type="button" id="qz-back">&larr; Back</button>
+            <button class="btn btn--secondary" type="button" id="qz-back">&larr; Back</button>
             <button class="btn btn--primary" type="submit" id="qz-next" disabled>Continue &rarr;</button>
           </div>
         </form>
@@ -357,12 +392,12 @@
       <div class="container container-narrow text-center">
         <p class="eyebrow">Optional, before your results</p>
         <h2 id="qz-email-title" tabindex="-1">Your profile is ready. Want a copy for your inbox?</h2>
-        <p class="mx-auto">Results on a screen have a way of disappearing. Leave your email and
+        <p class="measure mx-auto" style="margin-top: 18px;">Results on a screen have a way of disappearing. Leave your email and
           I will send your full profile, so you can come back to it when there is more room to
           read. You will also start getting the Sunday Letter.</p>
         <form class="signup__form mx-auto" id="qz-ml-form" method="post"
               action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
-              style="margin-top: var(--space-5); max-width: 30rem;">
+              style="margin-top: 24px; max-width: 30rem;">
           <label class="visually-hidden" for="qz-email">Email address</label>
           <input class="input" id="qz-email" name="fields[email]" type="email"
                  autocomplete="email" placeholder="Your email address" required>
@@ -371,7 +406,7 @@
           <button class="btn btn--primary" type="submit">Send me my profile</button>
           <p class="signup__status" id="qz-ml-status" role="status" aria-live="polite"></p>
         </form>
-        <p class="meta" style="margin-top: var(--space-4);"><a href="#" id="qz-skip">Skip this
+        <p class="meta" style="margin-top: 16px;"><a href="#" id="qz-skip">Skip this
           and show my results &rarr;</a></p>
         <p class="qz-privacy">Your answers never leave this page. If you leave your email, the
           only things sent are your address and the name of your strongest response, never
@@ -400,7 +435,7 @@
           <p class="eyebrow">Your full response profile</p>
           <h3>Each bar shows how strongly that response registered for you</h3>
           <ul class="qz-bars" id="qz-bars"></ul>
-          <p class="meta" style="margin-top: var(--space-3);" id="qz-dominance"></p>
+          <p class="meta" style="margin-top: 12px;" id="qz-dominance"></p>
         </div>
 
         <!-- What this response is -->
@@ -456,16 +491,16 @@
         <div class="qz-result-section text-center">
           <p class="eyebrow">A gentle next step, at your own pace</p>
           <h3>Where to go from here</h3>
-          <p class="mx-auto">Start with the free workbook, let the Sunday Letter keep showing up, and reach out for coaching only if and when you&rsquo;re ready.</p>
-          <div class="btn-row btn-row--center">
+          <p class="measure mx-auto">Start with the free workbook, let the Sunday Letter keep showing up, and reach out for coaching only if and when you&rsquo;re ready.</p>
+          <div class="btn-row btn-row--center" style="margin-top: 24px;">
             <a class="btn btn--primary" href="/resources/trauma-tree-worksheet">Get the free Trauma Tree Workbook</a>
           </div>
-          <p class="meta" style="margin-top: var(--space-4);"><a href="/subscribe">Get the
+          <p class="meta" style="margin-top: 16px;"><a href="/subscribe">Get the
             Sunday Letter</a> &middot; <a href="/coaching">See how 1:1 coaching works &rarr;</a></p>
         </div>
 
         <div class="btn-row btn-row--center">
-          <button class="btn btn--ghost" type="button" id="qz-retake">Retake the quiz</button>
+          <button class="btn btn--secondary" type="button" id="qz-retake">Retake the quiz</button>
         </div>
         <p class="qz-privacy">Your answers never left this page. This result was scored
           entirely in your browser. If you left your email, only your address and the name of
@@ -477,22 +512,22 @@
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copied verbatim from index.html.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copied verbatim from index.html. Contains crisis resources,
+       scope disclaimer, and Organization JSON-LD (sitewide entity).
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -520,9 +555,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -563,7 +598,7 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }

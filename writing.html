@@ -22,46 +22,69 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721i">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
+       ============================================================ -->
+  <!-- ANNOUNCEMENT BAR: memoir pre-order. The button carries
+       data-preorder so js/preorder.js upgrades it to the retailer
+       link the day it exists; until then it routes to the notify
+       form, which is the honest promise. Dismiss stored per session. -->
+  <div class="announce" data-announce hidden>
+    <div class="announce__inner">
+      <strong>Pre-order my memoir:</strong> <em>Addicted to Trauma</em>
+      <span>Releasing August 8, 2026</span>
+      <a class="announce__btn" href="/book#launch" data-preorder>Be first to read</a>
+      <button class="announce__close" type="button" aria-label="Dismiss announcement" data-announce-close>&times;</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SITE HEADER (dc): letterspaced wordmark + logo mark, CSS
+       dropdown nav (My Story / Coaching / Resources / Blog /
+       Contact), Book a Call pill. Same hooks as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
+        <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="/">Home</a></li>
-          <li><a class="nav__link" href="/about">About</a></li>
-          <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-          <li><a class="nav__link" href="/book">The Memoir</a></li>
-          <li><a class="nav__link" aria-current="page" href="/writing">Blog</a></li>
-          <li class="nav__more">
-            <button class="nav__more-toggle" type="button" aria-expanded="false" aria-controls="nav-more-menu" aria-label="More pages">
-              <span class="nav-toggle__bars" aria-hidden="true"></span>
-            </button>
-            <ul class="nav__more-menu" id="nav-more-menu">
-              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
-              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
-              <li><a class="nav__link" href="/contact">Contact</a></li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">My Story</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/about">About</a></li>
+              <li><a class="nav__link" href="/book">The Memoir</a></li>
             </ul>
           </li>
+          <li class="nav__dd">
+            <button class="nav__link" type="button" aria-haspopup="true">Coaching</button>
+            <ul class="nav__dd-menu">
+              <li><a class="nav__link" href="/coaching">Work with Me</a></li>
+              <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
+              <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
+          <li><a class="nav__link" href="/writing">Blog</a></li>
+          <li><a class="nav__link" href="/contact">Contact</a></li>
         </ul>
         <a class="btn btn--primary btn--pill" href="/discovery-call">Book a Call</a>
       </nav>
@@ -73,33 +96,39 @@
     <!-- ============================================================
          HERO: two-layer copy: search-language H1 + poetic payoff.
          ============================================================ -->
-    <section class="hero-banner"
-             style="background-image: url(/assets/carrie-writing.jpg); background-position: center 48%;"
-             aria-label="Carrie Davidson writing in a notebook at a sunlit cafe table">
+    <section class="hero">
       <div class="container">
-        <div class="hero-banner__copy">
-          <p class="eyebrow">Writing</p>
-          <h1>Essays on trauma, ADHD, and nervous system regulation</h1>
-          <p class="lede">Slowly coming back to yourself. Free to read, every week.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
+        <div class="split">
+          <div>
+            <p class="eyebrow">Writing</p>
+            <h1>Essays on trauma, ADHD, and nervous system regulation</h1>
+            <p class="lede" style="margin: 24px 0 32px;">Slowly coming back to yourself. Free to read, every week.</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
+            </div>
+          </div>
+          <div>
+            <div class="portrait-frame portrait-frame--4x5">
+              <img src="/assets/carrie-writing.jpg" fetchpriority="high"
+                   alt="Carrie Davidson writing in a notebook at a sunlit cafe table">
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="pattern-divider pattern-divider--easing" aria-hidden="true"></div>
+    <div class="pattern-divider" aria-hidden="true"></div>
 
     <!-- ============================================================
          FEATURED ESSAY: the newest piece, given room to breathe.
          ============================================================ -->
     <section class="section section--tight reveal" aria-labelledby="featured-title">
-      <div class="container">
-        <div class="hub-featured">
+      <div class="container container-narrow">
+        <div class="card">
           <p class="eyebrow">Featured</p>
-          <h2 id="featured-title"><a href="/writing/break-the-trauma-loop">How to Break the Trauma Loop: The Conscious Creation Method for Healing Complex Trauma</a></h2>
-          <p>The complete guide to the five-stage method, from the first witnessed pattern to an intentional life. If you read one thing here, read this.</p>
-          <p class="meta"><a href="/writing/break-the-trauma-loop">Read it &rarr;</a></p>
+          <h2 id="featured-title" class="h2-small"><a href="/writing/break-the-trauma-loop">How to Break the Trauma Loop: The Conscious Creation Method for Healing Complex Trauma</a></h2>
+          <p style="margin-top: 14px;">The complete guide to the five movements of the Conscious Creation Method, from the first witnessed pattern to an intentional life. If you read one thing here, read this.</p>
+          <p class="meta" style="margin-top: 12px;"><a href="/writing/break-the-trauma-loop">Read it &rarr;</a></p>
         </div>
       </div>
     </section>
@@ -114,10 +143,10 @@
         <div class="section-head">
           <p class="eyebrow">Browse by topic</p>
           <h2 id="topics-title">Find the thread you came for</h2>
-          <p>Three guides gather the essays by theme, each with a place to start, a free companion,
+          <p style="margin: 18px 0 0;">Three guides gather the essays by theme, each with a place to start, a free companion,
             and one gentle next step.</p>
         </div>
-        <ul class="topic-links topic-links--2">
+        <ul class="topic-links topic-links--3">
           <li>
             <h3><a href="/writing/nervous-system">Nervous system regulation</a></h3>
             <p>What regulation actually means when your body learned that calm came right before danger.</p>
@@ -144,44 +173,44 @@
         <div class="section-head">
           <p class="eyebrow">Latest essays</p>
           <h2 id="essays-title">Recent writing, newest first</h2>
-          <p>The most recent essays. A new one most weeks; the Sunday Letter brings each one to your inbox.</p>
+          <p style="margin: 18px 0 0;">The most recent essays. A new one most weeks; the Sunday Letter brings each one to your inbox.</p>
         </div>
-        <div class="grid grid--2">
+        <ul class="topic-links grid--2">
 
-          <article class="card">
-            <p class="eyebrow">Trauma Patterns &middot; Jul 2026</p>
+          <li>
             <h3><a href="/writing/sedate-the-thing-that-saved-you">They Are Teaching You to Sedate the Thing That Saved You</a></h3>
-          </article>
-          <article class="card">
-            <p class="eyebrow">Trauma Patterns &middot; Jul 2026</p>
+            <p class="meta">Trauma Patterns &middot; Jul 2026</p>
+          </li>
+          <li>
             <h3><a href="/writing/gold-standard-failed-us">The gold standard failed most of us. That's not the same as you failing.</a></h3>
-          </article>
-          <article class="card">
-            <p class="eyebrow">Nervous System &middot; Jul 2026</p>
+            <p class="meta">Trauma Patterns &middot; Jul 2026</p>
+          </li>
+          <li>
             <h3><a href="/writing/cannot-buy-your-way-back">You Cannot Buy Your Way Back Into Your Body.</a></h3>
-          </article>
-          <article class="card">
-            <p class="eyebrow">Trauma Patterns &middot; Jul 2026</p>
+            <p class="meta">Nervous System &middot; Jul 2026</p>
+          </li>
+          <li>
             <h3><a href="/writing/trained-to-carry-it">You Were Trained to Carry It</a></h3>
-          </article>
-          <article class="card">
-            <p class="eyebrow">Trauma Patterns &middot; Jul 2026</p>
+            <p class="meta">Trauma Patterns &middot; Jul 2026</p>
+          </li>
+          <li>
             <h3><a href="/writing/the-science-is-fighting">The Science Is Fighting. I Still Can't Breathe in That House.</a></h3>
-          </article>
-          <article class="card">
-            <p class="eyebrow">Trauma Patterns &middot; Jul 2026</p>
+            <p class="meta">Trauma Patterns &middot; Jul 2026</p>
+          </li>
+          <li>
             <h3><a href="/writing/entrepreneurship-from-drug-dealers">I Learned Entrepreneurship From Drug Dealers</a></h3>
-          </article>
-          <article class="card">
-            <p class="eyebrow">Trauma Patterns &middot; Jul 2026</p>
+            <p class="meta">Trauma Patterns &middot; Jul 2026</p>
+          </li>
+          <li>
             <h3><a href="/writing/you-built-it-to-get-yourself-back">You Didn't Build It for the Money. You Built It to Get Yourself Back.</a></h3>
-          </article>
+            <p class="meta">Trauma Patterns &middot; Jul 2026</p>
+          </li>
 
-        </div>
+        </ul>
 
-        <details class="archive-details" style="margin-top: var(--space-8);">
+        <details class="archive-details" style="margin-top: 40px;">
           <summary>Browse the full archive</summary>
-          <ul class="archive-list" style="margin-top: var(--space-5); columns: 2; column-gap: var(--space-8);">
+          <ul class="archive-list" style="margin-top: 24px; columns: 2; column-gap: 40px;">
             <li><a href="/writing/what-addicted-to-trauma-actually-means">What "Addicted to Trauma" Actually Means</a></li>
             <li><a href="/writing/can-creativity-heal-trauma">Can Creativity Heal Trauma? What Making Things Does for a Trauma-Trained Nervous System</a></li>
             <li><a href="/writing/how-long-does-trauma-recovery-take">How Long Does Trauma Recovery Take? An Honest Answer</a></li>
@@ -205,41 +234,45 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         PRIMARY CTA: Sunday Letter.
-         ============================================================ -->
-    <section class="section section--accent reveal" aria-labelledby="cta-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">Every Sunday, one small practice</p>
-        <h2 id="cta-title">Get the next essay in your inbox</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">The Sunday Letter is where these essays
-          begin: neuroscience precision, a poetic reframe, one small practice. No hustle, no shame,
-          no urgency. And my <a href="/resources">free resources</a> are yours whenever you want them.</p>
-        <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
-        </div>
+    <!-- SUNDAY LETTER CAPTURE (tint) -->
+    <section class="section section--tint section--snug reveal" aria-labelledby="signup-title">
+      <div class="container center" style="max-width: 640px;">
+        <p class="eyebrow">The Sunday Letter</p>
+        <h2 id="signup-title" class="h2-small" style="line-height: 1.12;">The essays continue on Sundays.</h2>
+        <p class="lede" style="margin: 18px 0 32px;">One letter most weeks, with one small
+          practice tucked inside.</p>
+        <form class="signup__form" method="post"
+              action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
+              data-ml-form>
+          <label class="visually-hidden" for="signup-email">Email address</label>
+          <input class="input" id="signup-email" name="fields[email]" type="email"
+                 autocomplete="email" placeholder="Email address" required>
+          <input type="hidden" name="ml-submit" value="1">
+          <button class="btn btn--primary" type="submit">Get the letter</button>
+          <p class="signup__status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="meta" style="margin: 16px 0 0;">No spam. Unsubscribe anytime.</p>
       </div>
     </section>
 
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -267,9 +300,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -310,13 +343,13 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
     </script>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
