@@ -1554,7 +1554,7 @@ p { max-width: var(--measure); }
   box-shadow: -10px 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Phase cards: a journey rendered as arch-topped cards, tinted purple to
+/* Phase cards: a shapeline rendered as arch-topped cards, tinted purple to
    gold in walking order. An explainer graphic built from the system, for
    step sequences that would otherwise be lists of text. */
 .phase-cards {
@@ -1652,4 +1652,66 @@ p { max-width: var(--measure); }
     background: linear-gradient(180deg,
       rgba(43, 29, 56, 0.20) 0%, rgba(43, 29, 56, 0.78) 70%);
   }
+}
+
+/* ============================================================
+   SHAPELINE: Pattern -> Pause -> Choice -> Creation.
+   The signature scroll section. A tall wrapper gives the scroll
+   runway; the stage stays sticky while one SVG line draws itself
+   through four states. Without JS, or with reduced motion, the
+   wrapper collapses and the finished drawing simply sits on the
+   page: same meaning, no motion.
+   ============================================================ */
+.shapeline { position: relative; height: 320vh; }
+.shapeline__intro { padding-top: var(--space-8); padding-bottom: var(--space-4); }
+.shapeline__stage {
+  position: sticky; top: 0; min-height: 100vh;
+  display: grid; place-items: center;
+  padding: var(--space-5) var(--space-3);
+}
+@supports (height: 100svh) { .shapeline__stage { min-height: 100svh; } }
+.shapeline__svg { width: min(1060px, 94vw); height: auto; display: block; }
+.shapeline__svg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.shapeline__seg--pattern  { stroke: #7B68A0; stroke-width: 3.5; }
+.shapeline__seg--pause    { stroke: #98A5C6; stroke-width: 3.5; }
+.shapeline__seg--choice   { stroke: #C9A87C; stroke-width: 4; }
+.shapeline__seg--creation { stroke: #C9A87C; stroke-width: 4; }
+.shapeline__offshoot        { stroke: #C9A87C; stroke-width: 2.5; opacity: .45; }
+.shapeline__offshoot--lilac { stroke: #B8A9C9; stroke-width: 2.5; opacity: .6; }
+.shapeline__ghost {
+  stroke: #7B68A0; stroke-width: 3; stroke-dasharray: 7 9; opacity: .22;
+}
+.shapeline__still { fill: #98A5C6; }
+.shapeline__word {
+  font-family: var(--font-sans); font-weight: 500; font-size: 30px;
+  letter-spacing: .34em; fill: #574768;
+}
+.shapeline__word--creation { fill: #8A6B42; }
+.shapeline__coda { padding: var(--space-2) var(--space-4) var(--space-7); margin-inline: auto; }
+
+/* Armed by JS: beats hidden until their scroll moment. */
+.shapeline.is-armed [data-at] {
+  opacity: 0; transition: opacity .9s ease;
+}
+.shapeline.is-armed .shapeline__ghost.is-on { opacity: .22; }
+.shapeline.is-armed .shapeline__offshoot.is-on { opacity: .45; }
+.shapeline.is-armed .shapeline__offshoot--lilac.is-on { opacity: .6; }
+.shapeline.is-armed [data-at].is-on { opacity: 1; }
+.shapeline.is-armed .shapeline__word.is-on { opacity: .9; }
+
+@media (max-width: 44rem) {
+  .shapeline { height: 240vh; }
+  .shapeline__word { font-size: 34px; letter-spacing: .26em; }
+}
+
+/* Static fallbacks: no sticky support, or reduced motion. */
+@supports not (position: sticky) {
+  .shapeline { height: auto; }
+  .shapeline__stage { position: static; min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shapeline { height: auto; }
+  .shapeline__stage { position: static; min-height: 0; }
+  .shapeline [data-at] { opacity: 1 !important; transition: none !important; }
+  .shapeline__ghost { opacity: .22 !important; }
 }

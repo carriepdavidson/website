@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260720y">
+  <link rel="stylesheet" href="css/style.css?v=20260720z">
 
   <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T.
        Reuse this verbatim on about.html; see docs/design-system.md. -->
@@ -173,6 +173,44 @@
       <p>Trauma recovery coaching from a nurse who has been the patient.</p>
     </section>
 
+    <!-- THE SHAPE OF HEALING: signature scroll section. One line drawn
+         through four states as the visitor scrolls. Fully drawn and
+         static without JS or with reduced motion. -->
+    <section class="shapeline" data-shapeline aria-labelledby="shapeline-title">
+      <div class="shapeline__intro container container-narrow text-center">
+        <p class="eyebrow">The shape of healing</p>
+        <h2 id="shapeline-title">Pattern. Pause. Choice. Creation.</h2>
+        <p class="mx-auto">Everything you survived taught your nervous system how to
+          protect you. Now you can teach it something new.</p>
+      </div>
+      <div class="shapeline__stage">
+        <svg class="shapeline__svg" viewBox="0 0 1000 640" role="img"
+             aria-label="One continuous line loops in a repeating tangle labeled pattern, slows to a still point labeled pause, turns gold at a branching point labeled choice, and opens into a wider organic path labeled creation">
+          <text class="shapeline__word" x="130" y="236" data-at="0.10">PATTERN</text>
+          <path class="shapeline__seg shapeline__seg--pattern" data-seg="0.06,0.36"
+                d="M 42 372 C 66 296, 150 288, 166 356 C 178 408, 112 436, 96 386 C 82 340, 152 302, 210 328 C 258 350, 250 412, 200 412 C 158 412, 164 350, 226 340 C 288 330, 324 366, 316 400 C 309 430, 260 434, 256 402 C 252 374, 300 352, 352 364"/>
+          <text class="shapeline__word" x="430" y="300" data-at="0.40">PAUSE</text>
+          <path class="shapeline__seg shapeline__seg--pause" data-seg="0.36,0.50"
+                d="M 352 364 C 404 376, 458 372, 500 368 C 522 366, 538 366, 550 366"/>
+          <circle class="shapeline__still" cx="550" cy="366" r="5.5" data-at="0.49"/>
+          <path class="shapeline__ghost" data-at="0.53"
+                d="M 550 366 C 592 378, 616 406, 610 442"/>
+          <text class="shapeline__word" x="545" y="496" data-at="0.55">CHOICE</text>
+          <path class="shapeline__seg shapeline__seg--choice" data-seg="0.52,0.62"
+                d="M 550 366 C 574 352, 592 332, 608 308"/>
+          <path class="shapeline__seg shapeline__seg--creation" data-seg="0.62,0.96"
+                d="M 608 308 C 636 268, 684 252, 720 268 C 748 281, 754 310, 736 324 C 718 338, 706 316, 726 296 C 752 262, 812 234, 872 232 C 912 231, 946 218, 972 198"/>
+          <path class="shapeline__offshoot" data-at="0.88"
+                d="M 812 240 C 830 226, 844 220, 860 212"/>
+          <path class="shapeline__offshoot shapeline__offshoot--lilac" data-at="0.92"
+                d="M 872 232 C 886 246, 904 252, 922 250"/>
+          <text class="shapeline__word shapeline__word--creation" x="780" y="330" data-at="0.74">CREATION</text>
+        </svg>
+      </div>
+    </section>
+    <p class="shapeline__coda text-center">Healing is not a straight line. It is a line that
+      learns. <a href="/method">How the Method works &rarr;</a></p>
+
     <!-- SOUND FAMILIAR: the client's mirror, one voice with /about. -->
     <section class="section section--alt reveal" aria-labelledby="loop-title">
       <div class="container">
@@ -203,23 +241,32 @@
 
     <div class="pattern-divider" aria-hidden="true"></div>
 
-    <!-- MEET YOUR GUIDE -->
-    <section class="section reveal" aria-labelledby="guide-title">
+    <!-- THE PLAN: ARC three nodes. Method before offers. -->
+    <section class="section reveal" aria-labelledby="method-title">
       <div class="container">
-        <div class="resource-lead resource-lead--guide resource-lead--wide-photo">
-          <div class="arch-photo">
-            <img src="/assets/carrie-welcome.jpg"
-                 alt="Carrie Davidson laughing with open arms at a garden doorway">
-          </div>
-          <div class="prose">
-            <h2 id="guide-title">Welcome to Conscious Coaching Collective</h2>
-            <p>I am a registered nurse, certified trauma recovery coach, and author of
-              <a href="/book"><em>Addicted to Trauma</em></a>. I help people who are
-              insight-rich and still stuck interrupt the pattern at its source:
-              <strong>through the body, not around it</strong>.</p>
-            <p><a href="/about">More about me &rarr;</a></p>
-          </div>
+        <div class="section-head section-head--center">
+          <p class="eyebrow">The Conscious Creation Method&trade;</p>
+          <h2 id="method-title">Three stages. One word to remember: ARC.</h2>
         </div>
+        <ul class="phase-cards">
+          <li class="phase-card phase-card--1">
+            <span class="phase-card__num" aria-hidden="true">A</span>
+            <h3>Awareness</h3>
+            <p>See the pattern.</p>
+          </li>
+          <li class="phase-card phase-card--3">
+            <span class="phase-card__num" aria-hidden="true">R</span>
+            <h3>Regulation</h3>
+            <p>Build the pause.</p>
+          </li>
+          <li class="phase-card phase-card--6">
+            <span class="phase-card__num" aria-hidden="true">C</span>
+            <h3>Creation</h3>
+            <p>Make something new.</p>
+          </li>
+        </ul>
+        <p class="text-center" style="margin-top: var(--space-6);"><a href="/method">How the
+          Method works &rarr;</a></p>
       </div>
     </section>
 
@@ -282,43 +329,34 @@
       </div>
     </section>
 
-    <!-- THE PLAN: ARC three nodes -->
-    <section class="section section--alt reveal" aria-labelledby="method-title">
-      <div class="container">
-        <div class="section-head section-head--center">
-          <p class="eyebrow">The Conscious Creation Method&trade;</p>
-          <h2 id="method-title">Three stages. One word to remember: ARC.</h2>
-        </div>
-        <ul class="phase-cards">
-          <li class="phase-card phase-card--1">
-            <span class="phase-card__num" aria-hidden="true">A</span>
-            <h3>Awareness</h3>
-            <p>See the pattern.</p>
-          </li>
-          <li class="phase-card phase-card--3">
-            <span class="phase-card__num" aria-hidden="true">R</span>
-            <h3>Regulation</h3>
-            <p>Build the pause.</p>
-          </li>
-          <li class="phase-card phase-card--6">
-            <span class="phase-card__num" aria-hidden="true">C</span>
-            <h3>Creation</h3>
-            <p>Make something new.</p>
-          </li>
-        </ul>
-        <p class="text-center" style="margin-top: var(--space-6);"><a href="/method">How the
-          Method works &rarr;</a></p>
-      </div>
-    </section>
-
     <!-- MEMOIR BAND -->
-    <section class="section reveal" aria-labelledby="memoir-title">
+    <section class="section section--alt reveal" aria-labelledby="memoir-title">
       <div class="container container-narrow text-center">
         <p class="eyebrow">The memoir &middot; August 8, 2026</p>
         <h2 id="memoir-title">Proof the Loop Can Break.</h2>
         <p>The story of what it took to stop running the patterns that almost killed me.</p>
         <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/book" data-preorder>Pre-order <em>Addicted to Trauma</em></a>
+          <a class="btn btn--secondary" href="/book" data-preorder>Pre-order <em>Addicted to Trauma</em></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET YOUR GUIDE: moved after the memoir per the emotional arc. -->
+    <section class="section reveal" aria-labelledby="guide-title">
+      <div class="container">
+        <div class="resource-lead resource-lead--guide resource-lead--wide-photo">
+          <div class="arch-photo">
+            <img src="/assets/carrie-welcome.jpg" loading="lazy"
+                 alt="Carrie Davidson laughing with open arms at a garden doorway">
+          </div>
+          <div class="prose">
+            <h2 id="guide-title">Welcome to Conscious Coaching Collective</h2>
+            <p>I am a registered nurse, certified trauma recovery coach, and author of
+              <a href="/book"><em>Addicted to Trauma</em></a>. I help people who are
+              insight-rich and still stuck interrupt the pattern at its source:
+              <strong>through the body, not around it</strong>.</p>
+            <p><a href="/about">More about me &rarr;</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -503,5 +541,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/preorder.js"></script>
+  <script src="js/shapeline.js"></script>
 </body>
 </html>
