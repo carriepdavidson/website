@@ -114,31 +114,19 @@
           <li class="nav__dd">
             <button class="nav__link" type="button" aria-haspopup="true">My Story</button>
             <ul class="nav__dd-menu">
-              <li><a class="nav__link" href="/about">About Carrie</a></li>
+              <li><a class="nav__link" href="/about">About</a></li>
               <li><a class="nav__link" href="/book">The Memoir</a></li>
-              <li><a class="nav__link" href="/media">Speaking &amp; Media</a></li>
             </ul>
           </li>
           <li class="nav__dd">
             <button class="nav__link" type="button" aria-haspopup="true">Coaching</button>
             <ul class="nav__dd-menu">
               <li><a class="nav__link" href="/coaching">Work with Me</a></li>
-              <li><a class="nav__link" href="/arc-program">The ARC Program</a></li>
-              <li><a class="nav__link" href="/rooted-and-rising">Rooted &amp; Rising</a></li>
               <li><a class="nav__link" href="/workshop">The LIVE Workshop</a></li>
               <li><a class="nav__link" href="/gathering">Monthly Gathering</a></li>
             </ul>
           </li>
-          <li class="nav__dd">
-            <button class="nav__link" type="button" aria-haspopup="true">Resources</button>
-            <ul class="nav__dd-menu">
-              <li><a class="nav__link" href="/resources">Free Resources</a></li>
-              <li><a class="nav__link" href="/quiz">The Pattern Quiz</a></li>
-              <li><a class="nav__link" href="/subscribe">The Sunday Letter</a></li>
-              <li><a class="nav__link" href="/for-nurses">For Nurses &amp; Caregivers</a></li>
-              <li><a class="nav__link" href="/faq">FAQ</a></li>
-            </ul>
-          </li>
+          <li><a class="nav__link" href="/resources">Resources</a></li>
           <li><a class="nav__link" href="/writing">Blog</a></li>
           <li><a class="nav__link" href="/contact">Contact</a></li>
         </ul>
@@ -151,22 +139,23 @@
 
     <!-- HERO (mockup 1): swash headline, diamond divider, question
          lead-in, lavender Explore Resources, credential card overlay. -->
-    <section class="hero">
+    <section class="hero hero--home">
       <div class="container">
         <div class="split">
           <div>
             <h1 class="h1-display">You are not broken.<br>You are <span class="swash">patterned.</span></h1>
             <p class="lede-serif-italic" style="margin: 22px 0 0;">And patterns can change.</p>
             <div class="diamond-divider" aria-hidden="true"><span>&#10022;</span></div>
-            <p class="support-strong measure" style="margin: 0 0 10px;">Are you ready to build
-              a different one?</p>
+            <p class="support-strong measure" style="margin: 0 0 10px;">Are you done surviving
+              the same story, and ready to build a different one?</p>
             <p class="lede measure" style="margin: 0 0 8px;">Trauma recovery coaching through
-              nervous system regulation and deliberate creation, for people who are done
-              surviving the same story.</p>
+              nervous system regulation and deliberate creation.</p>
             <p class="measure" style="margin: 0 0 30px; color: var(--text-muted);">Guided by a
               registered nurse who has also been the patient.</p>
             <div class="btn-row">
-              <a class="btn btn--lavender" href="/resources">Explore Resources &rarr;</a>
+              <a class="btn btn--lavender" href="/resources">
+                <svg style="width: 18px; height: 18px; margin-right: 9px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 20c0-6 3-11 13-13-1 9-5 12-10 12-1.2 0-2.2-.2-3 1Z"/><path d="M5 20c1.5-4.5 4.5-8 9-10"/></svg>
+                Explore Resources &rarr;</a>
             </div>
             <p class="meta" style="margin: 14px 0 0;">Tools, insights and practices to support
               your healing.</p>
@@ -267,10 +256,14 @@
     </section>
     -->
 
-    <!-- PHOTO BAND: edge to edge, the destination. -->
-    <div class="photo-band" style="background-image: url(/assets/carrie-pond-full.jpg); background-position: center 30%;"
+    <!-- PHOTO BAND: edge to edge, attributed pull-quote over a
+         darkened gradient for legibility (brief, quote treatment). -->
+    <div class="photo-band photo-band--overlay" style="background-image: url(/assets/carrie-pond-full.jpg); background-position: center 30%;"
          role="img" aria-label="Carrie Davidson seated at the edge of a garden pond at golden hour">
-      <p class="photo-band__line">Whatever we tend, grows.</p>
+      <div class="center">
+        <p class="photo-band__line">&ldquo;Whatever we tend, grows.&rdquo;</p>
+        <p class="photo-band__attr">Carrie Davidson</p>
+      </div>
     </div>
 
     <!-- POINTER: offers live on Work with Me only (her no-duplication rule).

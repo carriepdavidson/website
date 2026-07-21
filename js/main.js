@@ -158,7 +158,7 @@
   if (!bar) return;
   var KEY = "ccc-announce-dismissed";
   try { if (sessionStorage.getItem(KEY) === "1") return; } catch (e) {}
-  window.setTimeout(function () { bar.hidden = false; }, 1200);
+  window.setTimeout(function () { bar.hidden = false; }, 10000);
   var close = bar.querySelector("[data-announce-close]");
   if (!close) return;
   close.addEventListener("click", function () {
