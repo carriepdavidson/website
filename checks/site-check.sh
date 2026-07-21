@@ -97,9 +97,9 @@ else note "(sitemap.xml not present yet)"
 fi
 
 # 11. No leftover old-palette hex in any html/css/svg
-OLDHEX='#4B2D73|#7A5C10|#1C4A44|#9A4632|#F4EEE4'
-if grep -rniE "$OLDHEX" $PAGES css/*.css assets/*.svg 2>/dev/null | grep -q .; then
-  fail "old-palette hex found:"; grep -rniE "$OLDHEX" $PAGES css/*.css assets/*.svg
+OLDHEX='#4B2D73|#7A5C10|#1C4A44|#9A4632|#F4EEE4|#7C77C0|#5A55A0|#47437F|#6A64AC|#F6F4FB|#ECEAF7|#3F3168|#B8B2E4'
+if grep -rniE "$OLDHEX" $PAGES css/*.css assets/*.svg assets/letters/*.svg 2>/dev/null | grep -q .; then
+  fail "old-palette hex found:"; grep -rniE "$OLDHEX" $PAGES css/*.css assets/*.svg assets/letters/*.svg
 else pass "no old-palette hex (html/css/svg)"; fi
 
 # 12. Banned words (brand voice) in SITE COPY. Exemptions: her coined
