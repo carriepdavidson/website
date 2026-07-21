@@ -1737,7 +1737,7 @@ p { max-width: var(--measure); }
 /* ARC section: the original logo, full and unaltered. */
 .arc-emblem-logo {
   display: block; width: min(220px, 58vw); height: auto;
-  margin: 0 auto var(--space-6); border-radius: 16px;
+  margin: 0 auto var(--space-6);
 }
 
 /* ARC emblem: spiral -> arch -> plant, drawn on reveal. */
