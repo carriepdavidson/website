@@ -10,6 +10,20 @@
 - Coach-vs-therapist table on /coaching
 - Facts override mockup text everywhere: book releases **August 8, 2026** (mockups say "Fall 2025" — wrong); ARC = Awareness, Regulation, **Creation** (one mockup card says "Choice" — wrong; choice language belongs in body copy)
 
+## LAYOUT SYSTEM — three page types (Carrie's structure; build these first, then apply)
+Every page on the site uses exactly one of these three templates. Shared across all types: header/nav, announcement bar, footer (with crisis block + disclaimer), newsletter band.
+
+**Type A — Home (index.html only)**
+Full-bleed hero with photo + credential badge → alternating cream/lavender content bands → signature interactive sections (mirror, ARC flow, shapeline animation) → offers ("Three ways to begin") → memoir band → newsletter band → final CTA.
+
+**Type B — General Subpage** (about, coaching, arc-program, method, book, for-nurses, faq, contact, discovery-call, media, and the blog-post template in /writing)
+Consistent page hero: eyebrow + serif H1 + short intro, optional photo with dark gradient overlay for legibility → content sections in alternating bands → FAQ block near the bottom where the page has one → plum full-width CTA band ("Healing is possible." style) → footer.
+
+**Type C — Resources & Events** (resources, writing listing, quiz, gathering, workshop, subscribe)
+Page hero (same as Type B but shorter) → card grid: white cards with circular line-icon badges or cover images (per mockup 3's card style), each card = icon/cover + title + one-liner + single CTA → newsletter band → footer.
+
+Rule: if a change is needed on one page of a type, make it in the shared pattern so every page of that type stays identical. No page gets a bespoke layout.
+
 ## HIGH PRIORITY
 
 ### Navigation (all pages, keep identical across site)
