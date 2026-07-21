@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721f">
+  <link rel="stylesheet" href="css/style.css?v=20260721g">
 
   <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T.
        Reuse this verbatim on about.html; see docs/design-system.md. -->
@@ -247,7 +247,7 @@
     <!-- THE SHAPE OF HEALING: signature scroll section. One line drawn
          through four states as the visitor scrolls. Fully drawn and
          static without JS or with reduced motion. -->
-    <section class="shapeline" data-shapeline aria-labelledby="shapeline-title">
+    <section class="shapeline reveal" aria-labelledby="shapeline-title">
       <div class="shapeline__intro container container-narrow text-center">
         <p class="eyebrow">The shape of healing</p>
         <h2 id="shapeline-title">Pattern. Pause. Choice. Creation.</h2>
@@ -267,24 +267,24 @@
               <stop offset="1" stop-color="#a4865e"/>
             </linearGradient>
           </defs>
-          <text class="shapeline__word" x="96" y="512" data-at="0.12">PATTERN</text>
-          <text class="shapeline__word" x="540" y="512" data-at="0.44">PAUSE</text>
-          <text class="shapeline__word" x="700" y="512" data-at="0.60">CHOICE</text>
-          <text class="shapeline__word shapeline__word--creation" x="928" y="512" data-at="0.84">CREATION</text>
-          <path class="shapeline__seg shapeline__seg--pattern" data-seg="0.06,0.40"
+          <text class="shapeline__word" x="96" y="512" data-at="0.12" style="transition-delay:.3s">PATTERN</text>
+          <text class="shapeline__word" x="540" y="512" data-at="0.44" style="transition-delay:1.8s">PAUSE</text>
+          <text class="shapeline__word" x="700" y="512" data-at="0.60" style="transition-delay:2.7s">CHOICE</text>
+          <text class="shapeline__word shapeline__word--creation" x="928" y="512" data-at="0.84" style="transition-delay:3.4s">CREATION</text>
+          <path class="shapeline__seg shapeline__seg--pattern" pathLength="1"
                 d="M 50 396 C 76 396, 90 382, 86 350 C 82 320, 52 320, 52 350 C 52 376, 80 392, 116 396 C 142 396, 156 382, 152 350 C 148 320, 118 320, 118 350 C 118 376, 146 392, 182 396 C 208 396, 222 382, 218 350 C 214 320, 184 320, 184 350 C 184 376, 212 392, 248 396 C 274 396, 288 382, 284 350 C 280 320, 250 320, 250 350 C 250 376, 278 392, 314 396 C 340 396, 354 382, 350 350 C 346 320, 316 320, 316 350 C 316 376, 344 392, 380 396 C 400 398, 408 388, 414 378"/>
-          <path class="shapeline__seg shapeline__seg--pause" data-seg="0.40,0.58"
+          <path class="shapeline__seg shapeline__seg--pause" pathLength="1"
                 d="M 414 378 C 452 372, 474 356, 512 362 C 550 368, 570 386, 610 380 C 640 375, 652 362, 684 364 C 708 366, 720 372, 744 370 C 762 368, 776 366, 792 364"/>
-          <path class="shapeline__seg shapeline__seg--rise" data-seg="0.58,0.82"
+          <path class="shapeline__seg shapeline__seg--rise" pathLength="1"
                 d="M 792 364 C 850 358, 900 330, 940 290 C 972 258, 990 224, 1004 192 C 1012 174, 1018 158, 1022 144"/>
-          <path class="shapeline__leaf" data-at="0.84" d="M 966 262 q 16 -20 34 -22 q -12 20 -34 22 z"/>
-          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.87" d="M 988 232 q -22 -10 -30 -26 q 22 6 30 26 z"/>
-          <path class="shapeline__leaf" data-at="0.90" d="M 1002 204 q 16 -20 32 -22 q -10 20 -32 22 z"/>
-          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.93" d="M 1014 176 q -22 -10 -28 -26 q 20 6 28 26 z"/>
-          <path class="shapeline__leaf" data-at="0.95" d="M 1022 148 q 14 -20 30 -24 q -8 20 -30 24 z"/>
-          <circle class="shapeline__berry" data-at="0.96" cx="1052" cy="150" r="3"/>
-          <circle class="shapeline__berry" data-at="0.97" cx="1040" cy="120" r="2.5"/>
-          <circle class="shapeline__berry" data-at="0.98" cx="1062" cy="128" r="2"/>
+          <path class="shapeline__leaf" data-at="0.84" style="transition-delay:3.2s" d="M 966 262 q 16 -20 34 -22 q -12 20 -34 22 z"/>
+          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.87" style="transition-delay:3.4s" d="M 988 232 q -22 -10 -30 -26 q 22 6 30 26 z"/>
+          <path class="shapeline__leaf" data-at="0.90" style="transition-delay:3.6s" d="M 1002 204 q 16 -20 32 -22 q -10 20 -32 22 z"/>
+          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.93" style="transition-delay:3.8s" d="M 1014 176 q -22 -10 -28 -26 q 20 6 28 26 z"/>
+          <path class="shapeline__leaf" data-at="0.95" style="transition-delay:4s" d="M 1022 148 q 14 -20 30 -24 q -8 20 -30 24 z"/>
+          <circle class="shapeline__berry" data-at="0.96" style="transition-delay:4.15s" cx="1052" cy="150" r="3"/>
+          <circle class="shapeline__berry" data-at="0.97" style="transition-delay:4.3s" cx="1040" cy="120" r="2.5"/>
+          <circle class="shapeline__berry" data-at="0.98" style="transition-delay:4.45s" cx="1062" cy="128" r="2"/>
         </svg>
       </div>
     </section>
@@ -420,9 +420,9 @@
     <!-- FINAL CTA: two honest paths, no pressure. -->
     <section class="section reveal" aria-labelledby="final-cta-title">
       <div class="container container-narrow text-center">
-        <img class="line-lockup" src="/assets/carrie-line-lockup.jpg"
-             alt="A single line untangles from repeated loops and grows into a golden sprig, above the name Carrie Davidson"
-             width="900" height="559" loading="lazy">
+        <img class="line-lockup" src="/assets/carrie-line-mark.png"
+             alt="A single line untangles from repeated loops and grows into a golden sprig"
+             width="840" height="400" loading="lazy">
         <h2 id="final-cta-title">If something in you recognized something in this</h2>
         <div class="grid grid--2" style="margin-top: var(--space-6); gap: var(--space-6);">
           <div>

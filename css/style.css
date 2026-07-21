@@ -1813,5 +1813,31 @@ p { max-width: var(--measure); }
 .art-full { display: block; width: 100%; height: auto; }
 .line-lockup {
   display: block; width: min(380px, 74vw); height: auto;
-  margin: 0 auto var(--space-5); mix-blend-mode: multiply;
+  margin: 0 auto var(--space-5);
+}
+
+/* SHAPELINE v3 (2026-07-21, per Carrie's ADHD feedback): no more tall
+   scroll runway or sticky stage. Compact section; the line draws itself
+   in ~4 seconds when it enters view, words and leaves arriving with it.
+   Static and fully drawn without JS or with reduced motion. */
+.shapeline { height: auto; }
+.shapeline__stage { position: static; min-height: 0; padding: var(--space-6) var(--space-3) var(--space-5); }
+.shapeline__intro { padding-top: var(--space-7); }
+.js .shapeline path[pathLength] { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js .shapeline.is-visible .shapeline__seg--pattern {
+  stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s ease-out 0.15s;
+}
+.js .shapeline.is-visible .shapeline__seg--pause {
+  stroke-dashoffset: 0; transition: stroke-dashoffset 1s ease-in-out 1.75s;
+}
+.js .shapeline.is-visible .shapeline__seg--rise {
+  stroke-dashoffset: 0; transition: stroke-dashoffset 0.9s ease-out 2.75s;
+}
+.js .shapeline [data-at] { opacity: 0; transition: opacity 0.6s ease; }
+.js .shapeline.is-visible [data-at] { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .js .shapeline path[pathLength] {
+    stroke-dasharray: none; stroke-dashoffset: 0; transition: none !important;
+  }
+  .js .shapeline [data-at] { opacity: 1 !important; transition: none !important; }
 }
