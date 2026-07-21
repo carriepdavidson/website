@@ -1808,3 +1808,10 @@ p { max-width: var(--measure); }
 @media (max-width: 44rem) {
   .shapeline__word { font-size: 36px; letter-spacing: .22em; }
 }
+
+/* Carrie's line artwork, used as itself (Design.png + CD.png, 2026-07-21). */
+.art-full { display: block; width: 100%; height: auto; }
+.line-lockup {
+  display: block; width: min(380px, 74vw); height: auto;
+  margin: 0 auto var(--space-5); mix-blend-mode: multiply;
+}
