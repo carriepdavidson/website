@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How to Break Trauma Patterns | Conscious Creation Method</title>
-  <meta name="description" content="How to break a trauma pattern when insight isn't enough: the Conscious Creation Method, a five-step nervous-system approach from an RN and recovery coach.">
+  <meta name="description" content="The Conscious Creation Method. ARC: Awareness, Regulation, Creation, opened into five movements. From the trauma loop to an intentional life.">
   <link rel="canonical" href="https://carriepdavidson.com/method">
   <meta name="author" content="Carrie Davidson, BSPH, BSN, RN">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="How to Break Trauma Patterns | The Conscious Creation Method">
-  <meta property="og:description" content="The loop runs faster than thought. So we don't out-think it. We give it new evidence. The five-step Conscious Creation Method.">
+  <meta property="og:description" content="The Conscious Creation Method. ARC: Awareness, Regulation, Creation, opened into five movements. From the trauma loop to an intentional life.">
   <meta property="og:url" content="https://carriepdavidson.com/method">
   <meta property="og:site_name" content="Carrie Davidson">
   <meta property="og:image" content="https://carriepdavidson.com/assets/og-method.png">
@@ -22,25 +22,42 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721b">
+
+  <!-- Page-specific styles: pieces dc.css does not carry.
+       Large stage-row letter badge, breathing room between the two
+       movement paragraphs, and the felt-cards step labels. -->
+  <style>
+    .chip--stage { width: 120px; height: 120px; font-size: 64px; color: var(--gold-light); margin-bottom: 0; }
+    .movements p + p { margin-top: 6px; }
+    .felt-cards .card { background: var(--bg); }
+    .felt-cards .card h3 {
+      font-family: var(--serif); font-size: 15px; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--plum);
+      margin: 0 0 10px;
+    }
+  </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -70,161 +87,230 @@
 
   <main id="main">
 
-    <!-- ============================================================
-         HERO: two-layer copy: search-language H1 + poetic payoff.
-         ============================================================ -->
-    <!-- COPY-PASS -->
+    <!-- HERO: kicker + h1 + two paragraphs, ARC arch artwork right. -->
     <section class="hero">
       <div class="container">
-        <div class="resource-lead resource-lead--bio resource-lead--wide-photo">
+        <div class="split">
           <div>
             <p class="eyebrow">The Conscious Creation Method&trade;</p>
-            <h1>How to break a trauma pattern: when insight isn&rsquo;t enough</h1>
-            <p class="lede">The loop runs faster than thought. So we don&rsquo;t out-think it.
-              We give it new evidence.</p>
-            <div class="btn-row">
+            <h1>Three stages.<br>One word to remember: <em class="plum">ARC</em>.</h1>
+            <p class="lede measure" style="margin: 24px 0 0; font-size: 19px;">Everything you
+              survived taught your nervous system how to protect you. Now you can teach it
+              something new. The Method is how: a clear path from seeing the pattern to
+              building something different.</p>
+            <p class="measure" style="margin: 20px 0 0; font-size: 18px; color: var(--text-muted);">Awareness
+              reveals the pattern. Regulation creates the pause. Inside that pause, choice
+              becomes possible. And choice is how creation begins.</p>
+            <div class="btn-row" style="margin-top: 32px;">
               <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
             </div>
-            <p class="meta" style="margin-top: var(--space-3);">Or start on your own with the
+            <p class="meta" style="margin: 16px 0 0;">Or start on your own with the
               <a href="assets/conscious-creation-workbook.pdf">free workbook</a>.</p>
           </div>
-          <div class="arch-photo">
-            <img src="assets/carrie-method-steps.jpg"
-                 alt="Carrie Davidson seated on concrete steps, hands clasped, looking into the light"
-                 width="1200" height="1500" fetchpriority="high">
+          <div>
+            <!-- Carrie's original ARC arch artwork. Never redraw or derive from it. -->
+            <div class="art-frame">
+              <img src="/assets/arc-arch.png" fetchpriority="high"
+                   alt="Carrie's ARC arch artwork: a growing plant and a golden spiral beneath an arch, for Awareness, Regulation, Creation"
+                   width="380" height="375">
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- THE LINE: Carrie's artwork, full width. -->
-    <img class="art-full" src="/assets/pattern-line-art.jpg"
-         alt="One continuous line moves from repeated loops labeled pattern, through gentle waves labeled pause, past choice, and grows into a golden branch labeled creation, on a lavender and gold watercolor wash"
-         width="1800" height="982" loading="lazy">
+    <!-- HOW IT WORKS: the loop, in Carrie's words. -->
+    <section class="section section--tint reveal" aria-labelledby="how-title">
+      <div class="container container--read">
+        <p class="eyebrow">Start here</p>
+        <h2 id="how-title">This is how it works</h2>
+        <p style="margin: 26px 0 0; font-size: 18px;">A thought becomes a word. A word becomes
+          an action. An action, repeated enough times, becomes a pattern. A pattern becomes a
+          life that confirms the original thought.</p>
+        <p style="margin: 20px 0 0; font-size: 18px;">This is the loop. It runs below conscious
+          awareness, in your relationships, your choices, your nervous system&rsquo;s reading of
+          every room you walk into. It does not ask permission. It does not check whether the
+          threat is real. It just runs.</p>
+        <p style="margin: 20px 0 0; font-size: 18px;">The loop is not your fault. It was
+          installed before you had any say in the evidence your brain was collecting. And you
+          cannot think your way out, because the loop lives in the body, not the intellect.</p>
+        <p style="margin: 20px 0 0; font-size: 18px;">The pause between trigger and response is
+          where everything changes. Not a dramatic rewrite. Not a personality transplant. Just
+          the pause. The space where a different choice becomes possible.</p>
+        <p class="pullquote" style="margin: 30px 0 0;">That pause is a skill. It can be learned.
+          That is the work.</p>
+      </div>
+    </section>
 
-    <div class="pattern-divider pattern-divider--easing" aria-hidden="true"></div>
+    <!-- FIRST, THE LOOP (dark) -->
+    <section class="section section--dark reveal" aria-labelledby="loop-title">
+      <div class="container container--read center">
+        <p class="eyebrow">First, the loop</p>
+        <h2 id="loop-title" style="font-size: clamp(28px, 3.6vw, 44px); line-height: 1.12;">The
+          pattern lives in the body, not the intellect.</h2>
+        <p class="measure mx-auto" style="margin: 24px auto 0; font-size: 18.5px;">A trigger
+          fires. The nervous system responds the way it learned to long ago. The same story
+          repeats. You cannot think your way out, because the loop lives below thought.
+          That&rsquo;s why insight alone never sets you free, and why the Method works where
+          the pattern actually lives.</p>
+      </div>
+    </section>
 
-    <!-- ============================================================
-         WHY INSIGHT ISN'T ENOUGH: answer-first opener.
-         ============================================================ -->
-    <section class="section section--alt reveal" aria-labelledby="why-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Start here</p>
-          <h2 id="why-title">Why doesn&rsquo;t understanding my trauma make it stop?</h2>
-        </div>
-        <div class="prose">
-          <p>Because insight lives in the thinking brain, and the pattern lives somewhere older
-            and faster. You can explain your loop perfectly and still be inside it.</p>
-          <p>Change has to be practiced through the body: repeated, felt evidence that it is
-            safe to do something new. The Method is how we build that evidence, on purpose.</p>
-          <p class="pullquote">You do not have to think your way out. You have to feel your way home.</p>
+    <!-- THE THREE STAGES: stacked rows, five movements nested inside. -->
+    <section class="section reveal" aria-label="The three stages of ARC">
+      <div class="container container--narrow">
+        <p class="lede measure-wide" style="font-size: 18px;">ARC is the method. Inside those
+          three stages are five movements, a slower and deeper walk through the same arc.
+          Awareness opens into Witness and Understand. Regulation is the work of Interrupt.
+          Creation opens into Create and Build.</p>
+        <div class="stage-rows" style="margin-top: 28px;">
+
+          <div class="stage-row">
+            <div class="chip chip--stage" aria-hidden="true">A</div>
+            <div>
+              <p class="stage-row__kicker">Stage One</p>
+              <h3>Awareness</h3>
+              <p class="measure" style="font-size: 19px;">See the pattern. Name the story
+                living underneath it.</p>
+              <p class="detail measure">Healing begins the moment you stop asking
+                &ldquo;What&rsquo;s wrong with me?&rdquo; and start asking &ldquo;What pattern
+                am I living?&rdquo; We map the loop together, without shame, so it can stop
+                running unseen.</p>
+              <ul class="movements">
+                <li>
+                  <p class="movement__label">The Awareness stage</p>
+                  <h4>Witness</h4>
+                  <p><em>Making the unconscious conscious.</em></p>
+                  <p>You cannot change what you cannot see. The first work is observation.
+                    Turning toward the loop instead of away from it. Building enough awareness
+                    to see the pattern while you are still inside it.</p>
+                </li>
+                <li>
+                  <p class="movement__label">The Awareness stage, continued</p>
+                  <h4>Understand</h4>
+                  <p><em>The mechanism underneath the pattern.</em></p>
+                  <p>Once you can see the loop, the next work is asking it why. Giving it
+                    context. Understanding what it was for. Tracing it back to the room where
+                    it was installed.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="stage-row">
+            <div class="chip chip--stage" aria-hidden="true">R</div>
+            <div>
+              <p class="stage-row__kicker">Stage Two</p>
+              <h3>Regulation</h3>
+              <p class="measure" style="font-size: 19px;">Build the pause between trigger and
+                response.</p>
+              <p class="detail measure">This is the body-based skill the intellect can&rsquo;t
+                supply. Through nervous-system work, you learn to create space where there used
+                to be only the old, automatic reaction.</p>
+              <ul class="movements">
+                <li>
+                  <p class="movement__label">The Regulation stage</p>
+                  <h4>Interrupt</h4>
+                  <p><em>Building the pause.</em></p>
+                  <p>Activation is fast. Choice is slower. The work is to build the gap between
+                    them, one breath at a time, until choice has room to enter.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="stage-row">
+            <div class="chip chip--stage" aria-hidden="true">C</div>
+            <div>
+              <p class="stage-row__kicker">Stage Three</p>
+              <h3>Creation</h3>
+              <p class="measure" style="font-size: 19px;">Make something new. Choice becomes
+                possible here.</p>
+              <p class="detail measure">Inside the pause, you get to choose, and choice is how
+                creation begins. The act of making moves what talking cannot reach. This is
+                where a different story gets built.</p>
+              <ul class="movements">
+                <li>
+                  <p class="movement__label">The Creation stage</p>
+                  <h4>Create</h4>
+                  <p><em>Finding your creative flow.</em></p>
+                  <p>Creativity is the opposite of stuck trauma. This stage is about finding
+                    the state, the one that is yours alone, that interrupts the loop at the
+                    level of the body and begins to lay new pathways down.</p>
+                </li>
+                <li>
+                  <p class="movement__label">The Creation stage, continued</p>
+                  <h4>Build</h4>
+                  <p><em>Building the intentional life.</em></p>
+                  <p>The daily, unglamorous, deeply worthwhile work of choosing Conscious
+                    Creation over and over again, long enough that the new pattern becomes as
+                    automatic as the old one was.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         THE FIVE STEPS at a glance.
-         ============================================================ -->
-    <section class="section reveal" aria-labelledby="steps-title">
+    <!-- PATTERN. PAUSE. CHOICE. CREATION. (tint) -->
+    <section class="section section--tint reveal" aria-labelledby="felt-title">
       <div class="container">
-        <div class="section-head section-head--center">
-          <p class="eyebrow">The five steps</p>
-          <h2 id="steps-title">The Method at a glance</h2>
-          <p>Five steps. Three stages: Awareness, Regulation, Creation.</p>
+        <div class="section-head center measure-wide mx-auto">
+          <p class="eyebrow">The same healing, felt from the inside</p>
+          <h2 id="felt-title">Pattern. Pause. Choice. Creation.</h2>
+          <p style="margin: 20px 0 0; font-size: 18px;">ARC is the method. This is what it
+            feels like as you live it.</p>
         </div>
-        <ul class="phase-cards phase-cards--5">
-          <li class="phase-card phase-card--1">
-            <span class="phase-card__stage">Awareness</span>
-            <span class="phase-card__num" aria-hidden="true">1</span>
-            <h3>Witness</h3>
-            <p>See the pattern while it runs.</p>
+        <ul class="cards-4 felt-cards" style="list-style: none; margin: 0; padding: 0;">
+          <li class="card" style="padding: 28px 24px;">
+            <h3>Pattern</h3>
+            <p>The loop that&rsquo;s been running, now visible.</p>
           </li>
-          <li class="phase-card phase-card--2">
-            <span class="phase-card__stage">Awareness</span>
-            <span class="phase-card__num" aria-hidden="true">2</span>
-            <h3>Understand</h3>
-            <p>Name the story underneath it.</p>
+          <li class="card" style="padding: 28px 24px;">
+            <h3>Pause</h3>
+            <p>The space you build between trigger and response.</p>
           </li>
-          <li class="phase-card phase-card--3">
-            <span class="phase-card__stage">Regulation</span>
-            <span class="phase-card__num" aria-hidden="true">3</span>
-            <h3>Interrupt</h3>
-            <p>Build the pause between trigger and response.</p>
+          <li class="card" style="padding: 28px 24px;">
+            <h3>Choice</h3>
+            <p>What becomes possible inside that space.</p>
           </li>
-          <li class="phase-card phase-card--5">
-            <span class="phase-card__stage">Creation</span>
-            <span class="phase-card__num" aria-hidden="true">4</span>
-            <h3>Find Creative Flow</h3>
-            <p>Make something. Making moves what talking cannot.</p>
-          </li>
-          <li class="phase-card phase-card--6">
-            <span class="phase-card__stage">Creation</span>
-            <span class="phase-card__num" aria-hidden="true">5</span>
-            <h3>Build the Intentional Life</h3>
-            <p>Choose the new pattern until it feels familiar.</p>
+          <li class="card" style="padding: 28px 24px;">
+            <h3>Creation</h3>
+            <p>The new thing you make from there.</p>
           </li>
         </ul>
-        <p class="meta text-center" style="margin-top: var(--space-5);">Practiced privately in
-          <a href="/arc-program">the ARC Program</a>, self-paced in
-          <a href="/rooted-and-rising">Rooted &amp; Rising</a>, or
-          <a href="/writing/break-the-trauma-loop">read the full walkthrough &rarr;</a></p>
       </div>
     </section>
 
-    <!-- ============================================================
-         WHAT THIS METHOD IS, AND IS NOT: scope clarity in her voice.
-         Two short lists, using the coaching fit/not-fit .grid--2 pattern.
-         ============================================================ -->
-    <section class="section section--alt reveal" aria-labelledby="scope-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Honest edges</p>
-          <h2 id="scope-title">What this method is, and what it is not</h2>
-          <p>I want the boundary to be clear, because clarity is its own kind of safety. This method is
-            nervous-system-informed, shaped by research on regulation, trauma, and creative arts
-            interventions, and by the years I spent walking it myself.</p>
-        </div>
-        <div class="grid grid--2">
-          <div class="card">
-            <h3>What it is</h3>
-            <ul>
-              <li>Coaching: present-and-forward companionship as you build a new pattern.</li>
-              <li>Education: naming what trauma does in the body, without shame.</li>
-              <li>A creative practice: creation is where the change actually happens.</li>
-              <li>Nervous-system-informed: paced to what your body can actually hold.</li>
-              <li>Built from research, professional experience, and lived experience, together.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>What it is not</h3>
-            <ul>
-              <li>Not psychotherapy, and not a diagnosis of anything.</li>
-              <li>Not medical treatment or nursing care.</li>
-              <li>Not art therapy, though creativity lives at its center.</li>
-              <li>Not crisis care. If you are in crisis, the resources below can help right now.</li>
-              <li>Not a replacement for licensed mental-health or medical support.</li>
-            </ul>
-            <p class="meta">Coaching is companionship alongside care, not a replacement for it.</p>
-          </div>
-        </div>
+    <!-- THE CORE BELIEF (dark) -->
+    <section class="section section--dark reveal" aria-label="The core belief">
+      <div class="container container--read center">
+        <p class="eyebrow">The core belief</p>
+        <p class="measure mx-auto" style="margin: 0; font-size: 18.5px;">The loop runs faster
+          than thought. By the time we notice the pattern, we are already inside it. The work
+          is to build the noticing that comes a little earlier each time, until the noticing
+          arrives before the loop does.</p>
+        <p class="measure mx-auto" style="margin: 20px auto 0; font-size: 18.5px;">The Method
+          is the practice of building that noticing.</p>
+        <p class="pullquote mx-auto" style="margin: 30px auto 0;">You are not broken. You are
+          patterned. And patterns can change.</p>
       </div>
     </section>
 
-    <!-- ============================================================
-         PRIMARY CTA: coaching + newsletter fallback.
-         ============================================================ -->
-    <!-- COPY-PASS -->
-    <section class="section section--accent reveal" aria-labelledby="cta-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">You already know the theory. Now give your body the evidence.</p>
-        <h2 id="cta-title">Move through the method with a guide who has walked it</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">Coaching is where the five steps stop
-          being an idea and start becoming more available to your body over time: paced to
-          your nervous system, guided by me, who built this Method to get myself out. Not ready yet?
-          The <a href="/subscribe">Sunday Letter</a> brings one small practice to your inbox each week.</p>
+    <!-- CTA -->
+    <section class="section reveal" aria-labelledby="cta-title">
+      <div class="container container--read center">
+        <p class="lede-serif-italic" style="margin: 0 0 16px;">Whatever we tend, grows.</p>
+        <h2 id="cta-title" style="font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12;">Ready
+          to walk the ARC with someone?</h2>
+        <p style="margin: 18px 0 32px; font-size: 18px;">The ARC Program is twelve weeks of
+          private coaching built on this Method. Or begin at your own pace with
+          Rooted &amp; Rising.</p>
         <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
+          <a class="btn btn--primary" href="/arc-program">See the ARC Program</a>
+          <a class="btn btn--secondary" href="/rooted-and-rising">Explore Rooted &amp; Rising</a>
         </div>
       </div>
     </section>
@@ -232,22 +318,21 @@
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -275,9 +360,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -318,7 +403,7 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
