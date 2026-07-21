@@ -22,12 +22,13 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
 
   <!-- Breadcrumb structured data: Home > Resources > The Trauma Tree Workbook -->
   <script type="application/ld+json">
@@ -46,13 +47,15 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copied verbatim. Resources marked aria-current.
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -82,9 +85,11 @@
 
   <main id="main">
 
-    <!-- HERO: breadcrumb + H1 + poetic payoff -->
+    <!-- HERO: breadcrumb + H1 + poetic payoff + ungated download.
+         The optional Sunday Letter signup below the button is a
+         Carrie-approved companion, not a second CTA. -->
     <section class="hero">
-      <div class="container container-narrow">
+      <div class="container container--narrow">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol>
             <li><a href="/">Home</a></li>
@@ -93,20 +98,21 @@
           </ol>
         </nav>
         <p class="eyebrow">Free resource</p>
-        <h1>The Trauma Tree Workbook</h1>
-        <p class="lede">See the loop as one whole thing, not a hundred separate failures.</p>
-        <p>A free 19-page workbook that traces one repeating pattern from the branch you can see
-          to the root you usually cannot.</p>
-        <div class="btn-row">
+        <h1 style="font-size: clamp(38px, 4.8vw, 60px);">The Trauma Tree Workbook</h1>
+        <p class="lede-serif-italic" style="margin: 20px 0 0;">See the loop as one whole thing,
+          not a hundred separate failures.</p>
+        <p class="measure" style="margin: 18px 0 0;">A free 19-page workbook that traces one
+          repeating pattern from the branch you can see to the root you usually cannot.</p>
+        <div class="btn-row" style="margin-top: 30px;">
           <a class="btn btn--primary" href="/assets/trauma-tree-worksheet.pdf">Download the workbook (free) &rarr;</a>
         </div>
 
-        <div class="signup" style="margin-top: var(--space-6);">
+        <div style="margin-top: 44px;">
           <p class="meta">The download is open, no email required. Want the Sunday Letter
             alongside it? Leave your email here.</p>
           <form class="signup__form" method="post"
                 action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
-                data-ml-form style="margin-top: var(--space-3);">
+                data-ml-form style="margin-top: 14px; margin-inline: 0;">
             <label class="visually-hidden" for="worksheet-email">Email address</label>
             <input class="input" id="worksheet-email" name="fields[email]" type="email"
                    autocomplete="email" placeholder="Your email address" required>
@@ -118,61 +124,59 @@
       </div>
     </section>
 
-    <!-- DETAIL: what it is / who it may help / what's included + format -->
-    <section class="section section--tight">
-      <div class="container container-narrow">
+    <!-- DETAIL: the three parts + format facts + second download -->
+    <section class="section reveal" aria-labelledby="how-title">
+      <div class="container container--narrow">
         <div class="section-head">
           <p class="eyebrow">How it works</p>
-          <h2>One pattern, seen whole</h2>
+          <h2 id="how-title" class="h2-small">One pattern, seen whole</h2>
         </div>
-        <ul class="phase-cards" aria-label="The three parts of the Trauma Tree">
-          <li class="phase-card phase-card--1">
-            <span class="phase-card__num" aria-hidden="true">1</span>
+        <ul class="cards-3" style="list-style: none; margin: 0; padding: 0;"
+            aria-label="The three parts of the Trauma Tree">
+          <li class="card">
+            <span class="chip" aria-hidden="true">1</span>
             <h3>Roots</h3>
             <p>What happened.</p>
           </li>
-          <li class="phase-card phase-card--3">
-            <span class="phase-card__num" aria-hidden="true">2</span>
+          <li class="card">
+            <span class="chip" aria-hidden="true">2</span>
             <h3>Trunk</h3>
             <p>What you came to believe.</p>
           </li>
-          <li class="phase-card phase-card--5">
-            <span class="phase-card__num" aria-hidden="true">3</span>
+          <li class="card">
+            <span class="chip" aria-hidden="true">3</span>
             <h3>Branches</h3>
             <p>The patterns you live out today.</p>
           </li>
         </ul>
-        <div class="resource-lead" style="margin-top: var(--space-6);">
-          <div>
-            <p>Written for the insight-rich and still stuck. There are no wrong answers, and
-              nothing here is a diagnosis.</p>
 
-            <h2>Format and size</h2>
-            <dl class="res-facts">
-              <dt>Format</dt><dd>PDF (printable)</dd>
-              <dt>Length</dt><dd>19 pages</dd>
-              <dt>Size</dt><dd>About 3.9 MB</dd>
-              <dt>Access</dt><dd>Open download, no email required</dd>
-            </dl>
+        <p style="margin: 40px 0 0;">Written for the self-aware and still stuck. There are no
+          wrong answers, and nothing here is a diagnosis.</p>
 
-            <p class="disclaimer-inline">This workbook is education and reflection, not therapy,
-              diagnosis, or medical treatment. If you are in crisis, the resources at the bottom
-              of this page can help right now.</p>
+        <h2 class="h2-small" style="margin: 44px 0 0;">Format and size</h2>
+        <dl class="res-facts">
+          <dt>Format</dt><dd>PDF (printable)</dd>
+          <dt>Length</dt><dd>19 pages</dd>
+          <dt>Size</dt><dd>About 3.9 MB</dd>
+          <dt>Access</dt><dd>Open download, no email required</dd>
+        </dl>
 
-            <div class="btn-row" style="margin-top: var(--space-6);">
-              <a class="btn btn--primary" href="/assets/trauma-tree-worksheet.pdf">Download the workbook (free)</a>
-            </div>
-          </div>
+        <p class="disclaimer-inline">This workbook is education and reflection, not therapy,
+          diagnosis, or medical treatment. If you are in crisis, the resources at the bottom
+          of this page can help right now.</p>
+
+        <div class="btn-row" style="margin-top: 36px;">
+          <a class="btn btn--primary" href="/assets/trauma-tree-worksheet.pdf">Download the workbook (free)</a>
         </div>
       </div>
     </section>
 
-    <!-- RELATED: one hub link -->
-    <section class="section section--alt section--tight reveal" aria-labelledby="related-title">
-      <div class="container container-narrow">
+    <!-- RELATED: one hub link (tint) -->
+    <section class="section section--tint reveal" aria-labelledby="related-title">
+      <div class="container container--narrow">
         <div class="section-head">
           <p class="eyebrow">Read alongside it</p>
-          <h2 id="related-title">Where this fits</h2>
+          <h2 id="related-title" class="h2-small">Where this fits</h2>
         </div>
         <ul class="topic-links">
           <li>
@@ -184,15 +188,16 @@
       </div>
     </section>
 
-    <!-- SUNDAY LETTER: quiet invite -->
-    <section class="section section--accent reveal" aria-labelledby="cta-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">The Sunday Letter</p>
-        <h2 id="cta-title">A quiet note every Sunday, when you want the next small step</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">Neuroscience precision, a poetic
-          reframe, and one small practice. No hustle, no shame, no urgency. Only if and when you want it.</p>
+    <!-- SUNDAY LETTER: quiet invite (dark) -->
+    <section class="section section--dark reveal" aria-labelledby="cta-title">
+      <div class="container container--narrow center">
+        <p class="eyebrow">The Sunday Letter</p>
+        <h2 id="cta-title" class="h2-small">A quiet note every Sunday, when you want the next small step</h2>
+        <p class="mx-auto" style="max-width: 40em; margin: 18px auto 32px;">Neuroscience precision,
+          a poetic reframe, and one small practice. No hustle, no shame, no urgency. Only if and
+          when you want it.</p>
         <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
+          <a class="btn btn--ghost-dark" href="/subscribe">Get the Sunday Letter</a>
         </div>
       </div>
     </section>
@@ -200,21 +205,21 @@
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copied verbatim. Worksheet link is root-relative
-       (/assets/...) so it resolves from /resources/.
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -242,9 +247,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -285,7 +290,7 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }

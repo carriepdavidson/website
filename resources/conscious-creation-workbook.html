@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Conscious Creation Workbook | Free PDF</title>
-  <meta name="description" content="A free workbook of prompts for building an intentional life after regulation, one honest choice at a time. Open PDF from Carrie Davidson, RN.">
+  <meta name="description" content="A free 40-page workbook built on the Conscious Creation Method: Awareness, Regulation, Creation, opened into five movements. From Carrie Davidson, RN.">
   <link rel="canonical" href="https://carriepdavidson.com/resources/conscious-creation-workbook">
   <meta name="author" content="Carrie Davidson, BSPH, BSN, RN">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Conscious Creation Workbook | Free PDF">
-  <meta property="og:description" content="Prompts for building the intentional life that comes after regulation, one honest choice at a time.">
+  <meta property="og:description" content="A free 40-page workbook built on the Conscious Creation Method: Awareness, Regulation, Creation, opened into five movements. From Carrie Davidson, RN.">
   <meta property="og:url" content="https://carriepdavidson.com/resources/conscious-creation-workbook">
   <meta property="og:site_name" content="Carrie Davidson">
   <meta property="og:image" content="https://carriepdavidson.com/assets/og-arc.png">
@@ -22,12 +22,18 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
+
+  <style>
+    /* Page-local: bold movement leads read in ink. */
+    .movements p strong { color: var(--ink); }
+  </style>
 
   <!-- Breadcrumb structured data: Home > Resources > The Conscious Creation Workbook -->
   <script type="application/ld+json">
@@ -43,11 +49,18 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a><header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
+       ============================================================ -->
+  <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -77,8 +90,9 @@
 
   <main id="main">
 
-<section class="hero">
-      <div class="container container-narrow">
+    <!-- HERO: breadcrumb + H1 + ungated download -->
+    <section class="hero">
+      <div class="container container--narrow">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol>
             <li><a href="/">Home</a></li>
@@ -86,54 +100,69 @@
             <li><span aria-current="page">The Conscious Creation Workbook</span></li>
           </ol>
         </nav>
-        <p class="eyebrow">Free workbook</p>
-        <h1>The Conscious Creation Workbook</h1>
-        <p class="lede">The life that comes after regulation, one honest choice at a time.</p>
-        <p>The Creation phase of the Method, on paper. Once the nervous system settles, a quieter question
-          arrives: now what? This workbook is for building forward from that steadier place, deliberately,
-          instead of drifting back into the old loop.</p>
-        <div class="btn-row">
+        <p class="eyebrow">Free Workbook</p>
+        <h1 style="font-size: clamp(38px, 4.8vw, 60px);">The Conscious Creation Workbook.
+          Yours, free.</h1>
+        <p class="lede measure-wide" style="margin: 24px 0 0;">A 40-page, self-paced companion
+          built on the Conscious Creation Method. The framework I developed for myself, over
+          years of therapy and many modalities, for moving from the loop to something new,
+          slowly, on your own time, in the quiet of your own room.</p>
+        <div class="btn-row" style="margin-top: 32px;">
           <a class="btn btn--primary" href="/assets/conscious-creation-workbook.pdf">Download the workbook (free) &rarr;</a>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight">
-      <div class="container container-narrow">
-        <div class="resource-lead resource-lead--cover">
+    <!-- INSIDE THE WORKBOOK: five movements (tint) -->
+    <section class="section section--tint reveal" aria-labelledby="inside-title">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <p class="eyebrow">What&rsquo;s in it</p>
+          <h2 id="inside-title" class="h2-small">Inside the workbook</h2>
+          <p style="margin: 18px 0 0;">Five parts, twenty-three exercises, one arc. The same
+            method you met on this site, Awareness, Regulation, Creation, opened into five
+            movements:</p>
+        </div>
+        <ul class="movements">
+          <li><p><strong>Witness.</strong> Somatic check-ins, mapping your nervous system
+            baseline, and your first creative flow discovery.</p></li>
+          <li><p><strong>Understand.</strong> Tracing the loop back to where it started and
+            drawing your first map.</p></li>
+          <li><p><strong>Interrupt.</strong> The activation protocol and a personal regulation
+            toolkit.</p></li>
+          <li><p><strong>Create.</strong> The full creative flow discovery, conscious language,
+            and a daily gratitude practice.</p></li>
+          <li><p><strong>Build.</strong> The intentional life. The corrected map, boundaries,
+            weekly reflection, and a letter to your future self.</p></li>
+        </ul>
+        <p style="margin: 36px 0 0;">No paywall. No email gate. Just the framework I built for
+          myself, the long way, over years. Yours to take home and work through at your own pace.</p>
+      </div>
+    </section>
+
+    <!-- FORMAT + COVER + SECOND DOWNLOAD -->
+    <section class="section reveal" aria-labelledby="facts-title">
+      <div class="container container--narrow">
+        <div class="split split--even" style="align-items: start;">
           <div>
             <img class="resource-cover" src="/assets/cover-conscious-creation-workbook.svg"
                  alt="Cover of the free workbook: The Conscious Creation Workbook"
                  loading="lazy" width="480" height="300">
           </div>
           <div>
-            <h2>What it is</h2>
-            <p>A printable workbook of prompts for the Creation phase: naming what you actually want and
-              making the small, honest choices that build toward it. It is the part of the work that comes
-              after the alarm quiets, when there is finally room to choose.</p>
-
-            <h2>Who it may help</h2>
-            <p>It may help you if you have done some of the regulation work and are ready for the next
-              question. It is for building from a steadier place, not for the acute middle of a hard
-              season. Nothing here is a diagnosis.</p>
-
-            <h2>What is included</h2>
-            <p>A printable workbook of reflective prompts for naming what you want and choosing toward it,
-              one honest step at a time. Work through it in order or dip into the prompts that fit where
-              you are.</p>
-
-            <h2>Format and size</h2>
+            <h2 id="facts-title" class="h2-small">Format and size</h2>
             <dl class="res-facts">
               <dt>Format</dt><dd>PDF (printable)</dd>
               <dt>Size</dt><dd>40 pages &middot; about 720 KB</dd>
               <dt>Access</dt><dd>Open download, no email required</dd>
             </dl>
 
-            <p class="disclaimer-inline">This workbook is education and reflection, not therapy, diagnosis,
-              or medical treatment. It can walk beside care from a licensed professional. It does not
-              replace it. If you are in crisis, the resources at the bottom of this page can help right now.</p>
+            <p class="disclaimer-inline">This workbook is education and reflection, not therapy,
+              diagnosis, or medical treatment. It can walk beside care from a licensed
+              professional. It does not replace it. If you are in crisis, the resources at the
+              bottom of this page can help right now.</p>
 
-            <div class="btn-row" style="margin-top: var(--space-6);">
+            <div class="btn-row" style="margin-top: 28px;">
               <a class="btn btn--primary" href="/assets/conscious-creation-workbook.pdf">Download the workbook (free)</a>
             </div>
           </div>
@@ -141,11 +170,12 @@
       </div>
     </section>
 
-    <section class="section section--alt section--tight reveal" aria-labelledby="related-title">
-      <div class="container container-narrow">
+    <!-- RELATED: one hub link (tint) -->
+    <section class="section section--tint reveal" aria-labelledby="related-title">
+      <div class="container container--narrow">
         <div class="section-head">
           <p class="eyebrow">Read alongside it</p>
-          <h2 id="related-title">Where this fits</h2>
+          <h2 id="related-title" class="h2-small">Where this fits</h2>
         </div>
         <ul class="topic-links">
           <li>
@@ -155,32 +185,40 @@
           </li>
         </ul>
       </div>
-    </section><section class="section section--accent reveal" aria-labelledby="cta-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">The Sunday Letter</p>
-        <h2 id="cta-title">A quiet note every Sunday, when you want the next small step</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">Neuroscience precision, a poetic
-          reframe, and one small practice. No hustle, no shame, no urgency. Only if and when you want it.</p>
+    </section>
+
+    <!-- SUNDAY LETTER: quiet invite (dark) -->
+    <section class="section section--dark reveal" aria-labelledby="cta-title">
+      <div class="container container--narrow center">
+        <p class="eyebrow">The Sunday Letter</p>
+        <h2 id="cta-title" class="h2-small">A quiet note every Sunday, when you want the next small step</h2>
+        <p class="mx-auto" style="max-width: 40em; margin: 18px auto 32px;">Neuroscience precision,
+          a poetic reframe, and one small practice. No hustle, no shame, no urgency. Only if and
+          when you want it.</p>
         <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
+          <a class="btn btn--ghost-dark" href="/subscribe">Get the Sunday Letter</a>
         </div>
       </div>
     </section>
 
   </main>
 
-<footer class="site-footer">
+  <!-- ============================================================
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
+       ============================================================ -->
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -208,14 +246,15 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
       </div>
 
+      <!-- Crisis resources: ethical + trust signal. Keep on every page. -->
       <section class="crisis" aria-label="Crisis resources">
         <h2>If you are in crisis, reach out now</h2>
         <p>You deserve immediate support. In the U.S.: call or text <strong>988</strong>
@@ -224,6 +263,7 @@
           If you are in immediate danger, call 911.</p>
       </section>
 
+      <!-- Scope disclaimer: in Carrie's voice; YMYL trust. -->
       <p class="disclaimer">Coaching is companionship alongside care, not a replacement for it.
         This work is trauma recovery coaching and education. It is not therapy, diagnosis, or medical
         treatment, and it is not a substitute for care from a licensed mental-health or medical
@@ -236,6 +276,7 @@
       </div>
     </div>
 
+    <!-- Organization JSON-LD: sitewide entity (one canonical name). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -248,7 +289,7 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }

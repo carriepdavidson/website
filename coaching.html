@@ -11,7 +11,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Trauma Recovery Coach (vs Therapist) | Carrie Davidson, RN">
-  <meta property="og:description" content="Clinically grounded, body-based trauma recovery coaching for the insight-rich and still stuck. Whatever we tend, grows.">
+  <meta property="og:description" content="Clinically grounded, body-based trauma recovery coaching for the self-aware and still stuck. Whatever we tend, grows.">
   <meta property="og:url" content="https://carriepdavidson.com/coaching">
   <meta property="og:site_name" content="Carrie Davidson">
   <meta property="og:image" content="https://carriepdavidson.com/assets/og-arc.png">
@@ -22,12 +22,51 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
+
+  <!-- Page-specific styles: breath pacer + tools widgets (ported from
+       css/style.css into dc tokens) and the coach/therapist table. -->
+  <style>
+    .widget {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 36px 30px;
+    }
+    .widget h3 { margin: 0 0 10px; color: var(--ink); }
+    .widget ul { margin: 16px 0 18px; padding-left: 22px; }
+    .widget li { margin-bottom: 8px; color: var(--text); }
+    .pacer__stage {
+      display: flex; align-items: center; gap: 28px;
+      margin: 24px 0; min-height: 7rem;
+    }
+    .pacer__circle {
+      flex: 0 0 auto; width: 4rem; height: 4rem; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, var(--outline), var(--plum));
+      transform: scale(1); opacity: 0.85;
+    }
+    .pacer__circle.is-in  { transform: scale(1.6); transition: transform 4s ease-in-out; }
+    .pacer__circle.is-out { transform: scale(1.0); transition: transform 6s ease-in-out; }
+    .pacer__cue { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--plum); }
+    @media (prefers-reduced-motion: reduce) {
+      .pacer__circle.is-in, .pacer__circle.is-out { transition: none; transform: scale(1); }
+    }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-compare { width: 100%; border-collapse: collapse; min-width: 34rem; }
+    .table-compare th, .table-compare td {
+      text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--card-border);
+      vertical-align: top; font-size: 16px; color: var(--text);
+    }
+    .table-compare tbody th { color: var(--ink); font-weight: 600; }
+    .table-compare thead th {
+      font-family: var(--sans); font-size: 13px; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-faint);
+    }
+  </style>
 
   <!-- Service JSON-LD: coaching offer; provider resolves to Carrie (#carrie).
        Offer names mirror the visible offers on this page (content parity). -->
@@ -96,14 +135,15 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -133,32 +173,116 @@
 
   <main id="main">
 
-    <!-- HERO: SEO h1 + locked line. Chambray photo. One CTA. -->
-    <section class="hero-banner" style="background-image: url(/assets/carrie-client-conversation.jpg);"
-             aria-label="Carrie Davidson smiling in conversation with a client across a cafe table">
+    <!-- HERO (light): SEO h1 + locked line. One CTA. -->
+    <section class="hero">
       <div class="container">
-        <div class="hero-banner__copy">
-          <p class="eyebrow">Work with me</p>
-          <h1>Trauma recovery coaching for the insight-rich and still stuck</h1>
-          <p class="lede">Break the trauma loop. Not by talking about it. By creating your way
-            through it.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
+        <div class="split">
+          <div>
+            <p class="eyebrow">Work with me</p>
+            <h1>Trauma recovery coaching for the self-aware and still stuck</h1>
+            <p class="lede measure" style="margin: 26px 0 0;">Break the trauma loop. Not by
+              talking about it. By creating your way through it.</p>
+            <div class="btn-row" style="margin-top: 32px;">
+              <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
+            </div>
+            <p class="cred-line" style="margin: 30px 0 0;">BSPH, BSN, RN &middot; Certified
+              Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
           </div>
-          <p class="meta" style="margin-top: var(--space-3);">BSPH, BSN, RN &middot; Certified
-            Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
+          <div>
+            <div class="portrait-frame portrait-frame--4x5">
+              <img src="/assets/carrie-client-conversation.jpg" fetchpriority="high"
+                   alt="Carrie Davidson smiling in conversation with a client across a cafe table"
+                   width="1600" height="1067">
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- THE GENTLE PAUSE: feel the work before you buy any of it. -->
-    <section class="section section--alt reveal" aria-labelledby="pause-title">
+    <!-- CHOOSE YOUR DOOR (dark): copied from the homepage doors section. -->
+    <section id="doors" class="section section--dark reveal" aria-labelledby="offers-title">
       <div class="container">
-        <div class="section-head section-head--center">
-          <p class="eyebrow">Feel a piece of the work</p>
-          <h2 id="pause-title">Before you read another word, try one minute of it</h2>
+        <div class="section-head center mx-auto" style="max-width: 40em; margin-bottom: 12px;">
+          <p class="eyebrow">Three ways to begin</p>
+          <h2 id="offers-title">Choose your door</h2>
+          <p style="margin: 18px 0 0; color: var(--on-dark-3);">Start wherever you are. Every
+            door leads to the same work, at the pace and depth that fit you now.</p>
         </div>
-        <div class="container-narrow" style="margin: var(--space-7) auto 0;">
+        <div class="ladder-labels" aria-hidden="true">
+          <span>Free</span><span class="sep">&middot;&middot;&middot;</span>
+          <span>Self-paced</span><span class="sep">&middot;&middot;&middot;</span>
+          <span>Private</span>
+        </div>
+        <div class="doors">
+          <div class="door">
+            <p class="door__kicker">The wide door</p>
+            <h3>The Sunday Letter</h3>
+            <p class="door__price">Free, forever</p>
+            <p class="door__body">One letter, most Sundays: one thing I know, one small thing
+              to try. No homework guilt.</p>
+            <a class="btn btn--ghost-dark" href="/subscribe">Get the letter</a>
+          </div>
+          <div class="door">
+            <p class="door__kicker">At your own pace</p>
+            <h3>Rooted &amp; Rising</h3>
+            <p class="door__price">$222 &middot; six-week course</p>
+            <p class="door__body">Build the intentional life on your own schedule, the Method,
+              structured into six weeks you can revisit anytime.</p>
+            <a class="btn btn--ghost-dark" href="/rooted-and-rising">See the course</a>
+          </div>
+          <div class="door door--featured">
+            <span class="badge-gold">Most personal</span>
+            <p class="door__kicker">Private coaching</p>
+            <h3>The ARC Program</h3>
+            <p class="door__price">$3,000 &middot; 12 weeks, 1:1</p>
+            <p class="door__hook">Break the trauma loop.</p>
+            <p class="door__body">Twelve weeks of private coaching built on the Conscious
+              Creation Method&trade;. The deepest, most accompanied version of this work.</p>
+            <a class="btn btn--primary" href="/arc-program">See the program</a>
+          </div>
+        </div>
+        <p class="center mx-auto" style="margin-top: 32px; color: var(--on-dark-3); font-size: 15.5px; max-width: 40em;">Not
+          sure which fits? <a href="/discovery-call" style="color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px;">Book a free call</a>,
+          a conversation, not a pitch. We&rsquo;ll find the honest fit, even if it isn&rsquo;t me.</p>
+      </div>
+    </section>
+
+    <!-- GETTING STARTED -->
+    <section class="section reveal" aria-labelledby="start-title">
+      <div class="container">
+        <div class="section-head center measure-wide mx-auto">
+          <h2 id="start-title">Getting started is simple</h2>
+        </div>
+        <ul class="cards-3" style="list-style: none; margin: 0; padding: 0;">
+          <li class="card">
+            <span class="chip" aria-hidden="true">1</span>
+            <h3>Book a Call</h3>
+            <p>A free conversation, not a pitch.</p>
+          </li>
+          <li class="card">
+            <span class="chip" aria-hidden="true">2</span>
+            <h3>Get your plan</h3>
+            <p>We find the honest fit, even if it isn&rsquo;t me.</p>
+          </li>
+          <li class="card">
+            <span class="chip" aria-hidden="true">3</span>
+            <h3>Do the work, accompanied</h3>
+            <p>Weekly sessions. A nervous system learning something new.</p>
+          </li>
+        </ul>
+        <p class="italic-note center" style="margin: 36px 0 0;">Someone who has walked it,
+          walking beside you.</p>
+      </div>
+    </section>
+
+    <!-- THE GENTLE PAUSE (tint): feel the work before you buy any of it. -->
+    <section class="section section--tint reveal" aria-labelledby="pause-title">
+      <div class="container">
+        <div class="section-head center measure-wide mx-auto">
+          <p class="eyebrow">Feel a piece of the work</p>
+          <h2 id="pause-title" class="h2-small">Before you read another word, try one minute of it</h2>
+        </div>
+        <div class="container--narrow mx-auto" style="padding-inline: 0;">
           <div class="widget widget--pacer" data-widget="pacer">
             <h3>The gentle pause</h3>
             <p class="meta">In for four, out for six, five rounds. Follow the circle with your
@@ -170,7 +294,7 @@
             </div>
             <button class="btn btn--secondary" type="button" data-pacer-toggle>Begin</button>
           </div>
-          <div class="widget" style="margin-top: var(--space-5);">
+          <div class="widget" style="margin-top: 24px;">
             <h3>If breathing is out of reach</h3>
             <p>A flooded body cannot count breaths. Go outside-in instead:</p>
             <ul>
@@ -186,91 +310,45 @@
           </div>
         </div>
       </div>
-      </div>
     </section>
 
-    <!-- PHOTO BAND -->
-    <div class="photo-band" style="background-image: url(/assets/carrie-stepping-stones.jpg); background-position: center 38%;"
-         role="img" aria-label="Carrie Davidson crossing stepping stones over a green woodland pond">
-      <p class="photo-band__line">Someone who has walked it, walking beside you.</p>
-    </div>
-
-    <div class="pattern-divider" aria-hidden="true"></div>
-
-    <!-- THREE DOORS -->
-    <section class="section reveal" aria-labelledby="doors-title">
-      <div class="container container-narrow">
-        <div class="section-head section-head--center">
-          <p class="eyebrow">Three ways in</p>
-          <h2 id="doors-title">Choose the depth and pace that fits</h2>
+    <!-- FIT / NOT-FIT -->
+    <section class="section reveal" aria-labelledby="fit-title">
+      <div class="container">
+        <div class="section-head center measure-wide mx-auto">
+          <p class="eyebrow">The honest fit</p>
+          <h2 id="fit-title" class="h2-small">Is this the right fit?</h2>
         </div>
-        <ul class="topic-links topic-links--3">
-          <li>
-            <img src="/assets/arc-logo.png"
-                 alt="The ARC logo: an arch in purple and gold. Awareness, Regulation, Creation." class="door-badge">
-            <h3>The ARC Program</h3>
-            <p><strong>Break the Trauma Loop.</strong> 12 weeks of private coaching. $3,000,
-              stated plainly.</p>
-            <p><a href="/arc-program">See the program &rarr;</a></p>
-          </li>
-          <li>
-            <img src="/assets/rooted-and-rising-logo.png"
-                 alt="The Rooted and Rising logo: a rooted tree rising beneath a purple and gold arch" class="door-badge">
-            <h3>Rooted &amp; Rising</h3>
-            <p><strong>Build the Intentional Life. At Your Own Pace.</strong> A six-week
-              self-paced course. $222.</p>
-            <p><a href="/rooted-and-rising">See the course &rarr;</a></p>
-          </li>
-          <li>
-            <img src="/assets/monthly-gathering-logo.png"
-                 alt="The Monthly Gathering logo: three figures beneath a purple and gold arch" class="door-badge">
-            <h3>The Monthly Gathering</h3>
-            <p><strong>You Don't Heal in Isolation.</strong> Free, monthly, open to everyone.</p>
-            <p><a href="/gathering">Get the invitation &rarr;</a></p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- GETTING STARTED -->
-    <section class="section section--paper reveal" aria-labelledby="start-title">
-      <div class="container container-narrow">
-        <div class="section-head section-head--center">
-          <h2 id="start-title">Getting started is simple</h2>
-        </div>
-        <ul class="phase-cards">
-          <li class="phase-card phase-card--1">
-            <span class="phase-card__num" aria-hidden="true">1</span>
-            <h3>Book a Call</h3>
-            <p>A free conversation, not a pitch.</p>
-          </li>
-          <li class="phase-card phase-card--3">
-            <span class="phase-card__num" aria-hidden="true">2</span>
-            <h3>Get your plan</h3>
-            <p>We find the honest fit, even if it isn&rsquo;t me.</p>
-          </li>
-          <li class="phase-card phase-card--6">
-            <span class="phase-card__num" aria-hidden="true">3</span>
-            <h3>Do the work, accompanied</h3>
-            <p>Weekly sessions. A nervous system learning something new.</p>
-          </li>
-        </ul>
-        <div class="btn-row" style="justify-content: center; margin-top: var(--space-7);">
-          <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
+        <div class="cards-2">
+          <div class="card" style="padding: 40px 34px;">
+            <h3>Choose this work when</h3>
+            <p>You are stable, self-aware, and still stuck in a loop you understand.
+              Willingness to look at every version of yourself, with curiosity rather than
+              judgment, is the only entry requirement.</p>
+          </div>
+          <div class="card" style="padding: 40px 34px;">
+            <h3>Not the right season when</h3>
+            <p>You are in acute crisis, or you need diagnosis or treatment first; licensed
+              care comes before coaching, and I will say so plainly. And it is not a fit if
+              you want the pattern named but not changed.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- COACH VS THERAPIST + AFFIRMING -->
-    <section class="section section--alt reveal" aria-labelledby="compare-title">
-      <div class="container container-narrow text-center">
-        <h2 id="compare-title">Is this therapy?</h2>
-        <p>No. Therapy looks back to diagnose and treat. I work present-and-forward: patterns,
-          regulation, creation. <strong>My coaching can walk beside therapy without replacing
-          it.</strong></p>
-        <p>My work is LGBTQ+ affirming and inclusive of all identities and relationship
-          structures.</p>
-        <div class="table-wrap" style="margin-top: var(--space-6); text-align: left;">
+    <!-- COACH VS THERAPIST + AFFIRMING (tint) -->
+    <section class="section section--tint reveal" aria-labelledby="compare-title">
+      <div class="container container--narrow">
+        <div class="section-head center" style="margin-bottom: 36px;">
+          <h2 id="compare-title" class="h2-small">Is this therapy?</h2>
+          <p class="measure-wide mx-auto" style="margin: 18px 0 0;">No. Therapy looks back to
+            diagnose and treat. I work present-and-forward: patterns, regulation, creation.
+            <strong style="color: var(--ink);">My coaching can walk beside therapy without
+            replacing it.</strong></p>
+          <p class="measure-wide mx-auto" style="margin: 14px 0 0;">My work is LGBTQ+ affirming
+            and inclusive of all identities and relationship structures.</p>
+        </div>
+        <div class="table-wrap">
           <table class="table-compare">
             <caption class="visually-hidden">Trauma recovery coach compared with therapist</caption>
             <thead>
@@ -304,7 +382,7 @@
               <tr>
                 <th scope="row">Choose this when</th>
                 <td>You need diagnosis, medication, or deep processing of the past.</td>
-                <td>You are stable, insight-rich, and still stuck in a loop you understand.</td>
+                <td>You are stable, self-aware, and still stuck in a loop you understand.</td>
               </tr>
               <tr>
                 <th scope="row">Together?</th>
@@ -313,20 +391,15 @@
             </tbody>
           </table>
         </div>
-        <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
-        </div>
-        <p class="meta" style="margin-top: var(--space-3);">A conversation, not a pitch.
-          Deciding slowly is allowed here.</p>
       </div>
     </section>
 
     <!-- FAQ -->
     <section class="section reveal" aria-labelledby="faq-title">
-      <div class="container container-narrow">
-        <div class="section-head">
-          <p class="eyebrow">Questions, answered plainly</p>
-          <h2 id="faq-title">The honest fine print</h2>
+      <div class="container container--narrow">
+        <div class="section-head center">
+          <p class="eyebrow" style="margin-bottom: 12px;">Questions, answered plainly</p>
+          <h2 id="faq-title" class="h2-small">The honest fine print</h2>
         </div>
         <div class="faq">
           <details class="faq__item">
@@ -365,26 +438,35 @@
       </div>
     </section>
 
+    <!-- FINAL CTA (tint) -->
+    <section class="section section--tint section--snug reveal" aria-labelledby="final-cta-title">
+      <div class="container center" style="max-width: 640px;">
+        <h2 id="final-cta-title" class="h2-small">A conversation, not a pitch.</h2>
+        <div class="btn-row btn-row--center" style="margin-top: 30px;">
+          <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
+        </div>
+        <p class="italic-note" style="margin: 24px 0 0;">Deciding slowly is allowed here.</p>
+      </div>
+    </section>
+
   </main>
 
-
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -412,9 +494,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -455,14 +537,14 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
     </script>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/course.js"></script>
+  <script src="/js/course.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

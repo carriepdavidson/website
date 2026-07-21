@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Published 2026-07-13. Appearances verified by Carrie 2026-07-13. -->
-   <title>Speaking &amp; Media | Carrie Davidson, RN</title>
+  <title>Speaking &amp; Media | Carrie Davidson, RN</title>
   <meta name="description" content="Press and media resources for Carrie Davidson, RN: bios, headshots, speaking topics, and appearances including The Find Me Podcast.">
   <link rel="canonical" href="https://carriepdavidson.com/media">
   <meta name="author" content="Carrie Davidson, BSPH, BSN, RN">
@@ -23,26 +23,34 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
+
+  <!-- Page-only: card images for the appearances grid. -->
+  <style>
+    .press-img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
+    .press-img--contain { object-fit: contain; background: var(--bg); }
+    .topic-links .eyebrow { margin-bottom: 8px; font-size: 12px; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
-       (Media is intentionally NOT in the nav, so no aria-current here.)
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -72,24 +80,22 @@
 
   <main id="main">
 
-    <!-- ============================================================
-         HERO.
-         ============================================================ -->
-    <section class="hero hero--split">
-      <div class="container hero__inner">
-        <div class="hero__grid">
-          <div class="hero__copy">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="split">
+          <div>
             <p class="eyebrow">Press &amp; media</p>
             <h1>Speaking &amp; Media</h1>
-            <p class="lede">Stories, strategy, and truth that move people to act.</p>
-            <p class="cred-strip">BSPH, BSN, RN &middot; Certified Trauma Recovery Coach &middot; Author of <a href="/book"><em>Addicted to Trauma</em></a></p>
-            <p>For interviews, features, or speaking, write to
+            <p class="lede" style="margin: 24px 0 0;">Stories, strategy, and truth that move people to act.</p>
+            <p class="cred-line" style="margin: 20px 0 0;">BSPH, BSN, RN &middot; Certified Trauma Recovery Coach &middot; Author of <a href="/book"><em>Addicted to Trauma</em></a></p>
+            <p class="measure" style="margin: 24px 0 0;">For interviews, features, or speaking, write to
               <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a>.
               I read every request myself.</p>
           </div>
-          <div class="hero__media">
-            <div class="arch-photo">
-              <img src="assets/carrie-aboutme.jpg"
+          <div>
+            <div class="portrait-frame portrait-frame--4x5">
+              <img src="/assets/carrie-aboutme.jpg"
                    alt="Carrie Davidson seated on stone steps in a white blazer, smiling at the camera"
                    width="800" height="1000" fetchpriority="high">
             </div>
@@ -102,15 +108,15 @@
          SPEAKING TOPICS: derived ONLY from Carrie's existing published
          themes (about.html, book.html, writing hubs). No invented topics.
          ============================================================ -->
-    <section class="section section--alt reveal" aria-labelledby="topics-title">
+    <section class="section section--tint reveal" aria-labelledby="topics-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Speaking</p>
           <h2 id="topics-title">Topics Carrie speaks and writes about</h2>
-          <p class="lede">Every topic comes from the work itself: the memoir, the method, and
+          <p class="lede" style="margin: 18px 0 0; max-width: 44em;">Every topic comes from the work itself: the memoir, the method, and
             both sides of the chart. For stages, podcasts, panels, and trainings.</p>
         </div>
-        <div class="grid grid--2">
+        <div class="cards-3">
           <article class="card">
             <h3>Trauma and addiction as one wound</h3>
             <p>The unified thesis: addiction understood not as a moral failure but as a symptom of an
@@ -133,7 +139,7 @@
           </article>
           <article class="card">
             <h3>Nervous-system regulation: why insight isn&rsquo;t enough</h3>
-            <p>Insight-rich and still stuck: how bottom-up, body-based work gives a dysregulated
+            <p>Self-aware and still stuck: how bottom-up, body-based work gives a dysregulated
               nervous system new evidence that safety is possible.</p>
           </article>
           <article class="card">
@@ -142,7 +148,6 @@
               people understand themselves.</p>
           </article>
         </div>
-
       </div>
     </section>
 
@@ -150,55 +155,77 @@
          APPEARANCES: verified by Carrie 2026-07-13.
          ============================================================ -->
     <section class="section reveal" aria-labelledby="appearances-title">
-      <div class="container container-narrow">
+      <div class="container">
         <div class="section-head">
           <p class="eyebrow">Appearances</p>
           <h2 id="appearances-title">Interviews &amp; features</h2>
         </div>
-        <div class="grid grid--2">
-          <article class="card">
-            <img src="/assets/press-find-me-podcast.jpg" alt="The Find Me Podcast episode artwork for Kidnapped in Mexico, featuring Carrie Davidson" loading="lazy" style="object-fit: contain; background: var(--color-paper);">
+        <ul class="topic-links topic-links--3">
+          <li>
+            <img class="press-img press-img--contain" src="/assets/press-find-me-podcast.jpg" alt="The Find Me Podcast episode artwork for Kidnapped in Mexico, featuring Carrie Davidson" loading="lazy" width="600" height="600">
             <p class="eyebrow">Podcast</p>
             <h3><a href="https://podcasts.apple.com/ca/podcast/23-kidnapped-in-mexico/id1877256572?i=1000775932965">The Find Me Podcast: &ldquo;Kidnapped in Mexico&rdquo;</a></h3>
             <p>Carrie shares the story at the center of her memoir: the kidnapping, the road through trauma
               and addiction, and the work of recovery. Episode 23, on Apple Podcasts.</p>
             <p class="meta">Listen &rarr;</p>
-          </article>
-          <article class="card">
+          </li>
+          <li>
             <p class="eyebrow">Television</p>
             <h3>Inside Success TV</h3>
             <p>A featured television conversation with Inside Success TV about recovery and the story behind the memoir. Air date to come.</p>
-          </article>
-          <article class="card">
-            <img src="/assets/press-womens-insider.jpg" alt="Addicted to Trauma memoir styled on a desk with lavender, from the Women's Insider feature" loading="lazy">
+          </li>
+          <li>
+            <img class="press-img" src="/assets/press-womens-insider.jpg" alt="Addicted to Trauma memoir styled on a desk with lavender, from the Women's Insider feature" loading="lazy" width="800" height="600">
             <p class="eyebrow">Print</p>
             <h3><a href="https://womensinsider.com/lifestyle/carrie-davidson-where-neuroscience-meets-the-soul-of-healing/">Women&rsquo;s Insider: &ldquo;Where Neuroscience Meets the Soul of Healing&rdquo;</a></h3>
             <p>A profile on the work: nursing, recovery, and the Conscious Creation Method.</p>
             <p class="meta">Read &rarr;</p>
-          </article>
-          <article class="card">
-            <img src="/assets/press-usa-news.jpg" alt="Garden table with terracotta pots and flowers, from the USA News feature" loading="lazy">
+          </li>
+          <li>
+            <img class="press-img" src="/assets/press-usa-news.jpg" alt="Garden table with terracotta pots and flowers, from the USA News feature" loading="lazy" width="800" height="600">
             <p class="eyebrow">Print</p>
             <h3><a href="https://usanews.com/newsroom/conscious-coaching-collective-and-the-work-behind-my-coaching-practice">USA News: "Conscious Coaching Collective and the Work Behind My Coaching Practice"</a></h3>
             <p>On the practice: the method, the nursing background, and the work itself.</p>
             <p class="meta">Read &rarr;</p>
-          </article>
-          <article class="card">
+          </li>
+          <li>
             <p class="eyebrow">Podcast &middot; Upcoming</p>
             <h3>Think Unbroken</h3>
             <p>A conversation on trauma, addiction, and the way out is planned with the Think Unbroken
               podcast. Details when the episode airs.</p>
-          </article>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ============================================================
          CONTACT + MEDIA KIT.
          ============================================================ -->
+    <section class="section section--tint reveal" aria-labelledby="bio-title">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <p class="eyebrow">Media kit</p>
+          <h2 id="bio-title">A bio you can run as-is</h2>
+        </div>
+        <div class="prose">
+          <p><em>Carrie Davidson is the nurse who became her own patient. Now she shows others
+            the way home.</em></p>
+          <p>Carrie Davidson, BSPH, BSN, RN, is a registered nurse, certified trauma recovery
+            coach, and the author of <em>Addicted to Trauma</em>. She has been the nurse reading
+            the chart and the patient inside it. Her work sits at the overlap of complex trauma
+            and addiction, built on one thesis: trauma and addiction are not separate problems.
+            They are the same wound, telling itself in two different languages. She is the
+            creator of the Conscious Creation Method&trade; and the founder of Conscious
+            Coaching Collective, PLLC.</p>
+          <p class="meta">High-resolution headshots and a longer bio are available on request.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pattern-divider" aria-hidden="true"></div>
 
     <section class="section reveal" aria-labelledby="contact-title">
-      <div class="container container-narrow">
+      <div class="container container--narrow">
         <div class="section-head">
           <p class="eyebrow">Contact</p>
           <h2 id="contact-title">Press &amp; booking</h2>
@@ -214,22 +241,21 @@
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -257,9 +283,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -300,13 +326,13 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
     </script>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

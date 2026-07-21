@@ -22,12 +22,13 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
 
   <!-- FAQPage JSON-LD: mirrors every visible Q&A pair on this page (content parity). -->
   <script type="application/ld+json">
@@ -180,14 +181,15 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -221,17 +223,17 @@
          HERO: two-layer copy: search-language H1 + poetic payoff.
          ============================================================ -->
     <section class="hero">
-      <div class="container hero__inner">
+      <div class="container container--narrow">
         <p class="eyebrow">Trauma coaching questions, answered</p>
-        <h1>Trauma recovery coaching questions, answered</h1>
-        <p class="lede">Plain answers to the questions you&rsquo;d type at 11pm.</p>
-        <p>Coach versus therapist, cost, whether you can heal without therapy, why the same patterns keep
+        <h1 style="font-size: clamp(36px, 4.6vw, 56px);">Trauma recovery coaching questions, answered</h1>
+        <p class="lede-serif-italic" style="margin: 22px 0 0;">Plain answers to the questions you&rsquo;d type at 11pm.</p>
+        <p class="measure-wide" style="margin: 22px 0 0;">Coach versus therapist, cost, whether you can heal without therapy, why the same patterns keep
           repeating: the honest answers below, from a registered nurse and certified trauma recovery
           coach. Each one stands on its own, so start wherever your question lives.</p>
       </div>
     </section>
 
-    <div class="pattern-divider pattern-divider--easing" aria-hidden="true"></div>
+    <div class="pattern-divider" aria-hidden="true"></div>
 
     <!-- ============================================================
          FAQ: native <details>/<summary>, mirrored in FAQPage JSON-LD.
@@ -239,17 +241,17 @@
          of each answer stand alone (AEO extraction).
          ============================================================ -->
     <section class="section reveal" aria-labelledby="faq-title">
-      <div class="container">
+      <div class="container container--narrow">
         <div class="section-head">
           <p class="eyebrow">Frequently asked</p>
           <h2 id="faq-title">The questions people actually ask</h2>
-          <p class="meta">Last updated 21 July 2026 &middot; Written by Carrie Davidson, BSPH, BSN, RN.</p>
+          <p class="meta" style="margin: 14px 0 0;">Last updated 21 July 2026 &middot; Written by Carrie Davidson, BSPH, BSN, RN.</p>
         </div>
 
         <div class="faq">
 
           <!-- Decision / comparison -->
-          <details class="faq__item">
+          <details class="faq__item" open>
             <summary>What is a trauma recovery coach?</summary>
             <div class="faq__answer">
               <p>A trauma recovery coach is a trained, non-clinical guide who helps you move
@@ -472,15 +474,15 @@
     <!-- ============================================================
          PRIMARY CTA + newsletter fallback.
          ============================================================ -->
-    <section class="section section--accent reveal" aria-labelledby="cta-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">Still have a question?</p>
-        <h2 id="cta-title">The best answers come from an actual conversation</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">If you&rsquo;re wondering whether this is
-          for you, the first call is a no-pressure place to find out, or <a href="/subscribe">start free
+    <section class="section section--dark reveal" aria-labelledby="cta-title">
+      <div class="container container--narrow center">
+        <p class="eyebrow">Still have a question?</p>
+        <h2 id="cta-title" class="h2-small">The best answers come from an actual conversation</h2>
+        <p class="mx-auto" style="margin: 20px 0 30px; max-width: 38em; color: var(--on-dark-3);">If you&rsquo;re wondering whether this is
+          for you, the first call is a no-pressure place to find out, or <a href="/subscribe" style="color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px;">start free
           with the Sunday Letter</a> and see how the work feels.</p>
         <div class="btn-row btn-row--center">
-          <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
+          <a class="btn btn--ghost-dark" href="/discovery-call">Book a Call</a>
         </div>
       </div>
     </section>
@@ -488,22 +490,21 @@
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -531,9 +532,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -574,13 +575,13 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
     </script>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

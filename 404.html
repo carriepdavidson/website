@@ -21,25 +21,33 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
+
+  <!-- Page-only: two-up link grid. -->
+  <style>
+    .topic-links--2 { grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 960px) { .topic-links--2 { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copied verbatim. 404 is not in the nav, so no
-       aria-current. Root-relative paths (this file serves at any depth).
+       SITE HEADER (dc): copied verbatim. 404 is not in the nav, so
+       no aria-current. Root-relative paths (this file serves at any
+       depth). Same structural classes as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -70,11 +78,11 @@
   <main id="main">
 
     <section class="hero">
-      <div class="container container-narrow text-center">
+      <div class="container container--narrow center">
         <p class="eyebrow">Page not found</p>
-        <h1>This page seems to have wandered off.</h1>
-        <p class="lede">The link may be old, or the address slightly off. Nothing you did wrong.</p>
-        <p>Let&rsquo;s get you back to solid ground. Here are a few good places to begin again,
+        <h1 style="font-size: clamp(36px, 4.6vw, 56px);">This page seems to have wandered off.</h1>
+        <p class="lede-serif-italic" style="margin: 22px 0 0;">The link may be old, or the address slightly off. Nothing you did wrong.</p>
+        <p style="margin: 22px 0 30px;">Let&rsquo;s get you back to solid ground. Here are a few good places to begin again,
           or <a href="/resources">start here with the free resources</a>.</p>
         <div class="btn-row btn-row--center">
           <a class="btn btn--primary" href="/">Go to the home page</a>
@@ -82,11 +90,11 @@
       </div>
     </section>
 
-    <section class="section section--tight" aria-labelledby="paths-title">
-      <div class="container container-narrow">
-        <div class="section-head">
+    <section class="section section--snug section--tint" aria-labelledby="paths-title">
+      <div class="container container--narrow">
+        <div class="section-head center">
           <p class="eyebrow">A few honest doors</p>
-          <h2 id="paths-title">Where would you like to go?</h2>
+          <h2 id="paths-title" class="h2-small">Where would you like to go?</h2>
         </div>
         <ul class="topic-links topic-links--2">
           <li>
@@ -114,21 +122,21 @@
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copied verbatim. Root-relative worksheet link so
-       it resolves no matter what path this 404 was served at.
+       SITE FOOTER (dc): copied verbatim. Root-relative links so
+       everything resolves no matter what path this 404 served at.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -156,14 +164,15 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
       </div>
 
+      <!-- Crisis resources: ethical + trust signal. Keep on every page. -->
       <section class="crisis" aria-label="Crisis resources">
         <h2>If you are in crisis, reach out now</h2>
         <p>You deserve immediate support. In the U.S.: call or text <strong>988</strong>
@@ -172,6 +181,7 @@
           If you are in immediate danger, call 911.</p>
       </section>
 
+      <!-- Scope disclaimer: in Carrie's voice; YMYL trust. -->
       <p class="disclaimer">Coaching is companionship alongside care, not a replacement for it.
         This work is trauma recovery coaching and education. It is not therapy, diagnosis, or medical
         treatment, and it is not a substitute for care from a licensed mental-health or medical
@@ -184,6 +194,7 @@
       </div>
     </div>
 
+    <!-- Organization JSON-LD: sitewide entity (one canonical name). -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -196,7 +207,7 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }

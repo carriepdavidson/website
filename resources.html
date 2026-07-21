@@ -22,25 +22,32 @@
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body). font-display: swap. -->
+
+  <!-- Fonts: Newsreader (display) + Instrument Sans (body). font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721l">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
+
+  <style>
+    /* Page-local: cover images inside resource cards. */
+    .topic-links .resource-cover { margin-bottom: 18px; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============================================================
-       SITE HEADER: copy verbatim into every page.
-       Set aria-current="page" on the matching nav link per page.
+       SITE HEADER (dc): sticky, blurred lavender-white, hairline
+       border. Wordmark + 5 links + persistent "more" dropdown +
+       Book a Call pill. Same structural classes as js/main.js.
        ============================================================ -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <span class="brand-stack__name">Carrie Davidson</span>
-        <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        <span class="brand-stack__cred brand-stack__cred--scroll">&middot; RN</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -70,234 +77,170 @@
 
   <main id="main">
 
-    <!-- ============================================================
-         HERO: two-layer copy: search-language H1 + poetic payoff.
-         ============================================================ -->
-    <!-- COPY-PASS -->
+    <!-- HERO: search-language H1 + poetic payoff. -->
     <section class="hero">
-      <div class="container hero__inner">
+      <div class="container container--narrow">
         <p class="eyebrow">Free trauma recovery resources</p>
-        <h1>Free trauma recovery workbooks, a quiz, and a weekly letter</h1>
-        <p class="lede">Start where you are.</p>
-        <p>You don&rsquo;t have to be ready to hire a coach to begin. You just have to be
-          tired of the loop.</p>
-        <div class="btn-row">
+        <h1 style="font-size: clamp(34px, 4.4vw, 54px); line-height: 1.08;">Free trauma
+          recovery workbooks, a quiz, and a weekly letter</h1>
+        <p class="lede-serif-italic" style="margin: 20px 0 0;">Start where you are.</p>
+        <p class="measure" style="margin: 18px 0 0;">You don&rsquo;t have to be ready to hire a
+          coach to begin. You just have to be tired of the loop.</p>
+        <div class="btn-row" style="margin-top: 30px;">
           <a class="btn btn--primary" href="/resources/trauma-tree-worksheet">Get the free workbook &rarr;</a>
         </div>
       </div>
     </section>
 
-    <div class="pattern-divider pattern-divider--easing" aria-hidden="true"></div>
-
     <!-- ============================================================
-         START HERE: clear sequencing for the new visitor.
+         THE FREE LIBRARY: one grid, every free resource.
          ============================================================ -->
-    <section class="section section--alt reveal" aria-labelledby="start-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">If you&rsquo;re new, start here</p>
-          <h2 id="start-title">Where do I begin?</h2>
-          <p>Begin with the quiz, then the workbook, then the weekly letter: each one takes the next
-            small step, in order.</p>
-        </div>
-        <ul class="phase-cards" style="grid-template-columns: repeat(2, 1fr);"
-            aria-label="How to begin, in four steps">
-          <li class="phase-card phase-card--1">
-            <span class="phase-card__num" aria-hidden="true">1</span>
-            <h3>Take the quiz</h3>
-            <p>Three minutes to see your pattern&rsquo;s shape.</p>
-          </li>
-          <li class="phase-card phase-card--3">
-            <span class="phase-card__num" aria-hidden="true">2</span>
-            <h3>Map your roots</h3>
-            <p>The Trauma Tree Workbook, free.</p>
-          </li>
-          <li class="phase-card phase-card--5">
-            <span class="phase-card__num" aria-hidden="true">3</span>
-            <h3>Subscribe</h3>
-            <p>The Sunday Letter, one practice a week.</p>
-          </li>
-          <li class="phase-card phase-card--6">
-            <span class="phase-card__num" aria-hidden="true">4</span>
-            <h3>Go deeper</h3>
-            <p>The free library, then coaching when ready.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FREE PDF LIBRARY: 6 real downloads (all files in assets/).
-         ============================================================ -->
-    <section class="section section--alt reveal" aria-labelledby="library-title">
+    <section class="section reveal" aria-labelledby="library-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">The free library</p>
-          <h2 id="library-title">What&rsquo;s in the free PDF library?</h2>
-          <p>A growing shelf of short, practical guides, grouped by what you need right now. Each title
-            opens a page that explains what it is and who it may help.</p>
+          <h2 id="library-title">What&rsquo;s in the free library?</h2>
+          <p class="measure-wide" style="margin: 18px 0 0;">A growing shelf of short, practical
+            guides, plus the quiz and the Sunday Letter. Each title opens a page that explains
+            what it is and who it may help.</p>
         </div>
 
-        <!-- Group: Grounding and Regulation -->
-        <div class="library-group">
-          <div class="library-group__head">
-            <h3>Grounding and Regulation</h3>
-            <p>For when the alarm will not quiet, and calm itself feels unsafe.</p>
-          </div>
-          <div class="grid grid--3">
-            <article class="card">
-              <img src="assets/cover-befriending-nervous-system.svg"
-                   alt="Cover of the free workbook: Befriending Your Nervous System"
-                   loading="lazy" width="480" height="300"
-                  >
-              <h4><a href="/resources/befriending-your-nervous-system">Befriending Your Nervous System</a></h4>
-              <p>A workbook for making peace with the alarm system that kept you alive: learn to read
-                your own body, then work with it instead of against it.</p>
-              <p class="meta"><a href="/resources/befriending-your-nervous-system">What it is</a>
-                &middot; <a href="assets/befriending-nervous-system-workbook.pdf">Download PDF</a></p>
-            </article>
-          </div>
-        </div>
+        <ul class="topic-links topic-links--3">
+          <li>
+            <h3><a href="/quiz">The 3-Minute Pattern Quiz</a></h3>
+            <p>Three minutes to see your pattern&rsquo;s shape. If you&rsquo;re new, start here.</p>
+            <p class="meta"><a href="/quiz">Take the quiz</a></p>
+          </li>
 
-        <!-- Group: Understanding Patterns -->
-        <div class="library-group">
-          <div class="library-group__head">
-            <h3>Understanding Patterns</h3>
-            <p>For seeing the loop as one whole thing, not a hundred separate failures.</p>
-          </div>
-          <div class="grid grid--3">
-            <article class="card">
-              <img src="assets/cover-trauma-tree.svg"
-                   alt="Cover of the free Trauma Tree Workbook"
-                   loading="lazy" width="480" height="300"
-                  >
-              <h4><a href="/resources/trauma-tree-worksheet">The Trauma Tree Workbook</a></h4>
-              <p>The free download at the heart of the Method. Map the roots (what happened), the trunk
-                (the beliefs), and the branches (the patterns) as one system.</p>
-              <p class="meta"><a href="/resources/trauma-tree-worksheet">What it is</a>
-                &middot; <a href="/resources/trauma-tree-worksheet">Download PDF</a></p>
-            </article>
+          <li>
+            <img class="resource-cover" src="/assets/cover-trauma-tree.svg"
+                 alt="Cover of the free Trauma Tree Workbook"
+                 loading="lazy" width="480" height="300">
+            <h3><a href="/resources/trauma-tree-worksheet">The Trauma Tree Workbook</a></h3>
+            <p>The free download at the heart of the Method. Map the roots (what happened), the
+              trunk (the beliefs), and the branches (the patterns) as one system.</p>
+            <p class="meta"><a href="/resources/trauma-tree-worksheet">What it is</a>
+              &middot; <a href="/resources/trauma-tree-worksheet">Download PDF</a></p>
+          </li>
 
-            <article class="card">
-              <img src="assets/cover-small-leavings-journal.svg"
-                   alt="Cover of the free journal: The Small Leavings Journal"
-                   loading="lazy" width="480" height="300"
-                  >
-              <h4><a href="/resources/small-leavings-journal">The Small Leavings Journal</a></h4>
-              <p>Named for the way we lose ourselves: one small leaving at a time. A journal for noticing
-                the exits, and choosing to stay.</p>
-              <p class="meta"><a href="/resources/small-leavings-journal">What it is</a>
-                &middot; <a href="assets/small-leavings-journal.pdf">Download PDF</a></p>
-            </article>
+          <li>
+            <img class="resource-cover" src="/assets/cover-conscious-creation-workbook.svg"
+                 alt="Cover of the free workbook: The Conscious Creation Workbook"
+                 loading="lazy" width="480" height="300">
+            <h3><a href="/resources/conscious-creation-workbook">The Conscious Creation Workbook</a></h3>
+            <p>The workbook at the heart of the Method: prompts for all five steps and for building
+              the intentional life that comes after regulation, one honest choice at a time.</p>
+            <p class="meta"><a href="/resources/conscious-creation-workbook">What it is</a>
+              &middot; <a href="/assets/conscious-creation-workbook.pdf">Download PDF</a></p>
+          </li>
 
-            <article class="card">
-              <img src="assets/the-philosophy-poster.svg"
-                   alt="The philosophy poster: one continuous hand-drawn violet line moves through tangled loops, a pause at a still point, a choice, and an open blooming rise, above the words Pattern, Pause, Choice, Creation"
-                   loading="lazy" width="480" height="600"
-                  >
-              <h4><a href="assets/the-philosophy-poster.svg">The Philosophy Poster</a></h4>
-              <p>The whole method in one unbroken line, for your wall: the loop, the pause, the choice,
-                and the open path. A quiet daily reminder that the pattern is not the ending.</p>
-              <p class="meta"><a href="assets/the-philosophy-poster.svg" download="the-philosophy-poster.svg">Download the printable poster</a></p>
-            </article>
-          </div>
-        </div>
+          <li>
+            <h3><a href="/subscribe">The Sunday Letter</a></h3>
+            <p>Neuroscience precision, a poetic reframe, and one small practice, every Sunday.</p>
+            <p class="meta"><a href="/subscribe">Get the Sunday Letter</a></p>
+          </li>
 
-        <!-- Group: ADHD and Executive Functioning -->
-        <div class="library-group">
-          <div class="library-group__head">
-            <h3>ADHD and Executive Functioning</h3>
-            <p>For the brain that works differently, and the days trying harder is not the answer.</p>
-          </div>
-          <div class="grid grid--3">
-            <article class="card">
-              <img src="assets/pdf-youre-not-broken.jpg"
-                   alt="Cover of the free ebook You're Not Broken: Understanding the ADHD Brain, by Carrie Davidson"
-                   loading="lazy" width="480" height="300" style="width:100%; height:auto; border-radius: var(--radius);">
-              <h4><a href="/resources/youre-not-broken">You&rsquo;re Not Broken: Understanding the ADHD Brain</a></h4>
-              <p>A 27-page ebook on why your brain works the way it does: executive function, RSD, and
-                practical tools that work with your wiring instead of against it.</p>
-              <p class="meta"><a href="/resources/youre-not-broken">What it is</a>
-                &middot; <a href="assets/youre-not-broken-adhd-ebook.pdf">Download PDF</a></p>
-            </article>
+          <li>
+            <img class="resource-cover" src="/assets/cover-befriending-nervous-system.svg"
+                 alt="Cover of the free workbook: Befriending Your Nervous System"
+                 loading="lazy" width="480" height="300">
+            <h3><a href="/resources/befriending-your-nervous-system">Befriending Your Nervous System</a></h3>
+            <p>A workbook for making peace with the alarm system that kept you alive: learn to read
+              your own body, then work with it instead of against it.</p>
+            <p class="meta"><a href="/resources/befriending-your-nervous-system">What it is</a>
+              &middot; <a href="/assets/befriending-nervous-system-workbook.pdf">Download PDF</a></p>
+          </li>
 
-            <article class="card">
-              <img src="assets/cover-adhd-affirmation-cards.svg"
-                   alt="Cover of the free printable: ADHD Affirmation Cards"
-                   loading="lazy" width="480" height="300"
-                  >
-              <h4><a href="/resources/adhd-affirmation-cards">ADHD Affirmation Cards</a></h4>
-              <p>Printable cards with gentle reframes for the ADHD brain: for the days when executive
-                function feels out of reach.</p>
-              <p class="meta"><a href="/resources/adhd-affirmation-cards">What it is</a>
-                &middot; <a href="assets/adhd-affirmation-cards.pdf">Download PDF</a></p>
-            </article>
-          </div>
-        </div>
+          <li>
+            <img class="resource-cover" src="/assets/cover-small-leavings-journal.svg"
+                 alt="Cover of the free journal: The Small Leavings Journal"
+                 loading="lazy" width="480" height="300">
+            <h3><a href="/resources/small-leavings-journal">The Small Leavings Journal</a></h3>
+            <p>Named for the way we lose ourselves: one small leaving at a time. A journal for
+              noticing the exits, and choosing to stay.</p>
+            <p class="meta"><a href="/resources/small-leavings-journal">What it is</a>
+              &middot; <a href="/assets/small-leavings-journal.pdf">Download PDF</a></p>
+          </li>
 
-        <!-- Group: Reflection and Creativity -->
-        <div class="library-group">
-          <div class="library-group__head">
-            <h3>Reflection and Creativity</h3>
-            <p>For building the life that comes after regulation, one honest choice at a time.</p>
-          </div>
-          <div class="grid grid--3">
-            <article class="card">
-              <img src="assets/cover-conscious-creation-workbook.svg"
-                   alt="Cover of the free workbook: The Conscious Creation Workbook"
-                   loading="lazy" width="480" height="300"
-                  >
-              <h4><a href="/resources/conscious-creation-workbook">The Conscious Creation Workbook</a></h4>
-              <p>The workbook at the heart of the Method: prompts for all five steps and for building the intentional life that comes after
-                regulation, one honest choice at a time.</p>
-              <p class="meta"><a href="/resources/conscious-creation-workbook">What it is</a>
-                &middot; <a href="assets/conscious-creation-workbook.pdf">Download PDF</a></p>
-            </article>
-          </div>
-        </div>
+          <li>
+            <img class="resource-cover" src="/assets/the-philosophy-poster.svg"
+                 alt="The philosophy poster: one continuous hand-drawn violet line moves through tangled loops, a pause at a still point, a choice, and an open blooming rise, above the words Pattern, Pause, Choice, Creation"
+                 loading="lazy" width="480" height="600">
+            <h3><a href="/assets/the-philosophy-poster.svg">The Philosophy Poster</a></h3>
+            <p>The whole method in one unbroken line, for your wall: the loop, the pause, the
+              choice, and the open path. A quiet daily reminder that the pattern is not the ending.</p>
+            <p class="meta"><a href="/assets/the-philosophy-poster.svg" download="the-philosophy-poster.svg">Download the printable poster</a></p>
+          </li>
+
+          <li>
+            <img class="resource-cover" src="/assets/pdf-youre-not-broken.jpg"
+                 alt="Cover of the free ebook You're Not Broken: Understanding the ADHD Brain, by Carrie Davidson"
+                 loading="lazy" width="480" height="300">
+            <h3><a href="/resources/youre-not-broken">You&rsquo;re Not Broken: Understanding the ADHD Brain</a></h3>
+            <p>A 27-page ebook on why your brain works the way it does: executive function, RSD, and
+              practical tools that work with your wiring instead of against it.</p>
+            <p class="meta"><a href="/resources/youre-not-broken">What it is</a>
+              &middot; <a href="/assets/youre-not-broken-adhd-ebook.pdf">Download PDF</a></p>
+          </li>
+
+          <li>
+            <img class="resource-cover" src="/assets/cover-adhd-affirmation-cards.svg"
+                 alt="Cover of the free printable: ADHD Affirmation Cards"
+                 loading="lazy" width="480" height="300">
+            <h3><a href="/resources/adhd-affirmation-cards">ADHD Affirmation Cards</a></h3>
+            <p>Printable cards with gentle reframes for the ADHD brain: for the days when executive
+              function feels out of reach.</p>
+            <p class="meta"><a href="/resources/adhd-affirmation-cards">What it is</a>
+              &middot; <a href="/assets/adhd-affirmation-cards.pdf">Download PDF</a></p>
+          </li>
+        </ul>
 
         <!-- Cross-link: the companion workbook lives on the book page. -->
-        <p class="library-crosslink">Working through the memoir? The
+        <p style="margin-top: 36px;">Working through the memoir? The
           <a href="/resources/addicted-to-trauma-workbook">Addicted to Trauma Companion Workbook</a>
           is free too, and you can read more about it on <a href="/book">the memoir page</a>.</p>
       </div>
     </section>
 
-    <!-- ============================================================
-         SUNDAY LETTER SIGNUP: the primary "start free" CTA.
-         ============================================================ -->
-    <section class="section section--accent reveal" aria-labelledby="signup-title">
-      <div class="container container-narrow text-center">
-        <p class="eyebrow" style="color: var(--color-accent-soft);">The Sunday Letter</p>
-        <h2 id="signup-title">The Sunday Letter: words for the work no one else sees</h2>
-        <p class="mx-auto" style="color: var(--color-accent-soft);">Neuroscience precision, a poetic reframe,
-          and one small practice, every Sunday.</p>
-        <!-- Subscription happens on Substack (no on-site form handler exists). -->
-        <div class="btn-row" style="justify-content: center;">
-          <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
-        </div>
+    <!-- SUNDAY LETTER CAPTURE (tint) -->
+    <section class="section section--tint section--snug reveal" aria-labelledby="signup-title">
+      <div class="container center" style="max-width: 640px;">
+        <p class="eyebrow">The Sunday Letter</p>
+        <h2 id="signup-title" class="h2-small" style="line-height: 1.12;">One letter, most Sundays.</h2>
+        <p class="lede" style="margin: 18px 0 32px;">One thing I know, one small thing to try,
+          and not a drop of homework guilt.</p>
+        <form class="signup__form" method="post"
+              action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
+              data-ml-form>
+          <label class="visually-hidden" for="signup-email">Email address</label>
+          <input class="input" id="signup-email" name="fields[email]" type="email"
+                 autocomplete="email" placeholder="Email address" required>
+          <input type="hidden" name="ml-submit" value="1">
+          <button class="btn btn--primary" type="submit">Get the letter</button>
+          <p class="signup__status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="meta" style="margin: 16px 0 0;">No spam. Unsubscribe anytime.</p>
       </div>
     </section>
 
   </main>
 
   <!-- ============================================================
-       SITE FOOTER: copy verbatim into every page.
-       Contains crisis resources, scope disclaimer, and
-       Organization JSON-LD (sitewide entity).
+       SITE FOOTER (dc): dark, three columns + crisis box.
+       Copy verbatim into every converted page.
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
 
-        <div class="footer-col">
+        <div class="footer-col footer-col--brand">
           <img class="footer-mark" src="/assets/arc-arch.png" alt="ARC: Awareness, Regulation, Creation" width="64" height="63" loading="lazy">
           <h2>Carrie Davidson</h2>
-          <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
-          <p class="meta footer-invite">
+          <p class="footer-tagline">Nurse. Coach. Writer. Survivor. Human.</p>
+          <p class="footer-invite">
             <a href="/subscribe">Get reflections and resources to support your healing &rarr;</a>
           </p>
-          <p class="meta" style="margin-top: var(--space-3);">
+          <p class="meta" style="margin-top: 24px;">
             <a href="mailto:coaching@carriepdavidson.com">coaching@carriepdavidson.com</a><br>
             Conscious Coaching Collective, PLLC
           </p>
@@ -325,9 +268,9 @@
         <div class="footer-col">
           <h2>Start here</h2>
           <ul>
-            <li><a href="/quiz"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-method"/></svg>Take the 3-minute quiz</a></li>
-            <li><a href="/resources/trauma-tree-worksheet"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-resources"/></svg>Free Trauma Tree Workbook</a></li>
-            <li><a href="/subscribe"><svg class="footer-icon" aria-hidden="true"><use href="/assets/icons-thread.svg#icon-contact"/></svg>The Sunday Letter</a></li>
+            <li><a href="/quiz">Take the 3-minute quiz</a></li>
+            <li><a href="/resources/trauma-tree-worksheet">Free Trauma Tree Workbook</a></li>
+            <li><a href="/subscribe">The Sunday Letter</a></li>
           </ul>
         </div>
 
@@ -368,13 +311,13 @@
       "description": "Trauma recovery coaching for the overlap of complex trauma and addiction, founded by registered nurse and trauma recovery coach Carrie Davidson.",
       "sameAs": [
         "https://www.instagram.com/carriepdavidson",
-      "https://www.facebook.com/cpdavidson1",
+        "https://www.facebook.com/cpdavidson1",
         "https://carriepdavidson.substack.com"
       ]
     }
     </script>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
