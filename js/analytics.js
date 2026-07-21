@@ -8,8 +8,8 @@
 (function () {
   "use strict";
 
-  /* Set to your GA4 Measurement ID (e.g. "G-XXXXXXXXXX") to enable. */
-  var GA_MEASUREMENT_ID = "";
+  /* GA4 Measurement ID for carriepdavidson.com (stream: carriepdavidson.com). */
+  var GA_MEASUREMENT_ID = "G-0E8DLJF1H3";
 
   if (!GA_MEASUREMENT_ID) return;
 
