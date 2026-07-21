@@ -22,19 +22,10 @@
      to the cream/ivory + thread-violet skin. Copper retires from the line;
      the thread is now violet. Backgrounds go warm ivory / paper cream.
 
-     COMPUTED WCAG CONTRAST (sRGB, rounded to 0.01). Target: ink >=7:1;
-     accent/links + all small text >=4.5:1; thread-violet #7C77C0 is
-     DECORATIVE ONLY (never small text). Verified via WCAG relative-luminance.
-
-     LAVENDER + PLUM pass (Carrie, 2026-07-13): backgrounds shifted to light
-     lavender; ALL text (ink, ink-soft, eyebrows, links) and button fills are
-     #3F3168 plum-charcoal.
-     Ink/text #3F3168: on bg #F6F4FB 12.6 | mist #EEEAF8 11.8 | surface
-       #FDFCFF 13.3 | blush #F3EFFA 12.1 | mist-deep #E9E4F5 11.2 |
-       clay-soft #F0E9DC 11.3  ALL AAA.
-     Buttons: near-white #FBF9F4 on #3F3168 12.2 AAA; hover #2E2352 14.9 AAA.
+     CONTRAST RULES (VBI palette; pre-VBI audit numbers removed 2026-07-21).
+     Target: ink >=7:1; accent/links + all small text >=4.5:1.
+     Ink #3D2B4F on all light backgrounds >=11:1 AAA.
      Lavender band #7B68A0 (VBI): near-white text 4.84 AA.
-     Focus ring #3F3168 >=11:1 on all light backgrounds.
      VBI purple #7B68A0 as text ~4.2:1 on tinted bgs -> DECORATIVE (threads/borders) only;
      text links use text-safe #5D4E7E (>=6.3:1 on all light bands).
      ------------------------------------------------------------------ */
