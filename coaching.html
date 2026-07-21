@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260721c">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721e">
 
   <!-- Page-specific styles: breath pacer + tools widgets (ported from
        css/style.css into dc tokens) and the coach/therapist table. -->
@@ -173,28 +173,21 @@
 
   <main id="main">
 
-    <!-- HERO (light): SEO h1 + locked line. One CTA. -->
-    <section class="hero">
+    <!-- HERO: edge-to-edge banner, Carrie with client (her favorite
+         format for this page). Copy panel over the photo. One CTA. -->
+    <section class="hero-banner" style="background-image: url(/assets/carrie-client-conversation.jpg);"
+             role="img" aria-label="Carrie Davidson smiling in conversation with a client across a cafe table">
       <div class="container">
-        <div class="split">
-          <div>
-            <p class="eyebrow">Work with me</p>
-            <h1>Trauma recovery coaching for the self-aware and still stuck</h1>
-            <p class="lede measure" style="margin: 26px 0 0;">Break the trauma loop. Not by
-              talking about it. By creating your way through it.</p>
-            <div class="btn-row" style="margin-top: 32px;">
-              <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
-            </div>
-            <p class="cred-line" style="margin: 30px 0 0;">BSPH, BSN, RN &middot; Certified
-              Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
+        <div class="hero-banner__panel">
+          <p class="eyebrow">Work with me</p>
+          <h1>Trauma recovery coaching for the self-aware and still stuck</h1>
+          <p class="lede" style="margin: 20px 0 0;">Break the trauma loop. Not by
+            talking about it. By creating your way through it.</p>
+          <div class="btn-row" style="margin-top: 28px;">
+            <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
           </div>
-          <div>
-            <div class="portrait-frame portrait-frame--4x5">
-              <img src="/assets/carrie-client-conversation.jpg" fetchpriority="high"
-                   alt="Carrie Davidson smiling in conversation with a client across a cafe table"
-                   width="1600" height="1067">
-            </div>
-          </div>
+          <p class="cred-line" style="margin: 24px 0 0;">BSPH, BSN, RN &middot; Certified
+            Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
         </div>
       </div>
     </section>
@@ -205,8 +198,8 @@
         <div class="section-head center mx-auto" style="max-width: 40em; margin-bottom: 12px;">
           <p class="eyebrow">Three ways to begin</p>
           <h2 id="offers-title">Choose your door</h2>
-          <p style="margin: 18px 0 0; color: var(--on-dark-3);">Start wherever you are. Every
-            door leads to the same work, at the pace and depth that fit you now.</p>
+          <p style="margin: 18px 0 0; color: var(--on-dark-3);">Three containers for the same
+            work. Here is what each one actually holds.</p>
         </div>
         <div class="ladder-labels" aria-hidden="true">
           <span>Free</span><span class="sep">&middot;&middot;&middot;</span>
@@ -218,16 +211,16 @@
             <p class="door__kicker">The wide door</p>
             <h3>The Sunday Letter</h3>
             <p class="door__price">Free, forever</p>
-            <p class="door__body">One letter, most Sundays: one thing I know, one small thing
-              to try. No homework guilt.</p>
+            <p class="door__body">A weekly letter with one practice inside, and the archive of
+              every letter before it. Unsubscribe anytime, no hard feelings.</p>
             <a class="btn btn--ghost-dark" href="/subscribe">Get the letter</a>
           </div>
           <div class="door">
             <p class="door__kicker">At your own pace</p>
             <h3>Rooted &amp; Rising</h3>
             <p class="door__price">$222 &middot; six-week course</p>
-            <p class="door__body">Build the intentional life on your own schedule, the Method,
-              structured into six weeks you can revisit anytime.</p>
+            <p class="door__body">Six weeks, self-paced, lifetime access. Each week holds a
+              short teaching, one body-based practice, and a gentle reflection.</p>
             <a class="btn btn--ghost-dark" href="/rooted-and-rising">See the course</a>
           </div>
           <div class="door door--featured">
@@ -236,14 +229,13 @@
             <h3>The ARC Program</h3>
             <p class="door__price">$3,000 &middot; 12 weeks, 1:1</p>
             <p class="door__hook">Break the trauma loop.</p>
-            <p class="door__body">Twelve weeks of private coaching built on the Conscious
-              Creation Method&trade;. The deepest, most accompanied version of this work.</p>
+            <p class="door__body">Twelve weekly 1:1 sessions with me, between-session support
+              when the pattern shows up mid-week, and your own map by week twelve.</p>
             <a class="btn btn--primary" href="/arc-program">See the program</a>
           </div>
         </div>
-        <p class="center mx-auto" style="margin-top: 32px; color: var(--on-dark-3); font-size: 15.5px; max-width: 40em;">Not
-          sure which fits? <a href="/discovery-call" style="color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px;">Book a free call</a>,
-          a conversation, not a pitch. We&rsquo;ll find the honest fit, even if it isn&rsquo;t me.</p>
+        <p class="center mx-auto" style="margin-top: 32px; color: var(--on-dark-3); font-size: 15.5px; max-width: 40em;">Every
+          door stays open. Start small and go deeper whenever you&rsquo;re ready.</p>
       </div>
     </section>
 
@@ -270,10 +262,14 @@
             <p>Weekly sessions. A nervous system learning something new.</p>
           </li>
         </ul>
-        <p class="italic-note center" style="margin: 36px 0 0;">Someone who has walked it,
-          walking beside you.</p>
       </div>
     </section>
+
+    <!-- PHOTO BAND: edge to edge, the stepping stones. -->
+    <div class="photo-band" style="background-image: url(/assets/carrie-stepping-stones.jpg); background-position: center 40%;"
+         role="img" aria-label="Carrie Davidson crossing stepping stones over a green garden pond">
+      <p class="photo-band__line">Someone who has walked it, walking beside you.</p>
+    </div>
 
     <!-- THE GENTLE PAUSE (tint): feel the work before you buy any of it. -->
     <section class="section section--tint reveal" aria-labelledby="pause-title">
@@ -441,7 +437,7 @@
     <!-- FINAL CTA (tint) -->
     <section class="section section--tint section--snug reveal" aria-labelledby="final-cta-title">
       <div class="container center" style="max-width: 640px;">
-        <h2 id="final-cta-title" class="h2-small">A conversation, not a pitch.</h2>
+        <h2 id="final-cta-title" class="h2-small">Ready when you are.</h2>
         <div class="btn-row btn-row--center" style="margin-top: 30px;">
           <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
         </div>
