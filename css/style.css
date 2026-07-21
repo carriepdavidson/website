@@ -1715,3 +1715,51 @@ p { max-width: var(--measure); }
   .shapeline [data-at] { opacity: 1 !important; transition: none !important; }
   .shapeline__ghost { opacity: .22 !important; }
 }
+
+/* ============================================================
+   ARC MARK SYSTEM: the logo as design language. A derived
+   simplified vector (assets/arc-mark.svg) carries the spiral,
+   arch, and plant into the header and footer; the homepage ARC
+   section draws the emblem when it enters view; small motifs
+   tie each ARC stage to its symbol. Purple = pattern seen,
+   lavender = the pause, gold = what grows.
+   ============================================================ */
+
+/* Header: compact mark beside the wordmark. CSS-only, decorative. */
+.brand-stack {
+  padding-left: 46px;
+  background: url(/assets/arc-mark.svg) no-repeat left center / 36px auto;
+}
+.brand-stack__cred--scroll { left: 46px; }
+
+/* Footer: refined mark above the name. */
+.footer-mark { display: block; width: 52px; height: 52px; margin-bottom: var(--space-3); }
+
+/* ARC emblem: spiral -> arch -> plant, drawn on reveal. */
+.arc-emblem {
+  display: block; width: min(210px, 52vw); height: auto;
+  margin: 0 auto var(--space-6);
+}
+.arc-emblem path { fill: none; stroke-linecap: round; }
+.arc-emblem__spiral { stroke: #7B68A0; stroke-width: 5; }
+.arc-emblem__arch   { stroke: url(#emblemg); stroke-width: 6; }
+.arc-emblem__plant  { stroke: #a4865e; stroke-width: 5; }
+.js .reveal .arc-emblem path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js .reveal.is-visible .arc-emblem__spiral {
+  stroke-dashoffset: 0; transition: stroke-dashoffset 1.9s ease-out 0.2s;
+}
+.js .reveal.is-visible .arc-emblem__arch {
+  stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s ease-in-out 2.3s;
+}
+.js .reveal.is-visible .arc-emblem__plant {
+  stroke-dashoffset: 0; transition: stroke-dashoffset 1.5s ease-out 4s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal .arc-emblem path {
+    stroke-dasharray: none; stroke-dashoffset: 0; transition: none;
+  }
+}
+
+/* Stage motifs on the ARC cards and the closing sprout. */
+.phase-card__motif { display: block; width: 30px; height: 30px; margin: 0 auto var(--space-2); }
+.cta-sprout { display: block; margin: 0 auto var(--space-3); }

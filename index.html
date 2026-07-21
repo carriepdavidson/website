@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260720z">
+  <link rel="stylesheet" href="css/style.css?v=20260721a">
 
   <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T.
        Reuse this verbatim on about.html; see docs/design-system.md. -->
@@ -204,18 +204,40 @@
           <p class="eyebrow">The Conscious Creation Method&trade;</p>
           <h2 id="method-title">Three stages. One word to remember: ARC.</h2>
         </div>
+        <!-- ARC emblem: derived interpretation of the logo. Spiral draws,
+             the arch closes around it, the plant grows. CSS-only, rides
+             the reveal observer; fully drawn without JS or with reduced
+             motion. Decorative: the cards below carry the meaning. -->
+        <svg class="arc-emblem" viewBox="0 0 220 210" width="220" height="210" aria-hidden="true">
+          <defs>
+            <linearGradient id="emblemg" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#7B68A0"/>
+              <stop offset="0.55" stop-color="#98A5C6"/>
+              <stop offset="1" stop-color="#C9A87C"/>
+            </linearGradient>
+          </defs>
+          <path class="arc-emblem__spiral" pathLength="1"
+                d="M 79 139 c -2 -6 4 -13 11 -11 c 11 3 13 18 3 24 c -13 8 -30 -2 -31 -17 c -1 -21 21 -35 41 -26"/>
+          <path class="arc-emblem__arch" pathLength="1"
+                d="M 48 194 L 48 101 A 62 62 0 0 1 172 101 L 172 194"/>
+          <path class="arc-emblem__plant" pathLength="1"
+                d="M 141 186 C 139 160 141 139 147 118 M 144 152 C 129 144 123 129 125 114 M 145 133 C 160 122 166 107 164 92"/>
+        </svg>
         <ul class="phase-cards">
           <li class="phase-card phase-card--1">
+            <svg class="phase-card__motif" viewBox="0 0 32 32" aria-hidden="true"><path d="M 16 17 c -1 -2 1 -4 3 -3 c 3 1 3 6 0 7 c -5 2 -9 -2 -9 -7 c 0 -7 7 -11 13 -8" stroke="#7B68A0" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
             <span class="phase-card__num" aria-hidden="true">A</span>
             <h3>Awareness</h3>
             <p>See the pattern.</p>
           </li>
           <li class="phase-card phase-card--3">
+            <svg class="phase-card__motif" viewBox="0 0 32 32" aria-hidden="true"><path d="M 7 27 L 7 14 A 9 9 0 0 1 25 14 L 25 27" stroke="#98A5C6" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
             <span class="phase-card__num" aria-hidden="true">R</span>
             <h3>Regulation</h3>
             <p>Build the pause.</p>
           </li>
           <li class="phase-card phase-card--6">
+            <svg class="phase-card__motif" viewBox="0 0 32 32" aria-hidden="true"><path d="M 15 27 C 15 20 15 16 17 11 M 16 19 C 12 17 10 13 11 9 M 16 14 C 20 12 22 8 21 5" stroke="#a4865e" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
             <span class="phase-card__num" aria-hidden="true">C</span>
             <h3>Creation</h3>
             <p>Make something new.</p>
@@ -389,6 +411,7 @@
     <!-- FINAL CTA: two honest paths, no pressure. -->
     <section class="section reveal" aria-labelledby="final-cta-title">
       <div class="container container-narrow text-center">
+        <svg class="cta-sprout" viewBox="0 0 32 32" width="34" height="34" aria-hidden="true"><path d="M 15 27 C 15 20 15 16 17 11 M 16 19 C 12 17 10 13 11 9 M 16 14 C 20 12 22 8 21 5" stroke="#a4865e" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
         <h2 id="final-cta-title">If something in you recognized something in this</h2>
         <div class="grid grid--2" style="margin-top: var(--space-6); gap: var(--space-6);">
           <div>
@@ -470,6 +493,7 @@
       <div class="footer-grid">
 
         <div class="footer-col">
+          <img class="footer-mark" src="/assets/arc-mark.svg" alt="ARC: Awareness, Regulation, Creation" width="52" height="52" loading="lazy">
           <h2>Carrie Davidson</h2>
           <p class="eyebrow" style="margin-bottom: var(--space-4);">Nurse. Coach. Writer. Survivor. Human.</p>
           <p class="meta footer-invite">
