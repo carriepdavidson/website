@@ -1642,65 +1642,24 @@ p { max-width: var(--measure); }
 
 /* ============================================================
    SHAPELINE: Pattern -> Pause -> Choice -> Creation.
-   The signature scroll section. A tall wrapper gives the scroll
-   runway; the stage stays sticky while one SVG line draws itself
-   through four states. Without JS, or with reduced motion, the
-   wrapper collapses and the finished drawing simply sits on the
-   page: same meaning, no motion.
+   Base layout; motion lives in the v3 rules further down (compact
+   section, self-drawing line, no scroll runway).
    ============================================================ */
-.shapeline { position: relative; height: 320vh; }
 .shapeline__intro { padding-top: var(--space-8); padding-bottom: var(--space-4); }
 .shapeline__stage {
-  position: sticky; top: 0; min-height: 100vh;
   display: grid; place-items: center;
   padding: var(--space-5) var(--space-3);
 }
-@supports (height: 100svh) { .shapeline__stage { min-height: 100svh; } }
 .shapeline__svg { width: min(1060px, 94vw); height: auto; display: block; }
 .shapeline__svg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .shapeline__seg--pattern  { stroke: #7B68A0; stroke-width: 3.5; }
 .shapeline__seg--pause    { stroke: #98A5C6; stroke-width: 3.5; }
-.shapeline__seg--choice   { stroke: #C9A87C; stroke-width: 4; }
-.shapeline__seg--creation { stroke: #C9A87C; stroke-width: 4; }
-.shapeline__offshoot        { stroke: #C9A87C; stroke-width: 2.5; opacity: .45; }
-.shapeline__offshoot--lilac { stroke: #B8A9C9; stroke-width: 2.5; opacity: .6; }
-.shapeline__ghost {
-  stroke: #7B68A0; stroke-width: 3; stroke-dasharray: 7 9; opacity: .22;
-}
-.shapeline__still { fill: #98A5C6; }
 .shapeline__word {
   font-family: var(--font-sans); font-weight: 500; font-size: 30px;
   letter-spacing: .34em; fill: #574768;
 }
 .shapeline__word--creation { fill: #8A6B42; }
 .shapeline__coda { padding: var(--space-2) var(--space-4) var(--space-7); margin-inline: auto; }
-
-/* Armed by JS: beats hidden until their scroll moment. */
-.shapeline.is-armed [data-at] {
-  opacity: 0; transition: opacity .9s ease;
-}
-.shapeline.is-armed .shapeline__ghost.is-on { opacity: .22; }
-.shapeline.is-armed .shapeline__offshoot.is-on { opacity: .45; }
-.shapeline.is-armed .shapeline__offshoot--lilac.is-on { opacity: .6; }
-.shapeline.is-armed [data-at].is-on { opacity: 1; }
-.shapeline.is-armed .shapeline__word.is-on { opacity: .9; }
-
-@media (max-width: 44rem) {
-  .shapeline { height: 240vh; }
-  .shapeline__word { font-size: 34px; letter-spacing: .26em; }
-}
-
-/* Static fallbacks: no sticky support, or reduced motion. */
-@supports not (position: sticky) {
-  .shapeline { height: auto; }
-  .shapeline__stage { position: static; min-height: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .shapeline { height: auto; }
-  .shapeline__stage { position: static; min-height: 0; }
-  .shapeline [data-at] { opacity: 1 !important; transition: none !important; }
-  .shapeline__ghost { opacity: .22 !important; }
-}
 
 /* ============================================================
    ARC MARK SYSTEM: the logo as design language. A derived
@@ -1718,37 +1677,6 @@ p { max-width: var(--measure); }
 .footer-mark {
   display: block; width: 64px; height: auto;
   margin-bottom: var(--space-3);
-}
-
-/* ARC section: the original logo, full and unaltered. */
-.arc-emblem-logo {
-  display: block; width: min(220px, 58vw); height: auto;
-  margin: 0 auto var(--space-6);
-}
-
-/* ARC emblem: spiral -> arch -> plant, drawn on reveal. */
-.arc-emblem {
-  display: block; width: min(210px, 52vw); height: auto;
-  margin: 0 auto var(--space-6);
-}
-.arc-emblem path { fill: none; stroke-linecap: round; }
-.arc-emblem__spiral { stroke: #7B68A0; stroke-width: 5; }
-.arc-emblem__arch   { stroke: url(#emblemg); stroke-width: 6; }
-.arc-emblem__plant  { stroke: #a4865e; stroke-width: 5; }
-.js .reveal .arc-emblem path { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.js .reveal.is-visible .arc-emblem__spiral {
-  stroke-dashoffset: 0; transition: stroke-dashoffset 1.9s ease-out 0.2s;
-}
-.js .reveal.is-visible .arc-emblem__arch {
-  stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s ease-in-out 2.3s;
-}
-.js .reveal.is-visible .arc-emblem__plant {
-  stroke-dashoffset: 0; transition: stroke-dashoffset 1.5s ease-out 4s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .js .reveal .arc-emblem path {
-    stroke-dasharray: none; stroke-dashoffset: 0; transition: none;
-  }
 }
 
 /* Stage motifs on the ARC cards and the closing sprout. */
@@ -1802,8 +1730,7 @@ p { max-width: var(--measure); }
    scroll runway or sticky stage. Compact section; the line draws itself
    in ~4 seconds when it enters view, words and leaves arriving with it.
    Static and fully drawn without JS or with reduced motion. */
-.shapeline { height: auto; }
-.shapeline__stage { position: static; min-height: 0; padding: var(--space-6) var(--space-3) var(--space-5); }
+.shapeline__stage { padding: var(--space-6) var(--space-3) var(--space-5); }
 .shapeline__intro { padding-top: var(--space-7); }
 .js .shapeline path[pathLength] { stroke-dasharray: 1; stroke-dashoffset: 1; }
 .js .shapeline.is-visible .shapeline__seg--pattern {
