@@ -808,3 +808,21 @@ html:not(.js) .mirror-line g[mask] { mask: none; }
   .mirror-line g[mask] { mask: none; }
   [data-flood] { transition: none; }
 }
+
+/* Hero fixes: photo flush under header on mobile; copy never slides
+   under the bleed photo on tablet widths. Header credential line
+   restored under the wordmark, small, always visible. */
+@media (max-width: 960px) {
+  .hero--home { padding: 0 0 48px; }
+  .hero--home .hero-bleed { margin-top: 0; }
+  .hero--home .container { padding-top: 30px; }
+}
+@media (min-width: 961px) and (max-width: 1240px) {
+  .hero--home .hero-copy { max-width: 48%; }
+}
+.brand-stack__text { display: flex; flex-direction: column; line-height: 1.25; }
+.brand-stack { align-items: center; }
+.brand-stack .brand-stack__cred {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-faint); margin-top: 2px;
+}

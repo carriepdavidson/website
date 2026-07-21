@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260721j">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721k">
 
   <!-- Page-specific styles: pieces dc.css does not carry.
        Large stage-row letter badge, breathing room between the two
@@ -75,7 +75,10 @@
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson, RN, Author and Trauma Recovery Coach: home">
         <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
-        <span class="brand-stack__name">Carrie Davidson</span>
+        <span class="brand-stack__text">
+          <span class="brand-stack__name">Carrie Davidson</span>
+          <span class="brand-stack__cred">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
+        </span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menu
@@ -108,10 +111,11 @@
 
   <main id="main">
 
-    <!-- HERO: kicker + h1 + two paragraphs, ARC arch artwork right. -->
+    <!-- HERO: kicker + h1 + two paragraphs. The line artwork below is
+         the page's visual; no framed logo card. -->
     <section class="hero">
       <div class="container">
-        <div class="split">
+        <div style="max-width: 720px;">
           <div>
             <p class="eyebrow">The Conscious Creation Method&trade;</p>
             <h1 class="h1-display">Three stages.<br>One word to remember: <em class="plum">ARC</em>.</h1>
@@ -127,14 +131,6 @@
             </div>
             <p class="meta" style="margin: 16px 0 0;">Or start on your own with the
               <a href="assets/conscious-creation-workbook.pdf">free workbook</a>.</p>
-          </div>
-          <div>
-            <!-- Carrie's original ARC arch artwork. Never redraw or derive from it. -->
-            <div class="art-frame">
-              <img src="/assets/arc-arch.png" fetchpriority="high"
-                   alt="Carrie's ARC arch artwork: a growing plant and a golden spiral beneath an arch, for Awareness, Regulation, Creation"
-                   width="380" height="375">
-            </div>
           </div>
         </div>
       </div>
