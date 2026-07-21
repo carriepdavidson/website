@@ -10,14 +10,78 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="/css/style.css?v=20260721l">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/dc.css?v=20260721i">
+  <style>
+    /* Course chrome: the few style.css pieces these unlisted pages still
+       need, re-expressed in dc tokens. Everything else comes from dc.css. */
+    :root { --space-4: 1rem; --space-5: 1.5rem; }
+
+    /* Slim header: credential line reveals once scrolled (same as before). */
+    .brand-stack { position: relative; }
+    .brand-stack__cred--scroll {
+      position: absolute; top: calc(100% + 0.3em); left: 0; white-space: nowrap;
+      opacity: 0; transform: translateY(-2px); pointer-events: none;
+      transition: opacity 300ms ease, transform 300ms ease;
+    }
+    .site-header.is-scrolled .brand-stack__cred--scroll { opacity: 1; transform: none; }
+    @media (max-width: 704px) { .brand-stack__cred--scroll { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .brand-stack__cred--scroll { transition: none; } }
+
+    /* These pages have no nav toggle: keep the course-home pill
+       visible at every width instead of dc's collapsed mobile nav. */
+    @media (max-width: 960px) {
+      .nav {
+        display: flex; position: static; flex-direction: row;
+        background: none; border: none; padding: 0; box-shadow: none;
+      }
+      .nav .btn--pill { margin-top: 0; padding: 9px 16px; font-size: 14px; }
+    }
+
+    .site-footer .meta { color: var(--on-dark-4); }
+
+    /* Video placeholder slot. */
+    .video-slot {
+      display: flex; align-items: center; gap: 24px;
+      background: var(--card); border: 1.5px dashed var(--gold);
+      border-radius: 14px; padding: 24px 32px;
+    }
+    .video-slot__mark { flex: 0 0 64px; }
+    .video-slot__mark svg { width: 64px; height: 64px; }
+    .video-slot__title {
+      font-family: var(--serif); font-style: italic;
+      font-size: 19px; color: var(--ink); margin: 0 0 4px;
+    }
+
+    /* Felt-values picker widget. The .chip rules fully reset dc.css's
+       circular number chip into the course's tappable word pill. */
+    .widget {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 30px 28px; margin: 32px 0;
+    }
+    .widget h3 { margin-top: 0; }
+    .widget__response {
+      min-height: 1.5em; font-style: italic; color: var(--text-soft); margin: 12px 0 0;
+    }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .chip {
+      width: auto; height: auto; margin: 0; display: inline-flex;
+      align-items: center; justify-content: center; cursor: pointer;
+      font-family: var(--sans); font-size: 14.5px;
+      background: var(--bg); color: var(--text);
+      border: 1px solid var(--outline); border-radius: 999px; padding: 8px 16px;
+      transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+    }
+    .chip:hover { border-color: var(--plum); }
+    .chip.is-chosen { background: var(--plum); color: var(--bg); border-color: var(--plum); }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand-stack" href="/" aria-label="Carrie Davidson: home">
+        <img class="brand-mark" src="/assets/arc-arch.png" alt="" width="34" height="33">
         <span class="brand-stack__name">Carrie Davidson</span>
         <span class="brand-stack__cred brand-stack__cred--scroll">BSPH, BSN, RN &middot; Trauma Recovery Coach</span>
       </a>
