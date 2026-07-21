@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap">
 
-  <link rel="stylesheet" href="css/style.css?v=20260721c">
+  <link rel="stylesheet" href="css/style.css?v=20260721d">
 
   <!-- Person JSON-LD (Carrie): hasCredential surfaces RN/BSN/BSPH E-E-A-T.
        Reuse this verbatim on about.html; see docs/design-system.md. -->
@@ -275,27 +275,36 @@
           protect you. Now you can teach it something new.</p>
       </div>
       <div class="shapeline__stage">
-        <svg class="shapeline__svg" viewBox="0 0 1000 640" role="img"
-             aria-label="One continuous line loops in a repeating tangle labeled pattern, slows to a still point labeled pause, turns gold at a branching point labeled choice, and opens into a wider organic path labeled creation">
-          <text class="shapeline__word" x="130" y="236" data-at="0.10">PATTERN</text>
-          <path class="shapeline__seg shapeline__seg--pattern" data-seg="0.06,0.36"
-                d="M 42 372 C 66 296, 150 288, 166 356 C 178 408, 112 436, 96 386 C 82 340, 152 302, 210 328 C 258 350, 250 412, 200 412 C 158 412, 164 350, 226 340 C 288 330, 324 366, 316 400 C 309 430, 260 434, 256 402 C 252 374, 300 352, 352 364"/>
-          <text class="shapeline__word" x="430" y="300" data-at="0.40">PAUSE</text>
-          <path class="shapeline__seg shapeline__seg--pause" data-seg="0.36,0.50"
-                d="M 352 364 C 404 376, 458 372, 500 368 C 522 366, 538 366, 550 366"/>
-          <circle class="shapeline__still" cx="550" cy="366" r="5.5" data-at="0.49"/>
-          <path class="shapeline__ghost" data-at="0.53"
-                d="M 550 366 C 592 378, 616 406, 610 442"/>
-          <text class="shapeline__word" x="545" y="496" data-at="0.55">CHOICE</text>
-          <path class="shapeline__seg shapeline__seg--choice" data-seg="0.52,0.62"
-                d="M 550 366 C 574 352, 592 332, 608 308"/>
-          <path class="shapeline__seg shapeline__seg--creation" data-seg="0.62,0.96"
-                d="M 608 308 C 636 268, 684 252, 720 268 C 748 281, 754 310, 736 324 C 718 338, 706 316, 726 296 C 750 264, 800 244, 850 240 C 890 237, 918 230, 934 208 C 944 194, 948 178, 948 160"/>
-          <path class="shapeline__offshoot" data-at="0.90"
-                d="M 940 190 C 922 184, 910 172, 908 156"/>
-          <path class="shapeline__offshoot" data-at="0.94"
-                d="M 944 172 C 958 164, 966 150, 965 136"/>
-          <text class="shapeline__word shapeline__word--creation" x="780" y="330" data-at="0.74">CREATION</text>
+        <svg class="shapeline__svg" viewBox="0 0 1200 560" role="img"
+             aria-label="One continuous fine line tangles in dense loops labeled pattern, unwinds through gentle waves labeled pause, begins to rise at the word choice, and grows into a gold botanical branch labeled creation">
+          <defs>
+            <linearGradient id="slg1" gradientUnits="userSpaceOnUse" x1="392" y1="0" x2="792" y2="0">
+              <stop offset="0" stop-color="#7B68A0"/>
+              <stop offset="1" stop-color="#C9A87C"/>
+            </linearGradient>
+            <linearGradient id="slg2" gradientUnits="userSpaceOnUse" x1="792" y1="0" x2="1022" y2="0">
+              <stop offset="0" stop-color="#C9A87C"/>
+              <stop offset="1" stop-color="#a4865e"/>
+            </linearGradient>
+          </defs>
+          <text class="shapeline__word" x="96" y="512" data-at="0.12">PATTERN</text>
+          <text class="shapeline__word" x="540" y="512" data-at="0.44">PAUSE</text>
+          <text class="shapeline__word" x="700" y="512" data-at="0.60">CHOICE</text>
+          <text class="shapeline__word shapeline__word--creation" x="928" y="512" data-at="0.84">CREATION</text>
+          <path class="shapeline__seg shapeline__seg--pattern" data-seg="0.06,0.40"
+                d="M 30 330 C 60 260, 140 250, 150 320 C 158 372, 92 392, 76 340 C 62 296, 128 262, 172 292 C 210 316, 200 372, 152 372 C 110 372, 118 306, 172 300 C 226 294, 244 350, 210 376 C 180 398, 132 386, 130 344 C 128 300, 190 280, 232 306 C 268 328, 268 372, 230 388 C 200 400, 168 380, 176 348 C 186 310, 260 300, 300 330 C 340 358, 320 402, 282 396 C 252 390, 258 348, 306 342 C 354 336, 380 366, 372 394 C 366 416, 336 420, 330 398 C 326 380, 356 368, 392 372"/>
+          <path class="shapeline__seg shapeline__seg--pause" data-seg="0.40,0.58"
+                d="M 392 372 C 440 378, 470 352, 510 360 C 550 368, 570 386, 610 380 C 640 375, 652 362, 684 364 C 708 366, 720 372, 744 370 C 762 368, 776 366, 792 364"/>
+          <path class="shapeline__seg shapeline__seg--rise" data-seg="0.58,0.82"
+                d="M 792 364 C 850 358, 900 330, 940 290 C 972 258, 990 224, 1004 192 C 1012 174, 1018 158, 1022 144"/>
+          <path class="shapeline__leaf" data-at="0.84" d="M 966 262 q 16 -20 34 -22 q -12 20 -34 22 z"/>
+          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.87" d="M 988 232 q -22 -10 -30 -26 q 22 6 30 26 z"/>
+          <path class="shapeline__leaf" data-at="0.90" d="M 1002 204 q 16 -20 32 -22 q -10 20 -32 22 z"/>
+          <path class="shapeline__leaf shapeline__leaf--deep" data-at="0.93" d="M 1014 176 q -22 -10 -28 -26 q 20 6 28 26 z"/>
+          <path class="shapeline__leaf" data-at="0.95" d="M 1022 148 q 14 -20 30 -24 q -8 20 -30 24 z"/>
+          <circle class="shapeline__berry" data-at="0.96" cx="1052" cy="150" r="3"/>
+          <circle class="shapeline__berry" data-at="0.97" cx="1040" cy="120" r="2.5"/>
+          <circle class="shapeline__berry" data-at="0.98" cx="1062" cy="128" r="2"/>
         </svg>
       </div>
     </section>

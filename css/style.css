@@ -1782,3 +1782,24 @@ p { max-width: var(--measure); }
 @media (min-width: 52rem) { .arc-connector { display: block; } }
 .arc-flow .phase-cards { position: relative; z-index: 1; }
 .line-divider { display: block; margin: 0 auto; }
+
+/* SHAPELINE v2: redrawn to Carrie's line symbol (Design.png, 2026-07-20).
+   Finer thread, denser tangle, diminishing waves, no fork: the line
+   simply settles and rises into a gold botanical branch. Serif
+   letterspaced stage words along the base, soft lavender-to-gold wash. */
+.shapeline__svg { width: min(1120px, 94vw); }
+.shapeline__stage {
+  background: linear-gradient(100deg, #EFE9F6 0%, #FFFDFA 48%, #F7EFDD 100%);
+}
+.shapeline__seg--pattern { stroke: #5D4E7E; stroke-width: 2.25; }
+.shapeline__seg--pause   { stroke: url(#slg1); stroke-width: 2.5; }
+.shapeline__seg--rise    { stroke: url(#slg2); stroke-width: 2.5; }
+.shapeline__svg path.shapeline__leaf { fill: #C9A87C; stroke: none; }
+.shapeline__svg path.shapeline__leaf--deep, .shapeline__svg .shapeline__berry { fill: #a4865e; stroke: none; }
+.shapeline__word {
+  font-family: var(--font-serif); font-weight: 500; font-size: 30px;
+  letter-spacing: .32em; fill: #574768;
+}
+@media (max-width: 44rem) {
+  .shapeline__word { font-size: 36px; letter-spacing: .22em; }
+}
