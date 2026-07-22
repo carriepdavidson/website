@@ -211,11 +211,18 @@ em.plum { font-style: italic; color: var(--plum); }
 
 /* Full-bleed photo band (edge to edge, optional overlay line) */
 .photo-band {
-  min-height: 420px;
+  min-height: 420px; position: relative;
   background-size: cover; background-position: center;
   display: grid; place-items: end center;
   padding: 48px 24px;
 }
+/* Band fades: a photo band dissolves into its neighboring sections
+   instead of cutting hard. Edge color is set inline per placement to
+   match the neighbor's background. */
+.band-fade,
+.photo-band--overlay > .band-fade { position: absolute; left: 0; right: 0; height: 110px; pointer-events: none; }
+.band-fade--top { top: 0; }
+.band-fade--bottom { bottom: 0; }
 .photo-band__line {
   margin: 0;
   font-family: var(--serif); font-style: italic;

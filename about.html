@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260722e">
+  <link rel="stylesheet" href="/css/dc.css?v=20260722f">
 
   <!-- Page-only styles (candidates for dc.css consolidation):
        story pull-quote, credential row-cards, standalone press strip. -->
@@ -186,40 +186,58 @@
 
   <main id="main">
 
-    <!-- HERO (mockup 4): The nurse who became her own patient. -->
-    <section class="edge-split edge-split--media-right">
-      <div class="edge-split__media">
-        <img src="/assets/carrie-davidson.jpg" fetchpriority="high"
-             alt="Carrie Davidson standing on stone steps in a white blazer, looking at the camera">
+    <!-- HERO: full-bleed, reader-first per Carrie 2026-07-22. The visitor
+         meets themselves before they meet Carrie. -->
+    <section class="hero-banner" aria-labelledby="about-title">
+      <img class="hero-banner__img" src="/assets/carrie-hero.jpg" fetchpriority="high"
+           srcset="/assets/carrie-hero-1600.jpg 1600w, /assets/carrie-hero.jpg 2000w"
+           sizes="100vw" style="object-position: center 30%;"
+           alt="Carrie Davidson seated at the edge of a garden fountain, smiling">
+      <div class="container">
+        <div class="hero-banner__copy">
+          <div class="diamond-divider" style="justify-content: flex-start; margin: 0 0 18px; max-width: 220px;" aria-hidden="true">
+            <span class="eyebrow" style="margin: 0; color: var(--gold);">About</span><span>&#10022;</span>
+          </div>
+          <h1 class="h1-display">You&rsquo;ve done the work.<br>So why does so little change?</h1>
+          <p class="lede measure" style="margin: 26px 0 0;">You are smart, self-aware, and
+            tired in a way that is hard to explain. You can trace every pattern back to its
+            origin. And you are still reacting the same way to the same triggers.</p>
+          <p class="support-strong measure" style="margin: 20px 0 0;">That is not failure.
+            That is the loop.</p>
+          <p class="lede-serif-italic" style="margin: 10px 0 0;">My story is on this page.
+            Read it looking for yours.</p>
+        </div>
       </div>
-      <div class="edge-split__copy">
-        <div>
-            <div class="diamond-divider" style="justify-content: flex-start; margin: 0 0 18px; max-width: 220px;" aria-hidden="true">
-              <span class="eyebrow" style="margin: 0; color: var(--gold);">About</span><span>&#10022;</span>
-            </div>
-            <h1 class="h1-display">The nurse who became her own patient.</h1>
-            <p class="lede measure" style="margin: 26px 0 0;">I learned to read a room for
-              danger before I learned to read a book. That vigilance made me an exceptional
-              nurse. It also nearly cost me my life. Then came the day I became the patient in
-              the white hallway who could not remember her own name.</p>
-            <p class="support-strong measure" style="margin: 20px 0 0;">I have been the nurse
-              reading the chart and the patient inside the chart.</p>
-            <p class="lede-serif-italic" style="margin: 10px 0 0;">Both sides of it are what I
-              bring to this work.</p>
-            <div class="cred-row" style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 34px;">
-              <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
-                <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4Z"/><path d="M6 10.5V15c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>
-                <span>BSPH, BSN, RN</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
-                <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4.5 6v5c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg>
-                <span>Certified Trauma<br>Recovery Coach</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
-                <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20h16M13.5 4.5l4 4L9 17l-5 1 1-5 8.5-8.5Z"/></svg>
-                <span>Author of <em style="text-transform: none;">Addicted to Trauma</em><br>Releasing August 8, 2026</span>
-              </div>
-            </div>
+    </section>
+
+    <!-- MEET CARRIE: her story, told as a mirror. -->
+    <section class="section reveal" aria-labelledby="story-title">
+      <div class="container container--read">
+        <p class="eyebrow">My story</p>
+        <h2 id="story-title">The nurse who became her own patient.</h2>
+        <p class="lede measure" style="margin: 26px 0 0;">I learned to read a room for
+          danger before I learned to read a book. That vigilance made me an exceptional
+          nurse. It also nearly cost me my life. Then came the day I became the patient in
+          the white hallway who could not remember her own name.</p>
+        <p class="support-strong measure" style="margin: 20px 0 0;">I have been the nurse
+          reading the chart and the patient inside the chart.</p>
+        <p class="lede-serif-italic" style="margin: 10px 0 0;">Both sides of it are what I
+          bring to this work.</p>
+        <p class="measure" style="margin: 22px 0 0;">If you learned early to hold everything
+          together on the outside while something old ran the show underneath, then you
+          already know this story. You lived your own version of it.</p>
+        <div class="cred-row" style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 34px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
+            <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4Z"/><path d="M6 10.5V15c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>
+            <span>BSPH, BSN, RN</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
+            <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4.5 6v5c0 4.6 3.2 8 7.5 10 4.3-2 7.5-5.4 7.5-10V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg>
+            <span>Certified Trauma<br>Recovery Coach</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600;">
+            <svg style="width: 20px; height: 20px; color: var(--ink-3); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20h16M13.5 4.5l4 4L9 17l-5 1 1-5 8.5-8.5Z"/></svg>
+            <span>Author of <em style="text-transform: none;">Addicted to Trauma</em><br>Releasing August 8, 2026</span>
           </div>
         </div>
       </div>
