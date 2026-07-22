@@ -453,12 +453,8 @@ em.plum { font-style: italic; color: var(--plum); }
   font-size: 13px; color: var(--dark-label);
 }
 
-/* ---------- Reveal on scroll ---------- */
-html.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 550ms ease-out, transform 550ms ease-out; }
-html.js .reveal.is-visible { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  html.js .reveal { opacity: 1; transform: none; transition: none; }
-}
+/* Reveal-on-scroll fade-ins RETIRED 2026-07-22 (Carrie): sections render
+   immediately. The .reveal class remains in markup, inert. */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {

@@ -1121,9 +1121,7 @@ p { max-width: var(--measure); }
    .reveal elements start hidden and fade-rise as they enter the viewport,
    only when the user has not requested reduced motion. */
 @media (prefers-reduced-motion: no-preference) {
-  html.js .reveal { opacity: 0; transform: translateY(18px);
-    transition: opacity 720ms ease, transform 720ms ease; }
-  html.js .reveal.is-visible { opacity: 1; transform: none; }
+  /* Reveal-on-scroll fade-ins retired 2026-07-22; sections render immediately. */
   /* Animated link underline (content + nav links) */
   .nav__link { position: relative; }
   .nav__link::after {

@@ -46,42 +46,11 @@
   });
 })();
 
-/* Reveal-on-scroll: gentle fade-rise for sections (progressive enhancement).
-   Marks <html> with .js so CSS can hide .reveal elements only when JS runs;
-   without JS or without IntersectionObserver, everything stays visible. */
+/* Reveal-on-scroll fade-ins retired 2026-07-22 per Carrie: sections render
+   immediately. The .js marker class remains for any CSS that keys off it. */
 (function () {
   "use strict";
-  var root = document.documentElement;
-  root.classList.add("js");
-
-  var items = document.querySelectorAll(".reveal");
-  if (!items.length) return;
-
-  function showAll() {
-    for (var i = 0; i < items.length; i++) items[i].classList.add("is-visible");
-  }
-
-  if (!("IntersectionObserver" in window)) { showAll(); return; }
-
-  var io = new IntersectionObserver(function (entries, obs) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-
-  items.forEach(function (el) { io.observe(el); });
-
-  /* Safety net: content must never stay hidden. If the observer is slow,
-     throttled, or silently broken, reveal everything shortly after load. */
-  var failsafe = function () { showAll(); };
-  if (document.readyState === "complete") {
-    setTimeout(failsafe, 1500);
-  } else {
-    window.addEventListener("load", function () { setTimeout(failsafe, 1500); });
-  }
+  document.documentElement.classList.add("js");
 })();
 
 /* Sunday Letter signup (MailerLite): submits in place and confirms inline.
