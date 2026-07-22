@@ -797,6 +797,34 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .edge-split__copy, .edge-split--media-right .edge-split__copy { padding: 48px 24px; }
 }
 
+/* Full-bleed hero banner: photo spans edge to edge, copy overlays on a
+   cream wash that dissolves into the image. No blocks, no seams. */
+.hero-banner { position: relative; min-height: 620px; display: flex; align-items: center; overflow: hidden; }
+.hero-banner__img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 24%;
+  -webkit-mask-image: linear-gradient(to top, transparent 0, #000 16%);
+  mask-image: linear-gradient(to top, transparent 0, #000 16%);
+}
+.hero-banner::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to right,
+    rgba(255, 253, 250, 0.97) 0%, rgba(255, 253, 250, 0.92) 30%,
+    rgba(255, 253, 250, 0.55) 50%, rgba(255, 253, 250, 0) 76%);
+}
+.hero-banner .container { position: relative; z-index: 1; width: 100%; }
+.hero-banner__copy { max-width: 560px; padding-block: 72px; }
+@media (max-width: 960px) {
+  .hero-banner { display: block; min-height: 0; }
+  .hero-banner__img {
+    position: static; height: 380px;
+    -webkit-mask-image: linear-gradient(to top, transparent 0, #000 22%);
+    mask-image: linear-gradient(to top, transparent 0, #000 22%);
+  }
+  .hero-banner::after { content: none; }
+  .hero-banner__copy { padding-block: 8px 48px; }
+}
+
 /* Fade variant (mockup grammar): a media-right photo dissolves into the
    page background at its inner edge and its bottom edge instead of
    cutting hard against the next section. */

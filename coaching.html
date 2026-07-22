@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260722c">
+  <link rel="stylesheet" href="/css/dc.css?v=20260722d">
 
   <!-- Page-specific styles: breath pacer + tools widgets (ported from
        css/style.css into dc tokens) and the coach/therapist table. -->
@@ -198,26 +198,23 @@
 
     <!-- MEET YOUR COACH: the very top, per Carrie. Moved from the
          homepage (no-repetition rule: it lives only here now). -->
-    <section class="edge-split edge-split--media-right edge-split--fade">
-      <div class="edge-split__media">
-        <img src="/assets/carrie-welcome.jpg" fetchpriority="high"
-             alt="Carrie Davidson laughing with open arms at a garden doorway">
-      </div>
-      <div class="edge-split__copy">
-        <div>
-            <p class="eyebrow">Meet your coach</p>
-            <h1>Welcome to Conscious Coaching Collective, PLLC</h1>
-            <p class="lede" style="margin: 22px 0 0; max-width: 36em;">I&rsquo;m a registered
-              nurse, certified trauma recovery coach, and author of
-              <a href="/book"><em>Addicted to Trauma</em></a>.
-              I help people who can explain everything, and still repeat it, interrupt the
-              pattern at its source: <strong style="color: var(--ink);">through the body, not around it.</strong></p>
-            <div class="btn-row" style="margin-top: 30px;">
-              <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
-            </div>
-            <p class="cred-line" style="margin: 26px 0 0;">BSPH, BSN, RN &middot; Certified
-              Trauma Recovery Coach &middot; <a href="/about">More about me &rarr;</a></p>
+    <section class="hero-banner" aria-labelledby="welcome-title">
+      <img class="hero-banner__img" src="/assets/carrie-welcome-banner.jpg" fetchpriority="high"
+           alt="Carrie Davidson laughing with open arms at a garden doorway">
+      <div class="container">
+        <div class="hero-banner__copy">
+          <p class="eyebrow">Meet your coach</p>
+          <h1 id="welcome-title">Welcome to Conscious Coaching Collective, PLLC</h1>
+          <p class="lede" style="margin: 22px 0 0; max-width: 36em;">I&rsquo;m a registered
+            nurse, certified trauma recovery coach, and author of
+            <a href="/book"><em>Addicted to Trauma</em></a>.
+            I help people who can explain everything, and still repeat it, interrupt the
+            pattern at its source: <strong style="color: var(--ink);">through the body, not around it.</strong></p>
+          <div class="btn-row" style="margin-top: 30px;">
+            <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
           </div>
+          <p class="cred-line" style="margin: 26px 0 0;">BSPH, BSN, RN &middot; Certified
+            Trauma Recovery Coach &middot; <a href="/about">More about me &rarr;</a></p>
         </div>
       </div>
     </section>
