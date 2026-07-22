@@ -145,7 +145,7 @@
 (function () {
   "use strict";
   var s = document.createElement("script");
-  s.src = "/js/analytics.js";
+  s.src = "/js/analytics.js?v=20260722";
   s.defer = true;
   document.head.appendChild(s);
 })();

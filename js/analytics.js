@@ -47,8 +47,19 @@
       });
     } else if (href.indexOf("calendly.com") !== -1) {
       track("calendly_opened", { page_path: page });
+    } else if (href.indexOf("buy.stripe.com") !== -1) {
+      track("course_checkout_clicked", { page_path: page });
     }
   }, true);
+
+  /* Calendly inline widget: the actual booking, not just the open.
+     The embed posts a message when a time is scheduled. No PII read. */
+  window.addEventListener("message", function (e) {
+    if (typeof e.origin !== "string" || e.origin.indexOf("calendly.com") === -1) return;
+    if (e.data && e.data.event === "calendly.event_scheduled") {
+      track("discovery_call_booked", { page_path: page });
+    }
+  });
 
   /* Form submits: newsletter/waitlist (MailerLite) and call/contact
      requests (Web3Forms). Only the fact of submission is recorded. */
