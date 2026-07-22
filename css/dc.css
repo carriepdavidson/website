@@ -798,10 +798,13 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 
 /* Fade variant (mockup grammar): a media-right photo dissolves into the
-   page background at its inner edge instead of cutting hard. */
+   page background at its inner edge and its bottom edge instead of
+   cutting hard against the next section. */
 .edge-split--fade .edge-split__media img {
-  -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.35) 24%, #000 55%);
-  mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.35) 24%, #000 55%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.35) 24%, #000 55%), linear-gradient(to top, transparent 0, #000 22%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.35) 24%, #000 55%), linear-gradient(to top, transparent 0, #000 22%);
+  mask-composite: intersect;
 }
 @media (max-width: 960px) {
   .edge-split--fade .edge-split__media img { -webkit-mask-image: none; mask-image: none; }
