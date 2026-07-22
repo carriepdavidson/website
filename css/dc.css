@@ -320,6 +320,7 @@ em.plum { font-style: italic; color: var(--plum); }
 }
 .ladder-labels .sep { color: var(--dark-card-border); letter-spacing: 0.3em; }
 .doors { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 20px; align-items: stretch; }
+.doors--2 { grid-template-columns: 1.25fr 1fr; max-width: 880px; margin-inline: auto; }
 .door {
   background: var(--ink-3); border: 1px solid var(--dark-card-border); border-radius: 16px;
   padding: 32px 28px; display: flex; flex-direction: column;
