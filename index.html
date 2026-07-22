@@ -157,36 +157,33 @@
 
   <main id="main">
 
-    <!-- HERO (mockup 1): swash headline, diamond divider, question
-         lead-in, lavender Explore Resources, credential card overlay. -->
-    <section class="hero hero--home">
-      <div class="hero-bleed" aria-hidden="false">
-        <img src="/assets/carrie-gate-hero-full.jpg" fetchpriority="high"
-             srcset="/assets/carrie-gate-hero-1600.jpg 1600w, /assets/carrie-gate-hero-full.jpg 2500w"
-             sizes="(max-width: 960px) 100vw, 58vw"
-             alt="Carrie Davidson standing beside a brick garden gate on a tree-lined path"
-             width="2500" height="1667">
-      </div>
+    <!-- HERO: full-bleed gate photo, copy overlaid on the cream wash,
+         bottom dissolve into the page (same .hero-banner as /coaching).
+         Swash headline + single lavender Explore Resources CTA kept. -->
+    <section class="hero-banner" aria-labelledby="home-title">
+      <img class="hero-banner__img" src="/assets/carrie-gate-hero-full.jpg" fetchpriority="high"
+           srcset="/assets/carrie-gate-hero-1600.jpg 1600w, /assets/carrie-gate-hero-full.jpg 2500w"
+           sizes="100vw"
+           alt="Carrie Davidson standing beside a brick garden gate on a tree-lined path"
+           width="2500" height="1667">
       <div class="container">
-        <div class="split">
-          <div class="hero-copy">
-            <h1 class="h1-display">You are not broken.<br>You are <span class="swash">patterned.</span></h1>
-            <p class="lede-serif-italic" style="margin: 22px 0 0;">And patterns can change.</p>
-            <div class="diamond-divider" aria-hidden="true"><span>&#10022;</span></div>
-            <p class="support-strong measure" style="margin: 0 0 10px;">Are you done surviving
-              the same story, and ready to build a different one?</p>
-            <p class="lede measure" style="margin: 0 0 8px;">Trauma recovery coaching through
-              nervous system regulation and deliberate creation.</p>
-            <p class="measure" style="margin: 0 0 30px; color: var(--text-muted);">Guided by a
-              registered nurse who has also been the patient.</p>
-            <div class="btn-row">
-              <a class="btn btn--lavender" href="/resources">
-                <svg style="width: 18px; height: 18px; margin-right: 9px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 20c0-6 3-11 13-13-1 9-5 12-10 12-1.2 0-2.2-.2-3 1Z"/><path d="M5 20c1.5-4.5 4.5-8 9-10"/></svg>
-                Explore Resources &rarr;</a>
-            </div>
-            <p class="meta" style="margin: 14px 0 0;">Tools, insights and practices to support
-              your healing.</p>
+        <div class="hero-banner__copy">
+          <h1 id="home-title" class="h1-display">You are not broken.<br>You are <span class="swash">patterned.</span></h1>
+          <p class="lede-serif-italic" style="margin: 22px 0 0;">And patterns can change.</p>
+          <div class="diamond-divider" aria-hidden="true"><span>&#10022;</span></div>
+          <p class="support-strong measure" style="margin: 0 0 10px;">Are you done surviving
+            the same story, and ready to build a different one?</p>
+          <p class="lede measure" style="margin: 0 0 8px;">Trauma recovery coaching through
+            nervous system regulation and deliberate creation.</p>
+          <p class="measure" style="margin: 0 0 30px; color: var(--text-muted);">Guided by a
+            registered nurse who has also been the patient.</p>
+          <div class="btn-row">
+            <a class="btn btn--lavender" href="/resources">
+              <svg style="width: 18px; height: 18px; margin-right: 9px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 20c0-6 3-11 13-13-1 9-5 12-10 12-1.2 0-2.2-.2-3 1Z"/><path d="M5 20c1.5-4.5 4.5-8 9-10"/></svg>
+              Explore Resources &rarr;</a>
           </div>
+          <p class="meta" style="margin: 14px 0 0;">Tools, insights and practices to support
+            your healing.</p>
         </div>
         <div class="press-strip" aria-label="Featured in">
           <span class="press-strip__label">As featured in</span>
