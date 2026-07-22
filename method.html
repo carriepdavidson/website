@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260722g">
+  <link rel="stylesheet" href="/css/dc.css?v=20260722h">
 
   <!-- Page-specific styles: pieces dc.css does not carry.
        Large stage-row letter badge, breathing room between the two
@@ -130,22 +130,23 @@
 
     <!-- HERO: kicker + h1 + two paragraphs. The line artwork below is
          the page's visual; no framed logo card. -->
-    <section class="hero">
+    <section class="hero-banner hero-banner--lift hero-banner--copy-right" aria-labelledby="method-title">
+      <img class="hero-banner__img" src="/assets/carrie-method-banner.jpg" fetchpriority="high"
+           style="object-position: center 32%;"
+           alt="Carrie Davidson seated on the grass in front of a wall of pink and white hydrangeas">
       <div class="container">
-        <div style="max-width: 720px;">
-          <div>
-            <p class="eyebrow">The Conscious Creation Method&trade;</p>
-            <h1 class="h1-display">The five steps of <em class="plum">Conscious Creation</em>.</h1>
-            <p class="lede measure" style="margin: 24px 0 0; font-size: 19px;">Everything you
-              survived taught your nervous system how to protect you. Now you can teach it
-              something new. The Method is how: a clear path from seeing the pattern to
-              building something different.</p>
-            <div class="btn-row" style="margin-top: 32px;">
-              <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
-            </div>
-            <p class="meta" style="margin: 16px 0 0;">Or start on your own with the
-              <a href="assets/conscious-creation-workbook.pdf">free workbook</a>.</p>
+        <div class="hero-banner__copy">
+          <p class="eyebrow">The Conscious Creation Method&trade;</p>
+          <h1 id="method-title" class="h1-display">The five steps of <em class="plum">Conscious Creation</em>.</h1>
+          <p class="lede measure" style="margin: 24px 0 0; font-size: 19px;">Everything you
+            survived taught your nervous system how to protect you. Now you can teach it
+            something new. The Method is how: a clear path from seeing the pattern to
+            building something different.</p>
+          <div class="btn-row" style="margin-top: 32px;">
+            <a class="btn btn--primary" href="/discovery-call">Book a Call</a>
           </div>
+          <p class="meta" style="margin: 16px 0 0;">Or start on your own with the
+            <a href="assets/conscious-creation-workbook.pdf">free workbook</a>.</p>
         </div>
       </div>
     </section>

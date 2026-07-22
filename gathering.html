@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260722g">
+  <link rel="stylesheet" href="/css/dc.css?v=20260722h">
 
   <!-- Page-specific styles: hero logo sizing only. -->
   <style>
@@ -119,28 +119,32 @@
 
   <main id="main">
 
-    <!-- HERO: locked Gathering tagline block, centered. -->
-    <section class="hero">
-      <div class="container container--narrow center">
-        <img class="gathering-logo" src="/assets/monthly-gathering-logo.png"
-             alt="The Monthly Gathering logo: three figures beneath a purple and gold arch. We don't heal in isolation, we heal in community."
-             width="220" height="220">
-        <p class="eyebrow">The Monthly Gathering &middot; Free</p>
-        <h1>You Don't Heal in Isolation.</h1>
-        <p class="lede mx-auto measure" style="margin: 24px auto 0;">A free monthly gathering
-          for anyone in the work. Teaching, sharing, community.</p>
-        <p class="italic-note" style="margin: 18px 0 0;">Belonging. Connection. Creation. These
-          are not destinations. They are how we build.</p>
+    <!-- HERO: full-bleed banner (CD-040, laughing by the pink caladiums),
+         locked Gathering tagline. Logo moved to the How it works head. -->
+    <section class="hero-banner hero-banner--lift" aria-labelledby="gathering-title">
+      <img class="hero-banner__img" src="/assets/carrie-gathering-banner.jpg" fetchpriority="high"
+           style="object-position: center 30%;"
+           alt="Carrie Davidson laughing on a garden bench beside a planter of pink caladiums">
+      <div class="container">
+        <div class="hero-banner__copy">
+          <p class="eyebrow">The Monthly Gathering &middot; Free</p>
+          <h1 id="gathering-title">You Don't Heal in Isolation.</h1>
+          <p class="lede measure" style="margin: 24px 0 0;">A free monthly gathering
+            for anyone in the work. Teaching, sharing, community.</p>
+          <p class="italic-note" style="margin: 18px 0 0;">Belonging. Connection. Creation. These
+            are not destinations. They are how we build.</p>
+        </div>
       </div>
     </section>
-
-    <div class="pattern-divider" aria-hidden="true"></div>
 
     <!-- WHAT IT IS: how a gathering works, one card per movement of the
          evening. Card titles reuse the hero's own three words. -->
     <section class="section reveal" aria-labelledby="how-title">
       <div class="container">
         <div class="section-head center measure-wide mx-auto">
+          <img class="gathering-logo" src="/assets/monthly-gathering-logo.png"
+               alt="The Monthly Gathering logo: three figures beneath a purple and gold arch. We don't heal in isolation, we heal in community."
+               width="140" height="140" loading="lazy" style="margin-bottom: 14px;">
           <h2 id="how-title">How it works</h2>
         </div>
         <ul class="cards-3" style="list-style: none; margin: 0; padding: 0;">
