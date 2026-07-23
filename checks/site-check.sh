@@ -10,8 +10,10 @@ fail() { echo "✗ $1"; FAIL=1; }
 pass() { echo "✓ $1"; }
 
 # Pages under the gate: root + topic hubs + resource detail pages.
-# (templates/ is intentionally excluded: noindex, TODO-marked scaffolding.)
+# (templates/ is intentionally excluded: noindex, TODO-marked scaffolding.
+#  Redirect stubs are excluded: minimal by design, no h1/description/unique title.)
 PAGES=$(ls *.html writing/*.html resources/*.html 2>/dev/null)
+PAGES=$(grep -L 'http-equiv="refresh"' $PAGES)
 
 # 1. Em-dash ban (visible files)
 if grep -l '&mdash;\|—' $PAGES llms.txt 2>/dev/null | grep -q .; then
