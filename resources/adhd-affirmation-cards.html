@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260723a">
+  <link rel="stylesheet" href="/css/dc.css?v=20260723b">
 
   <!-- Page-only styles (candidates for dc.css consolidation):
        resource-lead cover layout + vars referenced by inline styles. -->
@@ -133,7 +133,21 @@
           one more thing to be good at: just a few honest reframes to keep within reach on the days that
           ask a lot of you.</p>
         <div class="btn-row">
-          <a class="btn btn--primary" href="/assets/adhd-affirmation-cards.pdf">Download the cards (free) &rarr;</a>
+          <div data-gate id="get">
+          <form class="signup__form" method="post"
+                action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
+                data-ml-form style="margin-inline: 0;">
+            <label class="visually-hidden" for="gate-email">Email address</label>
+            <input class="input" id="gate-email" name="fields[email]" type="email"
+                   autocomplete="email" placeholder="Your email address" required>
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="fields[resource_request]" value="adhd-affirmation-cards">
+            <button class="btn btn--primary" type="submit">Unlock the free download</button>
+            <p class="signup__status" role="status" aria-live="polite"></p>
+          </form>
+          <a class="btn btn--primary gate__download" hidden href="/assets/adhd-affirmation-cards.pdf">Download the cards &rarr;</a>
+          <p class="meta" style="margin: 12px 0 0;">Your email unlocks the download right here and signs you up for the Sunday Letter. Unsubscribe anytime.</p>
+        </div>
         </div>
       </div>
     </section>
@@ -166,7 +180,7 @@
             <dl class="res-facts">
               <dt>Format</dt><dd>PDF (printable cards)</dd>
               <dt>Size</dt><dd>About 5.7 MB</dd>
-              <dt>Access</dt><dd>Open download, no email required</dd>
+              <dt>Access</dt><dd>Free. Your email unlocks it here and brings the Sunday Letter.</dd>
             </dl>
 
             <p class="disclaimer-inline">These cards are education and reflection, not therapy, diagnosis,
@@ -174,7 +188,7 @@
               replace it. If you are in crisis, the resources at the bottom of this page can help right now.</p>
 
             <div class="btn-row" style="margin-top: var(--space-6);">
-              <a class="btn btn--primary" href="/assets/adhd-affirmation-cards.pdf">Download the cards (free)</a>
+              <a class="btn btn--primary" href="#get">Unlock the free download</a>
             </div>
           </div>
         </div>

@@ -80,7 +80,14 @@
         .then(function (data) {
           if (data && data.success) {
             form.querySelectorAll(".input, button").forEach(function (el) { el.hidden = true; });
-            say("Almost in. Check your inbox for a confirmation email, click it, and the next letter finds you on Sunday.");
+            var gate = form.closest("[data-gate]");
+            var unlock = gate ? gate.querySelector(".gate__download") : null;
+            if (unlock) {
+              unlock.hidden = false;
+              say("Unlocked. Your download is ready below, and a confirmation email for the Sunday Letter is on its way.");
+            } else {
+              say("Almost in. Check your inbox for a confirmation email, click it, and the next letter finds you on Sunday.");
+            }
           } else {
             if (button) button.disabled = false;
             say("That did not go through. Please check the address and try again.");

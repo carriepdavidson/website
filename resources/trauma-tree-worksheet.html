@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260723a">
+  <link rel="stylesheet" href="/css/dc.css?v=20260723b">
 
   <!-- Breadcrumb structured data: Home > Resources > The Trauma Tree Workbook -->
   <script type="application/ld+json">
@@ -108,9 +108,7 @@
 
   <main id="main">
 
-    <!-- HERO: breadcrumb + H1 + poetic payoff + ungated download.
-         The optional Sunday Letter signup below the button is a
-         Carrie-approved companion, not a second CTA. -->
+    <!-- HERO: breadcrumb + H1 + poetic payoff + email-gated download (her 2026-07-23 rule: nothing free without an email). -->
     <section class="hero">
       <div class="container container--narrow">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -127,23 +125,23 @@
         <p class="measure" style="margin: 18px 0 0;">A free 19-page workbook that traces one
           repeating pattern from the branch you can see to the root you usually cannot.</p>
         <div class="btn-row" style="margin-top: 30px;">
-          <a class="btn btn--primary" href="/assets/trauma-tree-worksheet.pdf">Download the workbook (free) &rarr;</a>
-        </div>
-
-        <div style="margin-top: 44px;">
-          <p class="meta">The download is open, no email required. Want the Sunday Letter
-            alongside it? Leave your email here.</p>
+          <div data-gate id="get">
           <form class="signup__form" method="post"
                 action="https://assets.mailerlite.com/jsonp/2507273/forms/193002592993805851/subscribe"
-                data-ml-form style="margin-top: 14px; margin-inline: 0;">
-            <label class="visually-hidden" for="worksheet-email">Email address</label>
-            <input class="input" id="worksheet-email" name="fields[email]" type="email"
+                data-ml-form style="margin-inline: 0;">
+            <label class="visually-hidden" for="gate-email">Email address</label>
+            <input class="input" id="gate-email" name="fields[email]" type="email"
                    autocomplete="email" placeholder="Your email address" required>
             <input type="hidden" name="ml-submit" value="1">
-            <button class="btn btn--secondary" type="submit">Get the Sunday Letter</button>
+            <input type="hidden" name="fields[resource_request]" value="trauma-tree-worksheet">
+            <button class="btn btn--primary" type="submit">Unlock the free download</button>
             <p class="signup__status" role="status" aria-live="polite"></p>
           </form>
+          <a class="btn btn--primary gate__download" hidden href="/assets/trauma-tree-worksheet.pdf">Download the workbook &rarr;</a>
+          <p class="meta" style="margin: 12px 0 0;">Your email unlocks the download right here and signs you up for the Sunday Letter. Unsubscribe anytime.</p>
         </div>
+        </div>
+
       </div>
     </section>
 
@@ -181,7 +179,7 @@
           <dt>Format</dt><dd>PDF (printable)</dd>
           <dt>Length</dt><dd>19 pages</dd>
           <dt>Size</dt><dd>About 3.9 MB</dd>
-          <dt>Access</dt><dd>Open download, no email required</dd>
+          <dt>Access</dt><dd>Free. Your email unlocks it here and brings the Sunday Letter.</dd>
         </dl>
 
         <p class="disclaimer-inline">This workbook is education and reflection, not therapy,
@@ -189,7 +187,7 @@
           of this page can help right now.</p>
 
         <div class="btn-row" style="margin-top: 36px;">
-          <a class="btn btn--primary" href="/assets/trauma-tree-worksheet.pdf">Download the workbook (free)</a>
+          <a class="btn btn--primary" href="#get">Unlock the free download</a>
         </div>
       </div>
     </section>
