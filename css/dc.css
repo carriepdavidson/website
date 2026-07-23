@@ -19,15 +19,15 @@
   --text: #564a6e;
   --text-muted: #655b7e;
   --text-soft: #7a6f92;
-  --text-faint: #928aa8;
+  --text-faint: #6a5f83; /* was #928aa8, darkened for WCAG AA */
   --on-dark: #ece3f7;
   --on-dark-2: #c6bbdc;
   --on-dark-3: #a89dc4;
   --on-dark-4: #9d93b8;
-  --gold: #b6a066;
+  --gold: #7a6737; /* was #b6a066, darkened for WCAG AA on light bgs */
   --gold-light: #d7c191;
   --gold-badge-bg: #f3e6c4;
-  --gold-badge-text: #9c8757;
+  --gold-badge-text: #6e5c33; /* was #9c8757, darkened for WCAG AA */
   --plum: #7a5bb2;
   --link: #6b4fac;
   --link-hover: #493378;
