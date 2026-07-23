@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260722h">
+  <link rel="stylesheet" href="/css/dc.css?v=20260722i">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -98,22 +98,17 @@
     <!-- ============================================================
          HERO: two-layer copy: search-language H1 + poetic payoff.
          ============================================================ -->
-    <section class="hero">
+    <section class="hero-banner hero-banner--lift" aria-labelledby="writing-title">
+      <img class="hero-banner__img" src="/assets/carrie-writing.jpg" fetchpriority="high"
+           style="object-position: center 40%;"
+           alt="Carrie Davidson writing in a notebook at a sunlit cafe table">
       <div class="container">
-        <div class="split">
-          <div>
-            <p class="eyebrow">Writing</p>
-            <h1>Essays on trauma, ADHD, and nervous system regulation</h1>
-            <p class="lede" style="margin: 24px 0 32px;">Slowly coming back to yourself. Free to read, every week.</p>
-            <div class="btn-row">
-              <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
-            </div>
-          </div>
-          <div>
-            <div class="portrait-frame portrait-frame--4x5">
-              <img src="/assets/carrie-writing.jpg" fetchpriority="high"
-                   alt="Carrie Davidson writing in a notebook at a sunlit cafe table">
-            </div>
+        <div class="hero-banner__copy">
+          <p class="eyebrow">Writing</p>
+          <h1 id="writing-title">Essays on trauma, ADHD, and nervous system regulation</h1>
+          <p class="lede" style="margin: 24px 0 32px;">Slowly coming back to yourself. Free to read, whenever you need them.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
           </div>
         </div>
       </div>

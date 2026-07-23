@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="/css/dc.css?v=20260722h">
+  <link rel="stylesheet" href="/css/dc.css?v=20260722i">
 </head>
 
 <body>
@@ -101,29 +101,22 @@
          HERO: search-language H1 + the recognition lede + RN
          credibility early. Portrait right, copy left.
          ============================================================ -->
-    <section class="hero">
+    <section class="hero-banner hero-banner--lift hero-banner--copy-right" aria-labelledby="nurses-title">
+      <img class="hero-banner__img" src="/assets/carrie-nurse-casual.jpg" fetchpriority="high"
+           style="object-position: center 40%;"
+           alt="Carrie Davidson in a purple I'm A Nurse t-shirt, sitting barefoot on a garden wall">
       <div class="container">
-        <div class="split">
-          <div>
-            <p class="eyebrow">For nurses &amp; caregivers</p>
-            <h1 style="font-size: clamp(36px, 4.6vw, 58px);">Trauma recovery coaching for
-              nurses and caregivers</h1>
-            <p class="lede measure" style="margin: 24px 0 0;">The vigilance that makes you
-              exceptional at work may be costing you outside of it.</p>
-            <div class="btn-row" style="margin-top: 32px;">
-              <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
-            </div>
-            <p class="cred-line" style="margin: 30px 0 0;">BSPH, BSN, RN &middot; Certified
-              Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
+        <div class="hero-banner__copy">
+          <p class="eyebrow">For nurses &amp; caregivers</p>
+          <h1 id="nurses-title" style="font-size: clamp(36px, 4.6vw, 58px);">Trauma recovery
+            coaching for nurses and caregivers</h1>
+          <p class="lede measure" style="margin: 24px 0 0;">The vigilance that makes you
+            exceptional at work may be costing you outside of it.</p>
+          <div class="btn-row" style="margin-top: 32px;">
+            <a class="btn btn--primary" href="/subscribe">Get the Sunday Letter</a>
           </div>
-          <div>
-            <div class="portrait-frame portrait-frame--4x5">
-              <img src="/assets/carrie-nurse-casual.jpg" fetchpriority="high"
-                   style="object-position: 10% center;"
-                   alt="Carrie Davidson in a purple I'm A Nurse t-shirt, sitting barefoot on a garden wall"
-                   width="1200" height="1500">
-            </div>
-          </div>
+          <p class="cred-line" style="margin: 30px 0 0;">BSPH, BSN, RN &middot; Certified
+            Trauma Recovery Coach &middot; Author of <em>Addicted to Trauma</em></p>
         </div>
       </div>
     </section>
